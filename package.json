@@ -1,0 +1,60 @@
+{
+  "name": "simple-ppx",
+  "version": "0.0.1",
+  "description": "This is an example of ppblix",
+  "author": "davesnx <dsnxmoreno@gmail.com>",
+  "keywords": [
+    "reason",
+    "ocaml",
+    "ppx",
+    "bucklescript",
+    "rescript",
+    "react"
+  ],
+  "esy": {
+    "buildsInSource": "_build",
+    "build": "dune build -p SimplePpx",
+    "buildDev": [
+      [
+        "dune",
+        "build",
+        "--promote-install-files",
+        "--root",
+        ".",
+        "--only-package",
+        "SimplePpx"
+      ]
+    ],
+    "buildEnv": {
+      "ODOC_SYNTAX": "re"
+    },
+    "release": {
+      "bin": [
+        "Bin"
+      ]
+    }
+  },
+  "devDependencies": {
+    "@opam/merlin": "*",
+    "ocaml": "4.10.0",
+    "@esy-ocaml/reason": ">= 3.6.0 < 4.0.0",
+    "@opam/dune": "2.7.1",
+    "@opam/ocaml-migrate-parsetree": "^1.7.3",
+    "@opam/ppxlib": "0.14.0",
+    "@reason-native/rely": "^3.2.1",
+    "@opam/ocaml-lsp-server": "ocaml/ocaml-lsp:ocaml-lsp-server.opam#fbc433e14035d520c7137916ae710b8ec3b415e9"
+  },
+  "resolutions": {
+    "@esy-ocaml/reason": "facebook/reason:reason.json#773dbcd"
+  },
+  "scripts": {
+    "build": "esy dune build -p SimplePpx",
+    "watch": "esy dune build -p SimplePpx --watch",
+    "test": "esy b dune runtest",
+    "promote": "esy dune promote",
+    "doc": "esy dune build @doc",
+    "doc-path": "esy echo #{self.target_dir}/default/_doc/_html/index.html",
+    "format": "esy dune build @fmt --auto-promote",
+    "utop": "esy dune utop lib -- -implicit-bindings"
+  }
+}
