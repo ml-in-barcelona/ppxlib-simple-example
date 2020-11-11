@@ -6,10 +6,7 @@
   "keywords": [
     "reason",
     "ocaml",
-    "ppx",
-    "bucklescript",
-    "rescript",
-    "react"
+    "ppx"
   ],
   "esy": {
     "buildsInSource": "_build",
@@ -20,9 +17,7 @@
         "build",
         "--promote-install-files",
         "--root",
-        ".",
-        "--only-package",
-        "SimplePpx"
+        "."
       ]
     ],
     "buildEnv": {

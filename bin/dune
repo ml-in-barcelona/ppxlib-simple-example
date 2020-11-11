@@ -1,7 +1,7 @@
 (executable
   (name Bin)
-  (public_name react-rules-of-hooks-ppx)
-  (libraries ReactRulesOfHooksPpx.lib)
+  (public_name simple-ppx)
+  (libraries SimplePpx.lib)
   (ocamlopt_flags ( -linkall ))
-  (package ReactRulesOfHooksPpx)
+  (package SimplePpx)
 )
