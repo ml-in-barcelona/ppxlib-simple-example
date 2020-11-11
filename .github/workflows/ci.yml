@@ -52,9 +52,7 @@ jobs:
 
       - name: Run tests
         run: |
-          cat _build/default/test/ExhaustiveDepsUseEffect.expected
-          echo "--------------------"
-          # esy test
+          esy test
         env:
           OCAML_ERROR_STYLE: "short"
           OCAML_COLOR: "never"
