@@ -48,11 +48,9 @@ jobs:
           restore-keys: build-${{ matrix.os }}-
 
       - name: Import dependencies
-        if: steps.deps-cache.outputs.cache-hit != 'true'
         run: esy import-build
 
       - name: Build dependencies
-        if: steps.deps-cache.outputs.cache-hit != 'true'
         run: esy build-dependencies
 
       - name: Build project
