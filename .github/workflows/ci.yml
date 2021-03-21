@@ -26,6 +26,12 @@ jobs:
       - name: Install esy
         run: npm install -g esy@0.6.8
 
+      - name: Load global cache (.esy/source)
+        uses: actions/cache@v2
+        with:
+          path: ~/.esy/source
+          key: source-${{ matrix.os }}-${{ hashFiles('**/index.json') }}
+
       - name: Install dependencies
         run: esy install
 
@@ -33,7 +39,7 @@ jobs:
         id: print_esy_cache
         run: node .github/workflows/print-esy-cache.js
 
-      - name: Try to restore dependencies cache
+      - name: Load dependencies cache
         id: deps-cache
         uses: actions/cache@v2
         with:
@@ -63,7 +69,7 @@ jobs:
           path: _build/default/bin/Bin.exe
 
       - name: Export dependencies
-        if: steps.deps-cache.outputs.cache-hit != 'true'
+        if: steps.deps-cache.outputs.cache-hit = 'true'
         run: esy export-dependencies
 
   prepare-publish:
