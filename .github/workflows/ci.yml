@@ -22,17 +22,9 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: 12
+
       - name: Install esy
         run: npm install -g esy@0.6.8
-
-      - name: Try to restore install cache
-        uses: actions/cache@v2
-        with:
-          path: ~/.esy/source
-          key: source-${{ matrix.os }}-${{ hashFiles('**/index.json') }}
-
-      - name: Install dependencies
-        run: esy install
 
       - name: Print esy cache
         id: print_esy_cache
@@ -45,6 +37,13 @@ jobs:
           path: ${{ steps.print_esy_cache.outputs.esy_cache }}
           key: build-${{ matrix.os }}-${{ hashFiles('**/index.json') }}
           restore-keys: build-${{ matrix.os }}-
+
+      - name: Import dependencies
+        if: steps.deps-cache.outputs.cache-hit == 'true'
+        run: esy import-build _export/*
+
+      - name: Install dependencies
+        run: esy install
 
       - name: Build dependencies
         if: steps.deps-cache.outputs.cache-hit != 'true'
@@ -65,10 +64,8 @@ jobs:
           name: ${{ matrix.os }}
           path: _build/default/bin/Bin.exe
 
-      # Cleanup build cache if dependencies have changed
-      - name: Clean build cache
-        if: steps.deps-cache.outputs.cache-hit != 'true'
-        run: esy cleanup .
+      - name: Export dependencies
+        run: esy export-dependencies
 
   prepare-publish:
     name: Prepare publish to npm
