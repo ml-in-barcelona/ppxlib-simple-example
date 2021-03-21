@@ -6,6 +6,9 @@ on:
       - master
     tags:
       - v*
+  pull_request:
+    branches:
+      - master
 
 jobs:
   build-test:
@@ -19,10 +22,11 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: 12
+
       - name: Install esy
         run: npm install -g esy@0.6.8
 
-      - name: Try to restore install cache
+      - name: Load global cache (.esy/source)
         uses: actions/cache@v2
         with:
           path: ~/.esy/source
@@ -35,7 +39,7 @@ jobs:
         id: print_esy_cache
         run: node .github/workflows/print-esy-cache.js
 
-      - name: Try to restore dependencies cache
+      - name: Load dependencies cache
         id: deps-cache
         uses: actions/cache@v2
         with:
@@ -43,8 +47,10 @@ jobs:
           key: build-${{ matrix.os }}-${{ hashFiles('**/index.json') }}
           restore-keys: build-${{ matrix.os }}-
 
+      - name: Import dependencies
+        run: esy import-build
+
       - name: Build dependencies
-        if: steps.deps-cache.outputs.cache-hit != 'true'
         run: esy build-dependencies
 
       - name: Build project
@@ -62,10 +68,9 @@ jobs:
           name: ${{ matrix.os }}
           path: _build/default/bin/Bin.exe
 
-      # Cleanup build cache if dependencies have changed
-      - name: Clean build cache
-        if: steps.deps-cache.outputs.cache-hit != 'true'
-        run: esy cleanup .
+      - name: Export dependencies
+        if: steps.deps-cache.outputs.cache-hit = 'true'
+        run: esy export-dependencies
 
   prepare-publish:
     name: Prepare publish to npm
