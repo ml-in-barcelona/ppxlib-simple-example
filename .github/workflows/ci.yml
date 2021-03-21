@@ -49,7 +49,7 @@ jobs:
 
       - name: Import dependencies
         if: steps.deps-cache.outputs.cache-hit != 'true'
-        run: # esy import-build _export/*
+        run: esy import-build
 
       - name: Build dependencies
         if: steps.deps-cache.outputs.cache-hit != 'true'
