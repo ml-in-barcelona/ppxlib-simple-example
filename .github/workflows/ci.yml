@@ -69,6 +69,7 @@ jobs:
           path: _build/default/bin/Bin.exe
 
       - name: Export dependencies
+        if: steps.deps-cache.outputs.cache-hit != 'true'
         run: esy export-dependencies
 
   prepare-publish:
