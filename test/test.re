@@ -1,1 +1,1 @@
-let _ = print_endline([%yay]);
+print_endline([%yay]);

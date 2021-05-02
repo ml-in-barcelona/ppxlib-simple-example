@@ -1,1 +1,1 @@
-let _ = print_endline("Replace random string");
+print_endline("Replace random string");
