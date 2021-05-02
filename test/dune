@@ -1,26 +1,14 @@
-(library
- (name TestSnapshot)
- (library_flags (-linkall -g))
- (libraries SimplePpx.lib)
- (preprocess
-  (pps SimplePpx.lib)
- )
-)
+(executable
+(name pp)
+(modules pp)
+(libraries ppxlib SimplePpx.lib))
 
 (rule
- (targets pp.result)
- (deps simple.re.pp.ml)
- (action
-  (with-stdout-to
-   %{targets}
-   (run refmt --parse=binary %{deps})
-  )
- )
-)
+(targets test.actual.ml)
+(deps (:pp pp.exe) (:input test.ml))
+(action (run ./%{pp} --impl %{input} -o %{targets})))
 
 (rule
- (alias runtest)
- (action
-  (diff pp.expected pp.result)
- )
-)
+(alias runtest)
+(deps (file test.expected.ml) (file test.actual.ml))
+(action (diff test.expected.ml test.actual.ml)))
