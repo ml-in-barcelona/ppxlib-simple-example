@@ -1,7 +1,7 @@
 open Ppxlib;
 
 let expander = (~loc, ~path as _) =>
-  Ast_builder.Default.estring(~loc, {|🎉|});
+  Ast_builder.Default.estring(~loc, "Replace random string");
 
 let extension =
   Context_free.Rule.extension(

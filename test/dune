@@ -5,15 +5,18 @@
 )
 
 (rule
- (targets test.actual.ml)
- (deps (:pp pp.exe) (:input test.ml))
+ (targets test.actual.re)
+ (deps (:pp pp.exe) (:input test.re))
  (action
-  (run ./%{pp} --impl %{input} -o %{targets})
+  (progn
+   (run ./%{pp} --impl %{input} -o %{targets})
+   (run refmt --parse ml --print re --in-place %{targets})
+  )
  )
 )
 
 (rule
  (alias runtest)
- (deps (file test.expected.ml) (file test.actual.ml))
- (action (diff test.expected.ml test.actual.ml))
+ (deps (file test.expected.re) (file test.actual.re))
+ (action (diff test.expected.re test.actual.re))
 )
