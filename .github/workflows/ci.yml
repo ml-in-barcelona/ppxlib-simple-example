@@ -57,8 +57,7 @@ jobs:
         run: esy build
 
       - name: Run tests
-        run: |
-          esy test
+        run: esy test
         env:
           OCAML_ERROR_STYLE: "short"
           OCAML_COLOR: "never"
@@ -80,7 +79,9 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: 12
+
       - uses: actions/checkout@v2
+
 
       # Download platform artifacts
       - name: Download Linux release
@@ -88,16 +89,19 @@ jobs:
         with:
           name: ubuntu-latest
           path: ubuntu-latest
+
       - name: Download Windows release
         uses: actions/download-artifact@v2
         with:
           name: windows-latest
           path: windows-latest
+
       - name: Download macOS release
         uses: actions/download-artifact@v2
         with:
           name: macos-latest
           path: macos-latest
+
       # Move artifacts in place
       - name: Move artifacts
         run: |
@@ -107,23 +111,28 @@ jobs:
           cp -a ubuntu-latest/. _release/platform-linux
           cp -a windows-latest/. _release/platform-windows-x64
           cp -a macos-latest/. _release/platform-darwin
+
       - name: Prepare package
         run: node .github/workflows/release.js
+
       # Create a npm package that can easily be published and tested
       - name: npm pack
         run: npm pack .
         working-directory: _release
+
       - name: move package
-        run: mv _release/*.tgz react-rules-of-hooks-ppx.tgz
+        run: mv _release/*.tgz ppxlib-simple-example.tgz
+
       # Upload artifacts
       - uses: actions/upload-artifact@v2
         with:
           name: release
           path: _release/
+
       - uses: actions/upload-artifact@v2
         with:
           name: release-tarball
-          path: react-rules-of-hooks-ppx.tgz
+          path: ppxlib-simple-example.tgz
 
   publish:
     needs: prepare-publish
