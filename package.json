@@ -1,6 +1,6 @@
 {
   "name": "simple-ppx",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "This is an example of a simple ppxlib",
   "author": "davesnx <dsnxmoreno@gmail.com>",
   "keywords": [
