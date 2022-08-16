@@ -1,25 +1,7 @@
-(executable
- (name pp)
- (modules pp)
- (libraries ppxlib SimplePpx.lib)
-)
-
-(rule
- (targets test.actual.re)
- (deps (:pp pp.exe) (:input test.re))
- (action
-  (progn
-   (with-stdout-to %{targets}
-    (run refmt --parse re --print ml %{input})
-   )
-   (run ./%{pp} --impl %{targets} -o %{targets})
-   (run refmt --parse ml --print re --in-place %{targets})
-  )
- )
-)
-
-(rule
- (alias runtest)
- (deps (file test.expected.re) (file test.actual.re))
- (action (diff test.expected.re test.actual.re))
-)
+(test
+ (name test)
+ (libraries alcotest)
+ (preprocess
+  ; -no-merge is needed to avoid merging context_free transformations with metaquote and maintain the order
+  ; Reference: (https://github.com/ocaml-ppx/ppxlib/blob/76118063460e2506ca442fd13cbb96c69a93d2cb/src/driver.ml#L1314-L1318)
+  (pps ppxlib.metaquot simpleppx -- -no-merge)))

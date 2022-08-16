@@ -1,49 +1,31 @@
 {
   "name": "simple-ppx",
-  "version": "0.2.0",
-  "description": "This is an example of a simple ppxlib",
+  "version": "1.0.0",
+  "description": "This is an example of a simple ppxlib with esy",
   "author": "davesnx <dsnxmoreno@gmail.com>",
-  "keywords": [
-    "reason",
-    "ocaml",
-    "ppx"
-  ],
+  "keywords": [ "ocaml", "ppx" ],
   "esy": {
     "buildsInSource": "_build",
-    "build": "dune build -p SimplePpx",
+    "build": "dune build -p #{self.name}",
     "buildDev": [
-      [
-        "dune",
-        "build",
-        "--promote-install-files",
-        "--root",
-        "."
-      ]
+      [ "dune", "build", "--promote-install-files", "--root", "." ]
     ],
-    "buildEnv": {
-      "ODOC_SYNTAX": "re"
-    },
-    "release": {
-      "bin": [
-        "Bin"
-      ]
-    }
+    "release": { "bin": [ "Bin" ] }
   },
-  "devDependencies": {
-    "ocaml": "~4.10.0",
-    "@esy-ocaml/reason": "^3.6.2",
-    "@opam/dune": ">=2.8.4",
-    "@opam/ppxlib": "0.22.0",
-    "@reason-native/rely": "^3.2.1",
-    "@opam/ocaml-lsp-server": "1.4.1"
+  "dependencies": {
+    "ocaml": "~4.14.0",
+    "@opam/alcotest": "1.6.0",
+    "@opam/dune": "3.4.1",
+    "@opam/ppxlib": "0.27.0",
+    "@opam/ocaml-lsp-server": "1.13.1",
+    "@opam/ocamlformat": "0.24.1"
   },
   "scripts": {
-    "build": "esy dune build -p SimplePpx",
-    "watch": "esy dune build -p SimplePpx --watch",
+    "build": "esy dune build -p #{self.name}",
+    "watch": "esy dune build -p #{self.name} --watch",
     "test": "esy b dune runtest",
     "promote": "esy dune promote",
     "doc": "esy dune build @doc",
-    "doc-path": "esy echo #{self.target_dir}/default/_doc/_html/index.html",
     "format": "esy dune build @fmt --auto-promote",
     "utop": "esy dune utop lib -- -implicit-bindings"
   }

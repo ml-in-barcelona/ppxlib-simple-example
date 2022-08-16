@@ -1,7 +1,6 @@
 (library
- (name SimplePpx)
+ (name simpleppx)
  (wrapped false)
- (public_name SimplePpx.lib)
+ (public_name simple-ppx)
  (kind ppx_rewriter)
- (libraries ppxlib)
-)
+ (libraries ppxlib))
