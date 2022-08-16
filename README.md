@@ -16,6 +16,12 @@ Needs `esy` installed globally in your system, if you don't have it install it w
 esy # Installs the dependencies and builds the project
 ```
 
+## Editor
+
+```bash
+esy add @opam/ocaml-lsp-server
+```
+
 ## Building
 
 ```bash
