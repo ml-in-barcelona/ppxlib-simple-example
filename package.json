@@ -24,8 +24,6 @@
     "build": "esy dune build -p #{self.name}",
     "watch": "esy dune build -p #{self.name} --watch",
     "test": "esy b dune runtest",
-    "promote": "esy dune promote",
-    "doc": "esy dune build @doc",
     "format": "esy dune build @fmt --auto-promote",
     "utop": "esy dune utop lib -- -implicit-bindings"
   }

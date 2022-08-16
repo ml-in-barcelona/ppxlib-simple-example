@@ -1,6 +1,8 @@
 # ppxlib-simple-example
 
-A simple ppx to examplify the initial setup of Ppxlib, part of the talk "**The needed introduction to writing a ppx**" given at [Reason STHLM Meetup](https://www.meetup.com/es-ES/ReasonSTHLM/): **[Video](https://youtu.be/dMoRMqQ6GLs?t=4184)**.
+A simple ppx to examplify the initial setup of [ppxlib](https://github.com/ocaml-ppx/ppxlib/), part of the talk "**The needed introduction to writing a ppx**" given at [Reason STHLM Meetup](https://www.meetup.com/es-ES/ReasonSTHLM/): **[Video](https://youtu.be/dMoRMqQ6GLs?t=4184)**.
+
+It uses [`esy`](https://esy.sh) since it's a little easier to install sandboxes enviroments than opam.
 
 - OCaml 4.14
 - dune 3.4.1
@@ -12,6 +14,13 @@ Needs `esy` installed globally in your system, if you don't have it install it w
 
 ```bash
 esy # Installs the dependencies and builds the project
+```
+
+## Building
+
+```bash
+esy build # Builds the project, once
+esy watch # Watch the filesystem and re-builds the project on each change
 ```
 
 ## Testing
