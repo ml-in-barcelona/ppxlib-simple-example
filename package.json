@@ -10,7 +10,7 @@
     "buildDev": [
       [ "dune", "build", "--promote-install-files", "--root", "." ]
     ],
-    "release": { "bin": [ "Bin" ] }
+    "release": { "bin": [ "main" ] }
   },
   "dependencies": {
     "ocaml": "~4.14.0",
