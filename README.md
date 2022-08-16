@@ -1,6 +1,6 @@
 # ppxlib-simple-example
 
-A simple ppx to examplify the initial setup of [ppxlib](https://github.com/ocaml-ppx/ppxlib/), part of the talk "**The needed introduction to writing a ppx**" given at [Reason STHLM Meetup](https://www.meetup.com/es-ES/ReasonSTHLM/): **[Video](https://youtu.be/dMoRMqQ6GLs?t=4184)**.
+A simple ppx to examplify the initial setup of [ppxlib](https://github.com/ocaml-ppx/ppxlib/), part of the talk [**The needed introduction to writing a ppx**](https://youtu.be/dMoRMqQ6GLs?t=4184) given at [Reason STHLM Meetup](https://www.meetup.com/es-ES/ReasonSTHLM/)..
 
 It uses [`esy`](https://esy.sh) since it's a little easier to install sandboxes enviroments than opam.
 
@@ -45,7 +45,7 @@ Users of your ppx need to add this to their dune for your executable to be execu
 ```
 
 ```ocaml
-print_endline [%yay];
-// Transforms to
-print_endline("r3p14ccd 70 r4nd0m 5tr1n9");
+print_endline [%yay]
+(* Transforms to *)
+print_endline "r3p14ccd 70 r4nd0m 5tr1n9"
 ```
