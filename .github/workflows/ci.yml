@@ -3,12 +3,12 @@ name: CI
 on:
   push:
     branches:
-      - master
+      - main
     tags:
       - v*
   pull_request:
     branches:
-      - master
+      - main
 
 jobs:
   build-test:
@@ -16,7 +16,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [ubuntu-latest, macos-latest, windows-latest]
+        os: [ubuntu-latest, macos-latest] # windows-latest
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
@@ -24,7 +24,7 @@ jobs:
           node-version: 12
 
       - name: Install esy
-        run: npm install -g esy@0.6.10
+        run: npm install -g esy@0.6.12
 
       - name: Load global cache (.esy/source)
         uses: actions/cache@v2
@@ -65,7 +65,7 @@ jobs:
       - uses: actions/upload-artifact@v2
         with:
           name: ${{ matrix.os }}
-          path: _build/default/bin/Bin.exe
+          path: _build/default/bin/main.exe
 
       - name: Export dependencies
         if: steps.deps-cache.outputs.cache-hit != 'true'
@@ -90,11 +90,11 @@ jobs:
           name: ubuntu-latest
           path: ubuntu-latest
 
-      - name: Download Windows release
-        uses: actions/download-artifact@v2
-        with:
-          name: windows-latest
-          path: windows-latest
+      # - name: Download Windows release
+        # uses: actions/download-artifact@v2
+        # with:
+          # name: windows-latest
+          # path: windows-latest
 
       - name: Download macOS release
         uses: actions/download-artifact@v2
@@ -106,10 +106,8 @@ jobs:
       - name: Move artifacts
         run: |
           mkdir -p _release/platform-linux
-          mkdir -p _release/platform-windows-x64
           mkdir -p _release/platform-darwin
           cp -a ubuntu-latest/. _release/platform-linux
-          cp -a windows-latest/. _release/platform-windows-x64
           cp -a macos-latest/. _release/platform-darwin
 
       - name: Prepare package

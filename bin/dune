@@ -1,7 +1,6 @@
 (executable
-  (name Bin)
-  (public_name simple-ppx)
-  (libraries SimplePpx.lib)
-  (ocamlopt_flags ( -linkall ))
-  (package SimplePpx)
-)
+ (name main)
+ (public_name simple-ppx)
+ (libraries simpleppx)
+ (ocamlopt_flags (-linkall))
+ (package simple-ppx))
