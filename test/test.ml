@@ -14,7 +14,7 @@ let ast =
   testable pp_ast compare
 
 let test () =
-  check ast "case I" [%expr [%yay]] [%expr "r3p14ccd 70 r4nd0m 5tr1n9"]
+  check ast "case I" [%expr "r3p14ccd 70 r4nd0m 5tr1n9"] [%expr [%yay]]
 
 let () =
   run "Simple ppx test suit" [ ("Transform", [ ("Test", `Quick, test) ]) ]
