@@ -1,6 +1,17 @@
 open Alcotest
-
+open Ppxlib
+    
 let loc = Location.none
+
+
+module Ast = Ast
+module Ast_helper = Ast_helper
+module Ast_magic = Selected_ast.Ast.Config
+module Asttypes = Asttypes
+module Parse = Parse
+module Parsetree = Parsetree
+module Pprintast = Astlib.Pprintast
+module Selected_ast = Selected_ast
 
 let ast =
   let pp_ast fmt v =

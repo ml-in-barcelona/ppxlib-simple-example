@@ -1,6 +1,11 @@
+(env
+ (_
+  (flags
+   (:standard -warn-error -9-26  ))))
+
 (library
  (name simpleppx)
  (wrapped false)
  (public_name simple-ppx)
  (kind ppx_rewriter)
- (libraries ppxlib))
+ (libraries ppxlib batteries))

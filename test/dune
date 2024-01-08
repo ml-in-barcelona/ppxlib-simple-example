@@ -1,6 +1,6 @@
 (test
  (name test)
- (libraries alcotest)
+ (libraries alcotest ppxlib)
  (preprocess
   ; -no-merge is needed to avoid merging context_free transformations with metaquote and maintain the order
   ; Reference: (https://github.com/ocaml-ppx/ppxlib/blob/76118063460e2506ca442fd13cbb96c69a93d2cb/src/driver.ml#L1314-L1318)
