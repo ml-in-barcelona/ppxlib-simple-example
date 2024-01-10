@@ -91,6 +91,7 @@ let rec process_record_kind(x) =
      pld_loc(* : Location.t *);
      pld_attributes(* : attributes *); 
    } ->
+    process_core_type(pld_type);
     (print_endline (Batteries.dump ("DEBUG:precord_kind:",  
                                     pld_name,
                                     "mutable",
@@ -105,7 +106,7 @@ process_core_type_desc x =
     let myid = (process_id a) in
     (process_core_type_list b);
 
-    Printf.printf "DEBUG:Ptyp_constr1:%s" myid;
+    Printf.printf "DEBUG:Ptyp_constr1 Constructor '%s' " myid;
      (* "id" ^ a ^ " id2 " ^ myid  *)
 
     (print_endline (Batteries.dump (
@@ -116,11 +117,12 @@ process_core_type_desc x =
   | Ptyp_tuple a (* of core_type list *)
     ->
     (print_endline (Batteries.dump ("DEBUG:Ptyp_tuple:" )))
-
   (*not in test*)
   | Ptyp_any  -> (print_endline (Batteries.dump ("DEBUG:Ptyp_any:")))
   | Ptyp_var name ->(print_endline (Batteries.dump ("DEBUG:Ptyp_var:"  , name)))
   | Ptyp_arrow (arg_label , core_type , core_type2) ->
+    process_core_type(core_type);
+    process_core_type(core_type2);
     (print_endline (Batteries.dump ("DEBUG:Ptyp_arrow10:" )))
 
   | Ptyp_object (a,b)(* of object_field list * closed_flag *)
@@ -128,15 +130,19 @@ process_core_type_desc x =
     (print_endline (Batteries.dump ("DEBUG:Ptyp_arrow8:" )))
   | Ptyp_class (a,b) (* of Longident.t loc * core_type list *)
     ->
+    let myid = (process_id a) in
+    process_core_type_list(b);
     (print_endline (Batteries.dump ("DEBUG:Ptyp_arrow7:" )))
   | Ptyp_alias (a,b) (* of core_type * string loc  *)
     ->
+    process_core_type(a);
     (print_endline (Batteries.dump ("DEBUG:Ptyp_arrow6:" )))
   | Ptyp_variant (a,b,c) (* of row_field list * closed_flag * label list option *)
     ->
     (print_endline (Batteries.dump ("DEBUG:Ptyp_arrow5:" )))
   | Ptyp_poly (a,b) (* of string loc list * core_type *)
     ->
+    process_core_type(b);
     (print_endline (Batteries.dump ("DEBUG:Ptyp_arrow4:" )))
   | Ptyp_package a(* of package_type  *)
     ->
@@ -171,10 +177,6 @@ and process_core_type_list(x:core_type list) =
   | h :: t ->
     process_core_type (h);
     process_core_type_list(t)
-
-
-
-    
 
     
 let print_constructor_arguments(x) =
