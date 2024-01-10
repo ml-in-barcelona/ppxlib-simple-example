@@ -1,7 +1,7 @@
 
 * data analysis 1
 
-#+begin_src shell
+#+begin_src shell :results value
 grep DEBUG log.txt  |cut -d, -f1-3 |sort |uniq -c |sort -n |tail -20
 #+end_src
 
@@ -29,7 +29,7 @@ grep DEBUG log.txt  |cut -d, -f1-3 |sort |uniq -c |sort -n |tail -20
 
 So we can see the ptype constructor.
 
-#+begin_src shell
+#+begin_src shell :results value
 grep Ptyp_constr log.txt |grep DEBUG  |cut -d, -f1-3 |sort |uniq -c |sort -n |tail -30
 #+end_src
 
