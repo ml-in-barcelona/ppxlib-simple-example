@@ -1,0 +1,3020 @@
+[
+  structure_item (src/ppx.ml[1,0+0]..[1,0+11])
+    Pstr_open Fresh
+    module_expr (src/ppx.ml[1,0+5]..[1,0+11])
+      Pmod_ident "Ppxlib" (src/ppx.ml[1,0+5]..[1,0+11])
+  structure_item (src/ppx.ml[6,118+0]..[8,217+4])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (src/ppx.ml[6,118+4]..[6,118+14])
+          Ppat_var "printdesc2" (src/ppx.ml[6,118+4]..[6,118+14])
+        expression (src/ppx.ml[6,118+14]..[8,217+4]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (src/ppx.ml[6,118+14]..[6,118+38])
+            Ppat_constraint
+            pattern (src/ppx.ml[6,118+15]..[6,118+16])
+              Ppat_var "x" (src/ppx.ml[6,118+15]..[6,118+16])
+            core_type (src/ppx.ml[6,118+18]..[6,118+37])
+              Ptyp_constr "structure_item_desc" (src/ppx.ml[6,118+18]..[6,118+37])
+              []
+          expression (src/ppx.ml[6,118+39]..[8,217+4])
+            Pexp_constraint
+            expression (src/ppx.ml[7,165+2]..[8,217+4])
+              Pexp_sequence
+              expression (src/ppx.ml[7,165+2]..[7,165+50])
+                Pexp_apply
+                expression (src/ppx.ml[7,165+3]..[7,165+16])
+                  Pexp_ident "print_endline" (src/ppx.ml[7,165+3]..[7,165+16])
+                [
+                  <arg>
+                  Nolabel
+                    expression (src/ppx.ml[7,165+17]..[7,165+49])
+                      Pexp_apply
+                      expression (src/ppx.ml[7,165+18]..[7,165+32])
+                        Pexp_ident "Batteries.dump" (src/ppx.ml[7,165+18]..[7,165+32])
+                      [
+                        <arg>
+                        Nolabel
+                          expression (src/ppx.ml[7,165+33]..[7,165+48])
+                            Pexp_tuple
+                            [
+                              expression (src/ppx.ml[7,165+34]..[7,165+44])
+                                Pexp_constant PConst_string("DEBUG21:",(src/ppx.ml[7,165+35]..[7,165+43]),None)
+                              expression (src/ppx.ml[7,165+46]..[7,165+47])
+                                Pexp_ident "x" (src/ppx.ml[7,165+46]..[7,165+47])
+                            ]
+                      ]
+                ]
+              expression (src/ppx.ml[8,217+2]..[8,217+4])
+                Pexp_construct "()" (src/ppx.ml[8,217+2]..[8,217+4])
+                None
+            core_type (src/ppx.ml[6,118+40]..[6,118+44])
+              Ptyp_constr "unit" (src/ppx.ml[6,118+40]..[6,118+44])
+              []
+    ]
+  structure_item (src/ppx.ml[10,223+0]..[17,366+6])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (src/ppx.ml[10,223+4]..[10,223+12])
+          Ppat_var "printone" (src/ppx.ml[10,223+4]..[10,223+12])
+        expression (src/ppx.ml[10,223+13]..[17,366+6]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (src/ppx.ml[10,223+13]..[10,223+34])
+            Ppat_constraint
+            pattern (src/ppx.ml[10,223+14]..[10,223+15])
+              Ppat_var "x" (src/ppx.ml[10,223+14]..[10,223+15])
+            core_type (src/ppx.ml[10,223+18]..[10,223+32])
+              Ptyp_constr "structure_item" (src/ppx.ml[10,223+18]..[10,223+32])
+              []
+          expression (src/ppx.ml[10,223+35]..[17,366+6])
+            Pexp_constraint
+            expression (src/ppx.ml[11,266+2]..[17,366+6])
+              Pexp_match
+              expression (src/ppx.ml[11,266+8]..[11,266+9])
+                Pexp_ident "x" (src/ppx.ml[11,266+8]..[11,266+9])
+              [
+                <case>
+                  pattern (src/ppx.ml[12,281+3]..[15,331+3])
+                    Ppat_record Open
+                    [
+                      "pstr_desc" (src/ppx.ml[13,286+4]..[13,286+13]) ghost
+                        pattern (src/ppx.ml[13,286+4]..[13,286+13])
+                          Ppat_var "pstr_desc" (src/ppx.ml[13,286+4]..[13,286+13])
+                    ]
+                  expression (src/ppx.ml[16,338+4]..[17,366+6])
+                    Pexp_sequence
+                    expression (src/ppx.ml[16,338+4]..[16,338+26])
+                      Pexp_apply
+                      expression (src/ppx.ml[16,338+5]..[16,338+15])
+                        Pexp_ident "printdesc2" (src/ppx.ml[16,338+5]..[16,338+15])
+                      [
+                        <arg>
+                        Nolabel
+                          expression (src/ppx.ml[16,338+16]..[16,338+25])
+                            Pexp_ident "pstr_desc" (src/ppx.ml[16,338+16]..[16,338+25])
+                      ]
+                    expression (src/ppx.ml[17,366+4]..[17,366+6])
+                      Pexp_construct "()" (src/ppx.ml[17,366+4]..[17,366+6])
+                      None
+              ]
+            core_type (src/ppx.ml[10,223+36]..[10,223+40])
+              Ptyp_constr "unit" (src/ppx.ml[10,223+36]..[10,223+40])
+              []
+    ]
+  structure_item (src/ppx.ml[20,381+0]..[22,455+12])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (src/ppx.ml[20,381+4]..[20,381+13])
+          Ppat_var "printone2" (src/ppx.ml[20,381+4]..[20,381+13])
+        expression (src/ppx.ml[20,381+14]..[22,455+12]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (src/ppx.ml[20,381+14]..[20,381+15])
+            Ppat_var "x" (src/ppx.ml[20,381+14]..[20,381+15])
+          expression (src/ppx.ml[20,381+16]..[22,455+12])
+            Pexp_constraint
+            expression (src/ppx.ml[21,405+2]..[22,455+12])
+              Pexp_sequence
+              expression (src/ppx.ml[21,405+2]..[21,405+48])
+                Pexp_apply
+                expression (src/ppx.ml[21,405+3]..[21,405+16])
+                  Pexp_ident "print_endline" (src/ppx.ml[21,405+3]..[21,405+16])
+                [
+                  <arg>
+                  Nolabel
+                    expression (src/ppx.ml[21,405+17]..[21,405+47])
+                      Pexp_apply
+                      expression (src/ppx.ml[21,405+18]..[21,405+32])
+                        Pexp_ident "Batteries.dump" (src/ppx.ml[21,405+18]..[21,405+32])
+                      [
+                        <arg>
+                        Nolabel
+                          expression (src/ppx.ml[21,405+33]..[21,405+46])
+                            Pexp_tuple
+                            [
+                              expression (src/ppx.ml[21,405+34]..[21,405+43])
+                                Pexp_constant PConst_string("DEBUG1:",(src/ppx.ml[21,405+35]..[21,405+42]),None)
+                              expression (src/ppx.ml[21,405+44]..[21,405+45])
+                                Pexp_ident "x" (src/ppx.ml[21,405+44]..[21,405+45])
+                            ]
+                      ]
+                ]
+              expression (src/ppx.ml[22,455+2]..[22,455+12])
+                Pexp_apply
+                expression (src/ppx.ml[22,455+2]..[22,455+10])
+                  Pexp_ident "printone" (src/ppx.ml[22,455+2]..[22,455+10])
+                [
+                  <arg>
+                  Nolabel
+                    expression (src/ppx.ml[22,455+11]..[22,455+12])
+                      Pexp_ident "x" (src/ppx.ml[22,455+11]..[22,455+12])
+                ]
+            core_type (src/ppx.ml[20,381+17]..[20,381+21])
+              Ptyp_constr "unit" (src/ppx.ml[20,381+17]..[20,381+21])
+              []
+    ]
+  structure_item (src/ppx.ml[24,469+0]..[26,506+4])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (src/ppx.ml[24,469+4]..[24,469+9])
+          Ppat_var "proc2" (src/ppx.ml[24,469+4]..[24,469+9])
+        expression (src/ppx.ml[24,469+10]..[26,506+4]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (src/ppx.ml[24,469+10]..[24,469+11])
+            Ppat_var "x" (src/ppx.ml[24,469+10]..[24,469+11])
+          expression (src/ppx.ml[24,469+13]..[26,506+4])
+            Pexp_constraint
+            expression (src/ppx.ml[25,491+2]..[26,506+4])
+              Pexp_sequence
+              expression (src/ppx.ml[25,491+2]..[25,491+13])
+                Pexp_apply
+                expression (src/ppx.ml[25,491+2]..[25,491+11])
+                  Pexp_ident "printone2" (src/ppx.ml[25,491+2]..[25,491+11])
+                [
+                  <arg>
+                  Nolabel
+                    expression (src/ppx.ml[25,491+12]..[25,491+13])
+                      Pexp_ident "x" (src/ppx.ml[25,491+12]..[25,491+13])
+                ]
+              expression (src/ppx.ml[26,506+2]..[26,506+4])
+                Pexp_construct "()" (src/ppx.ml[26,506+2]..[26,506+4])
+                None
+            core_type (src/ppx.ml[24,469+15]..[24,469+19])
+              Ptyp_constr "unit" (src/ppx.ml[24,469+15]..[24,469+19])
+              []
+    ]
+  structure_item (src/ppx.ml[28,512+0]..[29,559+50])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (src/ppx.ml[28,512+4]..[28,512+14])
+          Ppat_var "printdesc2" (src/ppx.ml[28,512+4]..[28,512+14])
+        expression (src/ppx.ml[28,512+14]..[29,559+50]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (src/ppx.ml[28,512+14]..[28,512+38])
+            Ppat_constraint
+            pattern (src/ppx.ml[28,512+15]..[28,512+16])
+              Ppat_var "x" (src/ppx.ml[28,512+15]..[28,512+16])
+            core_type (src/ppx.ml[28,512+18]..[28,512+37])
+              Ptyp_constr "structure_item_desc" (src/ppx.ml[28,512+18]..[28,512+37])
+              []
+          expression (src/ppx.ml[28,512+39]..[29,559+50])
+            Pexp_constraint
+            expression (src/ppx.ml[29,559+2]..[29,559+50])
+              Pexp_apply
+              expression (src/ppx.ml[29,559+3]..[29,559+16])
+                Pexp_ident "print_endline" (src/ppx.ml[29,559+3]..[29,559+16])
+              [
+                <arg>
+                Nolabel
+                  expression (src/ppx.ml[29,559+17]..[29,559+49])
+                    Pexp_apply
+                    expression (src/ppx.ml[29,559+18]..[29,559+32])
+                      Pexp_ident "Batteries.dump" (src/ppx.ml[29,559+18]..[29,559+32])
+                    [
+                      <arg>
+                      Nolabel
+                        expression (src/ppx.ml[29,559+33]..[29,559+48])
+                          Pexp_tuple
+                          [
+                            expression (src/ppx.ml[29,559+34]..[29,559+44])
+                              Pexp_constant PConst_string("DEBUG33:",(src/ppx.ml[29,559+35]..[29,559+43]),None)
+                            expression (src/ppx.ml[29,559+46]..[29,559+47])
+                              Pexp_ident "x" (src/ppx.ml[29,559+46]..[29,559+47])
+                          ]
+                    ]
+              ]
+            core_type (src/ppx.ml[28,512+40]..[28,512+44])
+              Ptyp_constr "unit" (src/ppx.ml[28,512+40]..[28,512+44])
+              []
+    ]
+  structure_item (src/ppx.ml[35,699+0]..[45,1105+4])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (src/ppx.ml[35,699+4]..[35,699+28])
+          Ppat_var "print_value_binding_expr" (src/ppx.ml[35,699+4]..[35,699+28])
+        expression (src/ppx.ml[35,699+29]..[45,1105+4]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (src/ppx.ml[35,699+29]..[35,699+45])
+            Ppat_constraint
+            pattern (src/ppx.ml[35,699+30]..[35,699+31])
+              Ppat_var "x" (src/ppx.ml[35,699+30]..[35,699+31])
+            core_type (src/ppx.ml[35,699+34]..[35,699+44])
+              Ptyp_constr "expression" (src/ppx.ml[35,699+34]..[35,699+44])
+              []
+          expression (src/ppx.ml[35,699+46]..[45,1105+4])
+            Pexp_constraint
+            expression (src/ppx.ml[36,753+2]..[45,1105+4])
+              Pexp_match
+              expression (src/ppx.ml[36,753+8]..[36,753+9])
+                Pexp_ident "x" (src/ppx.ml[36,753+8]..[36,753+9])
+              [
+                <case>
+                  pattern (src/ppx.ml[37,768+4]..[42,958+3])
+                    Ppat_record Closed
+                    [
+                      "pexp_desc" (src/ppx.ml[38,774+4]..[38,774+13]) ghost
+                        pattern (src/ppx.ml[38,774+4]..[38,774+13])
+                          Ppat_var "pexp_desc" (src/ppx.ml[38,774+4]..[38,774+13])
+                      "pexp_loc" (src/ppx.ml[39,813+4]..[39,813+12]) ghost
+                        pattern (src/ppx.ml[39,813+4]..[39,813+12])
+                          Ppat_var "pexp_loc" (src/ppx.ml[39,813+4]..[39,813+12])
+                      "pexp_loc_stack" (src/ppx.ml[40,845+4]..[40,845+18]) ghost
+                        pattern (src/ppx.ml[40,845+4]..[40,845+18])
+                          Ppat_var "pexp_loc_stack" (src/ppx.ml[40,845+4]..[40,845+18])
+                      "pexp_attributes" (src/ppx.ml[41,888+4]..[41,888+19]) ghost
+                        pattern (src/ppx.ml[41,888+4]..[41,888+19])
+                          Ppat_var "pexp_attributes" (src/ppx.ml[41,888+4]..[41,888+19])
+                    ]
+                  expression (src/ppx.ml[43,965+4]..[45,1105+4])
+                    Pexp_sequence
+                    expression (src/ppx.ml[43,965+4]..[43,965+65])
+                      Pexp_apply
+                      expression (src/ppx.ml[43,965+5]..[43,965+18])
+                        Pexp_ident "print_endline" (src/ppx.ml[43,965+5]..[43,965+18])
+                      [
+                        <arg>
+                        Nolabel
+                          expression (src/ppx.ml[43,965+19]..[43,965+64])
+                            Pexp_apply
+                            expression (src/ppx.ml[43,965+20]..[43,965+34])
+                              Pexp_ident "Batteries.dump" (src/ppx.ml[43,965+20]..[43,965+34])
+                            [
+                              <arg>
+                              Nolabel
+                                expression (src/ppx.ml[43,965+35]..[43,965+63])
+                                  Pexp_tuple
+                                  [
+                                    expression (src/ppx.ml[43,965+36]..[43,965+50])
+                                      Pexp_constant PConst_string("DEBUG66:desc",(src/ppx.ml[43,965+37]..[43,965+49]),None)
+                                    expression (src/ppx.ml[43,965+52]..[43,965+61])
+                                      Pexp_ident "pexp_desc" (src/ppx.ml[43,965+52]..[43,965+61])
+                                  ]
+                            ]
+                      ]
+                    expression (src/ppx.ml[44,1032+4]..[45,1105+4])
+                      Pexp_sequence
+                      expression (src/ppx.ml[44,1032+4]..[44,1032+71])
+                        Pexp_apply
+                        expression (src/ppx.ml[44,1032+5]..[44,1032+18])
+                          Pexp_ident "print_endline" (src/ppx.ml[44,1032+5]..[44,1032+18])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (src/ppx.ml[44,1032+19]..[44,1032+70])
+                              Pexp_apply
+                              expression (src/ppx.ml[44,1032+20]..[44,1032+34])
+                                Pexp_ident "Batteries.dump" (src/ppx.ml[44,1032+20]..[44,1032+34])
+                              [
+                                <arg>
+                                Nolabel
+                                  expression (src/ppx.ml[44,1032+35]..[44,1032+69])
+                                    Pexp_tuple
+                                    [
+                                      expression (src/ppx.ml[44,1032+36]..[44,1032+50])
+                                        Pexp_constant PConst_string("DEBUG66:desc",(src/ppx.ml[44,1032+37]..[44,1032+49]),None)
+                                      expression (src/ppx.ml[44,1032+52]..[44,1032+67])
+                                        Pexp_ident "pexp_attributes" (src/ppx.ml[44,1032+52]..[44,1032+67])
+                                    ]
+                              ]
+                        ]
+                      expression (src/ppx.ml[45,1105+2]..[45,1105+4])
+                        Pexp_construct "()" (src/ppx.ml[45,1105+2]..[45,1105+4])
+                        None
+              ]
+            core_type (src/ppx.ml[35,699+48]..[35,699+52])
+              Ptyp_constr "unit" (src/ppx.ml[35,699+48]..[35,699+52])
+              []
+    ]
+  structure_item (src/ppx.ml[47,1113+0]..[59,1617+75])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (src/ppx.ml[47,1113+4]..[47,1113+29])
+          Ppat_var "print_value_binding_list2" (src/ppx.ml[47,1113+4]..[47,1113+29])
+        expression (src/ppx.ml[47,1113+30]..[59,1617+75]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (src/ppx.ml[47,1113+30]..[47,1113+49])
+            Ppat_constraint
+            pattern (src/ppx.ml[47,1113+31]..[47,1113+32])
+              Ppat_var "x" (src/ppx.ml[47,1113+31]..[47,1113+32])
+            core_type (src/ppx.ml[47,1113+35]..[47,1113+48])
+              Ptyp_constr "value_binding" (src/ppx.ml[47,1113+35]..[47,1113+48])
+              []
+          expression (src/ppx.ml[47,1113+50]..[59,1617+75])
+            Pexp_constraint
+            expression (src/ppx.ml[48,1171+2]..[59,1617+75])
+              Pexp_match
+              expression (src/ppx.ml[48,1171+8]..[48,1171+9])
+                Pexp_ident "x" (src/ppx.ml[48,1171+8]..[48,1171+9])
+              [
+                <case>
+                  pattern (src/ppx.ml[49,1186+4]..[54,1327+3])
+                    Ppat_record Closed
+                    [
+                      "pvb_pat" (src/ppx.ml[50,1192+4]..[50,1192+11]) ghost
+                        pattern (src/ppx.ml[50,1192+4]..[50,1192+11])
+                          Ppat_var "pvb_pat" (src/ppx.ml[50,1192+4]..[50,1192+11])
+                      "pvb_expr" (src/ppx.ml[51,1222+4]..[51,1222+12]) ghost
+                        pattern (src/ppx.ml[51,1222+4]..[51,1222+12])
+                          Ppat_var "pvb_expr" (src/ppx.ml[51,1222+4]..[51,1222+12])
+                      "pvb_attributes" (src/ppx.ml[52,1256+4]..[52,1256+18]) ghost
+                        pattern (src/ppx.ml[52,1256+4]..[52,1256+18])
+                          Ppat_var "pvb_attributes" (src/ppx.ml[52,1256+4]..[52,1256+18])
+                      "pvb_loc" (src/ppx.ml[53,1296+4]..[53,1296+11]) ghost
+                        pattern (src/ppx.ml[53,1296+4]..[53,1296+11])
+                          Ppat_var "pvb_loc" (src/ppx.ml[53,1296+4]..[53,1296+11])
+                    ]
+                  expression (src/ppx.ml[55,1334+4]..[59,1617+75])
+                    Pexp_sequence
+                    expression (src/ppx.ml[55,1334+4]..[55,1334+75])
+                      Pexp_apply
+                      expression (src/ppx.ml[55,1334+5]..[55,1334+18])
+                        Pexp_ident "print_endline" (src/ppx.ml[55,1334+5]..[55,1334+18])
+                      [
+                        <arg>
+                        Nolabel
+                          expression (src/ppx.ml[55,1334+19]..[55,1334+74])
+                            Pexp_apply
+                            expression (src/ppx.ml[55,1334+20]..[55,1334+34])
+                              Pexp_ident "Batteries.dump" (src/ppx.ml[55,1334+20]..[55,1334+34])
+                            [
+                              <arg>
+                              Nolabel
+                                expression (src/ppx.ml[55,1334+35]..[55,1334+73])
+                                  Pexp_tuple
+                                  [
+                                    expression (src/ppx.ml[55,1334+36]..[55,1334+62])
+                                      Pexp_constant PConst_string("DEBUG:value_binding.pat:",(src/ppx.ml[55,1334+37]..[55,1334+61]),None)
+                                    expression (src/ppx.ml[55,1334+64]..[55,1334+71])
+                                      Pexp_ident "pvb_pat" (src/ppx.ml[55,1334+64]..[55,1334+71])
+                                  ]
+                            ]
+                      ]
+                    expression (src/ppx.ml[56,1411+4]..[59,1617+75])
+                      Pexp_sequence
+                      expression (src/ppx.ml[56,1411+4]..[56,1411+77])
+                        Pexp_apply
+                        expression (src/ppx.ml[56,1411+5]..[56,1411+18])
+                          Pexp_ident "print_endline" (src/ppx.ml[56,1411+5]..[56,1411+18])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (src/ppx.ml[56,1411+19]..[56,1411+76])
+                              Pexp_apply
+                              expression (src/ppx.ml[56,1411+20]..[56,1411+34])
+                                Pexp_ident "Batteries.dump" (src/ppx.ml[56,1411+20]..[56,1411+34])
+                              [
+                                <arg>
+                                Nolabel
+                                  expression (src/ppx.ml[56,1411+35]..[56,1411+75])
+                                    Pexp_tuple
+                                    [
+                                      expression (src/ppx.ml[56,1411+36]..[56,1411+63])
+                                        Pexp_constant PConst_string("DEBUG:value_binding.expr:",(src/ppx.ml[56,1411+37]..[56,1411+62]),None)
+                                      expression (src/ppx.ml[56,1411+65]..[56,1411+73])
+                                        Pexp_ident "pvb_expr" (src/ppx.ml[56,1411+65]..[56,1411+73])
+                                    ]
+                              ]
+                        ]
+                      expression (src/ppx.ml[58,1532+4]..[59,1617+75])
+                        Pexp_sequence
+                        expression (src/ppx.ml[58,1532+4]..[58,1532+83])
+                          Pexp_apply
+                          expression (src/ppx.ml[58,1532+5]..[58,1532+18])
+                            Pexp_ident "print_endline" (src/ppx.ml[58,1532+5]..[58,1532+18])
+                          [
+                            <arg>
+                            Nolabel
+                              expression (src/ppx.ml[58,1532+19]..[58,1532+82])
+                                Pexp_apply
+                                expression (src/ppx.ml[58,1532+20]..[58,1532+34])
+                                  Pexp_ident "Batteries.dump" (src/ppx.ml[58,1532+20]..[58,1532+34])
+                                [
+                                  <arg>
+                                  Nolabel
+                                    expression (src/ppx.ml[58,1532+35]..[58,1532+81])
+                                      Pexp_tuple
+                                      [
+                                        expression (src/ppx.ml[58,1532+36]..[58,1532+63])
+                                          Pexp_constant PConst_string("DEBUG:value_binding.atrr:",(src/ppx.ml[58,1532+37]..[58,1532+62]),None)
+                                        expression (src/ppx.ml[58,1532+65]..[58,1532+79])
+                                          Pexp_ident "pvb_attributes" (src/ppx.ml[58,1532+65]..[58,1532+79])
+                                      ]
+                                ]
+                          ]
+                        expression (src/ppx.ml[59,1617+4]..[59,1617+75])
+                          Pexp_apply
+                          expression (src/ppx.ml[59,1617+5]..[59,1617+18])
+                            Pexp_ident "print_endline" (src/ppx.ml[59,1617+5]..[59,1617+18])
+                          [
+                            <arg>
+                            Nolabel
+                              expression (src/ppx.ml[59,1617+19]..[59,1617+74])
+                                Pexp_apply
+                                expression (src/ppx.ml[59,1617+20]..[59,1617+34])
+                                  Pexp_ident "Batteries.dump" (src/ppx.ml[59,1617+20]..[59,1617+34])
+                                [
+                                  <arg>
+                                  Nolabel
+                                    expression (src/ppx.ml[59,1617+35]..[59,1617+73])
+                                      Pexp_tuple
+                                      [
+                                        expression (src/ppx.ml[59,1617+36]..[59,1617+62])
+                                          Pexp_constant PConst_string("DEBUG:value_binding.loc:",(src/ppx.ml[59,1617+37]..[59,1617+61]),None)
+                                        expression (src/ppx.ml[59,1617+64]..[59,1617+71])
+                                          Pexp_ident "pvb_loc" (src/ppx.ml[59,1617+64]..[59,1617+71])
+                                      ]
+                                ]
+                          ]
+              ]
+            core_type (src/ppx.ml[47,1113+52]..[47,1113+56])
+              Ptyp_constr "unit" (src/ppx.ml[47,1113+52]..[47,1113+56])
+              []
+    ]
+  structure_item (src/ppx.ml[61,1694+0]..[67,1871+6])
+    Pstr_value Rec
+    [
+      <def>
+        pattern (src/ppx.ml[61,1694+8]..[61,1694+32])
+          Ppat_var "print_value_binding_list" (src/ppx.ml[61,1694+8]..[61,1694+32])
+        expression (src/ppx.ml[61,1694+33]..[67,1871+6]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (src/ppx.ml[61,1694+33]..[61,1694+57])
+            Ppat_constraint
+            pattern (src/ppx.ml[61,1694+34]..[61,1694+35])
+              Ppat_var "x" (src/ppx.ml[61,1694+34]..[61,1694+35])
+            core_type (src/ppx.ml[61,1694+38]..[61,1694+56])
+              Ptyp_constr "list" (src/ppx.ml[61,1694+52]..[61,1694+56])
+              [
+                core_type (src/ppx.ml[61,1694+38]..[61,1694+51])
+                  Ptyp_constr "value_binding" (src/ppx.ml[61,1694+38]..[61,1694+51])
+                  []
+              ]
+          expression (src/ppx.ml[61,1694+58]..[67,1871+6])
+            Pexp_constraint
+            expression (src/ppx.ml[62,1760+2]..[67,1871+6])
+              Pexp_match
+              expression (src/ppx.ml[62,1760+8]..[62,1760+9])
+                Pexp_ident "x" (src/ppx.ml[62,1760+8]..[62,1760+9])
+              [
+                <case>
+                  pattern (src/ppx.ml[63,1775+4]..[63,1775+6])
+                    Ppat_construct "[]" (src/ppx.ml[63,1775+4]..[63,1775+6])
+                    None
+                  expression (src/ppx.ml[63,1775+10]..[63,1775+12])
+                    Pexp_construct "()" (src/ppx.ml[63,1775+10]..[63,1775+12])
+                    None
+                <case>
+                  pattern (src/ppx.ml[64,1788+4]..[64,1788+10])
+                    Ppat_construct "::" (src/ppx.ml[64,1788+6]..[64,1788+8])
+                    Some
+                      []
+                      pattern (src/ppx.ml[64,1788+4]..[64,1788+10]) ghost
+                        Ppat_tuple
+                        [
+                          pattern (src/ppx.ml[64,1788+4]..[64,1788+5])
+                            Ppat_var "h" (src/ppx.ml[64,1788+4]..[64,1788+5])
+                          pattern (src/ppx.ml[64,1788+9]..[64,1788+10])
+                            Ppat_var "t" (src/ppx.ml[64,1788+9]..[64,1788+10])
+                        ]
+                  expression (src/ppx.ml[65,1802+4]..[67,1871+6])
+                    Pexp_sequence
+                    expression (src/ppx.ml[65,1802+4]..[65,1802+33])
+                      Pexp_apply
+                      expression (src/ppx.ml[65,1802+5]..[65,1802+30])
+                        Pexp_ident "print_value_binding_list2" (src/ppx.ml[65,1802+5]..[65,1802+30])
+                      [
+                        <arg>
+                        Nolabel
+                          expression (src/ppx.ml[65,1802+31]..[65,1802+32])
+                            Pexp_ident "h" (src/ppx.ml[65,1802+31]..[65,1802+32])
+                      ]
+                    expression (src/ppx.ml[66,1837+4]..[67,1871+6])
+                      Pexp_sequence
+                      expression (src/ppx.ml[66,1837+4]..[66,1837+32])
+                        Pexp_apply
+                        expression (src/ppx.ml[66,1837+5]..[66,1837+29])
+                          Pexp_ident "print_value_binding_list" (src/ppx.ml[66,1837+5]..[66,1837+29])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (src/ppx.ml[66,1837+30]..[66,1837+31])
+                              Pexp_ident "t" (src/ppx.ml[66,1837+30]..[66,1837+31])
+                        ]
+                      expression (src/ppx.ml[67,1871+4]..[67,1871+6])
+                        Pexp_construct "()" (src/ppx.ml[67,1871+4]..[67,1871+6])
+                        None
+              ]
+            core_type (src/ppx.ml[61,1694+60]..[61,1694+64])
+              Ptyp_constr "unit" (src/ppx.ml[61,1694+60]..[61,1694+64])
+              []
+    ]
+  structure_item (src/ppx.ml[69,1879+0]..[73,1962+19])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (src/ppx.ml[69,1879+4]..[69,1879+14])
+          Ppat_var "process_id" (src/ppx.ml[69,1879+4]..[69,1879+14])
+        expression (src/ppx.ml[69,1879+14]..[73,1962+19]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (src/ppx.ml[69,1879+14]..[69,1879+31])
+            Ppat_constraint
+            pattern (src/ppx.ml[69,1879+15]..[69,1879+16])
+              Ppat_var "x" (src/ppx.ml[69,1879+15]..[69,1879+16])
+            core_type (src/ppx.ml[69,1879+17]..[69,1879+30])
+              Ptyp_constr "longident_loc" (src/ppx.ml[69,1879+17]..[69,1879+30])
+              []
+          expression (src/ppx.ml[70,1913+2]..[73,1962+19])
+            Pexp_match
+            expression (src/ppx.ml[70,1913+8]..[70,1913+9])
+              Pexp_ident "x" (src/ppx.ml[70,1913+8]..[70,1913+9])
+            [
+              <case>
+                pattern (src/ppx.ml[71,1928+4]..[71,1928+11])
+                  Ppat_record Open
+                  [
+                    "txt" (src/ppx.ml[71,1928+5]..[71,1928+8]) ghost
+                      pattern (src/ppx.ml[71,1928+5]..[71,1928+8])
+                        Ppat_var "txt" (src/ppx.ml[71,1928+5]..[71,1928+8])
+                  ]
+                expression (src/ppx.ml[72,1943+4]..[73,1962+19])
+                  Pexp_match
+                  expression (src/ppx.ml[72,1943+10]..[72,1943+13])
+                    Pexp_ident "txt" (src/ppx.ml[72,1943+10]..[72,1943+13])
+                  [
+                    <case>
+                      pattern (src/ppx.ml[73,1962+4]..[73,1962+12])
+                        Ppat_var "txt2" (src/ppx.ml[73,1962+6]..[73,1962+10])
+                      expression (src/ppx.ml[73,1962+15]..[73,1962+19])
+                        Pexp_ident "txt2" (src/ppx.ml[73,1962+15]..[73,1962+19])
+                  ]
+            ]
+    ]
+  structure_item (src/ppx.ml[77,2063+0]..[165,5020+29])
+    Pstr_value Rec
+    [
+      <def>
+        pattern (src/ppx.ml[77,2063+8]..[77,2063+27])
+          Ppat_var "process_record_kind" (src/ppx.ml[77,2063+8]..[77,2063+27])
+        expression (src/ppx.ml[77,2063+27]..[91,2547+47]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (src/ppx.ml[77,2063+27]..[77,2063+30])
+            Ppat_var "x" (src/ppx.ml[77,2063+28]..[77,2063+29])
+          expression (src/ppx.ml[78,2096+2]..[91,2547+47])
+            Pexp_match
+            expression (src/ppx.ml[78,2096+8]..[78,2096+9])
+              Pexp_ident "x" (src/ppx.ml[78,2096+8]..[78,2096+9])
+            [
+              <case>
+                pattern (src/ppx.ml[79,2111+4]..[85,2292+4])
+                  Ppat_record Closed
+                  [
+                    "pld_name" (src/ppx.ml[80,2117+5]..[80,2117+13]) ghost
+                      pattern (src/ppx.ml[80,2117+5]..[80,2117+13])
+                        Ppat_var "pld_name" (src/ppx.ml[80,2117+5]..[80,2117+13])
+                    "pld_mutable" (src/ppx.ml[81,2150+5]..[81,2150+16]) ghost
+                      pattern (src/ppx.ml[81,2150+5]..[81,2150+16])
+                        Ppat_var "pld_mutable" (src/ppx.ml[81,2150+5]..[81,2150+16])
+                    "pld_type" (src/ppx.ml[82,2188+5]..[82,2188+13]) ghost
+                      pattern (src/ppx.ml[82,2188+5]..[82,2188+13])
+                        Ppat_var "pld_type" (src/ppx.ml[82,2188+5]..[82,2188+13])
+                    "pld_loc" (src/ppx.ml[83,2220+5]..[83,2220+12]) ghost
+                      pattern (src/ppx.ml[83,2220+5]..[83,2220+12])
+                        Ppat_var "pld_loc" (src/ppx.ml[83,2220+5]..[83,2220+12])
+                    "pld_attributes" (src/ppx.ml[84,2252+5]..[84,2252+19]) ghost
+                      pattern (src/ppx.ml[84,2252+5]..[84,2252+19])
+                        Ppat_var "pld_attributes" (src/ppx.ml[84,2252+5]..[84,2252+19])
+                  ]
+                expression (src/ppx.ml[86,2300+4]..[91,2547+47])
+                  Pexp_apply
+                  expression (src/ppx.ml[86,2300+5]..[86,2300+18])
+                    Pexp_ident "print_endline" (src/ppx.ml[86,2300+5]..[86,2300+18])
+                  [
+                    <arg>
+                    Nolabel
+                      expression (src/ppx.ml[86,2300+19]..[91,2547+46])
+                        Pexp_apply
+                        expression (src/ppx.ml[86,2300+20]..[86,2300+34])
+                          Pexp_ident "Batteries.dump" (src/ppx.ml[86,2300+20]..[86,2300+34])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (src/ppx.ml[86,2300+35]..[91,2547+45])
+                              Pexp_tuple
+                              [
+                                expression (src/ppx.ml[86,2300+36]..[86,2300+57])
+                                  Pexp_constant PConst_string("DEBUG:precord_kind:",(src/ppx.ml[86,2300+37]..[86,2300+56]),None)
+                                expression (src/ppx.ml[87,2361+36]..[87,2361+44])
+                                  Pexp_ident "pld_name" (src/ppx.ml[87,2361+36]..[87,2361+44])
+                                expression (src/ppx.ml[88,2407+36]..[88,2407+45])
+                                  Pexp_constant PConst_string("mutable",(src/ppx.ml[88,2407+37]..[88,2407+44]),None)
+                                expression (src/ppx.ml[89,2454+36]..[89,2454+47])
+                                  Pexp_ident "pld_mutable" (src/ppx.ml[89,2454+36]..[89,2454+47])
+                                expression (src/ppx.ml[90,2503+36]..[90,2503+42])
+                                  Pexp_constant PConst_string("type",(src/ppx.ml[90,2503+37]..[90,2503+41]),None)
+                                expression (src/ppx.ml[91,2547+36]..[91,2547+44])
+                                  Pexp_ident "pld_type" (src/ppx.ml[91,2547+36]..[91,2547+44])
+                              ]
+                        ]
+                  ]
+            ]
+      <def>
+        pattern (src/ppx.ml[93,2599+0]..[93,2599+22])
+          Ppat_var "process_core_type_desc" (src/ppx.ml[93,2599+0]..[93,2599+22])
+        expression (src/ppx.ml[93,2599+23]..[139,4338+65]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (src/ppx.ml[93,2599+23]..[93,2599+24])
+            Ppat_var "x" (src/ppx.ml[93,2599+23]..[93,2599+24])
+          expression (src/ppx.ml[94,2626+2]..[139,4338+65])
+            Pexp_match
+            expression (src/ppx.ml[94,2626+8]..[94,2626+9])
+              Pexp_ident "x" (src/ppx.ml[94,2626+8]..[94,2626+9])
+            [
+              <case>
+                pattern (src/ppx.ml[95,2641+4]..[95,2641+21])
+                  Ppat_construct "Ptyp_constr" (src/ppx.ml[95,2641+4]..[95,2641+15])
+                  Some
+                    []
+                    pattern (src/ppx.ml[95,2641+16]..[95,2641+21])
+                      Ppat_tuple
+                      [
+                        pattern (src/ppx.ml[95,2641+17]..[95,2641+18])
+                          Ppat_var "a" (src/ppx.ml[95,2641+17]..[95,2641+18])
+                        pattern (src/ppx.ml[95,2641+19]..[95,2641+20])
+                          Ppat_var "b" (src/ppx.ml[95,2641+19]..[95,2641+20])
+                      ]
+                expression (src/ppx.ml[97,2712+4]..[106,2955+22])
+                  Pexp_let Nonrec
+                  [
+                    <def>
+                      pattern (src/ppx.ml[97,2712+8]..[97,2712+12])
+                        Ppat_var "myid" (src/ppx.ml[97,2712+8]..[97,2712+12])
+                      expression (src/ppx.ml[97,2712+15]..[97,2712+29])
+                        Pexp_apply
+                        expression (src/ppx.ml[97,2712+16]..[97,2712+26])
+                          Pexp_ident "process_id" (src/ppx.ml[97,2712+16]..[97,2712+26])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (src/ppx.ml[97,2712+27]..[97,2712+28])
+                              Pexp_ident "a" (src/ppx.ml[97,2712+27]..[97,2712+28])
+                        ]
+                  ]
+                  expression (src/ppx.ml[98,2745+4]..[106,2955+22])
+                    Pexp_sequence
+                    expression (src/ppx.ml[98,2745+4]..[98,2745+30])
+                      Pexp_apply
+                      expression (src/ppx.ml[98,2745+5]..[98,2745+27])
+                        Pexp_ident "process_core_type_list" (src/ppx.ml[98,2745+5]..[98,2745+27])
+                      [
+                        <arg>
+                        Nolabel
+                          expression (src/ppx.ml[98,2745+28]..[98,2745+29])
+                            Pexp_ident "b" (src/ppx.ml[98,2745+28]..[98,2745+29])
+                      ]
+                    expression (src/ppx.ml[100,2778+4]..[106,2955+22])
+                      Pexp_sequence
+                      expression (src/ppx.ml[100,2778+4]..[100,2778+46])
+                        Pexp_apply
+                        expression (src/ppx.ml[100,2778+4]..[100,2778+17])
+                          Pexp_ident "Printf.printf" (src/ppx.ml[100,2778+4]..[100,2778+17])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (src/ppx.ml[100,2778+18]..[100,2778+41])
+                              Pexp_constant PConst_string("DEBUG:Ptyp_constr1:%s",(src/ppx.ml[100,2778+19]..[100,2778+40]),None)
+                          <arg>
+                          Nolabel
+                            expression (src/ppx.ml[100,2778+42]..[100,2778+46])
+                              Pexp_ident "myid" (src/ppx.ml[100,2778+42]..[100,2778+46])
+                        ]
+                      expression (src/ppx.ml[103,2865+4]..[106,2955+22])
+                        Pexp_apply
+                        expression (src/ppx.ml[103,2865+5]..[103,2865+18])
+                          Pexp_ident "print_endline" (src/ppx.ml[103,2865+5]..[103,2865+18])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (src/ppx.ml[103,2865+19]..[106,2955+21])
+                              Pexp_apply
+                              expression (src/ppx.ml[103,2865+20]..[103,2865+34])
+                                Pexp_ident "Batteries.dump" (src/ppx.ml[103,2865+20]..[103,2865+34])
+                              [
+                                <arg>
+                                Nolabel
+                                  expression (src/ppx.ml[103,2865+35]..[106,2955+20])
+                                    Pexp_tuple
+                                    [
+                                      expression (src/ppx.ml[104,2902+9]..[104,2902+29])
+                                        Pexp_constant PConst_string("DEBUG:Ptyp_constr:",(src/ppx.ml[104,2902+10]..[104,2902+28]),None)
+                                      expression (src/ppx.ml[105,2933+9]..[105,2933+13])
+                                        Pexp_constant PConst_string("id",(src/ppx.ml[105,2933+10]..[105,2933+12]),None)
+                                      expression (src/ppx.ml[105,2933+14]..[105,2933+15])
+                                        Pexp_ident "a" (src/ppx.ml[105,2933+14]..[105,2933+15])
+                                      expression (src/ppx.ml[105,2933+16]..[105,2933+20])
+                                        Pexp_ident "myid" (src/ppx.ml[105,2933+16]..[105,2933+20])
+                                      expression (src/ppx.ml[106,2955+9]..[106,2955+16])
+                                        Pexp_constant PConst_string("types",(src/ppx.ml[106,2955+10]..[106,2955+15]),None)
+                                      expression (src/ppx.ml[106,2955+17]..[106,2955+18])
+                                        Pexp_ident "b" (src/ppx.ml[106,2955+17]..[106,2955+18])
+                                    ]
+                              ]
+                        ]
+              <case>
+                pattern (src/ppx.ml[108,2979+4]..[108,2979+16])
+                  Ppat_construct "Ptyp_tuple" (src/ppx.ml[108,2979+4]..[108,2979+14])
+                  Some
+                    []
+                    pattern (src/ppx.ml[108,2979+15]..[108,2979+16])
+                      Ppat_var "a" (src/ppx.ml[108,2979+15]..[108,2979+16])
+                expression (src/ppx.ml[110,3027+4]..[110,3027+59])
+                  Pexp_apply
+                  expression (src/ppx.ml[110,3027+5]..[110,3027+18])
+                    Pexp_ident "print_endline" (src/ppx.ml[110,3027+5]..[110,3027+18])
+                  [
+                    <arg>
+                    Nolabel
+                      expression (src/ppx.ml[110,3027+19]..[110,3027+58])
+                        Pexp_apply
+                        expression (src/ppx.ml[110,3027+20]..[110,3027+34])
+                          Pexp_ident "Batteries.dump" (src/ppx.ml[110,3027+20]..[110,3027+34])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (src/ppx.ml[110,3027+35]..[110,3027+57])
+                              Pexp_constant PConst_string("DEBUG:Ptyp_tuple:",(src/ppx.ml[110,3027+37]..[110,3027+54]),None)
+                        ]
+                  ]
+              <case>
+                pattern (src/ppx.ml[113,3106+4]..[113,3106+12])
+                  Ppat_construct "Ptyp_any" (src/ppx.ml[113,3106+4]..[113,3106+12])
+                  None
+                expression (src/ppx.ml[113,3106+17]..[113,3106+69])
+                  Pexp_apply
+                  expression (src/ppx.ml[113,3106+18]..[113,3106+31])
+                    Pexp_ident "print_endline" (src/ppx.ml[113,3106+18]..[113,3106+31])
+                  [
+                    <arg>
+                    Nolabel
+                      expression (src/ppx.ml[113,3106+32]..[113,3106+68])
+                        Pexp_apply
+                        expression (src/ppx.ml[113,3106+33]..[113,3106+47])
+                          Pexp_ident "Batteries.dump" (src/ppx.ml[113,3106+33]..[113,3106+47])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (src/ppx.ml[113,3106+48]..[113,3106+67])
+                              Pexp_constant PConst_string("DEBUG:Ptyp_any:",(src/ppx.ml[113,3106+50]..[113,3106+65]),None)
+                        ]
+                  ]
+              <case>
+                pattern (src/ppx.ml[114,3176+4]..[114,3176+17])
+                  Ppat_construct "Ptyp_var" (src/ppx.ml[114,3176+4]..[114,3176+12])
+                  Some
+                    []
+                    pattern (src/ppx.ml[114,3176+13]..[114,3176+17])
+                      Ppat_var "name" (src/ppx.ml[114,3176+13]..[114,3176+17])
+                expression (src/ppx.ml[114,3176+20]..[114,3176+80])
+                  Pexp_apply
+                  expression (src/ppx.ml[114,3176+21]..[114,3176+34])
+                    Pexp_ident "print_endline" (src/ppx.ml[114,3176+21]..[114,3176+34])
+                  [
+                    <arg>
+                    Nolabel
+                      expression (src/ppx.ml[114,3176+35]..[114,3176+79])
+                        Pexp_apply
+                        expression (src/ppx.ml[114,3176+36]..[114,3176+50])
+                          Pexp_ident "Batteries.dump" (src/ppx.ml[114,3176+36]..[114,3176+50])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (src/ppx.ml[114,3176+51]..[114,3176+78])
+                              Pexp_tuple
+                              [
+                                expression (src/ppx.ml[114,3176+52]..[114,3176+69])
+                                  Pexp_constant PConst_string("DEBUG:Ptyp_var:",(src/ppx.ml[114,3176+53]..[114,3176+68]),None)
+                                expression (src/ppx.ml[114,3176+73]..[114,3176+77])
+                                  Pexp_ident "name" (src/ppx.ml[114,3176+73]..[114,3176+77])
+                              ]
+                        ]
+                  ]
+              <case>
+                pattern (src/ppx.ml[115,3257+4]..[115,3257+51])
+                  Ppat_construct "Ptyp_arrow" (src/ppx.ml[115,3257+4]..[115,3257+14])
+                  Some
+                    []
+                    pattern (src/ppx.ml[115,3257+15]..[115,3257+51])
+                      Ppat_tuple
+                      [
+                        pattern (src/ppx.ml[115,3257+16]..[115,3257+25])
+                          Ppat_var "arg_label" (src/ppx.ml[115,3257+16]..[115,3257+25])
+                        pattern (src/ppx.ml[115,3257+28]..[115,3257+37])
+                          Ppat_var "core_type" (src/ppx.ml[115,3257+28]..[115,3257+37])
+                        pattern (src/ppx.ml[115,3257+40]..[115,3257+50])
+                          Ppat_var "core_type2" (src/ppx.ml[115,3257+40]..[115,3257+50])
+                      ]
+                expression (src/ppx.ml[116,3312+4]..[116,3312+61])
+                  Pexp_apply
+                  expression (src/ppx.ml[116,3312+5]..[116,3312+18])
+                    Pexp_ident "print_endline" (src/ppx.ml[116,3312+5]..[116,3312+18])
+                  [
+                    <arg>
+                    Nolabel
+                      expression (src/ppx.ml[116,3312+19]..[116,3312+60])
+                        Pexp_apply
+                        expression (src/ppx.ml[116,3312+20]..[116,3312+34])
+                          Pexp_ident "Batteries.dump" (src/ppx.ml[116,3312+20]..[116,3312+34])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (src/ppx.ml[116,3312+35]..[116,3312+59])
+                              Pexp_constant PConst_string("DEBUG:Ptyp_arrow10:",(src/ppx.ml[116,3312+37]..[116,3312+56]),None)
+                        ]
+                  ]
+              <case>
+                pattern (src/ppx.ml[118,3375+4]..[118,3375+21])
+                  Ppat_construct "Ptyp_object" (src/ppx.ml[118,3375+4]..[118,3375+15])
+                  Some
+                    []
+                    pattern (src/ppx.ml[118,3375+16]..[118,3375+21])
+                      Ppat_tuple
+                      [
+                        pattern (src/ppx.ml[118,3375+17]..[118,3375+18])
+                          Ppat_var "a" (src/ppx.ml[118,3375+17]..[118,3375+18])
+                        pattern (src/ppx.ml[118,3375+19]..[118,3375+20])
+                          Ppat_var "b" (src/ppx.ml[118,3375+19]..[118,3375+20])
+                      ]
+                expression (src/ppx.ml[120,3444+4]..[120,3444+60])
+                  Pexp_apply
+                  expression (src/ppx.ml[120,3444+5]..[120,3444+18])
+                    Pexp_ident "print_endline" (src/ppx.ml[120,3444+5]..[120,3444+18])
+                  [
+                    <arg>
+                    Nolabel
+                      expression (src/ppx.ml[120,3444+19]..[120,3444+59])
+                        Pexp_apply
+                        expression (src/ppx.ml[120,3444+20]..[120,3444+34])
+                          Pexp_ident "Batteries.dump" (src/ppx.ml[120,3444+20]..[120,3444+34])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (src/ppx.ml[120,3444+35]..[120,3444+58])
+                              Pexp_constant PConst_string("DEBUG:Ptyp_arrow8:",(src/ppx.ml[120,3444+37]..[120,3444+55]),None)
+                        ]
+                  ]
+              <case>
+                pattern (src/ppx.ml[121,3505+4]..[121,3505+20])
+                  Ppat_construct "Ptyp_class" (src/ppx.ml[121,3505+4]..[121,3505+14])
+                  Some
+                    []
+                    pattern (src/ppx.ml[121,3505+15]..[121,3505+20])
+                      Ppat_tuple
+                      [
+                        pattern (src/ppx.ml[121,3505+16]..[121,3505+17])
+                          Ppat_var "a" (src/ppx.ml[121,3505+16]..[121,3505+17])
+                        pattern (src/ppx.ml[121,3505+18]..[121,3505+19])
+                          Ppat_var "b" (src/ppx.ml[121,3505+18]..[121,3505+19])
+                      ]
+                expression (src/ppx.ml[123,3575+4]..[123,3575+60])
+                  Pexp_apply
+                  expression (src/ppx.ml[123,3575+5]..[123,3575+18])
+                    Pexp_ident "print_endline" (src/ppx.ml[123,3575+5]..[123,3575+18])
+                  [
+                    <arg>
+                    Nolabel
+                      expression (src/ppx.ml[123,3575+19]..[123,3575+59])
+                        Pexp_apply
+                        expression (src/ppx.ml[123,3575+20]..[123,3575+34])
+                          Pexp_ident "Batteries.dump" (src/ppx.ml[123,3575+20]..[123,3575+34])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (src/ppx.ml[123,3575+35]..[123,3575+58])
+                              Pexp_constant PConst_string("DEBUG:Ptyp_arrow7:",(src/ppx.ml[123,3575+37]..[123,3575+55]),None)
+                        ]
+                  ]
+              <case>
+                pattern (src/ppx.ml[124,3636+4]..[124,3636+20])
+                  Ppat_construct "Ptyp_alias" (src/ppx.ml[124,3636+4]..[124,3636+14])
+                  Some
+                    []
+                    pattern (src/ppx.ml[124,3636+15]..[124,3636+20])
+                      Ppat_tuple
+                      [
+                        pattern (src/ppx.ml[124,3636+16]..[124,3636+17])
+                          Ppat_var "a" (src/ppx.ml[124,3636+16]..[124,3636+17])
+                        pattern (src/ppx.ml[124,3636+18]..[124,3636+19])
+                          Ppat_var "b" (src/ppx.ml[124,3636+18]..[124,3636+19])
+                      ]
+                expression (src/ppx.ml[126,3697+4]..[126,3697+60])
+                  Pexp_apply
+                  expression (src/ppx.ml[126,3697+5]..[126,3697+18])
+                    Pexp_ident "print_endline" (src/ppx.ml[126,3697+5]..[126,3697+18])
+                  [
+                    <arg>
+                    Nolabel
+                      expression (src/ppx.ml[126,3697+19]..[126,3697+59])
+                        Pexp_apply
+                        expression (src/ppx.ml[126,3697+20]..[126,3697+34])
+                          Pexp_ident "Batteries.dump" (src/ppx.ml[126,3697+20]..[126,3697+34])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (src/ppx.ml[126,3697+35]..[126,3697+58])
+                              Pexp_constant PConst_string("DEBUG:Ptyp_arrow6:",(src/ppx.ml[126,3697+37]..[126,3697+55]),None)
+                        ]
+                  ]
+              <case>
+                pattern (src/ppx.ml[127,3758+4]..[127,3758+24])
+                  Ppat_construct "Ptyp_variant" (src/ppx.ml[127,3758+4]..[127,3758+16])
+                  Some
+                    []
+                    pattern (src/ppx.ml[127,3758+17]..[127,3758+24])
+                      Ppat_tuple
+                      [
+                        pattern (src/ppx.ml[127,3758+18]..[127,3758+19])
+                          Ppat_var "a" (src/ppx.ml[127,3758+18]..[127,3758+19])
+                        pattern (src/ppx.ml[127,3758+20]..[127,3758+21])
+                          Ppat_var "b" (src/ppx.ml[127,3758+20]..[127,3758+21])
+                        pattern (src/ppx.ml[127,3758+22]..[127,3758+23])
+                          Ppat_var "c" (src/ppx.ml[127,3758+22]..[127,3758+23])
+                      ]
+                expression (src/ppx.ml[129,3848+4]..[129,3848+60])
+                  Pexp_apply
+                  expression (src/ppx.ml[129,3848+5]..[129,3848+18])
+                    Pexp_ident "print_endline" (src/ppx.ml[129,3848+5]..[129,3848+18])
+                  [
+                    <arg>
+                    Nolabel
+                      expression (src/ppx.ml[129,3848+19]..[129,3848+59])
+                        Pexp_apply
+                        expression (src/ppx.ml[129,3848+20]..[129,3848+34])
+                          Pexp_ident "Batteries.dump" (src/ppx.ml[129,3848+20]..[129,3848+34])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (src/ppx.ml[129,3848+35]..[129,3848+58])
+                              Pexp_constant PConst_string("DEBUG:Ptyp_arrow5:",(src/ppx.ml[129,3848+37]..[129,3848+55]),None)
+                        ]
+                  ]
+              <case>
+                pattern (src/ppx.ml[130,3909+4]..[130,3909+19])
+                  Ppat_construct "Ptyp_poly" (src/ppx.ml[130,3909+4]..[130,3909+13])
+                  Some
+                    []
+                    pattern (src/ppx.ml[130,3909+14]..[130,3909+19])
+                      Ppat_tuple
+                      [
+                        pattern (src/ppx.ml[130,3909+15]..[130,3909+16])
+                          Ppat_var "a" (src/ppx.ml[130,3909+15]..[130,3909+16])
+                        pattern (src/ppx.ml[130,3909+17]..[130,3909+18])
+                          Ppat_var "b" (src/ppx.ml[130,3909+17]..[130,3909+18])
+                      ]
+                expression (src/ppx.ml[132,3973+4]..[132,3973+60])
+                  Pexp_apply
+                  expression (src/ppx.ml[132,3973+5]..[132,3973+18])
+                    Pexp_ident "print_endline" (src/ppx.ml[132,3973+5]..[132,3973+18])
+                  [
+                    <arg>
+                    Nolabel
+                      expression (src/ppx.ml[132,3973+19]..[132,3973+59])
+                        Pexp_apply
+                        expression (src/ppx.ml[132,3973+20]..[132,3973+34])
+                          Pexp_ident "Batteries.dump" (src/ppx.ml[132,3973+20]..[132,3973+34])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (src/ppx.ml[132,3973+35]..[132,3973+58])
+                              Pexp_constant PConst_string("DEBUG:Ptyp_arrow4:",(src/ppx.ml[132,3973+37]..[132,3973+55]),None)
+                        ]
+                  ]
+              <case>
+                pattern (src/ppx.ml[133,4034+4]..[133,4034+18])
+                  Ppat_construct "Ptyp_package" (src/ppx.ml[133,4034+4]..[133,4034+16])
+                  Some
+                    []
+                    pattern (src/ppx.ml[133,4034+17]..[133,4034+18])
+                      Ppat_var "a" (src/ppx.ml[133,4034+17]..[133,4034+18])
+                expression (src/ppx.ml[135,4082+4]..[135,4082+62])
+                  Pexp_apply
+                  expression (src/ppx.ml[135,4082+5]..[135,4082+18])
+                    Pexp_ident "print_endline" (src/ppx.ml[135,4082+5]..[135,4082+18])
+                  [
+                    <arg>
+                    Nolabel
+                      expression (src/ppx.ml[135,4082+19]..[135,4082+61])
+                        Pexp_apply
+                        expression (src/ppx.ml[135,4082+20]..[135,4082+34])
+                          Pexp_ident "Batteries.dump" (src/ppx.ml[135,4082+20]..[135,4082+34])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (src/ppx.ml[135,4082+35]..[135,4082+60])
+                              Pexp_tuple
+                              [
+                                expression (src/ppx.ml[135,4082+36]..[135,4082+56])
+                                  Pexp_constant PConst_string("DEBUG:Ptyp_arrow3:",(src/ppx.ml[135,4082+37]..[135,4082+55]),None)
+                                expression (src/ppx.ml[135,4082+57]..[135,4082+58])
+                                  Pexp_ident "a" (src/ppx.ml[135,4082+57]..[135,4082+58])
+                              ]
+                        ]
+                  ]
+              <case>
+                pattern (src/ppx.ml[138,4290+4]..[138,4290+20])
+                  Ppat_construct "Ptyp_extension" (src/ppx.ml[138,4290+4]..[138,4290+18])
+                  Some
+                    []
+                    pattern (src/ppx.ml[138,4290+19]..[138,4290+20])
+                      Ppat_var "a" (src/ppx.ml[138,4290+19]..[138,4290+20])
+                expression (src/ppx.ml[139,4338+4]..[139,4338+65])
+                  Pexp_apply
+                  expression (src/ppx.ml[139,4338+5]..[139,4338+18])
+                    Pexp_ident "print_endline" (src/ppx.ml[139,4338+5]..[139,4338+18])
+                  [
+                    <arg>
+                    Nolabel
+                      expression (src/ppx.ml[139,4338+19]..[139,4338+64])
+                        Pexp_apply
+                        expression (src/ppx.ml[139,4338+20]..[139,4338+34])
+                          Pexp_ident "Batteries.dump" (src/ppx.ml[139,4338+20]..[139,4338+34])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (src/ppx.ml[139,4338+35]..[139,4338+63])
+                              Pexp_tuple
+                              [
+                                expression (src/ppx.ml[139,4338+36]..[139,4338+59])
+                                  Pexp_constant PConst_string("DEBUG:Ptyp_extension:",(src/ppx.ml[139,4338+37]..[139,4338+58]),None)
+                                expression (src/ppx.ml[139,4338+60]..[139,4338+61])
+                                  Pexp_ident "a" (src/ppx.ml[139,4338+60]..[139,4338+61])
+                              ]
+                        ]
+                  ]
+            ]
+      <def>
+        pattern (src/ppx.ml[141,4408+2]..[141,4408+26])
+          Ppat_var "process_record_kind_list" (src/ppx.ml[141,4408+2]..[141,4408+26])
+        expression (src/ppx.ml[141,4408+26]..[147,4545+6]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (src/ppx.ml[141,4408+26]..[141,4408+29])
+            Ppat_var "x" (src/ppx.ml[141,4408+27]..[141,4408+28])
+          expression (src/ppx.ml[142,4440+2]..[147,4545+6])
+            Pexp_match
+            expression (src/ppx.ml[142,4440+8]..[142,4440+9])
+              Pexp_ident "x" (src/ppx.ml[142,4440+8]..[142,4440+9])
+            [
+              <case>
+                pattern (src/ppx.ml[143,4455+4]..[143,4455+6])
+                  Ppat_construct "[]" (src/ppx.ml[143,4455+4]..[143,4455+6])
+                  None
+                expression (src/ppx.ml[143,4455+10]..[143,4455+12])
+                  Pexp_construct "()" (src/ppx.ml[143,4455+10]..[143,4455+12])
+                  None
+              <case>
+                pattern (src/ppx.ml[144,4468+4]..[144,4468+10])
+                  Ppat_construct "::" (src/ppx.ml[144,4468+6]..[144,4468+8])
+                  Some
+                    []
+                    pattern (src/ppx.ml[144,4468+4]..[144,4468+10]) ghost
+                      Ppat_tuple
+                      [
+                        pattern (src/ppx.ml[144,4468+4]..[144,4468+5])
+                          Ppat_var "h" (src/ppx.ml[144,4468+4]..[144,4468+5])
+                        pattern (src/ppx.ml[144,4468+9]..[144,4468+10])
+                          Ppat_var "t" (src/ppx.ml[144,4468+9]..[144,4468+10])
+                      ]
+                expression (src/ppx.ml[145,4482+4]..[147,4545+6])
+                  Pexp_sequence
+                  expression (src/ppx.ml[145,4482+4]..[145,4482+27])
+                    Pexp_apply
+                    expression (src/ppx.ml[145,4482+5]..[145,4482+24])
+                      Pexp_ident "process_record_kind" (src/ppx.ml[145,4482+5]..[145,4482+24])
+                    [
+                      <arg>
+                      Nolabel
+                        expression (src/ppx.ml[145,4482+25]..[145,4482+26])
+                          Pexp_ident "h" (src/ppx.ml[145,4482+25]..[145,4482+26])
+                    ]
+                  expression (src/ppx.ml[146,4511+4]..[147,4545+6])
+                    Pexp_sequence
+                    expression (src/ppx.ml[146,4511+4]..[146,4511+32])
+                      Pexp_apply
+                      expression (src/ppx.ml[146,4511+5]..[146,4511+29])
+                        Pexp_ident "process_record_kind_list" (src/ppx.ml[146,4511+5]..[146,4511+29])
+                      [
+                        <arg>
+                        Nolabel
+                          expression (src/ppx.ml[146,4511+30]..[146,4511+31])
+                            Pexp_ident "t" (src/ppx.ml[146,4511+30]..[146,4511+31])
+                      ]
+                    expression (src/ppx.ml[147,4545+4]..[147,4545+6])
+                      Pexp_construct "()" (src/ppx.ml[147,4545+4]..[147,4545+6])
+                      None
+            ]
+      <def>
+        pattern (src/ppx.ml[149,4556+0]..[149,4556+17])
+          Ppat_var "process_core_type" (src/ppx.ml[149,4556+0]..[149,4556+17])
+        expression (src/ppx.ml[149,4556+17]..[159,4823+80]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (src/ppx.ml[149,4556+17]..[149,4556+20])
+            Ppat_var "x" (src/ppx.ml[149,4556+18]..[149,4556+19])
+          expression (src/ppx.ml[150,4579+2]..[159,4823+80])
+            Pexp_match
+            expression (src/ppx.ml[150,4579+8]..[150,4579+9])
+              Pexp_ident "x" (src/ppx.ml[150,4579+8]..[150,4579+9])
+            [
+              <case>
+                pattern (src/ppx.ml[151,4595+4]..[156,4756+5])
+                  Ppat_record Closed
+                  [
+                    "ptyp_desc" (src/ppx.ml[152,4601+6]..[152,4601+15]) ghost
+                      pattern (src/ppx.ml[152,4601+6]..[152,4601+15])
+                        Ppat_var "ptyp_desc" (src/ppx.ml[152,4601+6]..[152,4601+15])
+                    "ptyp_loc" (src/ppx.ml[153,4640+5]..[153,4640+13]) ghost
+                      pattern (src/ppx.ml[153,4640+5]..[153,4640+13])
+                        Ppat_var "ptyp_loc" (src/ppx.ml[153,4640+5]..[153,4640+13])
+                    "ptyp_loc_stack" (src/ppx.ml[154,4673+5]..[154,4673+19]) ghost
+                      pattern (src/ppx.ml[154,4673+5]..[154,4673+19])
+                        Ppat_var "ptyp_loc_stack" (src/ppx.ml[154,4673+5]..[154,4673+19])
+                    "ptyp_attributes" (src/ppx.ml[155,4716+5]..[155,4716+20]) ghost
+                      pattern (src/ppx.ml[155,4716+5]..[155,4716+20])
+                        Ppat_var "ptyp_attributes" (src/ppx.ml[155,4716+5]..[155,4716+20])
+                  ]
+                expression (src/ppx.ml[157,4764+4]..[159,4823+80])
+                  Pexp_sequence
+                  expression (src/ppx.ml[157,4764+4]..[157,4764+38])
+                    Pexp_apply
+                    expression (src/ppx.ml[157,4764+5]..[157,4764+27])
+                      Pexp_ident "process_core_type_desc" (src/ppx.ml[157,4764+5]..[157,4764+27])
+                    [
+                      <arg>
+                      Nolabel
+                        expression (src/ppx.ml[157,4764+28]..[157,4764+37])
+                          Pexp_ident "ptyp_desc" (src/ppx.ml[157,4764+28]..[157,4764+37])
+                    ]
+                  expression (src/ppx.ml[159,4823+4]..[159,4823+80])
+                    Pexp_apply
+                    expression (src/ppx.ml[159,4823+5]..[159,4823+18])
+                      Pexp_ident "print_endline" (src/ppx.ml[159,4823+5]..[159,4823+18])
+                    [
+                      <arg>
+                      Nolabel
+                        expression (src/ppx.ml[159,4823+19]..[159,4823+79])
+                          Pexp_apply
+                          expression (src/ppx.ml[159,4823+20]..[159,4823+34])
+                            Pexp_ident "Batteries.dump" (src/ppx.ml[159,4823+20]..[159,4823+34])
+                          [
+                            <arg>
+                            Nolabel
+                              expression (src/ppx.ml[159,4823+35]..[159,4823+78])
+                                Pexp_tuple
+                                [
+                                  expression (src/ppx.ml[159,4823+36]..[159,4823+64])
+                                    Pexp_constant PConst_string("DEBUG:core_type.ptyp_desc:",(src/ppx.ml[159,4823+37]..[159,4823+63]),None)
+                                  expression (src/ppx.ml[159,4823+68]..[159,4823+77])
+                                    Pexp_ident "ptyp_desc" (src/ppx.ml[159,4823+68]..[159,4823+77])
+                                ]
+                          ]
+                    ]
+            ]
+      <def>
+        pattern (src/ppx.ml[160,4904+4]..[160,4904+26])
+          Ppat_var "process_core_type_list" (src/ppx.ml[160,4904+4]..[160,4904+26])
+        expression (src/ppx.ml[160,4904+26]..[165,5020+29]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (src/ppx.ml[160,4904+26]..[160,4904+44])
+            Ppat_constraint
+            pattern (src/ppx.ml[160,4904+27]..[160,4904+28])
+              Ppat_var "x" (src/ppx.ml[160,4904+27]..[160,4904+28])
+            core_type (src/ppx.ml[160,4904+29]..[160,4904+43])
+              Ptyp_constr "list" (src/ppx.ml[160,4904+39]..[160,4904+43])
+              [
+                core_type (src/ppx.ml[160,4904+29]..[160,4904+38])
+                  Ptyp_constr "core_type" (src/ppx.ml[160,4904+29]..[160,4904+38])
+                  []
+              ]
+          expression (src/ppx.ml[161,4951+2]..[165,5020+29])
+            Pexp_match
+            expression (src/ppx.ml[161,4951+8]..[161,4951+9])
+              Pexp_ident "x" (src/ppx.ml[161,4951+8]..[161,4951+9])
+            [
+              <case>
+                pattern (src/ppx.ml[162,4966+4]..[162,4966+6])
+                  Ppat_construct "[]" (src/ppx.ml[162,4966+4]..[162,4966+6])
+                  None
+                expression (src/ppx.ml[162,4966+10]..[162,4966+12])
+                  Pexp_construct "()" (src/ppx.ml[162,4966+10]..[162,4966+12])
+                  None
+              <case>
+                pattern (src/ppx.ml[163,4979+4]..[163,4979+10])
+                  Ppat_construct "::" (src/ppx.ml[163,4979+6]..[163,4979+8])
+                  Some
+                    []
+                    pattern (src/ppx.ml[163,4979+4]..[163,4979+10]) ghost
+                      Ppat_tuple
+                      [
+                        pattern (src/ppx.ml[163,4979+4]..[163,4979+5])
+                          Ppat_var "h" (src/ppx.ml[163,4979+4]..[163,4979+5])
+                        pattern (src/ppx.ml[163,4979+9]..[163,4979+10])
+                          Ppat_var "t" (src/ppx.ml[163,4979+9]..[163,4979+10])
+                      ]
+                expression (src/ppx.ml[164,4993+4]..[165,5020+29])
+                  Pexp_sequence
+                  expression (src/ppx.ml[164,4993+4]..[164,4993+25])
+                    Pexp_apply
+                    expression (src/ppx.ml[164,4993+4]..[164,4993+21])
+                      Pexp_ident "process_core_type" (src/ppx.ml[164,4993+4]..[164,4993+21])
+                    [
+                      <arg>
+                      Nolabel
+                        expression (src/ppx.ml[164,4993+22]..[164,4993+25])
+                          Pexp_ident "h" (src/ppx.ml[164,4993+23]..[164,4993+24])
+                    ]
+                  expression (src/ppx.ml[165,5020+4]..[165,5020+29])
+                    Pexp_apply
+                    expression (src/ppx.ml[165,5020+4]..[165,5020+26])
+                      Pexp_ident "process_core_type_list" (src/ppx.ml[165,5020+4]..[165,5020+26])
+                    [
+                      <arg>
+                      Nolabel
+                        expression (src/ppx.ml[165,5020+26]..[165,5020+29])
+                          Pexp_ident "t" (src/ppx.ml[165,5020+27]..[165,5020+28])
+                    ]
+            ]
+    ]
+  structure_item (src/ppx.ml[172,5064+0]..[179,5263+65])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (src/ppx.ml[172,5064+4]..[172,5064+31])
+          Ppat_var "print_constructor_arguments" (src/ppx.ml[172,5064+4]..[172,5064+31])
+        expression (src/ppx.ml[172,5064+31]..[179,5263+65]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (src/ppx.ml[172,5064+31]..[172,5064+34])
+            Ppat_var "x" (src/ppx.ml[172,5064+32]..[172,5064+33])
+          expression (src/ppx.ml[173,5101+2]..[179,5263+65])
+            Pexp_match
+            expression (src/ppx.ml[173,5101+8]..[173,5101+9])
+              Pexp_ident "x" (src/ppx.ml[173,5101+8]..[173,5101+9])
+            [
+              <case>
+                pattern (src/ppx.ml[174,5116+4]..[174,5116+17])
+                  Ppat_construct "Pcstr_tuple" (src/ppx.ml[174,5116+4]..[174,5116+15])
+                  Some
+                    []
+                    pattern (src/ppx.ml[174,5116+16]..[174,5116+17])
+                      Ppat_var "a" (src/ppx.ml[174,5116+16]..[174,5116+17])
+                expression (src/ppx.ml[175,5137+4]..[176,5169+64])
+                  Pexp_sequence
+                  expression (src/ppx.ml[175,5137+4]..[175,5137+30])
+                    Pexp_apply
+                    expression (src/ppx.ml[175,5137+5]..[175,5137+27])
+                      Pexp_ident "process_core_type_list" (src/ppx.ml[175,5137+5]..[175,5137+27])
+                    [
+                      <arg>
+                      Nolabel
+                        expression (src/ppx.ml[175,5137+28]..[175,5137+29])
+                          Pexp_ident "a" (src/ppx.ml[175,5137+28]..[175,5137+29])
+                    ]
+                  expression (src/ppx.ml[176,5169+4]..[176,5169+64])
+                    Pexp_apply
+                    expression (src/ppx.ml[176,5169+5]..[176,5169+18])
+                      Pexp_ident "print_endline" (src/ppx.ml[176,5169+5]..[176,5169+18])
+                    [
+                      <arg>
+                      Nolabel
+                        expression (src/ppx.ml[176,5169+19]..[176,5169+63])
+                          Pexp_apply
+                          expression (src/ppx.ml[176,5169+20]..[176,5169+34])
+                            Pexp_ident "Batteries.dump" (src/ppx.ml[176,5169+20]..[176,5169+34])
+                          [
+                            <arg>
+                            Nolabel
+                              expression (src/ppx.ml[176,5169+35]..[176,5169+62])
+                                Pexp_tuple
+                                [
+                                  expression (src/ppx.ml[176,5169+36]..[176,5169+56])
+                                    Pexp_constant PConst_string("DEBUG:Pcstr_tuple:",(src/ppx.ml[176,5169+37]..[176,5169+55]),None)
+                                  expression (src/ppx.ml[176,5169+60]..[176,5169+61])
+                                    Pexp_ident "a" (src/ppx.ml[176,5169+60]..[176,5169+61])
+                                ]
+                          ]
+                    ]
+              <case>
+                pattern (src/ppx.ml[178,5241+4]..[178,5241+18])
+                  Ppat_construct "Pcstr_record" (src/ppx.ml[178,5241+4]..[178,5241+16])
+                  Some
+                    []
+                    pattern (src/ppx.ml[178,5241+17]..[178,5241+18])
+                      Ppat_var "a" (src/ppx.ml[178,5241+17]..[178,5241+18])
+                expression (src/ppx.ml[179,5263+4]..[179,5263+65])
+                  Pexp_apply
+                  expression (src/ppx.ml[179,5263+5]..[179,5263+18])
+                    Pexp_ident "print_endline" (src/ppx.ml[179,5263+5]..[179,5263+18])
+                  [
+                    <arg>
+                    Nolabel
+                      expression (src/ppx.ml[179,5263+19]..[179,5263+64])
+                        Pexp_apply
+                        expression (src/ppx.ml[179,5263+20]..[179,5263+34])
+                          Pexp_ident "Batteries.dump" (src/ppx.ml[179,5263+20]..[179,5263+34])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (src/ppx.ml[179,5263+35]..[179,5263+63])
+                              Pexp_tuple
+                              [
+                                expression (src/ppx.ml[179,5263+36]..[179,5263+57])
+                                  Pexp_constant PConst_string("DEBUG:Pcstr_record:",(src/ppx.ml[179,5263+37]..[179,5263+56]),None)
+                                expression (src/ppx.ml[179,5263+61]..[179,5263+62])
+                                  Pexp_ident "a" (src/ppx.ml[179,5263+61]..[179,5263+62])
+                              ]
+                        ]
+                  ]
+            ]
+    ]
+  structure_item (src/ppx.ml[181,5330+0]..[213,6306+8])
+    Pstr_value Rec
+    [
+      <def>
+        pattern (src/ppx.ml[181,5330+8]..[181,5330+57])
+          Ppat_var "process_pype_variant_constructor_declaration_list" (src/ppx.ml[181,5330+8]..[181,5330+57])
+        expression (src/ppx.ml[181,5330+57]..[213,6306+8]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (src/ppx.ml[181,5330+57]..[181,5330+60])
+            Ppat_var "x" (src/ppx.ml[181,5330+58]..[181,5330+59])
+          expression (src/ppx.ml[182,5393+2]..[213,6306+8])
+            Pexp_match
+            expression (src/ppx.ml[182,5393+8]..[182,5393+9])
+              Pexp_ident "x" (src/ppx.ml[182,5393+8]..[182,5393+9])
+            [
+              <case>
+                pattern (src/ppx.ml[183,5408+4]..[183,5408+6])
+                  Ppat_construct "[]" (src/ppx.ml[183,5408+4]..[183,5408+6])
+                  None
+                expression (src/ppx.ml[183,5408+10]..[183,5408+12])
+                  Pexp_construct "()" (src/ppx.ml[183,5408+10]..[183,5408+12])
+                  None
+              <case>
+                pattern (src/ppx.ml[184,5421+4]..[184,5421+10])
+                  Ppat_construct "::" (src/ppx.ml[184,5421+6]..[184,5421+8])
+                  Some
+                    []
+                    pattern (src/ppx.ml[184,5421+4]..[184,5421+10]) ghost
+                      Ppat_tuple
+                      [
+                        pattern (src/ppx.ml[184,5421+4]..[184,5421+5])
+                          Ppat_var "h" (src/ppx.ml[184,5421+4]..[184,5421+5])
+                        pattern (src/ppx.ml[184,5421+9]..[184,5421+10])
+                          Ppat_var "t" (src/ppx.ml[184,5421+9]..[184,5421+10])
+                      ]
+                expression (src/ppx.ml[186,5500+4]..[213,6306+8])
+                  Pexp_match
+                  expression (src/ppx.ml[186,5500+10]..[186,5500+11])
+                    Pexp_ident "h" (src/ppx.ml[186,5500+10]..[186,5500+11])
+                  [
+                    <case>
+                      pattern (src/ppx.ml[187,5517+5]..[194,5755+5])
+                        Ppat_record Closed
+                        [
+                          "pcd_name" (src/ppx.ml[188,5524+6]..[188,5524+14]) ghost
+                            pattern (src/ppx.ml[188,5524+6]..[188,5524+14])
+                              Ppat_var "pcd_name" (src/ppx.ml[188,5524+6]..[188,5524+14])
+                          "pcd_vars" (src/ppx.ml[189,5558+6]..[189,5558+14]) ghost
+                            pattern (src/ppx.ml[189,5558+6]..[189,5558+14])
+                              Ppat_var "pcd_vars" (src/ppx.ml[189,5558+6]..[189,5558+14])
+                          "pcd_args" (src/ppx.ml[190,5597+6]..[190,5597+14]) ghost
+                            pattern (src/ppx.ml[190,5597+6]..[190,5597+14])
+                              Ppat_var "pcd_args" (src/ppx.ml[190,5597+6]..[190,5597+14])
+                          "pcd_res" (src/ppx.ml[191,5642+6]..[191,5642+13]) ghost
+                            pattern (src/ppx.ml[191,5642+6]..[191,5642+13])
+                              Ppat_var "pcd_res" (src/ppx.ml[191,5642+6]..[191,5642+13])
+                          "pcd_loc" (src/ppx.ml[192,5681+6]..[192,5681+13]) ghost
+                            pattern (src/ppx.ml[192,5681+6]..[192,5681+13])
+                              Ppat_var "pcd_loc" (src/ppx.ml[192,5681+6]..[192,5681+13])
+                          "pcd_attributes" (src/ppx.ml[193,5714+6]..[193,5714+20]) ghost
+                            pattern (src/ppx.ml[193,5714+6]..[193,5714+20])
+                              Ppat_var "pcd_attributes" (src/ppx.ml[193,5714+6]..[193,5714+20])
+                        ]
+                      expression (src/ppx.ml[197,5837+6]..[213,6306+8])
+                        Pexp_sequence
+                        expression (src/ppx.ml[197,5837+6]..[197,5837+43])
+                          Pexp_apply
+                          expression (src/ppx.ml[197,5837+6]..[197,5837+33])
+                            Pexp_ident "print_constructor_arguments" (src/ppx.ml[197,5837+6]..[197,5837+33])
+                          [
+                            <arg>
+                            Nolabel
+                              expression (src/ppx.ml[197,5837+33]..[197,5837+43])
+                                Pexp_ident "pcd_args" (src/ppx.ml[197,5837+34]..[197,5837+42])
+                          ]
+                        expression (src/ppx.ml[198,5882+6]..[213,6306+8])
+                          Pexp_sequence
+                          expression (src/ppx.ml[198,5882+6]..[211,6227+16])
+                            Pexp_apply
+                            expression (src/ppx.ml[198,5882+7]..[198,5882+20])
+                              Pexp_ident "print_endline" (src/ppx.ml[198,5882+7]..[198,5882+20])
+                            [
+                              <arg>
+                              Nolabel
+                                expression (src/ppx.ml[198,5882+21]..[211,6227+15])
+                                  Pexp_apply
+                                  expression (src/ppx.ml[198,5882+22]..[198,5882+36])
+                                    Pexp_ident "Batteries.dump" (src/ppx.ml[198,5882+22]..[198,5882+36])
+                                  [
+                                    <arg>
+                                    Nolabel
+                                      expression (src/ppx.ml[198,5882+37]..[211,6227+14])
+                                        Pexp_tuple
+                                        [
+                                          expression (src/ppx.ml[199,5921+11]..[199,5921+37])
+                                            Pexp_constant PConst_string("constructor_declaration:",(src/ppx.ml[199,5921+12]..[199,5921+36]),None)
+                                          expression (src/ppx.ml[200,5960+15]..[200,5960+23])
+                                            Pexp_ident "pcd_name" (src/ppx.ml[200,5960+15]..[200,5960+23])
+                                          expression (src/ppx.ml[201,5985+15]..[201,5985+21])
+                                            Pexp_constant PConst_string("vars",(src/ppx.ml[201,5985+16]..[201,5985+20]),None)
+                                          expression (src/ppx.ml[202,6008+15]..[202,6008+23])
+                                            Pexp_ident "pcd_vars" (src/ppx.ml[202,6008+15]..[202,6008+23])
+                                          expression (src/ppx.ml[203,6033+15]..[203,6033+21])
+                                            Pexp_constant PConst_string("args",(src/ppx.ml[203,6033+16]..[203,6033+20]),None)
+                                          expression (src/ppx.ml[204,6056+15]..[204,6056+23])
+                                            Pexp_ident "pcd_args" (src/ppx.ml[204,6056+15]..[204,6056+23])
+                                          expression (src/ppx.ml[205,6081+15]..[205,6081+20])
+                                            Pexp_constant PConst_string("res",(src/ppx.ml[205,6081+16]..[205,6081+19]),None)
+                                          expression (src/ppx.ml[206,6103+15]..[206,6103+22])
+                                            Pexp_ident "pcd_res" (src/ppx.ml[206,6103+15]..[206,6103+22])
+                                          expression (src/ppx.ml[207,6127+15]..[207,6127+20])
+                                            Pexp_constant PConst_string("loc",(src/ppx.ml[207,6127+16]..[207,6127+19]),None)
+                                          expression (src/ppx.ml[208,6149+15]..[208,6149+22])
+                                            Pexp_ident "pcd_loc" (src/ppx.ml[208,6149+15]..[208,6149+22])
+                                          expression (src/ppx.ml[209,6173+15]..[209,6173+22])
+                                            Pexp_constant PConst_string("attrs",(src/ppx.ml[209,6173+16]..[209,6173+21]),None)
+                                          expression (src/ppx.ml[210,6197+15]..[210,6197+29])
+                                            Pexp_ident "pcd_attributes" (src/ppx.ml[210,6197+15]..[210,6197+29])
+                                        ]
+                                  ]
+                            ]
+                          expression (src/ppx.ml[212,6245+6]..[213,6306+8])
+                            Pexp_sequence
+                            expression (src/ppx.ml[212,6245+6]..[212,6245+59])
+                              Pexp_apply
+                              expression (src/ppx.ml[212,6245+7]..[212,6245+56])
+                                Pexp_ident "process_pype_variant_constructor_declaration_list" (src/ppx.ml[212,6245+7]..[212,6245+56])
+                              [
+                                <arg>
+                                Nolabel
+                                  expression (src/ppx.ml[212,6245+57]..[212,6245+58])
+                                    Pexp_ident "t" (src/ppx.ml[212,6245+57]..[212,6245+58])
+                              ]
+                            expression (src/ppx.ml[213,6306+6]..[213,6306+8])
+                              Pexp_construct "()" (src/ppx.ml[213,6306+6]..[213,6306+8])
+                              None
+                  ]
+            ]
+    ]
+  structure_item (src/ppx.ml[215,6318+0]..[226,6715+77])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (src/ppx.ml[215,6318+4]..[215,6318+16])
+          Ppat_var "process_kind" (src/ppx.ml[215,6318+4]..[215,6318+16])
+        expression (src/ppx.ml[215,6318+16]..[226,6715+77]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (src/ppx.ml[215,6318+16]..[215,6318+19])
+            Ppat_var "x" (src/ppx.ml[215,6318+17]..[215,6318+18])
+          expression (src/ppx.ml[216,6340+2]..[226,6715+77])
+            Pexp_match
+            expression (src/ppx.ml[216,6340+8]..[216,6340+9])
+              Pexp_ident "x" (src/ppx.ml[216,6340+8]..[216,6340+9])
+            [
+              <case>
+                pattern (src/ppx.ml[218,6377+4]..[218,6377+18])
+                  Ppat_construct "Ptype_abstract" (src/ppx.ml[218,6377+4]..[218,6377+18])
+                  None
+                expression (src/ppx.ml[218,6377+23]..[218,6377+81])
+                  Pexp_apply
+                  expression (src/ppx.ml[218,6377+24]..[218,6377+37])
+                    Pexp_ident "print_endline" (src/ppx.ml[218,6377+24]..[218,6377+37])
+                  [
+                    <arg>
+                    Nolabel
+                      expression (src/ppx.ml[218,6377+38]..[218,6377+80])
+                        Pexp_apply
+                        expression (src/ppx.ml[218,6377+39]..[218,6377+53])
+                          Pexp_ident "Batteries.dump" (src/ppx.ml[218,6377+39]..[218,6377+53])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (src/ppx.ml[218,6377+54]..[218,6377+79])
+                              Pexp_constant PConst_string("DEBUG:Ptype_abstract:",(src/ppx.ml[218,6377+56]..[218,6377+77]),None)
+                        ]
+                  ]
+              <case>
+                pattern (src/ppx.ml[219,6459+4]..[219,6459+19])
+                  Ppat_construct "Ptype_variant" (src/ppx.ml[219,6459+4]..[219,6459+17])
+                  Some
+                    []
+                    pattern (src/ppx.ml[219,6459+18]..[219,6459+19])
+                      Ppat_var "a" (src/ppx.ml[219,6459+18]..[219,6459+19])
+                expression (src/ppx.ml[220,6482+4]..[221,6541+65])
+                  Pexp_sequence
+                  expression (src/ppx.ml[220,6482+4]..[220,6482+57])
+                    Pexp_apply
+                    expression (src/ppx.ml[220,6482+5]..[220,6482+54])
+                      Pexp_ident "process_pype_variant_constructor_declaration_list" (src/ppx.ml[220,6482+5]..[220,6482+54])
+                    [
+                      <arg>
+                      Nolabel
+                        expression (src/ppx.ml[220,6482+55]..[220,6482+56])
+                          Pexp_ident "a" (src/ppx.ml[220,6482+55]..[220,6482+56])
+                    ]
+                  expression (src/ppx.ml[221,6541+4]..[221,6541+65])
+                    Pexp_apply
+                    expression (src/ppx.ml[221,6541+5]..[221,6541+18])
+                      Pexp_ident "print_endline" (src/ppx.ml[221,6541+5]..[221,6541+18])
+                    [
+                      <arg>
+                      Nolabel
+                        expression (src/ppx.ml[221,6541+19]..[221,6541+64])
+                          Pexp_apply
+                          expression (src/ppx.ml[221,6541+20]..[221,6541+34])
+                            Pexp_ident "Batteries.dump" (src/ppx.ml[221,6541+20]..[221,6541+34])
+                          [
+                            <arg>
+                            Nolabel
+                              expression (src/ppx.ml[221,6541+35]..[221,6541+63])
+                                Pexp_tuple
+                                [
+                                  expression (src/ppx.ml[221,6541+36]..[221,6541+58])
+                                    Pexp_constant PConst_string("DEBUG:Ptype_variant:",(src/ppx.ml[221,6541+37]..[221,6541+57]),None)
+                                  expression (src/ppx.ml[221,6541+61]..[221,6541+62])
+                                    Pexp_ident "a" (src/ppx.ml[221,6541+61]..[221,6541+62])
+                                ]
+                          ]
+                    ]
+              <case>
+                pattern (src/ppx.ml[224,6654+5]..[224,6654+19])
+                  Ppat_construct "Ptype_record" (src/ppx.ml[224,6654+5]..[224,6654+17])
+                  Some
+                    []
+                    pattern (src/ppx.ml[224,6654+18]..[224,6654+19])
+                      Ppat_var "a" (src/ppx.ml[224,6654+18]..[224,6654+19])
+                expression (src/ppx.ml[225,6682+5]..[225,6682+32])
+                  Pexp_apply
+                  expression (src/ppx.ml[225,6682+5]..[225,6682+29])
+                    Pexp_ident "process_record_kind_list" (src/ppx.ml[225,6682+5]..[225,6682+29])
+                  [
+                    <arg>
+                    Nolabel
+                      expression (src/ppx.ml[225,6682+29]..[225,6682+32])
+                        Pexp_ident "a" (src/ppx.ml[225,6682+30]..[225,6682+31])
+                  ]
+              <case>
+                pattern (src/ppx.ml[226,6715+5]..[226,6715+15])
+                  Ppat_construct "Ptype_open" (src/ppx.ml[226,6715+5]..[226,6715+15])
+                  None
+                expression (src/ppx.ml[226,6715+19]..[226,6715+77])
+                  Pexp_apply
+                  expression (src/ppx.ml[226,6715+20]..[226,6715+33])
+                    Pexp_ident "print_endline" (src/ppx.ml[226,6715+20]..[226,6715+33])
+                  [
+                    <arg>
+                    Nolabel
+                      expression (src/ppx.ml[226,6715+34]..[226,6715+76])
+                        Pexp_apply
+                        expression (src/ppx.ml[226,6715+35]..[226,6715+49])
+                          Pexp_ident "Batteries.dump" (src/ppx.ml[226,6715+35]..[226,6715+49])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (src/ppx.ml[226,6715+50]..[226,6715+75])
+                              Pexp_constant PConst_string("DEBUG:Ptype_abstract:",(src/ppx.ml[226,6715+52]..[226,6715+73]),None)
+                        ]
+                  ]
+            ]
+    ]
+  structure_item (src/ppx.ml[228,6794+0]..[249,7800+38])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (src/ppx.ml[228,6794+4]..[228,6794+19])
+          Ppat_var "print_type_decl" (src/ppx.ml[228,6794+4]..[228,6794+19])
+        expression (src/ppx.ml[228,6794+19]..[249,7800+38]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (src/ppx.ml[228,6794+19]..[228,6794+22])
+            Ppat_var "x" (src/ppx.ml[228,6794+20]..[228,6794+21])
+          expression (src/ppx.ml[229,6819+2]..[249,7800+38])
+            Pexp_match
+            expression (src/ppx.ml[229,6819+8]..[229,6819+9])
+              Pexp_ident "x" (src/ppx.ml[229,6819+8]..[229,6819+9])
+            [
+              <case>
+                pattern (src/ppx.ml[230,6834+4]..[239,7215+5])
+                  Ppat_record Closed
+                  [
+                    "ptype_name" (src/ppx.ml[231,6840+6]..[231,6840+16]) ghost
+                      pattern (src/ppx.ml[231,6840+6]..[231,6840+16])
+                        Ppat_var "ptype_name" (src/ppx.ml[231,6840+6]..[231,6840+16])
+                    "ptype_params" (src/ppx.ml[232,6877+6]..[232,6877+18]) ghost
+                      pattern (src/ppx.ml[232,6877+6]..[232,6877+18])
+                        Ppat_var "ptype_params" (src/ppx.ml[232,6877+6]..[232,6877+18])
+                    "ptype_cstrs" (src/ppx.ml[233,6949+6]..[233,6949+17]) ghost
+                      pattern (src/ppx.ml[233,6949+6]..[233,6949+17])
+                        Ppat_var "ptype_cstrs" (src/ppx.ml[233,6949+6]..[233,6949+17])
+                    "ptype_kind" (src/ppx.ml[234,7018+6]..[234,7018+16]) ghost
+                      pattern (src/ppx.ml[234,7018+6]..[234,7018+16])
+                        Ppat_var "ptype_kind" (src/ppx.ml[234,7018+6]..[234,7018+16])
+                    "ptype_private" (src/ppx.ml[235,7055+6]..[235,7055+19]) ghost
+                      pattern (src/ppx.ml[235,7055+6]..[235,7055+19])
+                        Ppat_var "ptype_private" (src/ppx.ml[235,7055+6]..[235,7055+19])
+                    "ptype_manifest" (src/ppx.ml[236,7096+6]..[236,7096+20]) ghost
+                      pattern (src/ppx.ml[236,7096+6]..[236,7096+20])
+                        Ppat_var "ptype_manifest" (src/ppx.ml[236,7096+6]..[236,7096+20])
+                    "ptype_attributes" (src/ppx.ml[237,7143+6]..[237,7143+22]) ghost
+                      pattern (src/ppx.ml[237,7143+6]..[237,7143+22])
+                        Ppat_var "ptype_attributes" (src/ppx.ml[237,7143+6]..[237,7143+22])
+                    "ptype_loc" (src/ppx.ml[238,7184+6]..[238,7184+15]) ghost
+                      pattern (src/ppx.ml[238,7184+6]..[238,7184+15])
+                        Ppat_var "ptype_loc" (src/ppx.ml[238,7184+6]..[238,7184+15])
+                  ]
+                expression (src/ppx.ml[240,7224+4]..[249,7800+38])
+                  Pexp_sequence
+                  expression (src/ppx.ml[240,7224+4]..[240,7224+69])
+                    Pexp_apply
+                    expression (src/ppx.ml[240,7224+5]..[240,7224+18])
+                      Pexp_ident "print_endline" (src/ppx.ml[240,7224+5]..[240,7224+18])
+                    [
+                      <arg>
+                      Nolabel
+                        expression (src/ppx.ml[240,7224+19]..[240,7224+68])
+                          Pexp_apply
+                          expression (src/ppx.ml[240,7224+20]..[240,7224+34])
+                            Pexp_ident "Batteries.dump" (src/ppx.ml[240,7224+20]..[240,7224+34])
+                          [
+                            <arg>
+                            Nolabel
+                              expression (src/ppx.ml[240,7224+35]..[240,7224+67])
+                                Pexp_tuple
+                                [
+                                  expression (src/ppx.ml[240,7224+36]..[240,7224+54])
+                                    Pexp_constant PConst_string("DEBUG:type_decl:",(src/ppx.ml[240,7224+37]..[240,7224+53]),None)
+                                  expression (src/ppx.ml[240,7224+56]..[240,7224+66])
+                                    Pexp_ident "ptype_name" (src/ppx.ml[240,7224+56]..[240,7224+66])
+                                ]
+                          ]
+                    ]
+                  expression (src/ppx.ml[241,7295+4]..[249,7800+38])
+                    Pexp_sequence
+                    expression (src/ppx.ml[241,7295+4]..[241,7295+72])
+                      Pexp_apply
+                      expression (src/ppx.ml[241,7295+5]..[241,7295+18])
+                        Pexp_ident "print_endline" (src/ppx.ml[241,7295+5]..[241,7295+18])
+                      [
+                        <arg>
+                        Nolabel
+                          expression (src/ppx.ml[241,7295+19]..[241,7295+71])
+                            Pexp_apply
+                            expression (src/ppx.ml[241,7295+20]..[241,7295+34])
+                              Pexp_ident "Batteries.dump" (src/ppx.ml[241,7295+20]..[241,7295+34])
+                            [
+                              <arg>
+                              Nolabel
+                                expression (src/ppx.ml[241,7295+35]..[241,7295+70])
+                                  Pexp_tuple
+                                  [
+                                    expression (src/ppx.ml[241,7295+36]..[241,7295+55])
+                                      Pexp_constant PConst_string("DEBUG:parameters:",(src/ppx.ml[241,7295+37]..[241,7295+54]),None)
+                                    expression (src/ppx.ml[241,7295+57]..[241,7295+69])
+                                      Pexp_ident "ptype_params" (src/ppx.ml[241,7295+57]..[241,7295+69])
+                                  ]
+                            ]
+                      ]
+                    expression (src/ppx.ml[242,7369+4]..[249,7800+38])
+                      Pexp_sequence
+                      expression (src/ppx.ml[242,7369+4]..[242,7369+66])
+                        Pexp_apply
+                        expression (src/ppx.ml[242,7369+5]..[242,7369+18])
+                          Pexp_ident "print_endline" (src/ppx.ml[242,7369+5]..[242,7369+18])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (src/ppx.ml[242,7369+19]..[242,7369+65])
+                              Pexp_apply
+                              expression (src/ppx.ml[242,7369+20]..[242,7369+34])
+                                Pexp_ident "Batteries.dump" (src/ppx.ml[242,7369+20]..[242,7369+34])
+                              [
+                                <arg>
+                                Nolabel
+                                  expression (src/ppx.ml[242,7369+35]..[242,7369+64])
+                                    Pexp_tuple
+                                    [
+                                      expression (src/ppx.ml[242,7369+36]..[242,7369+50])
+                                        Pexp_constant PConst_string("DEBUG:cstrs:",(src/ppx.ml[242,7369+37]..[242,7369+49]),None)
+                                      expression (src/ppx.ml[242,7369+52]..[242,7369+63])
+                                        Pexp_ident "ptype_cstrs" (src/ppx.ml[242,7369+52]..[242,7369+63])
+                                    ]
+                              ]
+                        ]
+                      expression (src/ppx.ml[243,7437+4]..[249,7800+38])
+                        Pexp_sequence
+                        expression (src/ppx.ml[243,7437+4]..[243,7437+63])
+                          Pexp_apply
+                          expression (src/ppx.ml[243,7437+5]..[243,7437+18])
+                            Pexp_ident "print_endline" (src/ppx.ml[243,7437+5]..[243,7437+18])
+                          [
+                            <arg>
+                            Nolabel
+                              expression (src/ppx.ml[243,7437+19]..[243,7437+62])
+                                Pexp_apply
+                                expression (src/ppx.ml[243,7437+20]..[243,7437+34])
+                                  Pexp_ident "Batteries.dump" (src/ppx.ml[243,7437+20]..[243,7437+34])
+                                [
+                                  <arg>
+                                  Nolabel
+                                    expression (src/ppx.ml[243,7437+35]..[243,7437+61])
+                                      Pexp_tuple
+                                      [
+                                        expression (src/ppx.ml[243,7437+36]..[243,7437+49])
+                                          Pexp_constant PConst_string("DEBUG:kind:",(src/ppx.ml[243,7437+37]..[243,7437+48]),None)
+                                        expression (src/ppx.ml[243,7437+50]..[243,7437+60])
+                                          Pexp_ident "ptype_kind" (src/ppx.ml[243,7437+50]..[243,7437+60])
+                                      ]
+                                ]
+                          ]
+                        expression (src/ppx.ml[244,7502+4]..[249,7800+38])
+                          Pexp_sequence
+                          expression (src/ppx.ml[244,7502+4]..[244,7502+29])
+                            Pexp_apply
+                            expression (src/ppx.ml[244,7502+5]..[244,7502+17])
+                              Pexp_ident "process_kind" (src/ppx.ml[244,7502+5]..[244,7502+17])
+                            [
+                              <arg>
+                              Nolabel
+                                expression (src/ppx.ml[244,7502+18]..[244,7502+28])
+                                  Pexp_ident "ptype_kind" (src/ppx.ml[244,7502+18]..[244,7502+28])
+                            ]
+                          expression (src/ppx.ml[245,7533+4]..[249,7800+38])
+                            Pexp_apply
+                            expression (src/ppx.ml[245,7533+5]..[245,7533+18])
+                              Pexp_ident "print_endline" (src/ppx.ml[245,7533+5]..[245,7533+18])
+                            [
+                              <arg>
+                              Nolabel
+                                expression (src/ppx.ml[245,7533+19]..[249,7800+37])
+                                  Pexp_apply
+                                  expression (src/ppx.ml[245,7533+20]..[245,7533+34])
+                                    Pexp_ident "Batteries.dump" (src/ppx.ml[245,7533+20]..[245,7533+34])
+                                  [
+                                    <arg>
+                                    Nolabel
+                                      expression (src/ppx.ml[245,7533+35]..[249,7800+36])
+                                        Pexp_tuple
+                                        [
+                                          expression (src/ppx.ml[245,7533+36]..[245,7533+52])
+                                            Pexp_constant PConst_string("DEBUG:private:",(src/ppx.ml[245,7533+37]..[245,7533+51]),None)
+                                          expression (src/ppx.ml[245,7533+55]..[245,7533+68])
+                                            Pexp_ident "ptype_private" (src/ppx.ml[245,7533+55]..[245,7533+68])
+                                          expression (src/ppx.ml[246,7603+36]..[246,7603+52])
+                                            Pexp_constant PConst_string("DEBUG:manifest",(src/ppx.ml[246,7603+37]..[246,7603+51]),None)
+                                          expression (src/ppx.ml[246,7603+54]..[246,7603+68])
+                                            Pexp_ident "ptype_manifest" (src/ppx.ml[246,7603+54]..[246,7603+68])
+                                          expression (src/ppx.ml[247,7673+36]..[247,7673+48])
+                                            Pexp_constant PConst_string("DEBUG:attr",(src/ppx.ml[247,7673+37]..[247,7673+47]),None)
+                                          expression (src/ppx.ml[247,7673+50]..[247,7673+66])
+                                            Pexp_ident "ptype_attributes" (src/ppx.ml[247,7673+50]..[247,7673+66])
+                                          expression (src/ppx.ml[248,7741+36]..[248,7741+47])
+                                            Pexp_constant PConst_string("DEBUG:loc",(src/ppx.ml[248,7741+37]..[248,7741+46]),None)
+                                          expression (src/ppx.ml[248,7741+49]..[248,7741+58])
+                                            Pexp_ident "ptype_loc" (src/ppx.ml[248,7741+49]..[248,7741+58])
+                                        ]
+                                  ]
+                            ]
+            ]
+    ]
+  structure_item (src/ppx.ml[251,7844+0]..[257,7979+6])
+    Pstr_value Rec
+    [
+      <def>
+        pattern (src/ppx.ml[251,7844+8]..[251,7844+30])
+          Ppat_var "process_type_decl_list" (src/ppx.ml[251,7844+8]..[251,7844+30])
+        expression (src/ppx.ml[251,7844+30]..[257,7979+6]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (src/ppx.ml[251,7844+30]..[251,7844+33])
+            Ppat_var "x" (src/ppx.ml[251,7844+31]..[251,7844+32])
+          expression (src/ppx.ml[252,7880+2]..[257,7979+6])
+            Pexp_match
+            expression (src/ppx.ml[252,7880+8]..[252,7880+9])
+              Pexp_ident "x" (src/ppx.ml[252,7880+8]..[252,7880+9])
+            [
+              <case>
+                pattern (src/ppx.ml[253,7895+4]..[253,7895+6])
+                  Ppat_construct "[]" (src/ppx.ml[253,7895+4]..[253,7895+6])
+                  None
+                expression (src/ppx.ml[253,7895+10]..[253,7895+12])
+                  Pexp_construct "()" (src/ppx.ml[253,7895+10]..[253,7895+12])
+                  None
+              <case>
+                pattern (src/ppx.ml[254,7908+4]..[254,7908+10])
+                  Ppat_construct "::" (src/ppx.ml[254,7908+6]..[254,7908+8])
+                  Some
+                    []
+                    pattern (src/ppx.ml[254,7908+4]..[254,7908+10]) ghost
+                      Ppat_tuple
+                      [
+                        pattern (src/ppx.ml[254,7908+4]..[254,7908+5])
+                          Ppat_var "h" (src/ppx.ml[254,7908+4]..[254,7908+5])
+                        pattern (src/ppx.ml[254,7908+9]..[254,7908+10])
+                          Ppat_var "t" (src/ppx.ml[254,7908+9]..[254,7908+10])
+                      ]
+                expression (src/ppx.ml[255,7922+4]..[257,7979+6])
+                  Pexp_sequence
+                  expression (src/ppx.ml[255,7922+4]..[255,7922+23])
+                    Pexp_apply
+                    expression (src/ppx.ml[255,7922+5]..[255,7922+20])
+                      Pexp_ident "print_type_decl" (src/ppx.ml[255,7922+5]..[255,7922+20])
+                    [
+                      <arg>
+                      Nolabel
+                        expression (src/ppx.ml[255,7922+21]..[255,7922+22])
+                          Pexp_ident "h" (src/ppx.ml[255,7922+21]..[255,7922+22])
+                    ]
+                  expression (src/ppx.ml[256,7947+4]..[257,7979+6])
+                    Pexp_sequence
+                    expression (src/ppx.ml[256,7947+4]..[256,7947+30])
+                      Pexp_apply
+                      expression (src/ppx.ml[256,7947+5]..[256,7947+27])
+                        Pexp_ident "process_type_decl_list" (src/ppx.ml[256,7947+5]..[256,7947+27])
+                      [
+                        <arg>
+                        Nolabel
+                          expression (src/ppx.ml[256,7947+28]..[256,7947+29])
+                            Pexp_ident "t" (src/ppx.ml[256,7947+28]..[256,7947+29])
+                      ]
+                    expression (src/ppx.ml[257,7979+4]..[257,7979+6])
+                      Pexp_construct "()" (src/ppx.ml[257,7979+4]..[257,7979+6])
+                      None
+            ]
+    ]
+  structure_item (src/ppx.ml[259,7991+0]..[285,9955+128])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (src/ppx.ml[259,7991+4]..[259,7991+13])
+          Ppat_var "printdesc" (src/ppx.ml[259,7991+4]..[259,7991+13])
+        expression (src/ppx.ml[259,7991+13]..[285,9955+128]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (src/ppx.ml[259,7991+13]..[259,7991+37])
+            Ppat_constraint
+            pattern (src/ppx.ml[259,7991+14]..[259,7991+15])
+              Ppat_var "x" (src/ppx.ml[259,7991+14]..[259,7991+15])
+            core_type (src/ppx.ml[259,7991+17]..[259,7991+36])
+              Ptyp_constr "structure_item_desc" (src/ppx.ml[259,7991+17]..[259,7991+36])
+              []
+          expression (src/ppx.ml[259,7991+38]..[285,9955+128])
+            Pexp_constraint
+            expression (src/ppx.ml[260,8037+2]..[285,9955+128])
+              Pexp_sequence
+              expression (src/ppx.ml[260,8037+2]..[260,8037+68])
+                Pexp_apply
+                expression (src/ppx.ml[260,8037+3]..[260,8037+16])
+                  Pexp_ident "print_endline" (src/ppx.ml[260,8037+3]..[260,8037+16])
+                [
+                  <arg>
+                  Nolabel
+                    expression (src/ppx.ml[260,8037+17]..[260,8037+67])
+                      Pexp_apply
+                      expression (src/ppx.ml[260,8037+18]..[260,8037+32])
+                        Pexp_ident "Batteries.dump" (src/ppx.ml[260,8037+18]..[260,8037+32])
+                      [
+                        <arg>
+                        Nolabel
+                          expression (src/ppx.ml[260,8037+33]..[260,8037+66])
+                            Pexp_tuple
+                            [
+                              expression (src/ppx.ml[260,8037+34]..[260,8037+62])
+                                Pexp_constant PConst_string("DEBUG:structure_item_desc:",(src/ppx.ml[260,8037+35]..[260,8037+61]),None)
+                              expression (src/ppx.ml[260,8037+64]..[260,8037+65])
+                                Pexp_ident "x" (src/ppx.ml[260,8037+64]..[260,8037+65])
+                            ]
+                      ]
+                ]
+              expression (src/ppx.ml[261,8107+2]..[285,9955+128])
+                Pexp_match
+                expression (src/ppx.ml[261,8107+8]..[261,8107+9])
+                  Pexp_ident "x" (src/ppx.ml[261,8107+8]..[261,8107+9])
+                [
+                  <case>
+                    pattern (src/ppx.ml[262,8122+4]..[262,8122+37])
+                      Ppat_construct "Pstr_eval" (src/ppx.ml[262,8122+4]..[262,8122+13])
+                      Some
+                        []
+                        pattern (src/ppx.ml[262,8122+14]..[262,8122+37])
+                          Ppat_tuple
+                          [
+                            pattern (src/ppx.ml[262,8122+15]..[262,8122+25])
+                              Ppat_var "expression" (src/ppx.ml[262,8122+15]..[262,8122+25])
+                            pattern (src/ppx.ml[262,8122+26]..[262,8122+36])
+                              Ppat_var "attributes" (src/ppx.ml[262,8122+26]..[262,8122+36])
+                          ]
+                    expression (src/ppx.ml[262,8122+41]..[262,8122+117])
+                      Pexp_apply
+                      expression (src/ppx.ml[262,8122+42]..[262,8122+55])
+                        Pexp_ident "print_endline" (src/ppx.ml[262,8122+42]..[262,8122+55])
+                      [
+                        <arg>
+                        Nolabel
+                          expression (src/ppx.ml[262,8122+56]..[262,8122+116])
+                            Pexp_apply
+                            expression (src/ppx.ml[262,8122+57]..[262,8122+71])
+                              Pexp_ident "Batteries.dump" (src/ppx.ml[262,8122+57]..[262,8122+71])
+                            [
+                              <arg>
+                              Nolabel
+                                expression (src/ppx.ml[262,8122+72]..[262,8122+115])
+                                  Pexp_tuple
+                                  [
+                                    expression (src/ppx.ml[262,8122+73]..[262,8122+91])
+                                      Pexp_constant PConst_string("DEBUG:Pstr_eval:",(src/ppx.ml[262,8122+74]..[262,8122+90]),None)
+                                    expression (src/ppx.ml[262,8122+93]..[262,8122+103])
+                                      Pexp_ident "expression" (src/ppx.ml[262,8122+93]..[262,8122+103])
+                                    expression (src/ppx.ml[262,8122+104]..[262,8122+114])
+                                      Pexp_ident "attributes" (src/ppx.ml[262,8122+104]..[262,8122+114])
+                                  ]
+                            ]
+                      ]
+                  <case>
+                    pattern (src/ppx.ml[264,8260+4]..[264,8260+45])
+                      Ppat_construct "Pstr_value" (src/ppx.ml[264,8260+4]..[264,8260+14])
+                      Some
+                        []
+                        pattern (src/ppx.ml[264,8260+15]..[264,8260+45])
+                          Ppat_tuple
+                          [
+                            pattern (src/ppx.ml[264,8260+16]..[264,8260+24])
+                              Ppat_var "rec_flag" (src/ppx.ml[264,8260+16]..[264,8260+24])
+                            pattern (src/ppx.ml[264,8260+26]..[264,8260+44])
+                              Ppat_var "value_binding_list" (src/ppx.ml[264,8260+26]..[264,8260+44])
+                          ]
+                    expression (src/ppx.ml[264,8260+48]..[265,8394+48])
+                      Pexp_sequence
+                      expression (src/ppx.ml[264,8260+48]..[264,8260+132])
+                        Pexp_apply
+                        expression (src/ppx.ml[264,8260+49]..[264,8260+62])
+                          Pexp_ident "print_endline" (src/ppx.ml[264,8260+49]..[264,8260+62])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (src/ppx.ml[264,8260+63]..[264,8260+131])
+                              Pexp_apply
+                              expression (src/ppx.ml[264,8260+64]..[264,8260+78])
+                                Pexp_ident "Batteries.dump" (src/ppx.ml[264,8260+64]..[264,8260+78])
+                              [
+                                <arg>
+                                Nolabel
+                                  expression (src/ppx.ml[264,8260+79]..[264,8260+130])
+                                    Pexp_tuple
+                                    [
+                                      expression (src/ppx.ml[264,8260+80]..[264,8260+99])
+                                        Pexp_constant PConst_string("DEBUG:Pstr_value:",(src/ppx.ml[264,8260+81]..[264,8260+98]),None)
+                                      expression (src/ppx.ml[264,8260+101]..[264,8260+109])
+                                        Pexp_ident "rec_flag" (src/ppx.ml[264,8260+101]..[264,8260+109])
+                                      expression (src/ppx.ml[264,8260+111]..[264,8260+129])
+                                        Pexp_ident "value_binding_list" (src/ppx.ml[264,8260+111]..[264,8260+129])
+                                    ]
+                              ]
+                        ]
+                      expression (src/ppx.ml[265,8394+4]..[265,8394+48])
+                        Pexp_apply
+                        expression (src/ppx.ml[265,8394+4]..[265,8394+28])
+                          Pexp_ident "print_value_binding_list" (src/ppx.ml[265,8394+4]..[265,8394+28])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (src/ppx.ml[265,8394+28]..[265,8394+48])
+                              Pexp_ident "value_binding_list" (src/ppx.ml[265,8394+29]..[265,8394+47])
+                        ]
+                  <case>
+                    pattern (src/ppx.ml[266,8443+4]..[266,8443+36])
+                      Ppat_construct "Pstr_primitive" (src/ppx.ml[266,8443+4]..[266,8443+18])
+                      Some
+                        []
+                        pattern (src/ppx.ml[266,8443+19]..[266,8443+36])
+                          Ppat_var "value_description" (src/ppx.ml[266,8443+19]..[266,8443+36])
+                    expression (src/ppx.ml[266,8443+39]..[266,8443+116])
+                      Pexp_apply
+                      expression (src/ppx.ml[266,8443+40]..[266,8443+53])
+                        Pexp_ident "print_endline" (src/ppx.ml[266,8443+40]..[266,8443+53])
+                      [
+                        <arg>
+                        Nolabel
+                          expression (src/ppx.ml[266,8443+54]..[266,8443+115])
+                            Pexp_apply
+                            expression (src/ppx.ml[266,8443+55]..[266,8443+69])
+                              Pexp_ident "Batteries.dump" (src/ppx.ml[266,8443+55]..[266,8443+69])
+                            [
+                              <arg>
+                              Nolabel
+                                expression (src/ppx.ml[266,8443+70]..[266,8443+114])
+                                  Pexp_tuple
+                                  [
+                                    expression (src/ppx.ml[266,8443+71]..[266,8443+94])
+                                      Pexp_constant PConst_string("DEBUG:Pstr_primitive:",(src/ppx.ml[266,8443+72]..[266,8443+93]),None)
+                                    expression (src/ppx.ml[266,8443+96]..[266,8443+113])
+                                      Pexp_ident "value_description" (src/ppx.ml[266,8443+96]..[266,8443+113])
+                                  ]
+                            ]
+                      ]
+                  <case>
+                    pattern (src/ppx.ml[268,8561+4]..[268,8561+47])
+                      Ppat_construct "Pstr_type" (src/ppx.ml[268,8561+4]..[268,8561+13])
+                      Some
+                        []
+                        pattern (src/ppx.ml[268,8561+14]..[268,8561+47])
+                          Ppat_tuple
+                          [
+                            pattern (src/ppx.ml[268,8561+15]..[268,8561+23])
+                              Ppat_var "rec_flag" (src/ppx.ml[268,8561+15]..[268,8561+23])
+                            pattern (src/ppx.ml[268,8561+25]..[268,8561+46])
+                              Ppat_var "type_declaration_list" (src/ppx.ml[268,8561+25]..[268,8561+46])
+                          ]
+                    expression (src/ppx.ml[270,8640+4]..[271,8691+90])
+                      Pexp_sequence
+                      expression (src/ppx.ml[270,8640+4]..[270,8640+49])
+                        Pexp_apply
+                        expression (src/ppx.ml[270,8640+4]..[270,8640+26])
+                          Pexp_ident "process_type_decl_list" (src/ppx.ml[270,8640+4]..[270,8640+26])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (src/ppx.ml[270,8640+26]..[270,8640+49])
+                              Pexp_ident "type_declaration_list" (src/ppx.ml[270,8640+27]..[270,8640+48])
+                        ]
+                      expression (src/ppx.ml[271,8691+4]..[271,8691+90])
+                        Pexp_apply
+                        expression (src/ppx.ml[271,8691+5]..[271,8691+18])
+                          Pexp_ident "print_endline" (src/ppx.ml[271,8691+5]..[271,8691+18])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (src/ppx.ml[271,8691+19]..[271,8691+89])
+                              Pexp_apply
+                              expression (src/ppx.ml[271,8691+20]..[271,8691+34])
+                                Pexp_ident "Batteries.dump" (src/ppx.ml[271,8691+20]..[271,8691+34])
+                              [
+                                <arg>
+                                Nolabel
+                                  expression (src/ppx.ml[271,8691+35]..[271,8691+88])
+                                    Pexp_tuple
+                                    [
+                                      expression (src/ppx.ml[271,8691+36]..[271,8691+54])
+                                        Pexp_constant PConst_string("DEBUG:Pstr_type:",(src/ppx.ml[271,8691+37]..[271,8691+53]),None)
+                                      expression (src/ppx.ml[271,8691+56]..[271,8691+64])
+                                        Pexp_ident "rec_flag" (src/ppx.ml[271,8691+56]..[271,8691+64])
+                                      expression (src/ppx.ml[271,8691+66]..[271,8691+87])
+                                        Pexp_ident "type_declaration_list" (src/ppx.ml[271,8691+66]..[271,8691+87])
+                                    ]
+                              ]
+                        ]
+                  <case>
+                    pattern (src/ppx.ml[274,8784+4]..[274,8784+31])
+                      Ppat_construct "Pstr_typext" (src/ppx.ml[274,8784+4]..[274,8784+15])
+                      Some
+                        []
+                        pattern (src/ppx.ml[274,8784+17]..[274,8784+31])
+                          Ppat_var "type_extension" (src/ppx.ml[274,8784+17]..[274,8784+31])
+                    expression (src/ppx.ml[274,8784+34]..[274,8784+105])
+                      Pexp_apply
+                      expression (src/ppx.ml[274,8784+35]..[274,8784+48])
+                        Pexp_ident "print_endline" (src/ppx.ml[274,8784+35]..[274,8784+48])
+                      [
+                        <arg>
+                        Nolabel
+                          expression (src/ppx.ml[274,8784+49]..[274,8784+104])
+                            Pexp_apply
+                            expression (src/ppx.ml[274,8784+50]..[274,8784+64])
+                              Pexp_ident "Batteries.dump" (src/ppx.ml[274,8784+50]..[274,8784+64])
+                            [
+                              <arg>
+                              Nolabel
+                                expression (src/ppx.ml[274,8784+65]..[274,8784+103])
+                                  Pexp_tuple
+                                  [
+                                    expression (src/ppx.ml[274,8784+66]..[274,8784+86])
+                                      Pexp_constant PConst_string("DEBUG:Pstr_typext:",(src/ppx.ml[274,8784+67]..[274,8784+85]),None)
+                                    expression (src/ppx.ml[274,8784+88]..[274,8784+102])
+                                      Pexp_ident "type_extension" (src/ppx.ml[274,8784+88]..[274,8784+102])
+                                  ]
+                            ]
+                      ]
+                  <case>
+                    pattern (src/ppx.ml[275,8890+4]..[275,8890+40])
+                      Ppat_construct "Pstr_exception" (src/ppx.ml[275,8890+4]..[275,8890+18])
+                      Some
+                        []
+                        pattern (src/ppx.ml[275,8890+19]..[275,8890+40])
+                          Ppat_var "extension_constructor" (src/ppx.ml[275,8890+19]..[275,8890+40])
+                    expression (src/ppx.ml[275,8890+43]..[275,8890+124])
+                      Pexp_apply
+                      expression (src/ppx.ml[275,8890+44]..[275,8890+57])
+                        Pexp_ident "print_endline" (src/ppx.ml[275,8890+44]..[275,8890+57])
+                      [
+                        <arg>
+                        Nolabel
+                          expression (src/ppx.ml[275,8890+58]..[275,8890+123])
+                            Pexp_apply
+                            expression (src/ppx.ml[275,8890+59]..[275,8890+73])
+                              Pexp_ident "Batteries.dump" (src/ppx.ml[275,8890+59]..[275,8890+73])
+                            [
+                              <arg>
+                              Nolabel
+                                expression (src/ppx.ml[275,8890+74]..[275,8890+122])
+                                  Pexp_tuple
+                                  [
+                                    expression (src/ppx.ml[275,8890+75]..[275,8890+98])
+                                      Pexp_constant PConst_string("DEBUG:Pstr_exception:",(src/ppx.ml[275,8890+76]..[275,8890+97]),None)
+                                    expression (src/ppx.ml[275,8890+100]..[275,8890+121])
+                                      Pexp_ident "extension_constructor" (src/ppx.ml[275,8890+100]..[275,8890+121])
+                                  ]
+                            ]
+                      ]
+                  <case>
+                    pattern (src/ppx.ml[276,9015+4]..[276,9015+31])
+                      Ppat_construct "Pstr_module" (src/ppx.ml[276,9015+4]..[276,9015+15])
+                      Some
+                        []
+                        pattern (src/ppx.ml[276,9015+17]..[276,9015+31])
+                          Ppat_var "module_binding" (src/ppx.ml[276,9015+17]..[276,9015+31])
+                    expression (src/ppx.ml[276,9015+34]..[276,9015+104])
+                      Pexp_apply
+                      expression (src/ppx.ml[276,9015+35]..[276,9015+48])
+                        Pexp_ident "print_endline" (src/ppx.ml[276,9015+35]..[276,9015+48])
+                      [
+                        <arg>
+                        Nolabel
+                          expression (src/ppx.ml[276,9015+49]..[276,9015+103])
+                            Pexp_apply
+                            expression (src/ppx.ml[276,9015+50]..[276,9015+64])
+                              Pexp_ident "Batteries.dump" (src/ppx.ml[276,9015+50]..[276,9015+64])
+                            [
+                              <arg>
+                              Nolabel
+                                expression (src/ppx.ml[276,9015+65]..[276,9015+102])
+                                  Pexp_tuple
+                                  [
+                                    expression (src/ppx.ml[276,9015+66]..[276,9015+86])
+                                      Pexp_constant PConst_string("DEBUG:Pstr_module:",(src/ppx.ml[276,9015+67]..[276,9015+85]),None)
+                                    expression (src/ppx.ml[276,9015+87]..[276,9015+101])
+                                      Pexp_ident "module_binding" (src/ppx.ml[276,9015+87]..[276,9015+101])
+                                  ]
+                            ]
+                      ]
+                  <case>
+                    pattern (src/ppx.ml[277,9120+4]..[277,9120+39])
+                      Ppat_construct "Pstr_recmodule" (src/ppx.ml[277,9120+4]..[277,9120+18])
+                      Some
+                        []
+                        pattern (src/ppx.ml[277,9120+20]..[277,9120+39])
+                          Ppat_var "module_binding_list" (src/ppx.ml[277,9120+20]..[277,9120+39])
+                    expression (src/ppx.ml[277,9120+42]..[277,9120+121])
+                      Pexp_apply
+                      expression (src/ppx.ml[277,9120+43]..[277,9120+56])
+                        Pexp_ident "print_endline" (src/ppx.ml[277,9120+43]..[277,9120+56])
+                      [
+                        <arg>
+                        Nolabel
+                          expression (src/ppx.ml[277,9120+57]..[277,9120+120])
+                            Pexp_apply
+                            expression (src/ppx.ml[277,9120+58]..[277,9120+72])
+                              Pexp_ident "Batteries.dump" (src/ppx.ml[277,9120+58]..[277,9120+72])
+                            [
+                              <arg>
+                              Nolabel
+                                expression (src/ppx.ml[277,9120+73]..[277,9120+119])
+                                  Pexp_tuple
+                                  [
+                                    expression (src/ppx.ml[277,9120+74]..[277,9120+97])
+                                      Pexp_constant PConst_string("DEBUG:Pstr_recmodule:",(src/ppx.ml[277,9120+75]..[277,9120+96]),None)
+                                    expression (src/ppx.ml[277,9120+99]..[277,9120+118])
+                                      Pexp_ident "module_binding_list" (src/ppx.ml[277,9120+99]..[277,9120+118])
+                                  ]
+                            ]
+                      ]
+                  <case>
+                    pattern (src/ppx.ml[278,9242+4]..[278,9242+40])
+                      Ppat_construct "Pstr_modtype" (src/ppx.ml[278,9242+4]..[278,9242+16])
+                      Some
+                        []
+                        pattern (src/ppx.ml[278,9242+17]..[278,9242+40])
+                          Ppat_var "module_type_declaration" (src/ppx.ml[278,9242+17]..[278,9242+40])
+                    expression (src/ppx.ml[278,9242+43]..[278,9242+124])
+                      Pexp_apply
+                      expression (src/ppx.ml[278,9242+44]..[278,9242+57])
+                        Pexp_ident "print_endline" (src/ppx.ml[278,9242+44]..[278,9242+57])
+                      [
+                        <arg>
+                        Nolabel
+                          expression (src/ppx.ml[278,9242+58]..[278,9242+123])
+                            Pexp_apply
+                            expression (src/ppx.ml[278,9242+59]..[278,9242+73])
+                              Pexp_ident "Batteries.dump" (src/ppx.ml[278,9242+59]..[278,9242+73])
+                            [
+                              <arg>
+                              Nolabel
+                                expression (src/ppx.ml[278,9242+74]..[278,9242+122])
+                                  Pexp_tuple
+                                  [
+                                    expression (src/ppx.ml[278,9242+75]..[278,9242+96])
+                                      Pexp_constant PConst_string("DEBUG:Pstr_modtype:",(src/ppx.ml[278,9242+76]..[278,9242+95]),None)
+                                    expression (src/ppx.ml[278,9242+98]..[278,9242+121])
+                                      Pexp_ident "module_type_declaration" (src/ppx.ml[278,9242+98]..[278,9242+121])
+                                  ]
+                            ]
+                      ]
+                  <case>
+                    pattern (src/ppx.ml[280,9384+4]..[280,9384+30])
+                      Ppat_construct "Pstr_open" (src/ppx.ml[280,9384+4]..[280,9384+13])
+                      Some
+                        []
+                        pattern (src/ppx.ml[280,9384+14]..[280,9384+30])
+                          Ppat_var "open_description" (src/ppx.ml[280,9384+14]..[280,9384+30])
+                    expression (src/ppx.ml[280,9384+33]..[280,9384+103])
+                      Pexp_apply
+                      expression (src/ppx.ml[280,9384+34]..[280,9384+47])
+                        Pexp_ident "print_endline" (src/ppx.ml[280,9384+34]..[280,9384+47])
+                      [
+                        <arg>
+                        Nolabel
+                          expression (src/ppx.ml[280,9384+48]..[280,9384+102])
+                            Pexp_apply
+                            expression (src/ppx.ml[280,9384+49]..[280,9384+63])
+                              Pexp_ident "Batteries.dump" (src/ppx.ml[280,9384+49]..[280,9384+63])
+                            [
+                              <arg>
+                              Nolabel
+                                expression (src/ppx.ml[280,9384+64]..[280,9384+101])
+                                  Pexp_tuple
+                                  [
+                                    expression (src/ppx.ml[280,9384+65]..[280,9384+82])
+                                      Pexp_constant PConst_string("DEBUG:Pstr_open",(src/ppx.ml[280,9384+66]..[280,9384+81]),None)
+                                    expression (src/ppx.ml[280,9384+84]..[280,9384+100])
+                                      Pexp_ident "open_description" (src/ppx.ml[280,9384+84]..[280,9384+100])
+                                  ]
+                            ]
+                      ]
+                  <case>
+                    pattern (src/ppx.ml[281,9488+4]..[281,9488+36])
+                      Ppat_construct "Pstr_class" (src/ppx.ml[281,9488+4]..[281,9488+14])
+                      Some
+                        []
+                        pattern (src/ppx.ml[281,9488+15]..[281,9488+36])
+                          Ppat_var "class_declarations" (src/ppx.ml[281,9488+16]..[281,9488+34])
+                    expression (src/ppx.ml[281,9488+39]..[281,9488+113])
+                      Pexp_apply
+                      expression (src/ppx.ml[281,9488+40]..[281,9488+53])
+                        Pexp_ident "print_endline" (src/ppx.ml[281,9488+40]..[281,9488+53])
+                      [
+                        <arg>
+                        Nolabel
+                          expression (src/ppx.ml[281,9488+54]..[281,9488+112])
+                            Pexp_apply
+                            expression (src/ppx.ml[281,9488+55]..[281,9488+69])
+                              Pexp_ident "Batteries.dump" (src/ppx.ml[281,9488+55]..[281,9488+69])
+                            [
+                              <arg>
+                              Nolabel
+                                expression (src/ppx.ml[281,9488+70]..[281,9488+111])
+                                  Pexp_tuple
+                                  [
+                                    expression (src/ppx.ml[281,9488+71]..[281,9488+90])
+                                      Pexp_constant PConst_string("DEBUG:Pstr_class:",(src/ppx.ml[281,9488+72]..[281,9488+89]),None)
+                                    expression (src/ppx.ml[281,9488+92]..[281,9488+110])
+                                      Pexp_ident "class_declarations" (src/ppx.ml[281,9488+92]..[281,9488+110])
+                                  ]
+                            ]
+                      ]
+                  <case>
+                    pattern (src/ppx.ml[282,9602+4]..[282,9602+45])
+                      Ppat_construct "Pstr_class_type" (src/ppx.ml[282,9602+4]..[282,9602+19])
+                      Some
+                        []
+                        pattern (src/ppx.ml[282,9602+20]..[282,9602+45])
+                          Ppat_var "class_type_declarations" (src/ppx.ml[282,9602+21]..[282,9602+44])
+                    expression (src/ppx.ml[282,9602+48]..[282,9602+132])
+                      Pexp_apply
+                      expression (src/ppx.ml[282,9602+49]..[282,9602+62])
+                        Pexp_ident "print_endline" (src/ppx.ml[282,9602+49]..[282,9602+62])
+                      [
+                        <arg>
+                        Nolabel
+                          expression (src/ppx.ml[282,9602+63]..[282,9602+131])
+                            Pexp_apply
+                            expression (src/ppx.ml[282,9602+64]..[282,9602+78])
+                              Pexp_ident "Batteries.dump" (src/ppx.ml[282,9602+64]..[282,9602+78])
+                            [
+                              <arg>
+                              Nolabel
+                                expression (src/ppx.ml[282,9602+79]..[282,9602+130])
+                                  Pexp_tuple
+                                  [
+                                    expression (src/ppx.ml[282,9602+80]..[282,9602+104])
+                                      Pexp_constant PConst_string("DEBUG:Pstr_class_type:",(src/ppx.ml[282,9602+81]..[282,9602+103]),None)
+                                    expression (src/ppx.ml[282,9602+106]..[282,9602+129])
+                                      Pexp_ident "class_type_declarations" (src/ppx.ml[282,9602+106]..[282,9602+129])
+                                  ]
+                            ]
+                      ]
+                  <case>
+                    pattern (src/ppx.ml[283,9735+4]..[283,9735+39])
+                      Ppat_construct "Pstr_include" (src/ppx.ml[283,9735+4]..[283,9735+16])
+                      Some
+                        []
+                        pattern (src/ppx.ml[283,9735+18]..[283,9735+39])
+                          Ppat_var "include_declaration" (src/ppx.ml[283,9735+19]..[283,9735+38])
+                    expression (src/ppx.ml[283,9735+41]..[283,9735+117])
+                      Pexp_apply
+                      expression (src/ppx.ml[283,9735+42]..[283,9735+55])
+                        Pexp_ident "print_endline" (src/ppx.ml[283,9735+42]..[283,9735+55])
+                      [
+                        <arg>
+                        Nolabel
+                          expression (src/ppx.ml[283,9735+56]..[283,9735+116])
+                            Pexp_apply
+                            expression (src/ppx.ml[283,9735+57]..[283,9735+71])
+                              Pexp_ident "Batteries.dump" (src/ppx.ml[283,9735+57]..[283,9735+71])
+                            [
+                              <arg>
+                              Nolabel
+                                expression (src/ppx.ml[283,9735+72]..[283,9735+115])
+                                  Pexp_tuple
+                                  [
+                                    expression (src/ppx.ml[283,9735+73]..[283,9735+94])
+                                      Pexp_constant PConst_string("DEBUG:Pstr_include:",(src/ppx.ml[283,9735+74]..[283,9735+93]),None)
+                                    expression (src/ppx.ml[283,9735+95]..[283,9735+114])
+                                      Pexp_ident "include_declaration" (src/ppx.ml[283,9735+95]..[283,9735+114])
+                                  ]
+                            ]
+                      ]
+                  <case>
+                    pattern (src/ppx.ml[284,9853+4]..[284,9853+30])
+                      Ppat_construct "Pstr_attribute" (src/ppx.ml[284,9853+4]..[284,9853+18])
+                      Some
+                        []
+                        pattern (src/ppx.ml[284,9853+19]..[284,9853+30])
+                          Ppat_var "attribute" (src/ppx.ml[284,9853+20]..[284,9853+29])
+                    expression (src/ppx.ml[284,9853+32]..[284,9853+101])
+                      Pexp_apply
+                      expression (src/ppx.ml[284,9853+33]..[284,9853+46])
+                        Pexp_ident "print_endline" (src/ppx.ml[284,9853+33]..[284,9853+46])
+                      [
+                        <arg>
+                        Nolabel
+                          expression (src/ppx.ml[284,9853+47]..[284,9853+100])
+                            Pexp_apply
+                            expression (src/ppx.ml[284,9853+48]..[284,9853+62])
+                              Pexp_ident "Batteries.dump" (src/ppx.ml[284,9853+48]..[284,9853+62])
+                            [
+                              <arg>
+                              Nolabel
+                                expression (src/ppx.ml[284,9853+63]..[284,9853+99])
+                                  Pexp_tuple
+                                  [
+                                    expression (src/ppx.ml[284,9853+64]..[284,9853+87])
+                                      Pexp_constant PConst_string("DEBUG:Pstr_attribute:",(src/ppx.ml[284,9853+65]..[284,9853+86]),None)
+                                    expression (src/ppx.ml[284,9853+89]..[284,9853+98])
+                                      Pexp_ident "attribute" (src/ppx.ml[284,9853+89]..[284,9853+98])
+                                  ]
+                            ]
+                      ]
+                  <case>
+                    pattern (src/ppx.ml[285,9955+4]..[285,9955+44])
+                      Ppat_construct "Pstr_extension" (src/ppx.ml[285,9955+4]..[285,9955+18])
+                      Some
+                        []
+                        pattern (src/ppx.ml[285,9955+19]..[285,9955+44])
+                          Ppat_tuple
+                          [
+                            pattern (src/ppx.ml[285,9955+21]..[285,9955+30])
+                              Ppat_var "extension" (src/ppx.ml[285,9955+21]..[285,9955+30])
+                            pattern (src/ppx.ml[285,9955+33]..[285,9955+43])
+                              Ppat_var "attributes" (src/ppx.ml[285,9955+33]..[285,9955+43])
+                          ]
+                    expression (src/ppx.ml[285,9955+46]..[285,9955+128])
+                      Pexp_apply
+                      expression (src/ppx.ml[285,9955+47]..[285,9955+60])
+                        Pexp_ident "print_endline" (src/ppx.ml[285,9955+47]..[285,9955+60])
+                      [
+                        <arg>
+                        Nolabel
+                          expression (src/ppx.ml[285,9955+61]..[285,9955+127])
+                            Pexp_apply
+                            expression (src/ppx.ml[285,9955+62]..[285,9955+76])
+                              Pexp_ident "Batteries.dump" (src/ppx.ml[285,9955+62]..[285,9955+76])
+                            [
+                              <arg>
+                              Nolabel
+                                expression (src/ppx.ml[285,9955+77]..[285,9955+126])
+                                  Pexp_tuple
+                                  [
+                                    expression (src/ppx.ml[285,9955+78]..[285,9955+101])
+                                      Pexp_constant PConst_string("DEBUG:Pstr_extension:",(src/ppx.ml[285,9955+79]..[285,9955+100]),None)
+                                    expression (src/ppx.ml[285,9955+103]..[285,9955+112])
+                                      Pexp_ident "extension" (src/ppx.ml[285,9955+103]..[285,9955+112])
+                                    expression (src/ppx.ml[285,9955+115]..[285,9955+125])
+                                      Pexp_ident "attributes" (src/ppx.ml[285,9955+115]..[285,9955+125])
+                                  ]
+                            ]
+                      ]
+                ]
+            core_type (src/ppx.ml[259,7991+39]..[259,7991+43])
+              Ptyp_constr "unit" (src/ppx.ml[259,7991+39]..[259,7991+43])
+              []
+    ]
+  structure_item (src/ppx.ml[287,10085+0]..[287,10085+11])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (src/ppx.ml[287,10085+4]..[287,10085+7])
+          Ppat_var "foo" (src/ppx.ml[287,10085+4]..[287,10085+7])
+        expression (src/ppx.ml[287,10085+10]..[287,10085+11])
+          Pexp_constant PConst_int (1,None)
+    ]
+  structure_item (src/ppx.ml[289,10100+0]..[297,10319+6])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (src/ppx.ml[289,10100+4]..[289,10100+12])
+          Ppat_var "printone" (src/ppx.ml[289,10100+4]..[289,10100+12])
+        expression (src/ppx.ml[289,10100+13]..[297,10319+6]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (src/ppx.ml[289,10100+13]..[289,10100+34])
+            Ppat_constraint
+            pattern (src/ppx.ml[289,10100+14]..[289,10100+15])
+              Ppat_var "x" (src/ppx.ml[289,10100+14]..[289,10100+15])
+            core_type (src/ppx.ml[289,10100+18]..[289,10100+32])
+              Ptyp_constr "structure_item" (src/ppx.ml[289,10100+18]..[289,10100+32])
+              []
+          expression (src/ppx.ml[289,10100+35]..[297,10319+6])
+            Pexp_constraint
+            expression (src/ppx.ml[290,10143+2]..[297,10319+6])
+              Pexp_match
+              expression (src/ppx.ml[290,10143+8]..[290,10143+9])
+                Pexp_ident "x" (src/ppx.ml[290,10143+8]..[290,10143+9])
+              [
+                <case>
+                  pattern (src/ppx.ml[291,10158+3]..[294,10208+3])
+                    Ppat_record Open
+                    [
+                      "pstr_desc" (src/ppx.ml[292,10163+4]..[292,10163+13]) ghost
+                        pattern (src/ppx.ml[292,10163+4]..[292,10163+13])
+                          Ppat_var "pstr_desc" (src/ppx.ml[292,10163+4]..[292,10163+13])
+                    ]
+                  expression (src/ppx.ml[296,10292+4]..[297,10319+6])
+                    Pexp_sequence
+                    expression (src/ppx.ml[296,10292+4]..[296,10292+25])
+                      Pexp_apply
+                      expression (src/ppx.ml[296,10292+5]..[296,10292+14])
+                        Pexp_ident "printdesc" (src/ppx.ml[296,10292+5]..[296,10292+14])
+                      [
+                        <arg>
+                        Nolabel
+                          expression (src/ppx.ml[296,10292+15]..[296,10292+24])
+                            Pexp_ident "pstr_desc" (src/ppx.ml[296,10292+15]..[296,10292+24])
+                      ]
+                    expression (src/ppx.ml[297,10319+4]..[297,10319+6])
+                      Pexp_construct "()" (src/ppx.ml[297,10319+4]..[297,10319+6])
+                      None
+              ]
+            core_type (src/ppx.ml[289,10100+36]..[289,10100+40])
+              Ptyp_constr "unit" (src/ppx.ml[289,10100+36]..[289,10100+40])
+              []
+    ]
+  structure_item (src/ppx.ml[303,10439+0]..[305,10520+12])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (src/ppx.ml[303,10439+4]..[303,10439+13])
+          Ppat_var "printone2" (src/ppx.ml[303,10439+4]..[303,10439+13])
+        expression (src/ppx.ml[303,10439+14]..[305,10520+12]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (src/ppx.ml[303,10439+14]..[303,10439+15])
+            Ppat_var "x" (src/ppx.ml[303,10439+14]..[303,10439+15])
+          expression (src/ppx.ml[303,10439+16]..[305,10520+12])
+            Pexp_constraint
+            expression (src/ppx.ml[304,10463+2]..[305,10520+12])
+              Pexp_sequence
+              expression (src/ppx.ml[304,10463+2]..[304,10463+55])
+                Pexp_apply
+                expression (src/ppx.ml[304,10463+3]..[304,10463+16])
+                  Pexp_ident "print_endline" (src/ppx.ml[304,10463+3]..[304,10463+16])
+                [
+                  <arg>
+                  Nolabel
+                    expression (src/ppx.ml[304,10463+17]..[304,10463+54])
+                      Pexp_apply
+                      expression (src/ppx.ml[304,10463+18]..[304,10463+32])
+                        Pexp_ident "Batteries.dump" (src/ppx.ml[304,10463+18]..[304,10463+32])
+                      [
+                        <arg>
+                        Nolabel
+                          expression (src/ppx.ml[304,10463+33]..[304,10463+53])
+                            Pexp_tuple
+                            [
+                              expression (src/ppx.ml[304,10463+34]..[304,10463+50])
+                                Pexp_constant PConst_string("DEBUG:SECOND::",(src/ppx.ml[304,10463+35]..[304,10463+49]),None)
+                              expression (src/ppx.ml[304,10463+51]..[304,10463+52])
+                                Pexp_ident "x" (src/ppx.ml[304,10463+51]..[304,10463+52])
+                            ]
+                      ]
+                ]
+              expression (src/ppx.ml[305,10520+2]..[305,10520+12])
+                Pexp_apply
+                expression (src/ppx.ml[305,10520+2]..[305,10520+10])
+                  Pexp_ident "printone" (src/ppx.ml[305,10520+2]..[305,10520+10])
+                [
+                  <arg>
+                  Nolabel
+                    expression (src/ppx.ml[305,10520+11]..[305,10520+12])
+                      Pexp_ident "x" (src/ppx.ml[305,10520+11]..[305,10520+12])
+                ]
+            core_type (src/ppx.ml[303,10439+17]..[303,10439+21])
+              Ptyp_constr "unit" (src/ppx.ml[303,10439+17]..[303,10439+21])
+              []
+    ]
+  structure_item (src/ppx.ml[307,10536+0]..[309,10567+3])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (src/ppx.ml[307,10536+4]..[307,10536+9])
+          Ppat_var "proc1" (src/ppx.ml[307,10536+4]..[307,10536+9])
+        expression (src/ppx.ml[307,10536+10]..[309,10567+3]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (src/ppx.ml[307,10536+10]..[307,10536+11])
+            Ppat_var "x" (src/ppx.ml[307,10536+10]..[307,10536+11])
+          expression (src/ppx.ml[308,10552+2]..[309,10567+3])
+            Pexp_sequence
+            expression (src/ppx.ml[308,10552+2]..[308,10552+13])
+              Pexp_apply
+              expression (src/ppx.ml[308,10552+2]..[308,10552+11])
+                Pexp_ident "printone2" (src/ppx.ml[308,10552+2]..[308,10552+11])
+              [
+                <arg>
+                Nolabel
+                  expression (src/ppx.ml[308,10552+12]..[308,10552+13])
+                    Pexp_ident "x" (src/ppx.ml[308,10552+12]..[308,10552+13])
+              ]
+            expression (src/ppx.ml[309,10567+2]..[309,10567+3])
+              Pexp_ident "x" (src/ppx.ml[309,10567+2]..[309,10567+3])
+    ]
+  structure_item (src/ppx.ml[311,10572+0]..[314,10721+4])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (src/ppx.ml[311,10572+4]..[311,10572+9])
+          Ppat_var "debug" (src/ppx.ml[311,10572+4]..[311,10572+9])
+        expression (src/ppx.ml[311,10572+10]..[314,10721+4]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (src/ppx.ml[311,10572+10]..[311,10572+14])
+            Ppat_var "proc" (src/ppx.ml[311,10572+10]..[311,10572+14])
+          expression (src/ppx.ml[311,10572+15]..[314,10721+4]) ghost
+            Pexp_fun
+            Nolabel
+            None
+            pattern (src/ppx.ml[311,10572+15]..[311,10572+18])
+              Ppat_var "lst" (src/ppx.ml[311,10572+15]..[311,10572+18])
+            expression (src/ppx.ml[311,10572+19]..[314,10721+4])
+              Pexp_constraint
+              expression (src/ppx.ml[312,10600+2]..[314,10721+4])
+                Pexp_let Nonrec
+                [
+                  <def>
+                    pattern (src/ppx.ml[312,10600+6]..[312,10600+12])
+                      Ppat_var "result" (src/ppx.ml[312,10600+6]..[312,10600+12])
+                    expression (src/ppx.ml[312,10600+15]..[312,10600+32])
+                      Pexp_apply
+                      expression (src/ppx.ml[312,10600+15]..[312,10600+23])
+                        Pexp_ident "List.map" (src/ppx.ml[312,10600+15]..[312,10600+23])
+                      [
+                        <arg>
+                        Nolabel
+                          expression (src/ppx.ml[312,10600+24]..[312,10600+28])
+                            Pexp_ident "proc" (src/ppx.ml[312,10600+24]..[312,10600+28])
+                        <arg>
+                        Nolabel
+                          expression (src/ppx.ml[312,10600+29]..[312,10600+32])
+                            Pexp_ident "lst" (src/ppx.ml[312,10600+29]..[312,10600+32])
+                      ]
+                ]
+                expression (src/ppx.ml[313,10636+2]..[314,10721+4])
+                  Pexp_sequence
+                  expression (src/ppx.ml[313,10636+2]..[313,10636+83])
+                    Pexp_apply
+                    expression (src/ppx.ml[313,10636+2]..[313,10636+11])
+                      Pexp_ident "List.iter" (src/ppx.ml[313,10636+2]..[313,10636+11])
+                    [
+                      <arg>
+                      Nolabel
+                        expression (src/ppx.ml[313,10636+12]..[313,10636+76])
+                          Pexp_fun
+                          Nolabel
+                          None
+                          pattern (src/ppx.ml[313,10636+17]..[313,10636+18])
+                            Ppat_var "i" (src/ppx.ml[313,10636+17]..[313,10636+18])
+                          expression (src/ppx.ml[313,10636+22]..[313,10636+75])
+                            Pexp_apply
+                            expression (src/ppx.ml[313,10636+22]..[313,10636+35])
+                              Pexp_ident "print_endline" (src/ppx.ml[313,10636+22]..[313,10636+35])
+                            [
+                              <arg>
+                              Nolabel
+                                expression (src/ppx.ml[313,10636+36]..[313,10636+75])
+                                  Pexp_apply
+                                  expression (src/ppx.ml[313,10636+37]..[313,10636+51])
+                                    Pexp_ident "Batteries.dump" (src/ppx.ml[313,10636+37]..[313,10636+51])
+                                  [
+                                    <arg>
+                                    Nolabel
+                                      expression (src/ppx.ml[313,10636+52]..[313,10636+74])
+                                        Pexp_tuple
+                                        [
+                                          expression (src/ppx.ml[313,10636+53]..[313,10636+70])
+                                            Pexp_constant PConst_string("DEBUG:TOPLEVEL:",(src/ppx.ml[313,10636+54]..[313,10636+69]),None)
+                                          expression (src/ppx.ml[313,10636+72]..[313,10636+73])
+                                            Pexp_ident "i" (src/ppx.ml[313,10636+72]..[313,10636+73])
+                                        ]
+                                  ]
+                            ]
+                      <arg>
+                      Nolabel
+                        expression (src/ppx.ml[313,10636+77]..[313,10636+83])
+                          Pexp_ident "result" (src/ppx.ml[313,10636+77]..[313,10636+83])
+                    ]
+                  expression (src/ppx.ml[314,10721+2]..[314,10721+4])
+                    Pexp_construct "()" (src/ppx.ml[314,10721+2]..[314,10721+4])
+                    None
+              core_type (src/ppx.ml[311,10572+21]..[311,10572+25])
+                Ptyp_constr "unit" (src/ppx.ml[311,10572+21]..[311,10572+25])
+                []
+    ]
+  structure_item (src/ppx.ml[316,10743+0]..[319,10867+3])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (src/ppx.ml[316,10743+4]..[316,10743+13])
+          Ppat_var "transform" (src/ppx.ml[316,10743+4]..[316,10743+13])
+        expression (src/ppx.ml[316,10743+14]..[319,10867+3]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (src/ppx.ml[316,10743+14]..[316,10743+15])
+            Ppat_var "x" (src/ppx.ml[316,10743+14]..[316,10743+15])
+          expression (src/ppx.ml[317,10798+2]..[319,10867+3])
+            Pexp_sequence
+            expression (src/ppx.ml[317,10798+2]..[317,10798+48])
+              Pexp_apply
+              expression (src/ppx.ml[317,10798+3]..[317,10798+16])
+                Pexp_ident "print_endline" (src/ppx.ml[317,10798+3]..[317,10798+16])
+              [
+                <arg>
+                Nolabel
+                  expression (src/ppx.ml[317,10798+17]..[317,10798+47])
+                    Pexp_apply
+                    expression (src/ppx.ml[317,10798+18]..[317,10798+32])
+                      Pexp_ident "Batteries.dump" (src/ppx.ml[317,10798+18]..[317,10798+32])
+                    [
+                      <arg>
+                      Nolabel
+                        expression (src/ppx.ml[317,10798+33]..[317,10798+46])
+                          Pexp_tuple
+                          [
+                            expression (src/ppx.ml[317,10798+34]..[317,10798+43])
+                              Pexp_constant PConst_string("DEBUG3:",(src/ppx.ml[317,10798+35]..[317,10798+42]),None)
+                            expression (src/ppx.ml[317,10798+44]..[317,10798+45])
+                              Pexp_ident "x" (src/ppx.ml[317,10798+44]..[317,10798+45])
+                          ]
+                    ]
+              ]
+            expression (src/ppx.ml[318,10848+2]..[319,10867+3])
+              Pexp_sequence
+              expression (src/ppx.ml[318,10848+2]..[318,10848+17])
+                Pexp_apply
+                expression (src/ppx.ml[318,10848+3]..[318,10848+8])
+                  Pexp_ident "debug" (src/ppx.ml[318,10848+3]..[318,10848+8])
+                [
+                  <arg>
+                  Nolabel
+                    expression (src/ppx.ml[318,10848+9]..[318,10848+14])
+                      Pexp_ident "proc1" (src/ppx.ml[318,10848+9]..[318,10848+14])
+                  <arg>
+                  Nolabel
+                    expression (src/ppx.ml[318,10848+15]..[318,10848+16])
+                      Pexp_ident "x" (src/ppx.ml[318,10848+15]..[318,10848+16])
+                ]
+              expression (src/ppx.ml[319,10867+2]..[319,10867+3])
+                Pexp_ident "x" (src/ppx.ml[319,10867+2]..[319,10867+3])
+    ]
+  structure_item (src/ppx.ml[321,10874+1]..[321,10874+69])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (src/ppx.ml[321,10874+5]..[321,10874+7])
+          Ppat_construct "()" (src/ppx.ml[321,10874+5]..[321,10874+7])
+          None
+        expression (src/ppx.ml[321,10874+10]..[321,10874+69])
+          Pexp_apply
+          expression (src/ppx.ml[321,10874+10]..[321,10874+40])
+            Pexp_ident "Driver.register_transformation" (src/ppx.ml[321,10874+10]..[321,10874+40])
+          [
+            <arg>
+            Labelled "impl"
+              expression (src/ppx.ml[321,10874+47]..[321,10874+56])
+                Pexp_ident "transform" (src/ppx.ml[321,10874+47]..[321,10874+56])
+            <arg>
+            Nolabel
+              expression (src/ppx.ml[321,10874+57]..[321,10874+69])
+                Pexp_constant PConst_string("simple-ppx",(src/ppx.ml[321,10874+58]..[321,10874+68]),None)
+          ]
+    ]
+]
+
+open Ppxlib
+let printdesc2 (x : structure_item_desc) =
+  (print_endline (Batteries.dump ("DEBUG21:", x)); () : unit)
+let printone (x : structure_item) =
+  (match x with | { pstr_desc;_} -> (printdesc2 pstr_desc; ()) : unit)
+let printone2 x =
+  (print_endline (Batteries.dump ("DEBUG1:", x)); printone x : unit)
+let proc2 x = (printone2 x; () : unit)
+let printdesc2 (x : structure_item_desc) =
+  (print_endline (Batteries.dump ("DEBUG33:", x)) : unit)
+let print_value_binding_expr (x : expression) =
+  (match x with
+   | { pexp_desc; pexp_loc; pexp_loc_stack; pexp_attributes } ->
+       (print_endline (Batteries.dump ("DEBUG66:desc", pexp_desc));
+        print_endline (Batteries.dump ("DEBUG66:desc", pexp_attributes));
+        ()) : unit)
+let print_value_binding_list2 (x : value_binding) =
+  (match x with
+   | { pvb_pat; pvb_expr; pvb_attributes; pvb_loc } ->
+       (print_endline (Batteries.dump ("DEBUG:value_binding.pat:", pvb_pat));
+        print_endline
+          (Batteries.dump ("DEBUG:value_binding.expr:", pvb_expr));
+        print_endline
+          (Batteries.dump ("DEBUG:value_binding.atrr:", pvb_attributes));
+        print_endline (Batteries.dump ("DEBUG:value_binding.loc:", pvb_loc))) : 
+  unit)
+let rec print_value_binding_list (x : value_binding list) =
+  (match x with
+   | [] -> ()
+   | h::t -> (print_value_binding_list2 h; print_value_binding_list t; ()) : 
+  unit)
+let process_id (x : longident_loc) =
+  match x with | { txt;_} -> (match txt with | txt2 -> txt2)
+let rec process_record_kind x =
+  match x with
+  | { pld_name; pld_mutable; pld_type; pld_loc; pld_attributes } ->
+      print_endline
+        (Batteries.dump
+           ("DEBUG:precord_kind:", pld_name, "mutable", pld_mutable, "type",
+             pld_type))
+and process_core_type_desc x =
+  match x with
+  | Ptyp_constr (a, b) ->
+      let myid = process_id a in
+      (process_core_type_list b;
+       Printf.printf "DEBUG:Ptyp_constr1:%s" myid;
+       print_endline
+         (Batteries.dump ("DEBUG:Ptyp_constr:", "id", a, myid, "types", b)))
+  | Ptyp_tuple a -> print_endline (Batteries.dump "DEBUG:Ptyp_tuple:")
+  | Ptyp_any -> print_endline (Batteries.dump "DEBUG:Ptyp_any:")
+  | Ptyp_var name -> print_endline (Batteries.dump ("DEBUG:Ptyp_var:", name))
+  | Ptyp_arrow (arg_label, core_type, core_type2) ->
+      print_endline (Batteries.dump "DEBUG:Ptyp_arrow10:")
+  | Ptyp_object (a, b) -> print_endline (Batteries.dump "DEBUG:Ptyp_arrow8:")
+  | Ptyp_class (a, b) -> print_endline (Batteries.dump "DEBUG:Ptyp_arrow7:")
+  | Ptyp_alias (a, b) -> print_endline (Batteries.dump "DEBUG:Ptyp_arrow6:")
+  | Ptyp_variant (a, b, c) ->
+      print_endline (Batteries.dump "DEBUG:Ptyp_arrow5:")
+  | Ptyp_poly (a, b) -> print_endline (Batteries.dump "DEBUG:Ptyp_arrow4:")
+  | Ptyp_package a ->
+      print_endline (Batteries.dump ("DEBUG:Ptyp_arrow3:", a))
+  | Ptyp_extension a ->
+      print_endline (Batteries.dump ("DEBUG:Ptyp_extension:", a))
+and process_record_kind_list x =
+  match x with
+  | [] -> ()
+  | h::t -> (process_record_kind h; process_record_kind_list t; ())
+and process_core_type x =
+  match x with
+  | { ptyp_desc; ptyp_loc; ptyp_loc_stack; ptyp_attributes } ->
+      (process_core_type_desc ptyp_desc;
+       print_endline
+         (Batteries.dump ("DEBUG:core_type.ptyp_desc:", ptyp_desc)))
+and process_core_type_list (x : core_type list) =
+  match x with
+  | [] -> ()
+  | h::t -> (process_core_type h; process_core_type_list t)
+let print_constructor_arguments x =
+  match x with
+  | Pcstr_tuple a ->
+      (process_core_type_list a;
+       print_endline (Batteries.dump ("DEBUG:Pcstr_tuple:", a)))
+  | Pcstr_record a ->
+      print_endline (Batteries.dump ("DEBUG:Pcstr_record:", a))
+let rec process_pype_variant_constructor_declaration_list x =
+  match x with
+  | [] -> ()
+  | h::t ->
+      (match h with
+       | { pcd_name; pcd_vars; pcd_args; pcd_res; pcd_loc; pcd_attributes }
+           ->
+           (print_constructor_arguments pcd_args;
+            print_endline
+              (Batteries.dump
+                 ("constructor_declaration:", pcd_name, "vars", pcd_vars,
+                   "args", pcd_args, "res", pcd_res, "loc", pcd_loc, "attrs",
+                   pcd_attributes));
+            process_pype_variant_constructor_declaration_list t;
+            ()))
+let process_kind x =
+  match x with
+  | Ptype_abstract -> print_endline (Batteries.dump "DEBUG:Ptype_abstract:")
+  | Ptype_variant a ->
+      (process_pype_variant_constructor_declaration_list a;
+       print_endline (Batteries.dump ("DEBUG:Ptype_variant:", a)))
+  | Ptype_record a -> process_record_kind_list a
+  | Ptype_open -> print_endline (Batteries.dump "DEBUG:Ptype_abstract:")
+let print_type_decl x =
+  match x with
+  | { ptype_name; ptype_params; ptype_cstrs; ptype_kind; ptype_private;
+      ptype_manifest; ptype_attributes; ptype_loc } ->
+      (print_endline (Batteries.dump ("DEBUG:type_decl:", ptype_name));
+       print_endline (Batteries.dump ("DEBUG:parameters:", ptype_params));
+       print_endline (Batteries.dump ("DEBUG:cstrs:", ptype_cstrs));
+       print_endline (Batteries.dump ("DEBUG:kind:", ptype_kind));
+       process_kind ptype_kind;
+       print_endline
+         (Batteries.dump
+            ("DEBUG:private:", ptype_private, "DEBUG:manifest",
+              ptype_manifest, "DEBUG:attr", ptype_attributes, "DEBUG:loc",
+              ptype_loc)))
+let rec process_type_decl_list x =
+  match x with
+  | [] -> ()
+  | h::t -> (print_type_decl h; process_type_decl_list t; ())
+let printdesc (x : structure_item_desc) =
+  (print_endline (Batteries.dump ("DEBUG:structure_item_desc:", x));
+   (match x with
+    | Pstr_eval (expression, attributes) ->
+        print_endline
+          (Batteries.dump ("DEBUG:Pstr_eval:", expression, attributes))
+    | Pstr_value (rec_flag, value_binding_list) ->
+        (print_endline
+           (Batteries.dump
+              ("DEBUG:Pstr_value:", rec_flag, value_binding_list));
+         print_value_binding_list value_binding_list)
+    | Pstr_primitive value_description ->
+        print_endline
+          (Batteries.dump ("DEBUG:Pstr_primitive:", value_description))
+    | Pstr_type (rec_flag, type_declaration_list) ->
+        (process_type_decl_list type_declaration_list;
+         print_endline
+           (Batteries.dump
+              ("DEBUG:Pstr_type:", rec_flag, type_declaration_list)))
+    | Pstr_typext type_extension ->
+        print_endline (Batteries.dump ("DEBUG:Pstr_typext:", type_extension))
+    | Pstr_exception extension_constructor ->
+        print_endline
+          (Batteries.dump ("DEBUG:Pstr_exception:", extension_constructor))
+    | Pstr_module module_binding ->
+        print_endline (Batteries.dump ("DEBUG:Pstr_module:", module_binding))
+    | Pstr_recmodule module_binding_list ->
+        print_endline
+          (Batteries.dump ("DEBUG:Pstr_recmodule:", module_binding_list))
+    | Pstr_modtype module_type_declaration ->
+        print_endline
+          (Batteries.dump ("DEBUG:Pstr_modtype:", module_type_declaration))
+    | Pstr_open open_description ->
+        print_endline (Batteries.dump ("DEBUG:Pstr_open", open_description))
+    | Pstr_class class_declarations ->
+        print_endline
+          (Batteries.dump ("DEBUG:Pstr_class:", class_declarations))
+    | Pstr_class_type class_type_declarations ->
+        print_endline
+          (Batteries.dump ("DEBUG:Pstr_class_type:", class_type_declarations))
+    | Pstr_include include_declaration ->
+        print_endline
+          (Batteries.dump ("DEBUG:Pstr_include:", include_declaration))
+    | Pstr_attribute attribute ->
+        print_endline (Batteries.dump ("DEBUG:Pstr_attribute:", attribute))
+    | Pstr_extension (extension, attributes) ->
+        print_endline
+          (Batteries.dump ("DEBUG:Pstr_extension:", extension, attributes))) : 
+  unit)
+let foo = 1
+let printone (x : structure_item) =
+  (match x with | { pstr_desc;_} -> (printdesc pstr_desc; ()) : unit)
+let printone2 x =
+  (print_endline (Batteries.dump ("DEBUG:SECOND::", x)); printone x : 
+  unit)
+let proc1 x = printone2 x; x
+let debug proc lst =
+  (let result = List.map proc lst in
+   List.iter (fun i -> print_endline (Batteries.dump ("DEBUG:TOPLEVEL:", i)))
+     result;
+   () : unit)
+let transform x =
+  print_endline (Batteries.dump ("DEBUG3:", x)); debug proc1 x; x
+let () = Driver.register_transformation ~impl:transform "simple-ppx"

@@ -1,0 +1,2709 @@
+[
+  structure_item (_none_[0,0+-1]..[0,0+-1]) ghost
+    Pstr_attribute "ocaml.ppx.context"
+    [
+      structure_item (_none_[0,0+-1]..[0,0+-1]) ghost
+        Pstr_eval
+        expression (_none_[0,0+-1]..[0,0+-1]) ghost
+          Pexp_record
+          [
+            "tool_name" (_none_[0,0+-1]..[0,0+-1]) ghost
+              expression (_none_[0,0+-1]..[0,0+-1]) ghost
+                Pexp_constant PConst_string("ppx_driver",(_none_[0,0+-1]..[0,0+-1]) ghost,None)
+            "include_dirs" (_none_[0,0+-1]..[0,0+-1]) ghost
+              expression (_none_[0,0+-1]..[0,0+-1]) ghost
+                Pexp_construct "[]" (_none_[0,0+-1]..[0,0+-1]) ghost
+                None
+            "load_path" (_none_[0,0+-1]..[0,0+-1]) ghost
+              expression (_none_[0,0+-1]..[0,0+-1]) ghost
+                Pexp_construct "[]" (_none_[0,0+-1]..[0,0+-1]) ghost
+                None
+            "open_modules" (_none_[0,0+-1]..[0,0+-1]) ghost
+              expression (_none_[0,0+-1]..[0,0+-1]) ghost
+                Pexp_construct "[]" (_none_[0,0+-1]..[0,0+-1]) ghost
+                None
+            "for_package" (_none_[0,0+-1]..[0,0+-1]) ghost
+              expression (_none_[0,0+-1]..[0,0+-1]) ghost
+                Pexp_construct "None" (_none_[0,0+-1]..[0,0+-1]) ghost
+                None
+            "debug" (_none_[0,0+-1]..[0,0+-1]) ghost
+              expression (_none_[0,0+-1]..[0,0+-1]) ghost
+                Pexp_construct "false" (_none_[0,0+-1]..[0,0+-1]) ghost
+                None
+            "use_threads" (_none_[0,0+-1]..[0,0+-1]) ghost
+              expression (_none_[0,0+-1]..[0,0+-1]) ghost
+                Pexp_construct "false" (_none_[0,0+-1]..[0,0+-1]) ghost
+                None
+            "use_vmthreads" (_none_[0,0+-1]..[0,0+-1]) ghost
+              expression (_none_[0,0+-1]..[0,0+-1]) ghost
+                Pexp_construct "false" (_none_[0,0+-1]..[0,0+-1]) ghost
+                None
+            "recursive_types" (_none_[0,0+-1]..[0,0+-1]) ghost
+              expression (_none_[0,0+-1]..[0,0+-1]) ghost
+                Pexp_construct "false" (_none_[0,0+-1]..[0,0+-1]) ghost
+                None
+            "principal" (_none_[0,0+-1]..[0,0+-1]) ghost
+              expression (_none_[0,0+-1]..[0,0+-1]) ghost
+                Pexp_construct "false" (_none_[0,0+-1]..[0,0+-1]) ghost
+                None
+            "transparent_modules" (_none_[0,0+-1]..[0,0+-1]) ghost
+              expression (_none_[0,0+-1]..[0,0+-1]) ghost
+                Pexp_construct "false" (_none_[0,0+-1]..[0,0+-1]) ghost
+                None
+            "unboxed_types" (_none_[0,0+-1]..[0,0+-1]) ghost
+              expression (_none_[0,0+-1]..[0,0+-1]) ghost
+                Pexp_construct "false" (_none_[0,0+-1]..[0,0+-1]) ghost
+                None
+            "unsafe_string" (_none_[0,0+-1]..[0,0+-1]) ghost
+              expression (_none_[0,0+-1]..[0,0+-1]) ghost
+                Pexp_construct "false" (_none_[0,0+-1]..[0,0+-1]) ghost
+                None
+            "cookies" (_none_[0,0+-1]..[0,0+-1]) ghost
+              expression (_none_[0,0+-1]..[0,0+-1]) ghost
+                Pexp_construct "[]" (_none_[0,0+-1]..[0,0+-1]) ghost
+                None
+          ]
+          None
+    ]
+  structure_item (test/test.ml[1,0+0]..[1,0+13])
+    Pstr_open Fresh
+    module_expr (test/test.ml[1,0+5]..[1,0+13])
+      Pmod_ident "Alcotest" (test/test.ml[1,0+5]..[1,0+13])
+  structure_item (test/test.ml[2,14+0]..[2,14+11])
+    Pstr_open Fresh
+    module_expr (test/test.ml[2,14+5]..[2,14+11])
+      Pmod_ident "Ppxlib" (test/test.ml[2,14+5]..[2,14+11])
+  structure_item (test/test.ml[4,31+0]..[4,31+23])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (test/test.ml[4,31+4]..[4,31+7])
+          Ppat_var "loc" (test/test.ml[4,31+4]..[4,31+7])
+        expression (test/test.ml[4,31+10]..[4,31+23])
+          Pexp_ident "Location.none" (test/test.ml[4,31+10]..[4,31+23])
+    ]
+  structure_item (test/test.ml[6,56+0]..[6,56+16])
+    Pstr_module
+    "Ast" (test/test.ml[6,56+7]..[6,56+10])
+      module_expr (test/test.ml[6,56+13]..[6,56+16])
+        Pmod_ident "Ast" (test/test.ml[6,56+13]..[6,56+16])
+  structure_item (test/test.ml[7,73+0]..[7,73+30])
+    Pstr_module
+    "Ast_helper" (test/test.ml[7,73+7]..[7,73+17])
+      module_expr (test/test.ml[7,73+20]..[7,73+30])
+        Pmod_ident "Ast_helper" (test/test.ml[7,73+20]..[7,73+30])
+  structure_item (test/test.ml[8,104+0]..[8,104+42])
+    Pstr_module
+    "Ast_magic" (test/test.ml[8,104+7]..[8,104+16])
+      module_expr (test/test.ml[8,104+19]..[8,104+42])
+        Pmod_ident "Selected_ast.Ast.Config" (test/test.ml[8,104+19]..[8,104+42])
+  structure_item (test/test.ml[9,147+0]..[9,147+26])
+    Pstr_module
+    "Asttypes" (test/test.ml[9,147+7]..[9,147+15])
+      module_expr (test/test.ml[9,147+18]..[9,147+26])
+        Pmod_ident "Asttypes" (test/test.ml[9,147+18]..[9,147+26])
+  structure_item (test/test.ml[10,174+0]..[10,174+20])
+    Pstr_module
+    "Parse" (test/test.ml[10,174+7]..[10,174+12])
+      module_expr (test/test.ml[10,174+15]..[10,174+20])
+        Pmod_ident "Parse" (test/test.ml[10,174+15]..[10,174+20])
+  structure_item (test/test.ml[11,195+0]..[11,195+28])
+    Pstr_module
+    "Parsetree" (test/test.ml[11,195+7]..[11,195+16])
+      module_expr (test/test.ml[11,195+19]..[11,195+28])
+        Pmod_ident "Parsetree" (test/test.ml[11,195+19]..[11,195+28])
+  structure_item (test/test.ml[12,224+0]..[12,224+35])
+    Pstr_module
+    "Pprintast" (test/test.ml[12,224+7]..[12,224+16])
+      module_expr (test/test.ml[12,224+19]..[12,224+35])
+        Pmod_ident "Astlib.Pprintast" (test/test.ml[12,224+19]..[12,224+35])
+  structure_item (test/test.ml[13,260+0]..[13,260+34])
+    Pstr_module
+    "Selected_ast" (test/test.ml[13,260+7]..[13,260+19])
+      module_expr (test/test.ml[13,260+22]..[13,260+34])
+        Pmod_ident "Selected_ast" (test/test.ml[13,260+22]..[13,260+34])
+  structure_item (test/test.ml[15,296+0]..[24,543+25])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (test/test.ml[15,296+4]..[15,296+7])
+          Ppat_var "ast" (test/test.ml[15,296+4]..[15,296+7])
+        expression (test/test.ml[16,306+2]..[24,543+25])
+          Pexp_let Nonrec
+          [
+            <def>
+              pattern (test/test.ml[16,306+6]..[16,306+12])
+                Ppat_var "pp_ast" (test/test.ml[16,306+6]..[16,306+12])
+              expression (test/test.ml[16,306+13]..[17,327+62]) ghost
+                Pexp_fun
+                Nolabel
+                None
+                pattern (test/test.ml[16,306+13]..[16,306+16])
+                  Ppat_var "fmt" (test/test.ml[16,306+13]..[16,306+16])
+                expression (test/test.ml[16,306+17]..[17,327+62]) ghost
+                  Pexp_fun
+                  Nolabel
+                  None
+                  pattern (test/test.ml[16,306+17]..[16,306+18])
+                    Ppat_var "v" (test/test.ml[16,306+17]..[16,306+18])
+                  expression (test/test.ml[17,327+4]..[17,327+62])
+                    Pexp_apply
+                    expression (test/test.ml[17,327+4]..[17,327+18])
+                      Pexp_ident "Format.fprintf" (test/test.ml[17,327+4]..[17,327+18])
+                    [
+                      <arg>
+                      Nolabel
+                        expression (test/test.ml[17,327+19]..[17,327+22])
+                          Pexp_ident "fmt" (test/test.ml[17,327+19]..[17,327+22])
+                      <arg>
+                      Nolabel
+                        expression (test/test.ml[17,327+23]..[17,327+27])
+                          Pexp_constant PConst_string("%S",(test/test.ml[17,327+24]..[17,327+26]),None)
+                      <arg>
+                      Nolabel
+                        expression (test/test.ml[17,327+28]..[17,327+62])
+                          Pexp_apply
+                          expression (test/test.ml[17,327+29]..[17,327+59])
+                            Pexp_ident "Pprintast.string_of_expression" (test/test.ml[17,327+29]..[17,327+59])
+                          [
+                            <arg>
+                            Nolabel
+                              expression (test/test.ml[17,327+60]..[17,327+61])
+                                Pexp_ident "v" (test/test.ml[17,327+60]..[17,327+61])
+                          ]
+                    ]
+          ]
+          expression (test/test.ml[19,395+2]..[24,543+25])
+            Pexp_let Nonrec
+            [
+              <def>
+                pattern (test/test.ml[19,395+6]..[19,395+13])
+                  Ppat_var "compare" (test/test.ml[19,395+6]..[19,395+13])
+                expression (test/test.ml[19,395+14]..[22,492+45]) ghost
+                  Pexp_fun
+                  Nolabel
+                  None
+                  pattern (test/test.ml[19,395+14]..[19,395+22])
+                    Ppat_var "expected" (test/test.ml[19,395+14]..[19,395+22])
+                  expression (test/test.ml[19,395+23]..[22,492+45]) ghost
+                    Pexp_fun
+                    Nolabel
+                    None
+                    pattern (test/test.ml[19,395+23]..[19,395+29])
+                      Ppat_var "actual" (test/test.ml[19,395+23]..[19,395+29])
+                    expression (test/test.ml[20,427+4]..[22,492+45])
+                      Pexp_apply
+                      expression (test/test.ml[20,427+4]..[20,427+16])
+                        Pexp_ident "String.equal" (test/test.ml[20,427+4]..[20,427+16])
+                      [
+                        <arg>
+                        Nolabel
+                          expression (test/test.ml[21,444+6]..[21,444+47])
+                            Pexp_apply
+                            expression (test/test.ml[21,444+7]..[21,444+37])
+                              Pexp_ident "Pprintast.string_of_expression" (test/test.ml[21,444+7]..[21,444+37])
+                            [
+                              <arg>
+                              Nolabel
+                                expression (test/test.ml[21,444+38]..[21,444+46])
+                                  Pexp_ident "expected" (test/test.ml[21,444+38]..[21,444+46])
+                            ]
+                        <arg>
+                        Nolabel
+                          expression (test/test.ml[22,492+6]..[22,492+45])
+                            Pexp_apply
+                            expression (test/test.ml[22,492+7]..[22,492+37])
+                              Pexp_ident "Pprintast.string_of_expression" (test/test.ml[22,492+7]..[22,492+37])
+                            [
+                              <arg>
+                              Nolabel
+                                expression (test/test.ml[22,492+38]..[22,492+44])
+                                  Pexp_ident "actual" (test/test.ml[22,492+38]..[22,492+44])
+                            ]
+                      ]
+            ]
+            expression (test/test.ml[24,543+2]..[24,543+25])
+              Pexp_apply
+              expression (test/test.ml[24,543+2]..[24,543+10])
+                Pexp_ident "testable" (test/test.ml[24,543+2]..[24,543+10])
+              [
+                <arg>
+                Nolabel
+                  expression (test/test.ml[24,543+11]..[24,543+17])
+                    Pexp_ident "pp_ast" (test/test.ml[24,543+11]..[24,543+17])
+                <arg>
+                Nolabel
+                  expression (test/test.ml[24,543+18]..[24,543+25])
+                    Pexp_ident "compare" (test/test.ml[24,543+18]..[24,543+25])
+              ]
+    ]
+  structure_item (test/test.ml[26,570+0]..[27,584+71])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (test/test.ml[26,570+4]..[26,570+8])
+          Ppat_var "test" (test/test.ml[26,570+4]..[26,570+8])
+        expression (test/test.ml[26,570+9]..[27,584+71]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (test/test.ml[26,570+9]..[26,570+11])
+            Ppat_construct "()" (test/test.ml[26,570+9]..[26,570+11])
+            None
+          expression (test/test.ml[27,584+2]..[27,584+71])
+            Pexp_apply
+            expression (test/test.ml[27,584+2]..[27,584+7])
+              Pexp_ident "check" (test/test.ml[27,584+2]..[27,584+7])
+            [
+              <arg>
+              Nolabel
+                expression (test/test.ml[27,584+8]..[27,584+11])
+                  Pexp_ident "ast" (test/test.ml[27,584+8]..[27,584+11])
+              <arg>
+              Nolabel
+                expression (test/test.ml[27,584+12]..[27,584+20])
+                  Pexp_constant PConst_string("case I",(test/test.ml[27,584+13]..[27,584+19]),None)
+              <arg>
+              Nolabel
+                expression (test/test.ml[27,584+21]..[27,584+56]) ghost
+                  Pexp_constraint
+                  expression (test/test.ml[27,584+21]..[27,584+56]) ghost
+                    Pexp_record
+                    [
+                      "pexp_desc" (test/test.ml[27,584+21]..[27,584+56]) ghost
+                        expression (test/test.ml[27,584+21]..[27,584+56]) ghost
+                          Pexp_construct "Pexp_constant" (test/test.ml[27,584+21]..[27,584+56]) ghost
+                          Some
+                            expression (test/test.ml[27,584+21]..[27,584+56]) ghost
+                              Pexp_construct "Pconst_string" (test/test.ml[27,584+21]..[27,584+56]) ghost
+                              Some
+                                expression (test/test.ml[27,584+21]..[27,584+56]) ghost
+                                  Pexp_tuple
+                                  [
+                                    expression (test/test.ml[27,584+21]..[27,584+56]) ghost
+                                      Pexp_constant PConst_string("r3p14ccd 70 r4nd0m 5tr1n9",(test/test.ml[27,584+21]..[27,584+56]) ghost,None)
+                                    expression (test/test.ml[27,584+21]..[27,584+56]) ghost
+                                      Pexp_ident "loc" (test/test.ml[27,584+21]..[27,584+56]) ghost
+                                    expression (test/test.ml[27,584+21]..[27,584+56]) ghost
+                                      Pexp_construct "None" (test/test.ml[27,584+21]..[27,584+56]) ghost
+                                      None
+                                  ]
+                      "pexp_loc" (test/test.ml[27,584+21]..[27,584+56]) ghost
+                        expression (test/test.ml[27,584+21]..[27,584+56]) ghost
+                          Pexp_ident "loc" (test/test.ml[27,584+21]..[27,584+56]) ghost
+                      "pexp_loc_stack" (test/test.ml[27,584+21]..[27,584+56]) ghost
+                        expression (test/test.ml[27,584+21]..[27,584+56]) ghost
+                          Pexp_construct "[]" (test/test.ml[27,584+21]..[27,584+56]) ghost
+                          None
+                      "pexp_attributes" (test/test.ml[27,584+21]..[27,584+56]) ghost
+                        expression (test/test.ml[27,584+21]..[27,584+56]) ghost
+                          Pexp_construct "[]" (test/test.ml[27,584+21]..[27,584+56]) ghost
+                          None
+                    ]
+                    None
+                  core_type (test/test.ml[27,584+21]..[27,584+56]) ghost
+                    Ptyp_constr "Ppxlib_ast.Ast.expression" (test/test.ml[27,584+21]..[27,584+56]) ghost
+                    []
+              <arg>
+              Nolabel
+                expression (test/test.ml[27,584+57]..[27,584+71]) ghost
+                  Pexp_constraint
+                  expression (test/test.ml[27,584+57]..[27,584+71]) ghost
+                    Pexp_record
+                    [
+                      "pexp_desc" (test/test.ml[27,584+57]..[27,584+71]) ghost
+                        expression (test/test.ml[27,584+57]..[27,584+71]) ghost
+                          Pexp_construct "Pexp_extension" (test/test.ml[27,584+57]..[27,584+71]) ghost
+                          Some
+                            expression (test/test.ml[27,584+57]..[27,584+71]) ghost
+                              Pexp_tuple
+                              [
+                                expression (test/test.ml[27,584+57]..[27,584+71]) ghost
+                                  Pexp_record
+                                  [
+                                    "txt" (test/test.ml[27,584+57]..[27,584+71]) ghost
+                                      expression (test/test.ml[27,584+57]..[27,584+71]) ghost
+                                        Pexp_constant PConst_string("yay",(test/test.ml[27,584+57]..[27,584+71]) ghost,None)
+                                    "loc" (test/test.ml[27,584+57]..[27,584+71]) ghost
+                                      expression (test/test.ml[27,584+57]..[27,584+71]) ghost
+                                        Pexp_ident "loc" (test/test.ml[27,584+57]..[27,584+71]) ghost
+                                  ]
+                                  None
+                                expression (test/test.ml[27,584+57]..[27,584+71]) ghost
+                                  Pexp_construct "PStr" (test/test.ml[27,584+57]..[27,584+71]) ghost
+                                  Some
+                                    expression (test/test.ml[27,584+57]..[27,584+71]) ghost
+                                      Pexp_construct "[]" (test/test.ml[27,584+57]..[27,584+71]) ghost
+                                      None
+                              ]
+                      "pexp_loc" (test/test.ml[27,584+57]..[27,584+71]) ghost
+                        expression (test/test.ml[27,584+57]..[27,584+71]) ghost
+                          Pexp_ident "loc" (test/test.ml[27,584+57]..[27,584+71]) ghost
+                      "pexp_loc_stack" (test/test.ml[27,584+57]..[27,584+71]) ghost
+                        expression (test/test.ml[27,584+57]..[27,584+71]) ghost
+                          Pexp_construct "[]" (test/test.ml[27,584+57]..[27,584+71]) ghost
+                          None
+                      "pexp_attributes" (test/test.ml[27,584+57]..[27,584+71]) ghost
+                        expression (test/test.ml[27,584+57]..[27,584+71]) ghost
+                          Pexp_construct "[]" (test/test.ml[27,584+57]..[27,584+71]) ghost
+                          None
+                    ]
+                    None
+                  core_type (test/test.ml[27,584+57]..[27,584+71]) ghost
+                    Ptyp_constr "Ppxlib_ast.Ast.expression" (test/test.ml[27,584+57]..[27,584+71]) ghost
+                    []
+            ]
+    ]
+  structure_item (test/test.ml[29,657+0]..[30,666+74])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (test/test.ml[29,657+4]..[29,657+6])
+          Ppat_construct "()" (test/test.ml[29,657+4]..[29,657+6])
+          None
+        expression (test/test.ml[30,666+2]..[30,666+74])
+          Pexp_apply
+          expression (test/test.ml[30,666+2]..[30,666+5])
+            Pexp_ident "run" (test/test.ml[30,666+2]..[30,666+5])
+          [
+            <arg>
+            Nolabel
+              expression (test/test.ml[30,666+6]..[30,666+28])
+                Pexp_constant PConst_string("Simple ppx test suit",(test/test.ml[30,666+7]..[30,666+27]),None)
+            <arg>
+            Nolabel
+              expression (test/test.ml[30,666+29]..[30,666+74])
+                Pexp_construct "::" (test/test.ml[30,666+31]..[30,666+74]) ghost
+                Some
+                  expression (test/test.ml[30,666+31]..[30,666+74]) ghost
+                    Pexp_tuple
+                    [
+                      expression (test/test.ml[30,666+31]..[30,666+72])
+                        Pexp_tuple
+                        [
+                          expression (test/test.ml[30,666+32]..[30,666+43])
+                            Pexp_constant PConst_string("Transform",(test/test.ml[30,666+33]..[30,666+42]),None)
+                          expression (test/test.ml[30,666+45]..[30,666+71])
+                            Pexp_construct "::" (test/test.ml[30,666+47]..[30,666+71]) ghost
+                            Some
+                              expression (test/test.ml[30,666+47]..[30,666+71]) ghost
+                                Pexp_tuple
+                                [
+                                  expression (test/test.ml[30,666+47]..[30,666+69])
+                                    Pexp_tuple
+                                    [
+                                      expression (test/test.ml[30,666+48]..[30,666+54])
+                                        Pexp_constant PConst_string("Test",(test/test.ml[30,666+49]..[30,666+53]),None)
+                                      expression (test/test.ml[30,666+56]..[30,666+62])
+                                        Pexp_variant "Quick"
+                                        None
+                                      expression (test/test.ml[30,666+64]..[30,666+68])
+                                        Pexp_ident "test" (test/test.ml[30,666+64]..[30,666+68])
+                                    ]
+                                  expression (test/test.ml[30,666+70]..[30,666+71]) ghost
+                                    Pexp_construct "[]" (test/test.ml[30,666+70]..[30,666+71]) ghost
+                                    None
+                                ]
+                        ]
+                      expression (test/test.ml[30,666+73]..[30,666+74]) ghost
+                        Pexp_construct "[]" (test/test.ml[30,666+73]..[30,666+74]) ghost
+                        None
+                    ]
+          ]
+    ]
+  structure_item (test/test.ml[32,742+0]..[142,6422+20])
+    Pstr_type Rec
+    [
+      type_declaration "expression_desc" (test/test.ml[32,742+5]..[32,742+20]) (test/test.ml[32,742+0]..[142,6422+20])
+        ptype_params =
+          []
+        ptype_cstrs =
+          []
+        ptype_kind =
+          Ptype_variant
+            [
+              (test/test.ml[33,765+2]..[33,765+31])
+                "Pexp_ident" (test/test.ml[33,765+4]..[33,765+14])
+                attribute "ocaml.doc"
+                  [
+                    structure_item (test/test.ml[33,765+33]..[33,765+73])
+                      Pstr_eval
+                      expression (test/test.ml[33,765+33]..[33,765+73])
+                        Pexp_constant PConst_string(" Identifiers such as [x] and [M.x] ",(test/test.ml[33,765+33]..[33,765+73]),None)
+                  ]
+                [
+                  core_type (test/test.ml[33,765+18]..[33,765+31])
+                    Ptyp_constr "longident_loc" (test/test.ml[33,765+18]..[33,765+31])
+                    []
+                ]
+                None
+              (test/test.ml[34,839+2]..[34,839+29])
+                "Pexp_constant" (test/test.ml[34,839+4]..[34,839+17])
+                attribute "ocaml.doc"
+                  [
+                    structure_item (test/test.ml[35,869+6]..[36,949+17])
+                      Pstr_eval
+                      expression (test/test.ml[35,869+6]..[36,949+17])
+                        Pexp_constant PConst_string(" Expressions constant such as [1], ['a'], [\"true\"], [1.0], [1l], [1L],\n          [1n] ",(test/test.ml[35,869+6]..[36,949+17]),None)
+                  ]
+                [
+                  core_type (test/test.ml[34,839+21]..[34,839+29])
+                    Ptyp_constr "constant" (test/test.ml[34,839+21]..[34,839+29])
+                    []
+                ]
+                None
+              (test/test.ml[37,967+2]..[37,967+58])
+                "Pexp_let" (test/test.ml[37,967+4]..[37,967+12])
+                attribute "ocaml.doc"
+                  [
+                    structure_item (test/test.ml[38,1026+6]..[42,1297+60])
+                      Pstr_eval
+                      expression (test/test.ml[38,1026+6]..[42,1297+60])
+                        Pexp_constant PConst_string(" [Pexp_let(flag, \\[(P1,E1) ; ... ; (Pn,En)\\], E)] represents:\n          - [let P1 = E1 and ... and Pn = EN in E] when [flag] is\n            {{!Asttypes.rec_flag.Nonrecursive} [Nonrecursive]},\n          - [let rec P1 = E1 and ... and Pn = EN in E] when [flag] is\n            {{!Asttypes.rec_flag.Recursive} [Recursive]}. ",(test/test.ml[38,1026+6]..[42,1297+60]),None)
+                  ]
+                [
+                  core_type (test/test.ml[37,967+16]..[37,967+24])
+                    Ptyp_constr "rec_flag" (test/test.ml[37,967+16]..[37,967+24])
+                    []
+                  core_type (test/test.ml[37,967+27]..[37,967+45])
+                    Ptyp_constr "list" (test/test.ml[37,967+41]..[37,967+45])
+                    [
+                      core_type (test/test.ml[37,967+27]..[37,967+40])
+                        Ptyp_constr "value_binding" (test/test.ml[37,967+27]..[37,967+40])
+                        []
+                    ]
+                  core_type (test/test.ml[37,967+48]..[37,967+58])
+                    Ptyp_constr "expression" (test/test.ml[37,967+48]..[37,967+58])
+                    []
+                ]
+                None
+              (test/test.ml[43,1358+2]..[43,1358+26])
+                "Pexp_function" (test/test.ml[43,1358+4]..[43,1358+17])
+                attribute "ocaml.doc"
+                  [
+                    structure_item (test/test.ml[43,1358+28]..[43,1358+71])
+                      Pstr_eval
+                      expression (test/test.ml[43,1358+28]..[43,1358+71])
+                        Pexp_constant PConst_string(" [function P1 -> E1 | ... | Pn -> En] ",(test/test.ml[43,1358+28]..[43,1358+71]),None)
+                  ]
+                [
+                  core_type (test/test.ml[43,1358+21]..[43,1358+26])
+                    Ptyp_constr "cases" (test/test.ml[43,1358+21]..[43,1358+26])
+                    []
+                ]
+                None
+              (test/test.ml[44,1430+2]..[44,1430+68])
+                "Pexp_fun" (test/test.ml[44,1430+4]..[44,1430+12])
+                attribute "ocaml.doc"
+                  [
+                    structure_item (test/test.ml[45,1499+6]..[61,2367+27])
+                      Pstr_eval
+                      expression (test/test.ml[45,1499+6]..[61,2367+27])
+                        Pexp_constant PConst_string(" [Pexp_fun(lbl, exp0, P, E1)] represents:\n          - [fun P -> E1] when [lbl] is {{!Asttypes.arg_label.Nolabel}\n            [Nolabel]} and [exp0] is [None]\n          - [fun ~l:P -> E1] when [lbl] is {{!Asttypes.arg_label.Labelled}\n            [Labelled l]} and [exp0] is [None]\n          - [fun ?l:P -> E1] when [lbl] is {{!Asttypes.arg_label.Optional}\n            [Optional l]} and [exp0] is [None]\n          - [fun ?l:(P = E0) -> E1] when [lbl] is\n            {{!Asttypes.arg_label.Optional} [Optional l]} and [exp0] is\n            [Some E0]\n          Notes:\n          - If [E0] is provided, only {{!Asttypes.arg_label.Optional}\n            [Optional]} is allowed.\n          - [fun P1 P2 .. Pn -> E1] is represented as nested\n            {{!expression_desc.Pexp_fun} [Pexp_fun]}.\n          - [let f P = E] is represented using {{!expression_desc.Pexp_fun}\n            [Pexp_fun]}. ",(test/test.ml[45,1499+6]..[61,2367+27]),None)
+                  ]
+                [
+                  core_type (test/test.ml[44,1430+16]..[44,1430+25])
+                    Ptyp_constr "arg_label" (test/test.ml[44,1430+16]..[44,1430+25])
+                    []
+                  core_type (test/test.ml[44,1430+28]..[44,1430+45])
+                    Ptyp_constr "option" (test/test.ml[44,1430+39]..[44,1430+45])
+                    [
+                      core_type (test/test.ml[44,1430+28]..[44,1430+38])
+                        Ptyp_constr "expression" (test/test.ml[44,1430+28]..[44,1430+38])
+                        []
+                    ]
+                  core_type (test/test.ml[44,1430+48]..[44,1430+55])
+                    Ptyp_constr "pattern" (test/test.ml[44,1430+48]..[44,1430+55])
+                    []
+                  core_type (test/test.ml[44,1430+58]..[44,1430+68])
+                    Ptyp_constr "expression" (test/test.ml[44,1430+58]..[44,1430+68])
+                    []
+                ]
+                None
+              (test/test.ml[62,2395+2]..[62,2395+60])
+                "Pexp_apply" (test/test.ml[62,2395+4]..[62,2395+14])
+                attribute "ocaml.doc"
+                  [
+                    structure_item (test/test.ml[63,2456+6]..[69,2809+31])
+                      Pstr_eval
+                      expression (test/test.ml[63,2456+6]..[69,2809+31])
+                        Pexp_constant PConst_string(" [Pexp_apply(E0, \\[(l1, E1) ; ... ; (ln, En)\\])] represents\n          [E0 ~l1:E1 ... ~ln:En]\n          [li] can be {{!Asttypes.arg_label.Nolabel} [Nolabel]} (non labeled\n          argument), {{!Asttypes.arg_label.Labelled} [Labelled]} (labelled\n          arguments) or {{!Asttypes.arg_label.Optional} [Optional]} (optional\n          argument).\n          Invariant: [n > 0] ",(test/test.ml[63,2456+6]..[69,2809+31]),None)
+                  ]
+                [
+                  core_type (test/test.ml[62,2395+18]..[62,2395+28])
+                    Ptyp_constr "expression" (test/test.ml[62,2395+18]..[62,2395+28])
+                    []
+                  core_type (test/test.ml[62,2395+31]..[62,2395+60])
+                    Ptyp_constr "list" (test/test.ml[62,2395+56]..[62,2395+60])
+                    [
+                      core_type (test/test.ml[62,2395+32]..[62,2395+54])
+                        Ptyp_tuple
+                        [
+                          core_type (test/test.ml[62,2395+32]..[62,2395+41])
+                            Ptyp_constr "arg_label" (test/test.ml[62,2395+32]..[62,2395+41])
+                            []
+                          core_type (test/test.ml[62,2395+44]..[62,2395+54])
+                            Ptyp_constr "expression" (test/test.ml[62,2395+44]..[62,2395+54])
+                            []
+                        ]
+                    ]
+                ]
+                None
+              (test/test.ml[70,2841+2]..[70,2841+36])
+                "Pexp_match" (test/test.ml[70,2841+4]..[70,2841+14])
+                attribute "ocaml.doc"
+                  [
+                    structure_item (test/test.ml[71,2878+6]..[71,2878+54])
+                      Pstr_eval
+                      expression (test/test.ml[71,2878+6]..[71,2878+54])
+                        Pexp_constant PConst_string(" [match E0 with P1 -> E1 | ... | Pn -> En] ",(test/test.ml[71,2878+6]..[71,2878+54]),None)
+                  ]
+                [
+                  core_type (test/test.ml[70,2841+18]..[70,2841+28])
+                    Ptyp_constr "expression" (test/test.ml[70,2841+18]..[70,2841+28])
+                    []
+                  core_type (test/test.ml[70,2841+31]..[70,2841+36])
+                    Ptyp_constr "cases" (test/test.ml[70,2841+31]..[70,2841+36])
+                    []
+                ]
+                None
+              (test/test.ml[72,2933+2]..[72,2933+34])
+                "Pexp_try" (test/test.ml[72,2933+4]..[72,2933+12])
+                attribute "ocaml.doc"
+                  [
+                    structure_item (test/test.ml[73,2968+6]..[73,2968+52])
+                      Pstr_eval
+                      expression (test/test.ml[73,2968+6]..[73,2968+52])
+                        Pexp_constant PConst_string(" [try E0 with P1 -> E1 | ... | Pn -> En] ",(test/test.ml[73,2968+6]..[73,2968+52]),None)
+                  ]
+                [
+                  core_type (test/test.ml[72,2933+16]..[72,2933+26])
+                    Ptyp_constr "expression" (test/test.ml[72,2933+16]..[72,2933+26])
+                    []
+                  core_type (test/test.ml[72,2933+29]..[72,2933+34])
+                    Ptyp_constr "cases" (test/test.ml[72,2933+29]..[72,2933+34])
+                    []
+                ]
+                None
+              (test/test.ml[74,3021+2]..[74,3021+33])
+                "Pexp_tuple" (test/test.ml[74,3021+4]..[74,3021+14])
+                attribute "ocaml.doc"
+                  [
+                    structure_item (test/test.ml[75,3055+6]..[76,3093+32])
+                      Pstr_eval
+                      expression (test/test.ml[75,3055+6]..[76,3093+32])
+                        Pexp_constant PConst_string(" Expressions [(E1, ..., En)]\n          Invariant: [n >= 2] ",(test/test.ml[75,3055+6]..[76,3093+32]),None)
+                  ]
+                [
+                  core_type (test/test.ml[74,3021+18]..[74,3021+33])
+                    Ptyp_constr "list" (test/test.ml[74,3021+29]..[74,3021+33])
+                    [
+                      core_type (test/test.ml[74,3021+18]..[74,3021+28])
+                        Ptyp_constr "expression" (test/test.ml[74,3021+18]..[74,3021+28])
+                        []
+                    ]
+                ]
+                None
+              (test/test.ml[77,3126+2]..[77,3126+55])
+                "Pexp_construct" (test/test.ml[77,3126+4]..[77,3126+18])
+                attribute "ocaml.doc"
+                  [
+                    structure_item (test/test.ml[78,3182+6]..[81,3309+79])
+                      Pstr_eval
+                      expression (test/test.ml[78,3182+6]..[81,3309+79])
+                        Pexp_constant PConst_string(" [Pexp_construct(C, exp)] represents:\n          - [C] when [exp] is [None],\n          - [C E] when [exp] is [Some E],\n          - [C (E1, ..., En)] when [exp] is [Some (Pexp_tuple\\[E1;...;En\\])] ",(test/test.ml[78,3182+6]..[81,3309+79]),None)
+                  ]
+                [
+                  core_type (test/test.ml[77,3126+22]..[77,3126+35])
+                    Ptyp_constr "longident_loc" (test/test.ml[77,3126+22]..[77,3126+35])
+                    []
+                  core_type (test/test.ml[77,3126+38]..[77,3126+55])
+                    Ptyp_constr "option" (test/test.ml[77,3126+49]..[77,3126+55])
+                    [
+                      core_type (test/test.ml[77,3126+38]..[77,3126+48])
+                        Ptyp_constr "expression" (test/test.ml[77,3126+38]..[77,3126+48])
+                        []
+                    ]
+                ]
+                None
+              (test/test.ml[82,3389+2]..[82,3389+45])
+                "Pexp_variant" (test/test.ml[82,3389+4]..[82,3389+16])
+                attribute "ocaml.doc"
+                  [
+                    structure_item (test/test.ml[83,3435+6]..[85,3518+44])
+                      Pstr_eval
+                      expression (test/test.ml[83,3435+6]..[85,3518+44])
+                        Pexp_constant PConst_string(" [Pexp_variant(`A, exp)] represents\n          - [`A] when [exp] is [None]\n          - [`A E] when [exp] is [Some E] ",(test/test.ml[83,3435+6]..[85,3518+44]),None)
+                  ]
+                [
+                  core_type (test/test.ml[82,3389+20]..[82,3389+25])
+                    Ptyp_constr "label" (test/test.ml[82,3389+20]..[82,3389+25])
+                    []
+                  core_type (test/test.ml[82,3389+28]..[82,3389+45])
+                    Ptyp_constr "option" (test/test.ml[82,3389+39]..[82,3389+45])
+                    [
+                      core_type (test/test.ml[82,3389+28]..[82,3389+38])
+                        Ptyp_constr "expression" (test/test.ml[82,3389+28]..[82,3389+38])
+                        []
+                    ]
+                ]
+                None
+              (test/test.ml[86,3563+2]..[86,3563+72])
+                "Pexp_record" (test/test.ml[86,3563+4]..[86,3563+15])
+                attribute "ocaml.doc"
+                  [
+                    structure_item (test/test.ml[87,3636+6]..[90,3833+31])
+                      Pstr_eval
+                      expression (test/test.ml[87,3636+6]..[90,3833+31])
+                        Pexp_constant PConst_string(" [Pexp_record(\\[(l1,P1) ; ... ; (ln,Pn)\\], exp0)] represents\n          - [{ l1=P1; ...; ln=Pn }] when [exp0] is [None]\n          - [{ E0 with l1=P1; ...; ln=Pn }] when [exp0] is [Some E0]\n          Invariant: [n > 0] ",(test/test.ml[87,3636+6]..[90,3833+31]),None)
+                  ]
+                [
+                  core_type (test/test.ml[86,3563+19]..[86,3563+52])
+                    Ptyp_constr "list" (test/test.ml[86,3563+48]..[86,3563+52])
+                    [
+                      core_type (test/test.ml[86,3563+20]..[86,3563+46])
+                        Ptyp_tuple
+                        [
+                          core_type (test/test.ml[86,3563+20]..[86,3563+33])
+                            Ptyp_constr "longident_loc" (test/test.ml[86,3563+20]..[86,3563+33])
+                            []
+                          core_type (test/test.ml[86,3563+36]..[86,3563+46])
+                            Ptyp_constr "expression" (test/test.ml[86,3563+36]..[86,3563+46])
+                            []
+                        ]
+                    ]
+                  core_type (test/test.ml[86,3563+55]..[86,3563+72])
+                    Ptyp_constr "option" (test/test.ml[86,3563+66]..[86,3563+72])
+                    [
+                      core_type (test/test.ml[86,3563+55]..[86,3563+65])
+                        Ptyp_constr "expression" (test/test.ml[86,3563+55]..[86,3563+65])
+                        []
+                    ]
+                ]
+                None
+              (test/test.ml[91,3865+2]..[91,3865+44])
+                "Pexp_field" (test/test.ml[91,3865+4]..[91,3865+14])
+                attribute "ocaml.doc"
+                  [
+                    structure_item (test/test.ml[91,3865+46]..[91,3865+58])
+                      Pstr_eval
+                      expression (test/test.ml[91,3865+46]..[91,3865+58])
+                        Pexp_constant PConst_string(" [E.l] ",(test/test.ml[91,3865+46]..[91,3865+58]),None)
+                  ]
+                [
+                  core_type (test/test.ml[91,3865+18]..[91,3865+28])
+                    Ptyp_constr "expression" (test/test.ml[91,3865+18]..[91,3865+28])
+                    []
+                  core_type (test/test.ml[91,3865+31]..[91,3865+44])
+                    Ptyp_constr "longident_loc" (test/test.ml[91,3865+31]..[91,3865+44])
+                    []
+                ]
+                None
+              (test/test.ml[92,3924+2]..[92,3924+60])
+                "Pexp_setfield" (test/test.ml[92,3924+4]..[92,3924+17])
+                attribute "ocaml.doc"
+                  [
+                    structure_item (test/test.ml[93,3985+6]..[93,3985+25])
+                      Pstr_eval
+                      expression (test/test.ml[93,3985+6]..[93,3985+25])
+                        Pexp_constant PConst_string(" [E1.l <- E2] ",(test/test.ml[93,3985+6]..[93,3985+25]),None)
+                  ]
+                [
+                  core_type (test/test.ml[92,3924+21]..[92,3924+31])
+                    Ptyp_constr "expression" (test/test.ml[92,3924+21]..[92,3924+31])
+                    []
+                  core_type (test/test.ml[92,3924+34]..[92,3924+47])
+                    Ptyp_constr "longident_loc" (test/test.ml[92,3924+34]..[92,3924+47])
+                    []
+                  core_type (test/test.ml[92,3924+50]..[92,3924+60])
+                    Ptyp_constr "expression" (test/test.ml[92,3924+50]..[92,3924+60])
+                    []
+                ]
+                None
+              (test/test.ml[94,4011+2]..[94,4011+33])
+                "Pexp_array" (test/test.ml[94,4011+4]..[94,4011+14])
+                attribute "ocaml.doc"
+                  [
+                    structure_item (test/test.ml[94,4011+35]..[94,4011+63])
+                      Pstr_eval
+                      expression (test/test.ml[94,4011+35]..[94,4011+63])
+                        Pexp_constant PConst_string(" [\\[| E1; ...; En |\\]] ",(test/test.ml[94,4011+35]..[94,4011+63]),None)
+                  ]
+                [
+                  core_type (test/test.ml[94,4011+18]..[94,4011+33])
+                    Ptyp_constr "list" (test/test.ml[94,4011+29]..[94,4011+33])
+                    [
+                      core_type (test/test.ml[94,4011+18]..[94,4011+28])
+                        Ptyp_constr "expression" (test/test.ml[94,4011+18]..[94,4011+28])
+                        []
+                    ]
+                ]
+                None
+              (test/test.ml[95,4075+2]..[95,4075+66])
+                "Pexp_ifthenelse" (test/test.ml[95,4075+4]..[95,4075+19])
+                attribute "ocaml.doc"
+                  [
+                    structure_item (test/test.ml[96,4142+6]..[96,4142+36])
+                      Pstr_eval
+                      expression (test/test.ml[96,4142+6]..[96,4142+36])
+                        Pexp_constant PConst_string(" [if E1 then E2 else E3] ",(test/test.ml[96,4142+6]..[96,4142+36]),None)
+                  ]
+                [
+                  core_type (test/test.ml[95,4075+23]..[95,4075+33])
+                    Ptyp_constr "expression" (test/test.ml[95,4075+23]..[95,4075+33])
+                    []
+                  core_type (test/test.ml[95,4075+36]..[95,4075+46])
+                    Ptyp_constr "expression" (test/test.ml[95,4075+36]..[95,4075+46])
+                    []
+                  core_type (test/test.ml[95,4075+49]..[95,4075+66])
+                    Ptyp_constr "option" (test/test.ml[95,4075+60]..[95,4075+66])
+                    [
+                      core_type (test/test.ml[95,4075+49]..[95,4075+59])
+                        Ptyp_constr "expression" (test/test.ml[95,4075+49]..[95,4075+59])
+                        []
+                    ]
+                ]
+                None
+              (test/test.ml[97,4179+2]..[97,4179+44])
+                "Pexp_sequence" (test/test.ml[97,4179+4]..[97,4179+17])
+                attribute "ocaml.doc"
+                  [
+                    structure_item (test/test.ml[97,4179+46]..[97,4179+61])
+                      Pstr_eval
+                      expression (test/test.ml[97,4179+46]..[97,4179+61])
+                        Pexp_constant PConst_string(" [E1; E2] ",(test/test.ml[97,4179+46]..[97,4179+61]),None)
+                  ]
+                [
+                  core_type (test/test.ml[97,4179+21]..[97,4179+31])
+                    Ptyp_constr "expression" (test/test.ml[97,4179+21]..[97,4179+31])
+                    []
+                  core_type (test/test.ml[97,4179+34]..[97,4179+44])
+                    Ptyp_constr "expression" (test/test.ml[97,4179+34]..[97,4179+44])
+                    []
+                ]
+                None
+              (test/test.ml[98,4241+2]..[98,4241+41])
+                "Pexp_while" (test/test.ml[98,4241+4]..[98,4241+14])
+                attribute "ocaml.doc"
+                  [
+                    structure_item (test/test.ml[98,4241+43]..[98,4241+71])
+                      Pstr_eval
+                      expression (test/test.ml[98,4241+43]..[98,4241+71])
+                        Pexp_constant PConst_string(" [while E1 do E2 done] ",(test/test.ml[98,4241+43]..[98,4241+71]),None)
+                  ]
+                [
+                  core_type (test/test.ml[98,4241+18]..[98,4241+28])
+                    Ptyp_constr "expression" (test/test.ml[98,4241+18]..[98,4241+28])
+                    []
+                  core_type (test/test.ml[98,4241+31]..[98,4241+41])
+                    Ptyp_constr "expression" (test/test.ml[98,4241+31]..[98,4241+41])
+                    []
+                ]
+                None
+              (test/test.ml[99,4313+2]..[99,4313+79])
+                "Pexp_for" (test/test.ml[99,4313+4]..[99,4313+12])
+                attribute "ocaml.doc"
+                  [
+                    structure_item (test/test.ml[100,4393+6]..[104,4633+59])
+                      Pstr_eval
+                      expression (test/test.ml[100,4393+6]..[104,4633+59])
+                        Pexp_constant PConst_string(" [Pexp_for(i, E1, E2, direction, E3)] represents:\n          - [for i = E1 to E2 do E3 done] when [direction] is\n            {{!Asttypes.direction_flag.Upto} [Upto]}\n          - [for i = E1 downto E2 do E3 done] when [direction] is\n            {{!Asttypes.direction_flag.Downto} [Downto]} ",(test/test.ml[100,4393+6]..[104,4633+59]),None)
+                  ]
+                [
+                  core_type (test/test.ml[99,4313+16]..[99,4313+23])
+                    Ptyp_constr "pattern" (test/test.ml[99,4313+16]..[99,4313+23])
+                    []
+                  core_type (test/test.ml[99,4313+26]..[99,4313+36])
+                    Ptyp_constr "expression" (test/test.ml[99,4313+26]..[99,4313+36])
+                    []
+                  core_type (test/test.ml[99,4313+39]..[99,4313+49])
+                    Ptyp_constr "expression" (test/test.ml[99,4313+39]..[99,4313+49])
+                    []
+                  core_type (test/test.ml[99,4313+52]..[99,4313+66])
+                    Ptyp_constr "direction_flag" (test/test.ml[99,4313+52]..[99,4313+66])
+                    []
+                  core_type (test/test.ml[99,4313+69]..[99,4313+79])
+                    Ptyp_constr "expression" (test/test.ml[99,4313+69]..[99,4313+79])
+                    []
+                ]
+                None
+              (test/test.ml[105,4693+2]..[105,4693+45])
+                "Pexp_constraint" (test/test.ml[105,4693+4]..[105,4693+19])
+                attribute "ocaml.doc"
+                  [
+                    structure_item (test/test.ml[105,4693+47]..[105,4693+63])
+                      Pstr_eval
+                      expression (test/test.ml[105,4693+47]..[105,4693+63])
+                        Pexp_constant PConst_string(" [(E : T)] ",(test/test.ml[105,4693+47]..[105,4693+63]),None)
+                  ]
+                [
+                  core_type (test/test.ml[105,4693+23]..[105,4693+33])
+                    Ptyp_constr "expression" (test/test.ml[105,4693+23]..[105,4693+33])
+                    []
+                  core_type (test/test.ml[105,4693+36]..[105,4693+45])
+                    Ptyp_constr "core_type" (test/test.ml[105,4693+36]..[105,4693+45])
+                    []
+                ]
+                None
+              (test/test.ml[106,4757+2]..[106,4757+60])
+                "Pexp_coerce" (test/test.ml[106,4757+4]..[106,4757+15])
+                attribute "ocaml.doc"
+                  [
+                    structure_item (test/test.ml[107,4818+6]..[109,4911+56])
+                      Pstr_eval
+                      expression (test/test.ml[107,4818+6]..[109,4911+56])
+                        Pexp_constant PConst_string(" [Pexp_coerce(E, from, T)] represents\n          - [(E :> T)] when [from] is [None],\n          - [(E : T0 :> T)] when [from] is [Some T0]. ",(test/test.ml[107,4818+6]..[109,4911+56]),None)
+                  ]
+                [
+                  core_type (test/test.ml[106,4757+19]..[106,4757+29])
+                    Ptyp_constr "expression" (test/test.ml[106,4757+19]..[106,4757+29])
+                    []
+                  core_type (test/test.ml[106,4757+32]..[106,4757+48])
+                    Ptyp_constr "option" (test/test.ml[106,4757+42]..[106,4757+48])
+                    [
+                      core_type (test/test.ml[106,4757+32]..[106,4757+41])
+                        Ptyp_constr "core_type" (test/test.ml[106,4757+32]..[106,4757+41])
+                        []
+                    ]
+                  core_type (test/test.ml[106,4757+51]..[106,4757+60])
+                    Ptyp_constr "core_type" (test/test.ml[106,4757+51]..[106,4757+60])
+                    []
+                ]
+                None
+              (test/test.ml[110,4968+2]..[110,4968+39])
+                "Pexp_send" (test/test.ml[110,4968+4]..[110,4968+13])
+                attribute "ocaml.doc"
+                  [
+                    structure_item (test/test.ml[110,4968+41]..[110,4968+55])
+                      Pstr_eval
+                      expression (test/test.ml[110,4968+41]..[110,4968+55])
+                        Pexp_constant PConst_string(" [E # m] ",(test/test.ml[110,4968+41]..[110,4968+55]),None)
+                  ]
+                [
+                  core_type (test/test.ml[110,4968+17]..[110,4968+27])
+                    Ptyp_constr "expression" (test/test.ml[110,4968+17]..[110,4968+27])
+                    []
+                  core_type (test/test.ml[110,4968+30]..[110,4968+39])
+                    Ptyp_constr "loc" (test/test.ml[110,4968+36]..[110,4968+39])
+                    [
+                      core_type (test/test.ml[110,4968+30]..[110,4968+35])
+                        Ptyp_constr "label" (test/test.ml[110,4968+30]..[110,4968+35])
+                        []
+                    ]
+                ]
+                None
+              (test/test.ml[111,5024+2]..[111,5024+29])
+                "Pexp_new" (test/test.ml[111,5024+4]..[111,5024+12])
+                attribute "ocaml.doc"
+                  [
+                    structure_item (test/test.ml[111,5024+31]..[111,5024+47])
+                      Pstr_eval
+                      expression (test/test.ml[111,5024+31]..[111,5024+47])
+                        Pexp_constant PConst_string(" [new M.c] ",(test/test.ml[111,5024+31]..[111,5024+47]),None)
+                  ]
+                [
+                  core_type (test/test.ml[111,5024+16]..[111,5024+29])
+                    Ptyp_constr "longident_loc" (test/test.ml[111,5024+16]..[111,5024+29])
+                    []
+                ]
+                None
+              (test/test.ml[112,5072+2]..[112,5072+45])
+                "Pexp_setinstvar" (test/test.ml[112,5072+4]..[112,5072+19])
+                attribute "ocaml.doc"
+                  [
+                    structure_item (test/test.ml[112,5072+47]..[112,5072+62])
+                      Pstr_eval
+                      expression (test/test.ml[112,5072+47]..[112,5072+62])
+                        Pexp_constant PConst_string(" [x <- 2] ",(test/test.ml[112,5072+47]..[112,5072+62]),None)
+                  ]
+                [
+                  core_type (test/test.ml[112,5072+23]..[112,5072+32])
+                    Ptyp_constr "loc" (test/test.ml[112,5072+29]..[112,5072+32])
+                    [
+                      core_type (test/test.ml[112,5072+23]..[112,5072+28])
+                        Ptyp_constr "label" (test/test.ml[112,5072+23]..[112,5072+28])
+                        []
+                    ]
+                  core_type (test/test.ml[112,5072+35]..[112,5072+45])
+                    Ptyp_constr "expression" (test/test.ml[112,5072+35]..[112,5072+45])
+                    []
+                ]
+                None
+              (test/test.ml[113,5135+2]..[113,5135+50])
+                "Pexp_override" (test/test.ml[113,5135+4]..[113,5135+17])
+                attribute "ocaml.doc"
+                  [
+                    structure_item (test/test.ml[114,5186+6]..[114,5186+42])
+                      Pstr_eval
+                      expression (test/test.ml[114,5186+6]..[114,5186+42])
+                        Pexp_constant PConst_string(" [{< x1 = E1; ...; xn = En >}] ",(test/test.ml[114,5186+6]..[114,5186+42]),None)
+                  ]
+                [
+                  core_type (test/test.ml[113,5135+21]..[113,5135+50])
+                    Ptyp_constr "list" (test/test.ml[113,5135+46]..[113,5135+50])
+                    [
+                      core_type (test/test.ml[113,5135+22]..[113,5135+44])
+                        Ptyp_tuple
+                        [
+                          core_type (test/test.ml[113,5135+22]..[113,5135+31])
+                            Ptyp_constr "loc" (test/test.ml[113,5135+28]..[113,5135+31])
+                            [
+                              core_type (test/test.ml[113,5135+22]..[113,5135+27])
+                                Ptyp_constr "label" (test/test.ml[113,5135+22]..[113,5135+27])
+                                []
+                            ]
+                          core_type (test/test.ml[113,5135+34]..[113,5135+44])
+                            Ptyp_constr "expression" (test/test.ml[113,5135+34]..[113,5135+44])
+                            []
+                        ]
+                    ]
+                ]
+                None
+              (test/test.ml[115,5229+2]..[115,5229+66])
+                "Pexp_letmodule" (test/test.ml[115,5229+4]..[115,5229+18])
+                attribute "ocaml.doc"
+                  [
+                    structure_item (test/test.ml[116,5296+6]..[116,5296+37])
+                      Pstr_eval
+                      expression (test/test.ml[116,5296+6]..[116,5296+37])
+                        Pexp_constant PConst_string(" [let module M = ME in E] ",(test/test.ml[116,5296+6]..[116,5296+37]),None)
+                  ]
+                [
+                  core_type (test/test.ml[115,5229+22]..[115,5229+39])
+                    Ptyp_constr "loc" (test/test.ml[115,5229+36]..[115,5229+39])
+                    [
+                      core_type (test/test.ml[115,5229+22]..[115,5229+35])
+                        Ptyp_constr "option" (test/test.ml[115,5229+29]..[115,5229+35])
+                        [
+                          core_type (test/test.ml[115,5229+22]..[115,5229+28])
+                            Ptyp_constr "string" (test/test.ml[115,5229+22]..[115,5229+28])
+                            []
+                        ]
+                    ]
+                  core_type (test/test.ml[115,5229+42]..[115,5229+53])
+                    Ptyp_constr "module_expr" (test/test.ml[115,5229+42]..[115,5229+53])
+                    []
+                  core_type (test/test.ml[115,5229+56]..[115,5229+66])
+                    Ptyp_constr "expression" (test/test.ml[115,5229+56]..[115,5229+66])
+                    []
+                ]
+                None
+              (test/test.ml[117,5334+2]..[117,5334+59])
+                "Pexp_letexception" (test/test.ml[117,5334+4]..[117,5334+21])
+                attribute "ocaml.doc"
+                  [
+                    structure_item (test/test.ml[118,5394+6]..[118,5394+35])
+                      Pstr_eval
+                      expression (test/test.ml[118,5394+6]..[118,5394+35])
+                        Pexp_constant PConst_string(" [let exception C in E] ",(test/test.ml[118,5394+6]..[118,5394+35]),None)
+                  ]
+                [
+                  core_type (test/test.ml[117,5334+25]..[117,5334+46])
+                    Ptyp_constr "extension_constructor" (test/test.ml[117,5334+25]..[117,5334+46])
+                    []
+                  core_type (test/test.ml[117,5334+49]..[117,5334+59])
+                    Ptyp_constr "expression" (test/test.ml[117,5334+49]..[117,5334+59])
+                    []
+                ]
+                None
+              (test/test.ml[119,5430+2]..[119,5430+29])
+                "Pexp_assert" (test/test.ml[119,5430+4]..[119,5430+15])
+                attribute "ocaml.doc"
+                  [
+                    structure_item (test/test.ml[120,5460+6]..[121,5482+82])
+                      Pstr_eval
+                      expression (test/test.ml[120,5460+6]..[121,5482+82])
+                        Pexp_constant PConst_string(" [assert E].\n          Note: [assert false] is treated in a special way by the type-checker. ",(test/test.ml[120,5460+6]..[121,5482+82]),None)
+                  ]
+                [
+                  core_type (test/test.ml[119,5430+19]..[119,5430+29])
+                    Ptyp_constr "expression" (test/test.ml[119,5430+19]..[119,5430+29])
+                    []
+                ]
+                None
+              (test/test.ml[122,5565+2]..[122,5565+27])
+                "Pexp_lazy" (test/test.ml[122,5565+4]..[122,5565+13])
+                attribute "ocaml.doc"
+                  [
+                    structure_item (test/test.ml[122,5565+29]..[122,5565+44])
+                      Pstr_eval
+                      expression (test/test.ml[122,5565+29]..[122,5565+44])
+                        Pexp_constant PConst_string(" [lazy E] ",(test/test.ml[122,5565+29]..[122,5565+44]),None)
+                  ]
+                [
+                  core_type (test/test.ml[122,5565+17]..[122,5565+27])
+                    Ptyp_constr "expression" (test/test.ml[122,5565+17]..[122,5565+27])
+                    []
+                ]
+                None
+              (test/test.ml[123,5610+2]..[123,5610+46])
+                "Pexp_poly" (test/test.ml[123,5610+4]..[123,5610+13])
+                attribute "ocaml.doc"
+                  [
+                    structure_item (test/test.ml[124,5657+6]..[127,5819+21])
+                      Pstr_eval
+                      expression (test/test.ml[124,5657+6]..[127,5819+21])
+                        Pexp_constant PConst_string(" Used for method bodies.\n          Can only be used as the expression under\n          {{!class_field_kind.Cfk_concrete} [Cfk_concrete]} for methods (not\n          values). ",(test/test.ml[124,5657+6]..[127,5819+21]),None)
+                  ]
+                [
+                  core_type (test/test.ml[123,5610+17]..[123,5610+27])
+                    Ptyp_constr "expression" (test/test.ml[123,5610+17]..[123,5610+27])
+                    []
+                  core_type (test/test.ml[123,5610+30]..[123,5610+46])
+                    Ptyp_constr "option" (test/test.ml[123,5610+40]..[123,5610+46])
+                    [
+                      core_type (test/test.ml[123,5610+30]..[123,5610+39])
+                        Ptyp_constr "core_type" (test/test.ml[123,5610+30]..[123,5610+39])
+                        []
+                    ]
+                ]
+                None
+              (test/test.ml[128,5841+2]..[128,5841+34])
+                "Pexp_object" (test/test.ml[128,5841+4]..[128,5841+15])
+                attribute "ocaml.doc"
+                  [
+                    structure_item (test/test.ml[128,5841+36]..[128,5841+59])
+                      Pstr_eval
+                      expression (test/test.ml[128,5841+36]..[128,5841+59])
+                        Pexp_constant PConst_string(" [object ... end] ",(test/test.ml[128,5841+36]..[128,5841+59]),None)
+                  ]
+                [
+                  core_type (test/test.ml[128,5841+19]..[128,5841+34])
+                    Ptyp_constr "class_structure" (test/test.ml[128,5841+19]..[128,5841+34])
+                    []
+                ]
+                None
+              (test/test.ml[129,5901+2]..[129,5901+43])
+                "Pexp_newtype" (test/test.ml[129,5901+4]..[129,5901+16])
+                attribute "ocaml.doc"
+                  [
+                    structure_item (test/test.ml[129,5901+45]..[129,5901+71])
+                      Pstr_eval
+                      expression (test/test.ml[129,5901+45]..[129,5901+71])
+                        Pexp_constant PConst_string(" [fun (type t) -> E] ",(test/test.ml[129,5901+45]..[129,5901+71]),None)
+                  ]
+                [
+                  core_type (test/test.ml[129,5901+20]..[129,5901+30])
+                    Ptyp_constr "loc" (test/test.ml[129,5901+27]..[129,5901+30])
+                    [
+                      core_type (test/test.ml[129,5901+20]..[129,5901+26])
+                        Ptyp_constr "string" (test/test.ml[129,5901+20]..[129,5901+26])
+                        []
+                    ]
+                  core_type (test/test.ml[129,5901+33]..[129,5901+43])
+                    Ptyp_constr "expression" (test/test.ml[129,5901+33]..[129,5901+43])
+                    []
+                ]
+                None
+              (test/test.ml[130,5973+2]..[130,5973+28])
+                "Pexp_pack" (test/test.ml[130,5973+4]..[130,5973+13])
+                attribute "ocaml.doc"
+                  [
+                    structure_item (test/test.ml[131,6002+6]..[133,6073+60])
+                      Pstr_eval
+                      expression (test/test.ml[131,6002+6]..[133,6073+60])
+                        Pexp_constant PConst_string(" [(module ME)].\n          [(module ME : S)] is represented as\n          [Pexp_constraint(Pexp_pack ME, Ptyp_package S)] ",(test/test.ml[131,6002+6]..[133,6073+60]),None)
+                  ]
+                [
+                  core_type (test/test.ml[130,5973+17]..[130,5973+28])
+                    Ptyp_constr "module_expr" (test/test.ml[130,5973+17]..[130,5973+28])
+                    []
+                ]
+                None
+              (test/test.ml[134,6134+2]..[134,6134+46])
+                "Pexp_open" (test/test.ml[134,6134+4]..[134,6134+13])
+                attribute "ocaml.doc"
+                  [
+                    structure_item (test/test.ml[135,6181+6]..[137,6231+33])
+                      Pstr_eval
+                      expression (test/test.ml[135,6181+6]..[137,6231+33])
+                        Pexp_constant PConst_string(" - [M.(E)]\n          - [let open M in E]\n          - [let open! M in E] ",(test/test.ml[135,6181+6]..[137,6231+33]),None)
+                  ]
+                [
+                  core_type (test/test.ml[134,6134+17]..[134,6134+33])
+                    Ptyp_constr "open_declaration" (test/test.ml[134,6134+17]..[134,6134+33])
+                    []
+                  core_type (test/test.ml[134,6134+36]..[134,6134+46])
+                    Ptyp_constr "expression" (test/test.ml[134,6134+36]..[134,6134+46])
+                    []
+                ]
+                None
+              (test/test.ml[138,6265+2]..[138,6265+23])
+                "Pexp_letop" (test/test.ml[138,6265+4]..[138,6265+14])
+                attribute "ocaml.doc"
+                  [
+                    structure_item (test/test.ml[139,6289+6]..[140,6321+50])
+                      Pstr_eval
+                      expression (test/test.ml[139,6289+6]..[140,6321+50])
+                        Pexp_constant PConst_string(" - [let* P = E0 in E1]\n          - [let* P0 = E00 and* P1 = E01 in E1] ",(test/test.ml[139,6289+6]..[140,6321+50]),None)
+                  ]
+                [
+                  core_type (test/test.ml[138,6265+18]..[138,6265+23])
+                    Ptyp_constr "letop" (test/test.ml[138,6265+18]..[138,6265+23])
+                    []
+                ]
+                None
+              (test/test.ml[141,6372+2]..[141,6372+31])
+                "Pexp_extension" (test/test.ml[141,6372+4]..[141,6372+18])
+                attribute "ocaml.doc"
+                  [
+                    structure_item (test/test.ml[141,6372+33]..[141,6372+49])
+                      Pstr_eval
+                      expression (test/test.ml[141,6372+33]..[141,6372+49])
+                        Pexp_constant PConst_string(" [\\[%id\\]] ",(test/test.ml[141,6372+33]..[141,6372+49]),None)
+                  ]
+                [
+                  core_type (test/test.ml[141,6372+22]..[141,6372+31])
+                    Ptyp_constr "extension" (test/test.ml[141,6372+22]..[141,6372+31])
+                    []
+                ]
+                None
+              (test/test.ml[142,6422+2]..[142,6422+20])
+                "Pexp_unreachable" (test/test.ml[142,6422+4]..[142,6422+20])
+                attribute "ocaml.doc"
+                  [
+                    structure_item (test/test.ml[142,6422+22]..[142,6422+32])
+                      Pstr_eval
+                      expression (test/test.ml[142,6422+22]..[142,6422+32])
+                        Pexp_constant PConst_string(" [.] ",(test/test.ml[142,6422+22]..[142,6422+32]),None)
+                  ]
+                []
+                None
+            ]
+        ptype_private = Public
+        ptype_manifest =
+          None
+    ]
+]
+
+[@@@ocaml.ppx.context
+  {
+    tool_name = "ppx_driver";
+    include_dirs = [];
+    load_path = [];
+    open_modules = [];
+    for_package = None;
+    debug = false;
+    use_threads = false;
+    use_vmthreads = false;
+    recursive_types = false;
+    principal = false;
+    transparent_modules = false;
+    unboxed_types = false;
+    unsafe_string = false;
+    cookies = []
+  }]
+open Alcotest
+open Ppxlib
+let loc = Location.none
+module Ast = Ast
+module Ast_helper = Ast_helper
+module Ast_magic = Selected_ast.Ast.Config
+module Asttypes = Asttypes
+module Parse = Parse
+module Parsetree = Parsetree
+module Pprintast = Astlib.Pprintast
+module Selected_ast = Selected_ast
+let ast =
+  let pp_ast fmt v =
+    Format.fprintf fmt "%S" (Pprintast.string_of_expression v) in
+  let compare expected actual =
+    String.equal (Pprintast.string_of_expression expected)
+      (Pprintast.string_of_expression actual) in
+  testable pp_ast compare
+let test () =
+  check ast "case I"
+    ({
+       pexp_desc =
+         (Pexp_constant
+            (Pconst_string ("r3p14ccd 70 r4nd0m 5tr1n9", loc, None)));
+       pexp_loc = loc;
+       pexp_loc_stack = [];
+       pexp_attributes = []
+     } : Ppxlib_ast.Ast.expression)
+    ({
+       pexp_desc = (Pexp_extension ({ txt = "yay"; loc }, (PStr [])));
+       pexp_loc = loc;
+       pexp_loc_stack = [];
+       pexp_attributes = []
+     } : Ppxlib_ast.Ast.expression)
+let () = run "Simple ppx test suit" [("Transform", [("Test", `Quick, test)])]
+type expression_desc =
+  | Pexp_ident of longident_loc
+  [@ocaml.doc " Identifiers such as [x] and [M.x] "]
+  | Pexp_constant of constant
+  [@ocaml.doc
+    " Expressions constant such as [1], ['a'], [\"true\"], [1.0], [1l], [1L],\n          [1n] "]
+  | Pexp_let of rec_flag * value_binding list * expression
+  [@ocaml.doc
+    " [Pexp_let(flag, \\[(P1,E1) ; ... ; (Pn,En)\\], E)] represents:\n          - [let P1 = E1 and ... and Pn = EN in E] when [flag] is\n            {{!Asttypes.rec_flag.Nonrecursive} [Nonrecursive]},\n          - [let rec P1 = E1 and ... and Pn = EN in E] when [flag] is\n            {{!Asttypes.rec_flag.Recursive} [Recursive]}. "]
+  | Pexp_function of cases
+  [@ocaml.doc " [function P1 -> E1 | ... | Pn -> En] "]
+  | Pexp_fun of arg_label * expression option * pattern * expression
+  [@ocaml.doc
+    " [Pexp_fun(lbl, exp0, P, E1)] represents:\n          - [fun P -> E1] when [lbl] is {{!Asttypes.arg_label.Nolabel}\n            [Nolabel]} and [exp0] is [None]\n          - [fun ~l:P -> E1] when [lbl] is {{!Asttypes.arg_label.Labelled}\n            [Labelled l]} and [exp0] is [None]\n          - [fun ?l:P -> E1] when [lbl] is {{!Asttypes.arg_label.Optional}\n            [Optional l]} and [exp0] is [None]\n          - [fun ?l:(P = E0) -> E1] when [lbl] is\n            {{!Asttypes.arg_label.Optional} [Optional l]} and [exp0] is\n            [Some E0]\n          Notes:\n          - If [E0] is provided, only {{!Asttypes.arg_label.Optional}\n            [Optional]} is allowed.\n          - [fun P1 P2 .. Pn -> E1] is represented as nested\n            {{!expression_desc.Pexp_fun} [Pexp_fun]}.\n          - [let f P = E] is represented using {{!expression_desc.Pexp_fun}\n            [Pexp_fun]}. "]
+  | Pexp_apply of expression * (arg_label * expression) list
+  [@ocaml.doc
+    " [Pexp_apply(E0, \\[(l1, E1) ; ... ; (ln, En)\\])] represents\n          [E0 ~l1:E1 ... ~ln:En]\n          [li] can be {{!Asttypes.arg_label.Nolabel} [Nolabel]} (non labeled\n          argument), {{!Asttypes.arg_label.Labelled} [Labelled]} (labelled\n          arguments) or {{!Asttypes.arg_label.Optional} [Optional]} (optional\n          argument).\n          Invariant: [n > 0] "]
+  | Pexp_match of expression * cases
+  [@ocaml.doc " [match E0 with P1 -> E1 | ... | Pn -> En] "]
+  | Pexp_try of expression * cases
+  [@ocaml.doc " [try E0 with P1 -> E1 | ... | Pn -> En] "]
+  | Pexp_tuple of expression list
+  [@ocaml.doc " Expressions [(E1, ..., En)]\n          Invariant: [n >= 2] "]
+  | Pexp_construct of longident_loc * expression option
+  [@ocaml.doc
+    " [Pexp_construct(C, exp)] represents:\n          - [C] when [exp] is [None],\n          - [C E] when [exp] is [Some E],\n          - [C (E1, ..., En)] when [exp] is [Some (Pexp_tuple\\[E1;...;En\\])] "]
+  | Pexp_variant of label * expression option
+  [@ocaml.doc
+    " [Pexp_variant(`A, exp)] represents\n          - [`A] when [exp] is [None]\n          - [`A E] when [exp] is [Some E] "]
+  | Pexp_record of (longident_loc * expression) list * expression option
+  [@ocaml.doc
+    " [Pexp_record(\\[(l1,P1) ; ... ; (ln,Pn)\\], exp0)] represents\n          - [{ l1=P1; ...; ln=Pn }] when [exp0] is [None]\n          - [{ E0 with l1=P1; ...; ln=Pn }] when [exp0] is [Some E0]\n          Invariant: [n > 0] "]
+  | Pexp_field of expression * longident_loc [@ocaml.doc " [E.l] "]
+  | Pexp_setfield of expression * longident_loc * expression
+  [@ocaml.doc " [E1.l <- E2] "]
+  | Pexp_array of expression list [@ocaml.doc " [\\[| E1; ...; En |\\]] "]
+  | Pexp_ifthenelse of expression * expression * expression option
+  [@ocaml.doc " [if E1 then E2 else E3] "]
+  | Pexp_sequence of expression * expression [@ocaml.doc " [E1; E2] "]
+  | Pexp_while of expression * expression
+  [@ocaml.doc " [while E1 do E2 done] "]
+  | Pexp_for of pattern * expression * expression * direction_flag *
+  expression
+  [@ocaml.doc
+    " [Pexp_for(i, E1, E2, direction, E3)] represents:\n          - [for i = E1 to E2 do E3 done] when [direction] is\n            {{!Asttypes.direction_flag.Upto} [Upto]}\n          - [for i = E1 downto E2 do E3 done] when [direction] is\n            {{!Asttypes.direction_flag.Downto} [Downto]} "]
+  | Pexp_constraint of expression * core_type [@ocaml.doc " [(E : T)] "]
+  | Pexp_coerce of expression * core_type option * core_type
+  [@ocaml.doc
+    " [Pexp_coerce(E, from, T)] represents\n          - [(E :> T)] when [from] is [None],\n          - [(E : T0 :> T)] when [from] is [Some T0]. "]
+  | Pexp_send of expression * label loc [@ocaml.doc " [E # m] "]
+  | Pexp_new of longident_loc [@ocaml.doc " [new M.c] "]
+  | Pexp_setinstvar of label loc * expression [@ocaml.doc " [x <- 2] "]
+  | Pexp_override of (label loc * expression) list
+  [@ocaml.doc " [{< x1 = E1; ...; xn = En >}] "]
+  | Pexp_letmodule of string option loc * module_expr * expression
+  [@ocaml.doc " [let module M = ME in E] "]
+  | Pexp_letexception of extension_constructor * expression
+  [@ocaml.doc " [let exception C in E] "]
+  | Pexp_assert of expression
+  [@ocaml.doc
+    " [assert E].\n          Note: [assert false] is treated in a special way by the type-checker. "]
+  | Pexp_lazy of expression [@ocaml.doc " [lazy E] "]
+  | Pexp_poly of expression * core_type option
+  [@ocaml.doc
+    " Used for method bodies.\n          Can only be used as the expression under\n          {{!class_field_kind.Cfk_concrete} [Cfk_concrete]} for methods (not\n          values). "]
+  | Pexp_object of class_structure [@ocaml.doc " [object ... end] "]
+  | Pexp_newtype of string loc * expression
+  [@ocaml.doc " [fun (type t) -> E] "]
+  | Pexp_pack of module_expr
+  [@ocaml.doc
+    " [(module ME)].\n          [(module ME : S)] is represented as\n          [Pexp_constraint(Pexp_pack ME, Ptyp_package S)] "]
+  | Pexp_open of open_declaration * expression
+  [@ocaml.doc
+    " - [M.(E)]\n          - [let open M in E]\n          - [let open! M in E] "]
+  | Pexp_letop of letop
+  [@ocaml.doc
+    " - [let* P = E0 in E1]\n          - [let* P0 = E00 and* P1 = E01 in E1] "]
+  | Pexp_extension of extension [@ocaml.doc " [\\[%id\\]] "]
+  | Pexp_unreachable [@ocaml.doc " [.] "]
+[
+  structure_item (_none_[0,0+-1].._none_[0,0+-1]) ghost
+    Tstr_attribute "ocaml.ppx.context"
+    [
+      structure_item (_none_[0,0+-1]..[0,0+-1]) ghost
+        Pstr_eval
+        expression (_none_[0,0+-1]..[0,0+-1]) ghost
+          Pexp_record
+          [
+            "tool_name" (_none_[0,0+-1]..[0,0+-1]) ghost
+              expression (_none_[0,0+-1]..[0,0+-1]) ghost
+                Pexp_constant PConst_string("ppx_driver",(_none_[0,0+-1]..[0,0+-1]) ghost,None)
+            "include_dirs" (_none_[0,0+-1]..[0,0+-1]) ghost
+              expression (_none_[0,0+-1]..[0,0+-1]) ghost
+                Pexp_construct "[]" (_none_[0,0+-1]..[0,0+-1]) ghost
+                None
+            "load_path" (_none_[0,0+-1]..[0,0+-1]) ghost
+              expression (_none_[0,0+-1]..[0,0+-1]) ghost
+                Pexp_construct "[]" (_none_[0,0+-1]..[0,0+-1]) ghost
+                None
+            "open_modules" (_none_[0,0+-1]..[0,0+-1]) ghost
+              expression (_none_[0,0+-1]..[0,0+-1]) ghost
+                Pexp_construct "[]" (_none_[0,0+-1]..[0,0+-1]) ghost
+                None
+            "for_package" (_none_[0,0+-1]..[0,0+-1]) ghost
+              expression (_none_[0,0+-1]..[0,0+-1]) ghost
+                Pexp_construct "None" (_none_[0,0+-1]..[0,0+-1]) ghost
+                None
+            "debug" (_none_[0,0+-1]..[0,0+-1]) ghost
+              expression (_none_[0,0+-1]..[0,0+-1]) ghost
+                Pexp_construct "false" (_none_[0,0+-1]..[0,0+-1]) ghost
+                None
+            "use_threads" (_none_[0,0+-1]..[0,0+-1]) ghost
+              expression (_none_[0,0+-1]..[0,0+-1]) ghost
+                Pexp_construct "false" (_none_[0,0+-1]..[0,0+-1]) ghost
+                None
+            "use_vmthreads" (_none_[0,0+-1]..[0,0+-1]) ghost
+              expression (_none_[0,0+-1]..[0,0+-1]) ghost
+                Pexp_construct "false" (_none_[0,0+-1]..[0,0+-1]) ghost
+                None
+            "recursive_types" (_none_[0,0+-1]..[0,0+-1]) ghost
+              expression (_none_[0,0+-1]..[0,0+-1]) ghost
+                Pexp_construct "false" (_none_[0,0+-1]..[0,0+-1]) ghost
+                None
+            "principal" (_none_[0,0+-1]..[0,0+-1]) ghost
+              expression (_none_[0,0+-1]..[0,0+-1]) ghost
+                Pexp_construct "false" (_none_[0,0+-1]..[0,0+-1]) ghost
+                None
+            "transparent_modules" (_none_[0,0+-1]..[0,0+-1]) ghost
+              expression (_none_[0,0+-1]..[0,0+-1]) ghost
+                Pexp_construct "false" (_none_[0,0+-1]..[0,0+-1]) ghost
+                None
+            "unboxed_types" (_none_[0,0+-1]..[0,0+-1]) ghost
+              expression (_none_[0,0+-1]..[0,0+-1]) ghost
+                Pexp_construct "false" (_none_[0,0+-1]..[0,0+-1]) ghost
+                None
+            "unsafe_string" (_none_[0,0+-1]..[0,0+-1]) ghost
+              expression (_none_[0,0+-1]..[0,0+-1]) ghost
+                Pexp_construct "false" (_none_[0,0+-1]..[0,0+-1]) ghost
+                None
+            "cookies" (_none_[0,0+-1]..[0,0+-1]) ghost
+              expression (_none_[0,0+-1]..[0,0+-1]) ghost
+                Pexp_construct "[]" (_none_[0,0+-1]..[0,0+-1]) ghost
+                None
+          ]
+          None
+    ]
+  structure_item (test/test.ml[1,0+0]..test/test.ml[1,0+13])
+    Tstr_open Fresh
+    module_expr (test/test.ml[1,0+5]..test/test.ml[1,0+13])
+      Tmod_ident "Alcotest!"
+  structure_item (test/test.ml[2,14+0]..test/test.ml[2,14+11])
+    Tstr_open Fresh
+    module_expr (test/test.ml[2,14+5]..test/test.ml[2,14+11])
+      Tmod_ident "Ppxlib!"
+  structure_item (test/test.ml[4,31+0]..test/test.ml[4,31+23])
+    Tstr_value Nonrec
+    [
+      <def>
+        pattern (test/test.ml[4,31+4]..test/test.ml[4,31+7])
+          Tpat_var "loc/745"
+        expression (test/test.ml[4,31+10]..test/test.ml[4,31+23])
+          Texp_ident "Ppxlib!.Location.none"
+    ]
+  structure_item (test/test.ml[6,56+0]..test/test.ml[6,56+16])
+    Tstr_module
+    Ast/797
+      module_expr (test/test.ml[6,56+13]..test/test.ml[6,56+16])
+        Tmod_ident "Ppxlib!.Ast"
+  structure_item (test/test.ml[7,73+0]..test/test.ml[7,73+30])
+    Tstr_module
+    Ast_helper/798
+      module_expr (test/test.ml[7,73+20]..test/test.ml[7,73+30])
+        Tmod_ident "Ppxlib!.Ast_helper"
+  structure_item (test/test.ml[8,104+0]..test/test.ml[8,104+42])
+    Tstr_module
+    Ast_magic/895
+      module_expr (test/test.ml[8,104+19]..test/test.ml[8,104+42])
+        Tmod_ident "Ppxlib!.Selected_ast.Ast.Config"
+  structure_item (test/test.ml[9,147+0]..test/test.ml[9,147+26])
+    Tstr_module
+    Asttypes/896
+      module_expr (test/test.ml[9,147+18]..test/test.ml[9,147+26])
+        Tmod_ident "Ppxlib!.Asttypes"
+  structure_item (test/test.ml[10,174+0]..test/test.ml[10,174+20])
+    Tstr_module
+    Parse/897
+      module_expr (test/test.ml[10,174+15]..test/test.ml[10,174+20])
+        Tmod_ident "Ppxlib!.Parse"
+  structure_item (test/test.ml[11,195+0]..test/test.ml[11,195+28])
+    Tstr_module
+    Parsetree/898
+      module_expr (test/test.ml[11,195+19]..test/test.ml[11,195+28])
+        Tmod_ident "Ppxlib!.Parsetree"
+  structure_item (test/test.ml[12,224+0]..test/test.ml[12,224+35])
+    Tstr_module
+    Pprintast/950
+      module_expr (test/test.ml[12,224+19]..test/test.ml[12,224+35])
+        Tmod_ident "Astlib!.Pprintast"
+  structure_item (test/test.ml[13,260+0]..test/test.ml[13,260+34])
+    Tstr_module
+    Selected_ast/951
+      module_expr (test/test.ml[13,260+22]..test/test.ml[13,260+34])
+        Tmod_ident "Ppxlib!.Selected_ast"
+  structure_item (test/test.ml[15,296+0]..test/test.ml[24,543+25])
+    Tstr_value Nonrec
+    [
+      <def>
+        pattern (test/test.ml[15,296+4]..test/test.ml[15,296+7])
+          Tpat_var "ast/952"
+        expression (test/test.ml[16,306+2]..test/test.ml[24,543+25])
+          Texp_let Nonrec
+          [
+            <def>
+              pattern (test/test.ml[16,306+6]..test/test.ml[16,306+12])
+                Tpat_var "pp_ast/953"
+              expression (test/test.ml[16,306+13]..test/test.ml[17,327+62]) ghost
+                Texp_function
+                Nolabel
+                [
+                  <case>
+                    pattern (test/test.ml[16,306+13]..test/test.ml[16,306+16])
+                      Tpat_var "fmt/955"
+                    expression (test/test.ml[16,306+17]..test/test.ml[17,327+62]) ghost
+                      Texp_function
+                      Nolabel
+                      [
+                        <case>
+                          pattern (test/test.ml[16,306+17]..test/test.ml[16,306+18])
+                            Tpat_var "v/956"
+                          expression (test/test.ml[17,327+4]..test/test.ml[17,327+62])
+                            Texp_apply
+                            expression (test/test.ml[17,327+4]..test/test.ml[17,327+18])
+                              Texp_ident "Stdlib!.Format.fprintf"
+                            [
+                              <arg>
+                                Nolabel
+                                expression (test/test.ml[17,327+19]..test/test.ml[17,327+22])
+                                  Texp_ident "fmt/955"
+                              <arg>
+                                Nolabel
+                                expression (test/test.ml[17,327+23]..test/test.ml[17,327+27])
+                                  Texp_construct "CamlinternalFormatBasics.Format"
+                                  [
+                                    expression (test/test.ml[17,327+23]..test/test.ml[17,327+27]) ghost
+                                      Texp_construct "CamlinternalFormatBasics.Caml_string"
+                                      [
+                                        expression (test/test.ml[17,327+23]..test/test.ml[17,327+27]) ghost
+                                          Texp_construct "CamlinternalFormatBasics.No_padding"
+                                          []
+                                        expression (test/test.ml[17,327+23]..test/test.ml[17,327+27]) ghost
+                                          Texp_construct "CamlinternalFormatBasics.End_of_format"
+                                          []
+                                      ]
+                                    expression (test/test.ml[17,327+23]..test/test.ml[17,327+27]) ghost
+                                      Texp_constant Const_string("%S",(test/test.ml[17,327+23]..test/test.ml[17,327+27]) ghost,None)
+                                  ]
+                              <arg>
+                                Nolabel
+                                expression (test/test.ml[17,327+28]..test/test.ml[17,327+62])
+                                  Texp_apply
+                                  expression (test/test.ml[17,327+29]..test/test.ml[17,327+59])
+                                    Texp_ident "Pprintast/950.string_of_expression"
+                                  [
+                                    <arg>
+                                      Nolabel
+                                      expression (test/test.ml[17,327+60]..test/test.ml[17,327+61])
+                                        Texp_ident "v/956"
+                                  ]
+                            ]
+                      ]
+                ]
+          ]
+          expression (test/test.ml[19,395+2]..test/test.ml[24,543+25])
+            Texp_let Nonrec
+            [
+              <def>
+                pattern (test/test.ml[19,395+6]..test/test.ml[19,395+13])
+                  Tpat_var "compare/1527"
+                expression (test/test.ml[19,395+14]..test/test.ml[22,492+45]) ghost
+                  Texp_function
+                  Nolabel
+                  [
+                    <case>
+                      pattern (test/test.ml[19,395+14]..test/test.ml[19,395+22])
+                        Tpat_var "expected/1528"
+                      expression (test/test.ml[19,395+23]..test/test.ml[22,492+45]) ghost
+                        Texp_function
+                        Nolabel
+                        [
+                          <case>
+                            pattern (test/test.ml[19,395+23]..test/test.ml[19,395+29])
+                              Tpat_var "actual/1529"
+                            expression (test/test.ml[20,427+4]..test/test.ml[22,492+45])
+                              Texp_apply
+                              expression (test/test.ml[20,427+4]..test/test.ml[20,427+16])
+                                Texp_ident "Stdlib!.String.equal"
+                              [
+                                <arg>
+                                  Nolabel
+                                  expression (test/test.ml[21,444+6]..test/test.ml[21,444+47])
+                                    Texp_apply
+                                    expression (test/test.ml[21,444+7]..test/test.ml[21,444+37])
+                                      Texp_ident "Pprintast/950.string_of_expression"
+                                    [
+                                      <arg>
+                                        Nolabel
+                                        expression (test/test.ml[21,444+38]..test/test.ml[21,444+46])
+                                          Texp_ident "expected/1528"
+                                    ]
+                                <arg>
+                                  Nolabel
+                                  expression (test/test.ml[22,492+6]..test/test.ml[22,492+45])
+                                    Texp_apply
+                                    expression (test/test.ml[22,492+7]..test/test.ml[22,492+37])
+                                      Texp_ident "Pprintast/950.string_of_expression"
+                                    [
+                                      <arg>
+                                        Nolabel
+                                        expression (test/test.ml[22,492+38]..test/test.ml[22,492+44])
+                                          Texp_ident "actual/1529"
+                                    ]
+                              ]
+                        ]
+                  ]
+            ]
+            expression (test/test.ml[24,543+2]..test/test.ml[24,543+25])
+              Texp_apply
+              expression (test/test.ml[24,543+2]..test/test.ml[24,543+10])
+                Texp_ident "Alcotest!.testable"
+              [
+                <arg>
+                  Nolabel
+                  expression (test/test.ml[24,543+11]..test/test.ml[24,543+17])
+                    Texp_ident "pp_ast/953"
+                <arg>
+                  Nolabel
+                  expression (test/test.ml[24,543+18]..test/test.ml[24,543+25])
+                    Texp_ident "compare/1527"
+              ]
+    ]
+  structure_item (test/test.ml[26,570+0]..test/test.ml[27,584+71])
+    Tstr_value Nonrec
+    [
+      <def>
+        pattern (test/test.ml[26,570+4]..test/test.ml[26,570+8])
+          Tpat_var "test/1716"
+        expression (test/test.ml[26,570+9]..test/test.ml[27,584+71]) ghost
+          Texp_function
+          Nolabel
+          [
+            <case>
+              pattern (test/test.ml[26,570+9]..test/test.ml[26,570+11])
+                Tpat_construct "()"
+                []
+                None
+              expression (test/test.ml[27,584+2]..test/test.ml[27,584+71])
+                Texp_apply
+                expression (test/test.ml[27,584+2]..test/test.ml[27,584+7])
+                  Texp_ident "Alcotest!.check"
+                [
+                  <arg>
+                    Optional "here"
+                    expression (_none_[0,0+-1].._none_[0,0+-1]) ghost
+                      Texp_construct "None"
+                      []
+                  <arg>
+                    Optional "pos"
+                    expression (_none_[0,0+-1].._none_[0,0+-1]) ghost
+                      Texp_construct "None"
+                      []
+                  <arg>
+                    Nolabel
+                    expression (test/test.ml[27,584+8]..test/test.ml[27,584+11])
+                      Texp_ident "ast/952"
+                  <arg>
+                    Nolabel
+                    expression (test/test.ml[27,584+12]..test/test.ml[27,584+20])
+                      Texp_constant Const_string("case I",(test/test.ml[27,584+13]..test/test.ml[27,584+19]),None)
+                  <arg>
+                    Nolabel
+                    expression (test/test.ml[27,584+21]..test/test.ml[27,584+56]) ghost
+                      extra
+                        Texp_constraint
+                        core_type (test/test.ml[27,584+21]..test/test.ml[27,584+56]) ghost
+                          Ttyp_constr "Ppxlib_ast!.Ast.expression"
+                          []
+                      Texp_record
+                        fields =
+                          [
+                            "pexp_desc"
+                              expression (test/test.ml[27,584+21]..test/test.ml[27,584+56]) ghost
+                                Texp_construct "Pexp_constant"
+                                [
+                                  expression (test/test.ml[27,584+21]..test/test.ml[27,584+56]) ghost
+                                    Texp_construct "Pconst_string"
+                                    [
+                                      expression (test/test.ml[27,584+21]..test/test.ml[27,584+56]) ghost
+                                        Texp_constant Const_string("r3p14ccd 70 r4nd0m 5tr1n9",(test/test.ml[27,584+21]..test/test.ml[27,584+56]) ghost,None)
+                                      expression (test/test.ml[27,584+21]..test/test.ml[27,584+56]) ghost
+                                        Texp_ident "loc/745"
+                                      expression (test/test.ml[27,584+21]..test/test.ml[27,584+56]) ghost
+                                        Texp_construct "None"
+                                        []
+                                    ]
+                                ]
+                            "pexp_loc"
+                              expression (test/test.ml[27,584+21]..test/test.ml[27,584+56]) ghost
+                                Texp_ident "loc/745"
+                            "pexp_loc_stack"
+                              expression (test/test.ml[27,584+21]..test/test.ml[27,584+56]) ghost
+                                Texp_construct "[]"
+                                []
+                            "pexp_attributes"
+                              expression (test/test.ml[27,584+21]..test/test.ml[27,584+56]) ghost
+                                Texp_construct "[]"
+                                []
+                          ]
+                        representation =
+                          Record_regular
+                        extended_expression =
+                          None
+                  <arg>
+                    Nolabel
+                    expression (test/test.ml[27,584+57]..test/test.ml[27,584+71]) ghost
+                      extra
+                        Texp_constraint
+                        core_type (test/test.ml[27,584+57]..test/test.ml[27,584+71]) ghost
+                          Ttyp_constr "Ppxlib_ast!.Ast.expression"
+                          []
+                      Texp_record
+                        fields =
+                          [
+                            "pexp_desc"
+                              expression (test/test.ml[27,584+57]..test/test.ml[27,584+71]) ghost
+                                Texp_construct "Pexp_extension"
+                                [
+                                  expression (test/test.ml[27,584+57]..test/test.ml[27,584+71]) ghost
+                                    Texp_tuple
+                                    [
+                                      expression (test/test.ml[27,584+57]..test/test.ml[27,584+71]) ghost
+                                        Texp_record
+                                          fields =
+                                            [
+                                              "txt"
+                                                expression (test/test.ml[27,584+57]..test/test.ml[27,584+71]) ghost
+                                                  Texp_constant Const_string("yay",(test/test.ml[27,584+57]..test/test.ml[27,584+71]) ghost,None)
+                                              "loc"
+                                                expression (test/test.ml[27,584+57]..test/test.ml[27,584+71]) ghost
+                                                  Texp_ident "loc/745"
+                                            ]
+                                          representation =
+                                            Record_regular
+                                          extended_expression =
+                                            None
+                                      expression (test/test.ml[27,584+57]..test/test.ml[27,584+71]) ghost
+                                        Texp_construct "PStr"
+                                        [
+                                          expression (test/test.ml[27,584+57]..test/test.ml[27,584+71]) ghost
+                                            Texp_construct "[]"
+                                            []
+                                        ]
+                                    ]
+                                ]
+                            "pexp_loc"
+                              expression (test/test.ml[27,584+57]..test/test.ml[27,584+71]) ghost
+                                Texp_ident "loc/745"
+                            "pexp_loc_stack"
+                              expression (test/test.ml[27,584+57]..test/test.ml[27,584+71]) ghost
+                                Texp_construct "[]"
+                                []
+                            "pexp_attributes"
+                              expression (test/test.ml[27,584+57]..test/test.ml[27,584+71]) ghost
+                                Texp_construct "[]"
+                                []
+                          ]
+                        representation =
+                          Record_regular
+                        extended_expression =
+                          None
+                ]
+          ]
+    ]
+  structure_item (test/test.ml[29,657+0]..test/test.ml[30,666+74])
+    Tstr_value Nonrec
+    [
+      <def>
+        pattern (test/test.ml[29,657+4]..test/test.ml[29,657+6])
+          Tpat_construct "()"
+          []
+          None
+        expression (test/test.ml[30,666+2]..test/test.ml[30,666+74])
+          Texp_apply
+          expression (test/test.ml[30,666+2]..test/test.ml[30,666+5])
+            Texp_ident "Alcotest!.run"
+          [
+            <arg>
+              Optional "and_exit"
+              expression (_none_[0,0+-1].._none_[0,0+-1]) ghost
+                Texp_construct "None"
+                []
+            <arg>
+              Optional "verbose"
+              expression (_none_[0,0+-1].._none_[0,0+-1]) ghost
+                Texp_construct "None"
+                []
+            <arg>
+              Optional "compact"
+              expression (_none_[0,0+-1].._none_[0,0+-1]) ghost
+                Texp_construct "None"
+                []
+            <arg>
+              Optional "tail_errors"
+              expression (_none_[0,0+-1].._none_[0,0+-1]) ghost
+                Texp_construct "None"
+                []
+            <arg>
+              Optional "quick_only"
+              expression (_none_[0,0+-1].._none_[0,0+-1]) ghost
+                Texp_construct "None"
+                []
+            <arg>
+              Optional "show_errors"
+              expression (_none_[0,0+-1].._none_[0,0+-1]) ghost
+                Texp_construct "None"
+                []
+            <arg>
+              Optional "json"
+              expression (_none_[0,0+-1].._none_[0,0+-1]) ghost
+                Texp_construct "None"
+                []
+            <arg>
+              Optional "filter"
+              expression (_none_[0,0+-1].._none_[0,0+-1]) ghost
+                Texp_construct "None"
+                []
+            <arg>
+              Optional "log_dir"
+              expression (_none_[0,0+-1].._none_[0,0+-1]) ghost
+                Texp_construct "None"
+                []
+            <arg>
+              Optional "bail"
+              expression (_none_[0,0+-1].._none_[0,0+-1]) ghost
+                Texp_construct "None"
+                []
+            <arg>
+              Optional "record_backtrace"
+              expression (_none_[0,0+-1].._none_[0,0+-1]) ghost
+                Texp_construct "None"
+                []
+            <arg>
+              Optional "ci"
+              expression (_none_[0,0+-1].._none_[0,0+-1]) ghost
+                Texp_construct "None"
+                []
+            <arg>
+              Optional "argv"
+              expression (_none_[0,0+-1].._none_[0,0+-1]) ghost
+                Texp_construct "None"
+                []
+            <arg>
+              Nolabel
+              expression (test/test.ml[30,666+6]..test/test.ml[30,666+28])
+                Texp_constant Const_string("Simple ppx test suit",(test/test.ml[30,666+7]..test/test.ml[30,666+27]),None)
+            <arg>
+              Nolabel
+              expression (test/test.ml[30,666+29]..test/test.ml[30,666+74])
+                Texp_construct "::"
+                [
+                  expression (test/test.ml[30,666+31]..test/test.ml[30,666+72])
+                    Texp_tuple
+                    [
+                      expression (test/test.ml[30,666+32]..test/test.ml[30,666+43])
+                        Texp_constant Const_string("Transform",(test/test.ml[30,666+33]..test/test.ml[30,666+42]),None)
+                      expression (test/test.ml[30,666+45]..test/test.ml[30,666+71])
+                        Texp_construct "::"
+                        [
+                          expression (test/test.ml[30,666+47]..test/test.ml[30,666+69])
+                            Texp_tuple
+                            [
+                              expression (test/test.ml[30,666+48]..test/test.ml[30,666+54])
+                                Texp_constant Const_string("Test",(test/test.ml[30,666+49]..test/test.ml[30,666+53]),None)
+                              expression (test/test.ml[30,666+56]..test/test.ml[30,666+62])
+                                Texp_variant "Quick"
+                                None
+                              expression (test/test.ml[30,666+64]..test/test.ml[30,666+68])
+                                Texp_ident "test/1716"
+                            ]
+                          expression (test/test.ml[30,666+70]..test/test.ml[30,666+71]) ghost
+                            Texp_construct "[]"
+                            []
+                        ]
+                    ]
+                  expression (test/test.ml[30,666+73]..test/test.ml[30,666+74]) ghost
+                    Texp_construct "[]"
+                    []
+                ]
+          ]
+    ]
+  structure_item (test/test.ml[32,742+0]..test/test.ml[142,6422+20])
+    Tstr_type Rec
+    [
+      type_declaration expression_desc/2423 (test/test.ml[32,742+0]..test/test.ml[142,6422+20])
+        ptype_params =
+          []
+        ptype_cstrs =
+          []
+        ptype_kind =
+          Ttype_variant
+            [
+              (test/test.ml[33,765+2]..test/test.ml[33,765+31])
+                Pexp_ident/2424
+                attribute "ocaml.doc"
+                  [
+                    structure_item (test/test.ml[33,765+33]..[33,765+73])
+                      Pstr_eval
+                      expression (test/test.ml[33,765+33]..[33,765+73])
+                        Pexp_constant PConst_string(" Identifiers such as [x] and [M.x] ",(test/test.ml[33,765+33]..[33,765+73]),None)
+                  ]
+                [
+                  core_type (test/test.ml[33,765+18]..test/test.ml[33,765+31])
+                    Ttyp_constr "Ppxlib!.longident_loc"
+                    []
+                ]
+                None
+              (test/test.ml[34,839+2]..test/test.ml[34,839+29])
+                Pexp_constant/2425
+                attribute "ocaml.doc"
+                  [
+                    structure_item (test/test.ml[35,869+6]..[36,949+17])
+                      Pstr_eval
+                      expression (test/test.ml[35,869+6]..[36,949+17])
+                        Pexp_constant PConst_string(" Expressions constant such as [1], ['a'], [\"true\"], [1.0], [1l], [1L],\n          [1n] ",(test/test.ml[35,869+6]..[36,949+17]),None)
+                  ]
+                [
+                  core_type (test/test.ml[34,839+21]..test/test.ml[34,839+29])
+                    Ttyp_constr "Ppxlib!.constant"
+                    []
+                ]
+                None
+              (test/test.ml[37,967+2]..test/test.ml[37,967+58])
+                Pexp_let/2426
+                attribute "ocaml.doc"
+                  [
+                    structure_item (test/test.ml[38,1026+6]..[42,1297+60])
+                      Pstr_eval
+                      expression (test/test.ml[38,1026+6]..[42,1297+60])
+                        Pexp_constant PConst_string(" [Pexp_let(flag, \\[(P1,E1) ; ... ; (Pn,En)\\], E)] represents:\n          - [let P1 = E1 and ... and Pn = EN in E] when [flag] is\n            {{!Asttypes.rec_flag.Nonrecursive} [Nonrecursive]},\n          - [let rec P1 = E1 and ... and Pn = EN in E] when [flag] is\n            {{!Asttypes.rec_flag.Recursive} [Recursive]}. ",(test/test.ml[38,1026+6]..[42,1297+60]),None)
+                  ]
+                [
+                  core_type (test/test.ml[37,967+16]..test/test.ml[37,967+24])
+                    Ttyp_constr "Ppxlib!.rec_flag"
+                    []
+                  core_type (test/test.ml[37,967+27]..test/test.ml[37,967+45])
+                    Ttyp_constr "list/9!"
+                    [
+                      core_type (test/test.ml[37,967+27]..test/test.ml[37,967+40])
+                        Ttyp_constr "Ppxlib!.value_binding"
+                        []
+                    ]
+                  core_type (test/test.ml[37,967+48]..test/test.ml[37,967+58])
+                    Ttyp_constr "Ppxlib!.expression"
+                    []
+                ]
+                None
+              (test/test.ml[43,1358+2]..test/test.ml[43,1358+26])
+                Pexp_function/2427
+                attribute "ocaml.doc"
+                  [
+                    structure_item (test/test.ml[43,1358+28]..[43,1358+71])
+                      Pstr_eval
+                      expression (test/test.ml[43,1358+28]..[43,1358+71])
+                        Pexp_constant PConst_string(" [function P1 -> E1 | ... | Pn -> En] ",(test/test.ml[43,1358+28]..[43,1358+71]),None)
+                  ]
+                [
+                  core_type (test/test.ml[43,1358+21]..test/test.ml[43,1358+26])
+                    Ttyp_constr "Ppxlib!.cases"
+                    []
+                ]
+                None
+              (test/test.ml[44,1430+2]..test/test.ml[44,1430+68])
+                Pexp_fun/2428
+                attribute "ocaml.doc"
+                  [
+                    structure_item (test/test.ml[45,1499+6]..[61,2367+27])
+                      Pstr_eval
+                      expression (test/test.ml[45,1499+6]..[61,2367+27])
+                        Pexp_constant PConst_string(" [Pexp_fun(lbl, exp0, P, E1)] represents:\n          - [fun P -> E1] when [lbl] is {{!Asttypes.arg_label.Nolabel}\n            [Nolabel]} and [exp0] is [None]\n          - [fun ~l:P -> E1] when [lbl] is {{!Asttypes.arg_label.Labelled}\n            [Labelled l]} and [exp0] is [None]\n          - [fun ?l:P -> E1] when [lbl] is {{!Asttypes.arg_label.Optional}\n            [Optional l]} and [exp0] is [None]\n          - [fun ?l:(P = E0) -> E1] when [lbl] is\n            {{!Asttypes.arg_label.Optional} [Optional l]} and [exp0] is\n            [Some E0]\n          Notes:\n          - If [E0] is provided, only {{!Asttypes.arg_label.Optional}\n            [Optional]} is allowed.\n          - [fun P1 P2 .. Pn -> E1] is represented as nested\n            {{!expression_desc.Pexp_fun} [Pexp_fun]}.\n          - [let f P = E] is represented using {{!expression_desc.Pexp_fun}\n            [Pexp_fun]}. ",(test/test.ml[45,1499+6]..[61,2367+27]),None)
+                  ]
+                [
+                  core_type (test/test.ml[44,1430+16]..test/test.ml[44,1430+25])
+                    Ttyp_constr "Ppxlib!.arg_label"
+                    []
+                  core_type (test/test.ml[44,1430+28]..test/test.ml[44,1430+45])
+                    Ttyp_constr "option/10!"
+                    [
+                      core_type (test/test.ml[44,1430+28]..test/test.ml[44,1430+38])
+                        Ttyp_constr "Ppxlib!.expression"
+                        []
+                    ]
+                  core_type (test/test.ml[44,1430+48]..test/test.ml[44,1430+55])
+                    Ttyp_constr "Ppxlib!.pattern"
+                    []
+                  core_type (test/test.ml[44,1430+58]..test/test.ml[44,1430+68])
+                    Ttyp_constr "Ppxlib!.expression"
+                    []
+                ]
+                None
+              (test/test.ml[62,2395+2]..test/test.ml[62,2395+60])
+                Pexp_apply/2429
+                attribute "ocaml.doc"
+                  [
+                    structure_item (test/test.ml[63,2456+6]..[69,2809+31])
+                      Pstr_eval
+                      expression (test/test.ml[63,2456+6]..[69,2809+31])
+                        Pexp_constant PConst_string(" [Pexp_apply(E0, \\[(l1, E1) ; ... ; (ln, En)\\])] represents\n          [E0 ~l1:E1 ... ~ln:En]\n          [li] can be {{!Asttypes.arg_label.Nolabel} [Nolabel]} (non labeled\n          argument), {{!Asttypes.arg_label.Labelled} [Labelled]} (labelled\n          arguments) or {{!Asttypes.arg_label.Optional} [Optional]} (optional\n          argument).\n          Invariant: [n > 0] ",(test/test.ml[63,2456+6]..[69,2809+31]),None)
+                  ]
+                [
+                  core_type (test/test.ml[62,2395+18]..test/test.ml[62,2395+28])
+                    Ttyp_constr "Ppxlib!.expression"
+                    []
+                  core_type (test/test.ml[62,2395+31]..test/test.ml[62,2395+60])
+                    Ttyp_constr "list/9!"
+                    [
+                      core_type (test/test.ml[62,2395+32]..test/test.ml[62,2395+54])
+                        Ttyp_tuple
+                        [
+                          core_type (test/test.ml[62,2395+32]..test/test.ml[62,2395+41])
+                            Ttyp_constr "Ppxlib!.arg_label"
+                            []
+                          core_type (test/test.ml[62,2395+44]..test/test.ml[62,2395+54])
+                            Ttyp_constr "Ppxlib!.expression"
+                            []
+                        ]
+                    ]
+                ]
+                None
+              (test/test.ml[70,2841+2]..test/test.ml[70,2841+36])
+                Pexp_match/2430
+                attribute "ocaml.doc"
+                  [
+                    structure_item (test/test.ml[71,2878+6]..[71,2878+54])
+                      Pstr_eval
+                      expression (test/test.ml[71,2878+6]..[71,2878+54])
+                        Pexp_constant PConst_string(" [match E0 with P1 -> E1 | ... | Pn -> En] ",(test/test.ml[71,2878+6]..[71,2878+54]),None)
+                  ]
+                [
+                  core_type (test/test.ml[70,2841+18]..test/test.ml[70,2841+28])
+                    Ttyp_constr "Ppxlib!.expression"
+                    []
+                  core_type (test/test.ml[70,2841+31]..test/test.ml[70,2841+36])
+                    Ttyp_constr "Ppxlib!.cases"
+                    []
+                ]
+                None
+              (test/test.ml[72,2933+2]..test/test.ml[72,2933+34])
+                Pexp_try/2431
+                attribute "ocaml.doc"
+                  [
+                    structure_item (test/test.ml[73,2968+6]..[73,2968+52])
+                      Pstr_eval
+                      expression (test/test.ml[73,2968+6]..[73,2968+52])
+                        Pexp_constant PConst_string(" [try E0 with P1 -> E1 | ... | Pn -> En] ",(test/test.ml[73,2968+6]..[73,2968+52]),None)
+                  ]
+                [
+                  core_type (test/test.ml[72,2933+16]..test/test.ml[72,2933+26])
+                    Ttyp_constr "Ppxlib!.expression"
+                    []
+                  core_type (test/test.ml[72,2933+29]..test/test.ml[72,2933+34])
+                    Ttyp_constr "Ppxlib!.cases"
+                    []
+                ]
+                None
+              (test/test.ml[74,3021+2]..test/test.ml[74,3021+33])
+                Pexp_tuple/2432
+                attribute "ocaml.doc"
+                  [
+                    structure_item (test/test.ml[75,3055+6]..[76,3093+32])
+                      Pstr_eval
+                      expression (test/test.ml[75,3055+6]..[76,3093+32])
+                        Pexp_constant PConst_string(" Expressions [(E1, ..., En)]\n          Invariant: [n >= 2] ",(test/test.ml[75,3055+6]..[76,3093+32]),None)
+                  ]
+                [
+                  core_type (test/test.ml[74,3021+18]..test/test.ml[74,3021+33])
+                    Ttyp_constr "list/9!"
+                    [
+                      core_type (test/test.ml[74,3021+18]..test/test.ml[74,3021+28])
+                        Ttyp_constr "Ppxlib!.expression"
+                        []
+                    ]
+                ]
+                None
+              (test/test.ml[77,3126+2]..test/test.ml[77,3126+55])
+                Pexp_construct/2433
+                attribute "ocaml.doc"
+                  [
+                    structure_item (test/test.ml[78,3182+6]..[81,3309+79])
+                      Pstr_eval
+                      expression (test/test.ml[78,3182+6]..[81,3309+79])
+                        Pexp_constant PConst_string(" [Pexp_construct(C, exp)] represents:\n          - [C] when [exp] is [None],\n          - [C E] when [exp] is [Some E],\n          - [C (E1, ..., En)] when [exp] is [Some (Pexp_tuple\\[E1;...;En\\])] ",(test/test.ml[78,3182+6]..[81,3309+79]),None)
+                  ]
+                [
+                  core_type (test/test.ml[77,3126+22]..test/test.ml[77,3126+35])
+                    Ttyp_constr "Ppxlib!.longident_loc"
+                    []
+                  core_type (test/test.ml[77,3126+38]..test/test.ml[77,3126+55])
+                    Ttyp_constr "option/10!"
+                    [
+                      core_type (test/test.ml[77,3126+38]..test/test.ml[77,3126+48])
+                        Ttyp_constr "Ppxlib!.expression"
+                        []
+                    ]
+                ]
+                None
+              (test/test.ml[82,3389+2]..test/test.ml[82,3389+45])
+                Pexp_variant/2434
+                attribute "ocaml.doc"
+                  [
+                    structure_item (test/test.ml[83,3435+6]..[85,3518+44])
+                      Pstr_eval
+                      expression (test/test.ml[83,3435+6]..[85,3518+44])
+                        Pexp_constant PConst_string(" [Pexp_variant(`A, exp)] represents\n          - [`A] when [exp] is [None]\n          - [`A E] when [exp] is [Some E] ",(test/test.ml[83,3435+6]..[85,3518+44]),None)
+                  ]
+                [
+                  core_type (test/test.ml[82,3389+20]..test/test.ml[82,3389+25])
+                    Ttyp_constr "Ppxlib!.label"
+                    []
+                  core_type (test/test.ml[82,3389+28]..test/test.ml[82,3389+45])
+                    Ttyp_constr "option/10!"
+                    [
+                      core_type (test/test.ml[82,3389+28]..test/test.ml[82,3389+38])
+                        Ttyp_constr "Ppxlib!.expression"
+                        []
+                    ]
+                ]
+                None
+              (test/test.ml[86,3563+2]..test/test.ml[86,3563+72])
+                Pexp_record/2435
+                attribute "ocaml.doc"
+                  [
+                    structure_item (test/test.ml[87,3636+6]..[90,3833+31])
+                      Pstr_eval
+                      expression (test/test.ml[87,3636+6]..[90,3833+31])
+                        Pexp_constant PConst_string(" [Pexp_record(\\[(l1,P1) ; ... ; (ln,Pn)\\], exp0)] represents\n          - [{ l1=P1; ...; ln=Pn }] when [exp0] is [None]\n          - [{ E0 with l1=P1; ...; ln=Pn }] when [exp0] is [Some E0]\n          Invariant: [n > 0] ",(test/test.ml[87,3636+6]..[90,3833+31]),None)
+                  ]
+                [
+                  core_type (test/test.ml[86,3563+19]..test/test.ml[86,3563+52])
+                    Ttyp_constr "list/9!"
+                    [
+                      core_type (test/test.ml[86,3563+20]..test/test.ml[86,3563+46])
+                        Ttyp_tuple
+                        [
+                          core_type (test/test.ml[86,3563+20]..test/test.ml[86,3563+33])
+                            Ttyp_constr "Ppxlib!.longident_loc"
+                            []
+                          core_type (test/test.ml[86,3563+36]..test/test.ml[86,3563+46])
+                            Ttyp_constr "Ppxlib!.expression"
+                            []
+                        ]
+                    ]
+                  core_type (test/test.ml[86,3563+55]..test/test.ml[86,3563+72])
+                    Ttyp_constr "option/10!"
+                    [
+                      core_type (test/test.ml[86,3563+55]..test/test.ml[86,3563+65])
+                        Ttyp_constr "Ppxlib!.expression"
+                        []
+                    ]
+                ]
+                None
+              (test/test.ml[91,3865+2]..test/test.ml[91,3865+44])
+                Pexp_field/2436
+                attribute "ocaml.doc"
+                  [
+                    structure_item (test/test.ml[91,3865+46]..[91,3865+58])
+                      Pstr_eval
+                      expression (test/test.ml[91,3865+46]..[91,3865+58])
+                        Pexp_constant PConst_string(" [E.l] ",(test/test.ml[91,3865+46]..[91,3865+58]),None)
+                  ]
+                [
+                  core_type (test/test.ml[91,3865+18]..test/test.ml[91,3865+28])
+                    Ttyp_constr "Ppxlib!.expression"
+                    []
+                  core_type (test/test.ml[91,3865+31]..test/test.ml[91,3865+44])
+                    Ttyp_constr "Ppxlib!.longident_loc"
+                    []
+                ]
+                None
+              (test/test.ml[92,3924+2]..test/test.ml[92,3924+60])
+                Pexp_setfield/2437
+                attribute "ocaml.doc"
+                  [
+                    structure_item (test/test.ml[93,3985+6]..[93,3985+25])
+                      Pstr_eval
+                      expression (test/test.ml[93,3985+6]..[93,3985+25])
+                        Pexp_constant PConst_string(" [E1.l <- E2] ",(test/test.ml[93,3985+6]..[93,3985+25]),None)
+                  ]
+                [
+                  core_type (test/test.ml[92,3924+21]..test/test.ml[92,3924+31])
+                    Ttyp_constr "Ppxlib!.expression"
+                    []
+                  core_type (test/test.ml[92,3924+34]..test/test.ml[92,3924+47])
+                    Ttyp_constr "Ppxlib!.longident_loc"
+                    []
+                  core_type (test/test.ml[92,3924+50]..test/test.ml[92,3924+60])
+                    Ttyp_constr "Ppxlib!.expression"
+                    []
+                ]
+                None
+              (test/test.ml[94,4011+2]..test/test.ml[94,4011+33])
+                Pexp_array/2438
+                attribute "ocaml.doc"
+                  [
+                    structure_item (test/test.ml[94,4011+35]..[94,4011+63])
+                      Pstr_eval
+                      expression (test/test.ml[94,4011+35]..[94,4011+63])
+                        Pexp_constant PConst_string(" [\\[| E1; ...; En |\\]] ",(test/test.ml[94,4011+35]..[94,4011+63]),None)
+                  ]
+                [
+                  core_type (test/test.ml[94,4011+18]..test/test.ml[94,4011+33])
+                    Ttyp_constr "list/9!"
+                    [
+                      core_type (test/test.ml[94,4011+18]..test/test.ml[94,4011+28])
+                        Ttyp_constr "Ppxlib!.expression"
+                        []
+                    ]
+                ]
+                None
+              (test/test.ml[95,4075+2]..test/test.ml[95,4075+66])
+                Pexp_ifthenelse/2439
+                attribute "ocaml.doc"
+                  [
+                    structure_item (test/test.ml[96,4142+6]..[96,4142+36])
+                      Pstr_eval
+                      expression (test/test.ml[96,4142+6]..[96,4142+36])
+                        Pexp_constant PConst_string(" [if E1 then E2 else E3] ",(test/test.ml[96,4142+6]..[96,4142+36]),None)
+                  ]
+                [
+                  core_type (test/test.ml[95,4075+23]..test/test.ml[95,4075+33])
+                    Ttyp_constr "Ppxlib!.expression"
+                    []
+                  core_type (test/test.ml[95,4075+36]..test/test.ml[95,4075+46])
+                    Ttyp_constr "Ppxlib!.expression"
+                    []
+                  core_type (test/test.ml[95,4075+49]..test/test.ml[95,4075+66])
+                    Ttyp_constr "option/10!"
+                    [
+                      core_type (test/test.ml[95,4075+49]..test/test.ml[95,4075+59])
+                        Ttyp_constr "Ppxlib!.expression"
+                        []
+                    ]
+                ]
+                None
+              (test/test.ml[97,4179+2]..test/test.ml[97,4179+44])
+                Pexp_sequence/2440
+                attribute "ocaml.doc"
+                  [
+                    structure_item (test/test.ml[97,4179+46]..[97,4179+61])
+                      Pstr_eval
+                      expression (test/test.ml[97,4179+46]..[97,4179+61])
+                        Pexp_constant PConst_string(" [E1; E2] ",(test/test.ml[97,4179+46]..[97,4179+61]),None)
+                  ]
+                [
+                  core_type (test/test.ml[97,4179+21]..test/test.ml[97,4179+31])
+                    Ttyp_constr "Ppxlib!.expression"
+                    []
+                  core_type (test/test.ml[97,4179+34]..test/test.ml[97,4179+44])
+                    Ttyp_constr "Ppxlib!.expression"
+                    []
+                ]
+                None
+              (test/test.ml[98,4241+2]..test/test.ml[98,4241+41])
+                Pexp_while/2441
+                attribute "ocaml.doc"
+                  [
+                    structure_item (test/test.ml[98,4241+43]..[98,4241+71])
+                      Pstr_eval
+                      expression (test/test.ml[98,4241+43]..[98,4241+71])
+                        Pexp_constant PConst_string(" [while E1 do E2 done] ",(test/test.ml[98,4241+43]..[98,4241+71]),None)
+                  ]
+                [
+                  core_type (test/test.ml[98,4241+18]..test/test.ml[98,4241+28])
+                    Ttyp_constr "Ppxlib!.expression"
+                    []
+                  core_type (test/test.ml[98,4241+31]..test/test.ml[98,4241+41])
+                    Ttyp_constr "Ppxlib!.expression"
+                    []
+                ]
+                None
+              (test/test.ml[99,4313+2]..test/test.ml[99,4313+79])
+                Pexp_for/2442
+                attribute "ocaml.doc"
+                  [
+                    structure_item (test/test.ml[100,4393+6]..[104,4633+59])
+                      Pstr_eval
+                      expression (test/test.ml[100,4393+6]..[104,4633+59])
+                        Pexp_constant PConst_string(" [Pexp_for(i, E1, E2, direction, E3)] represents:\n          - [for i = E1 to E2 do E3 done] when [direction] is\n            {{!Asttypes.direction_flag.Upto} [Upto]}\n          - [for i = E1 downto E2 do E3 done] when [direction] is\n            {{!Asttypes.direction_flag.Downto} [Downto]} ",(test/test.ml[100,4393+6]..[104,4633+59]),None)
+                  ]
+                [
+                  core_type (test/test.ml[99,4313+16]..test/test.ml[99,4313+23])
+                    Ttyp_constr "Ppxlib!.pattern"
+                    []
+                  core_type (test/test.ml[99,4313+26]..test/test.ml[99,4313+36])
+                    Ttyp_constr "Ppxlib!.expression"
+                    []
+                  core_type (test/test.ml[99,4313+39]..test/test.ml[99,4313+49])
+                    Ttyp_constr "Ppxlib!.expression"
+                    []
+                  core_type (test/test.ml[99,4313+52]..test/test.ml[99,4313+66])
+                    Ttyp_constr "Ppxlib!.direction_flag"
+                    []
+                  core_type (test/test.ml[99,4313+69]..test/test.ml[99,4313+79])
+                    Ttyp_constr "Ppxlib!.expression"
+                    []
+                ]
+                None
+              (test/test.ml[105,4693+2]..test/test.ml[105,4693+45])
+                Pexp_constraint/2443
+                attribute "ocaml.doc"
+                  [
+                    structure_item (test/test.ml[105,4693+47]..[105,4693+63])
+                      Pstr_eval
+                      expression (test/test.ml[105,4693+47]..[105,4693+63])
+                        Pexp_constant PConst_string(" [(E : T)] ",(test/test.ml[105,4693+47]..[105,4693+63]),None)
+                  ]
+                [
+                  core_type (test/test.ml[105,4693+23]..test/test.ml[105,4693+33])
+                    Ttyp_constr "Ppxlib!.expression"
+                    []
+                  core_type (test/test.ml[105,4693+36]..test/test.ml[105,4693+45])
+                    Ttyp_constr "Ppxlib!.core_type"
+                    []
+                ]
+                None
+              (test/test.ml[106,4757+2]..test/test.ml[106,4757+60])
+                Pexp_coerce/2444
+                attribute "ocaml.doc"
+                  [
+                    structure_item (test/test.ml[107,4818+6]..[109,4911+56])
+                      Pstr_eval
+                      expression (test/test.ml[107,4818+6]..[109,4911+56])
+                        Pexp_constant PConst_string(" [Pexp_coerce(E, from, T)] represents\n          - [(E :> T)] when [from] is [None],\n          - [(E : T0 :> T)] when [from] is [Some T0]. ",(test/test.ml[107,4818+6]..[109,4911+56]),None)
+                  ]
+                [
+                  core_type (test/test.ml[106,4757+19]..test/test.ml[106,4757+29])
+                    Ttyp_constr "Ppxlib!.expression"
+                    []
+                  core_type (test/test.ml[106,4757+32]..test/test.ml[106,4757+48])
+                    Ttyp_constr "option/10!"
+                    [
+                      core_type (test/test.ml[106,4757+32]..test/test.ml[106,4757+41])
+                        Ttyp_constr "Ppxlib!.core_type"
+                        []
+                    ]
+                  core_type (test/test.ml[106,4757+51]..test/test.ml[106,4757+60])
+                    Ttyp_constr "Ppxlib!.core_type"
+                    []
+                ]
+                None
+              (test/test.ml[110,4968+2]..test/test.ml[110,4968+39])
+                Pexp_send/2445
+                attribute "ocaml.doc"
+                  [
+                    structure_item (test/test.ml[110,4968+41]..[110,4968+55])
+                      Pstr_eval
+                      expression (test/test.ml[110,4968+41]..[110,4968+55])
+                        Pexp_constant PConst_string(" [E # m] ",(test/test.ml[110,4968+41]..[110,4968+55]),None)
+                  ]
+                [
+                  core_type (test/test.ml[110,4968+17]..test/test.ml[110,4968+27])
+                    Ttyp_constr "Ppxlib!.expression"
+                    []
+                  core_type (test/test.ml[110,4968+30]..test/test.ml[110,4968+39])
+                    Ttyp_constr "Ppxlib!.loc"
+                    [
+                      core_type (test/test.ml[110,4968+30]..test/test.ml[110,4968+35])
+                        Ttyp_constr "Ppxlib!.label"
+                        []
+                    ]
+                ]
+                None
+              (test/test.ml[111,5024+2]..test/test.ml[111,5024+29])
+                Pexp_new/2446
+                attribute "ocaml.doc"
+                  [
+                    structure_item (test/test.ml[111,5024+31]..[111,5024+47])
+                      Pstr_eval
+                      expression (test/test.ml[111,5024+31]..[111,5024+47])
+                        Pexp_constant PConst_string(" [new M.c] ",(test/test.ml[111,5024+31]..[111,5024+47]),None)
+                  ]
+                [
+                  core_type (test/test.ml[111,5024+16]..test/test.ml[111,5024+29])
+                    Ttyp_constr "Ppxlib!.longident_loc"
+                    []
+                ]
+                None
+              (test/test.ml[112,5072+2]..test/test.ml[112,5072+45])
+                Pexp_setinstvar/2447
+                attribute "ocaml.doc"
+                  [
+                    structure_item (test/test.ml[112,5072+47]..[112,5072+62])
+                      Pstr_eval
+                      expression (test/test.ml[112,5072+47]..[112,5072+62])
+                        Pexp_constant PConst_string(" [x <- 2] ",(test/test.ml[112,5072+47]..[112,5072+62]),None)
+                  ]
+                [
+                  core_type (test/test.ml[112,5072+23]..test/test.ml[112,5072+32])
+                    Ttyp_constr "Ppxlib!.loc"
+                    [
+                      core_type (test/test.ml[112,5072+23]..test/test.ml[112,5072+28])
+                        Ttyp_constr "Ppxlib!.label"
+                        []
+                    ]
+                  core_type (test/test.ml[112,5072+35]..test/test.ml[112,5072+45])
+                    Ttyp_constr "Ppxlib!.expression"
+                    []
+                ]
+                None
+              (test/test.ml[113,5135+2]..test/test.ml[113,5135+50])
+                Pexp_override/2448
+                attribute "ocaml.doc"
+                  [
+                    structure_item (test/test.ml[114,5186+6]..[114,5186+42])
+                      Pstr_eval
+                      expression (test/test.ml[114,5186+6]..[114,5186+42])
+                        Pexp_constant PConst_string(" [{< x1 = E1; ...; xn = En >}] ",(test/test.ml[114,5186+6]..[114,5186+42]),None)
+                  ]
+                [
+                  core_type (test/test.ml[113,5135+21]..test/test.ml[113,5135+50])
+                    Ttyp_constr "list/9!"
+                    [
+                      core_type (test/test.ml[113,5135+22]..test/test.ml[113,5135+44])
+                        Ttyp_tuple
+                        [
+                          core_type (test/test.ml[113,5135+22]..test/test.ml[113,5135+31])
+                            Ttyp_constr "Ppxlib!.loc"
+                            [
+                              core_type (test/test.ml[113,5135+22]..test/test.ml[113,5135+27])
+                                Ttyp_constr "Ppxlib!.label"
+                                []
+                            ]
+                          core_type (test/test.ml[113,5135+34]..test/test.ml[113,5135+44])
+                            Ttyp_constr "Ppxlib!.expression"
+                            []
+                        ]
+                    ]
+                ]
+                None
+              (test/test.ml[115,5229+2]..test/test.ml[115,5229+66])
+                Pexp_letmodule/2449
+                attribute "ocaml.doc"
+                  [
+                    structure_item (test/test.ml[116,5296+6]..[116,5296+37])
+                      Pstr_eval
+                      expression (test/test.ml[116,5296+6]..[116,5296+37])
+                        Pexp_constant PConst_string(" [let module M = ME in E] ",(test/test.ml[116,5296+6]..[116,5296+37]),None)
+                  ]
+                [
+                  core_type (test/test.ml[115,5229+22]..test/test.ml[115,5229+39])
+                    Ttyp_constr "Ppxlib!.loc"
+                    [
+                      core_type (test/test.ml[115,5229+22]..test/test.ml[115,5229+35])
+                        Ttyp_constr "option/10!"
+                        [
+                          core_type (test/test.ml[115,5229+22]..test/test.ml[115,5229+28])
+                            Ttyp_constr "string/15!"
+                            []
+                        ]
+                    ]
+                  core_type (test/test.ml[115,5229+42]..test/test.ml[115,5229+53])
+                    Ttyp_constr "Ppxlib!.module_expr"
+                    []
+                  core_type (test/test.ml[115,5229+56]..test/test.ml[115,5229+66])
+                    Ttyp_constr "Ppxlib!.expression"
+                    []
+                ]
+                None
+              (test/test.ml[117,5334+2]..test/test.ml[117,5334+59])
+                Pexp_letexception/2450
+                attribute "ocaml.doc"
+                  [
+                    structure_item (test/test.ml[118,5394+6]..[118,5394+35])
+                      Pstr_eval
+                      expression (test/test.ml[118,5394+6]..[118,5394+35])
+                        Pexp_constant PConst_string(" [let exception C in E] ",(test/test.ml[118,5394+6]..[118,5394+35]),None)
+                  ]
+                [
+                  core_type (test/test.ml[117,5334+25]..test/test.ml[117,5334+46])
+                    Ttyp_constr "Ppxlib!.extension_constructor"
+                    []
+                  core_type (test/test.ml[117,5334+49]..test/test.ml[117,5334+59])
+                    Ttyp_constr "Ppxlib!.expression"
+                    []
+                ]
+                None
+              (test/test.ml[119,5430+2]..test/test.ml[119,5430+29])
+                Pexp_assert/2451
+                attribute "ocaml.doc"
+                  [
+                    structure_item (test/test.ml[120,5460+6]..[121,5482+82])
+                      Pstr_eval
+                      expression (test/test.ml[120,5460+6]..[121,5482+82])
+                        Pexp_constant PConst_string(" [assert E].\n          Note: [assert false] is treated in a special way by the type-checker. ",(test/test.ml[120,5460+6]..[121,5482+82]),None)
+                  ]
+                [
+                  core_type (test/test.ml[119,5430+19]..test/test.ml[119,5430+29])
+                    Ttyp_constr "Ppxlib!.expression"
+                    []
+                ]
+                None
+              (test/test.ml[122,5565+2]..test/test.ml[122,5565+27])
+                Pexp_lazy/2452
+                attribute "ocaml.doc"
+                  [
+                    structure_item (test/test.ml[122,5565+29]..[122,5565+44])
+                      Pstr_eval
+                      expression (test/test.ml[122,5565+29]..[122,5565+44])
+                        Pexp_constant PConst_string(" [lazy E] ",(test/test.ml[122,5565+29]..[122,5565+44]),None)
+                  ]
+                [
+                  core_type (test/test.ml[122,5565+17]..test/test.ml[122,5565+27])
+                    Ttyp_constr "Ppxlib!.expression"
+                    []
+                ]
+                None
+              (test/test.ml[123,5610+2]..test/test.ml[123,5610+46])
+                Pexp_poly/2453
+                attribute "ocaml.doc"
+                  [
+                    structure_item (test/test.ml[124,5657+6]..[127,5819+21])
+                      Pstr_eval
+                      expression (test/test.ml[124,5657+6]..[127,5819+21])
+                        Pexp_constant PConst_string(" Used for method bodies.\n          Can only be used as the expression under\n          {{!class_field_kind.Cfk_concrete} [Cfk_concrete]} for methods (not\n          values). ",(test/test.ml[124,5657+6]..[127,5819+21]),None)
+                  ]
+                [
+                  core_type (test/test.ml[123,5610+17]..test/test.ml[123,5610+27])
+                    Ttyp_constr "Ppxlib!.expression"
+                    []
+                  core_type (test/test.ml[123,5610+30]..test/test.ml[123,5610+46])
+                    Ttyp_constr "option/10!"
+                    [
+                      core_type (test/test.ml[123,5610+30]..test/test.ml[123,5610+39])
+                        Ttyp_constr "Ppxlib!.core_type"
+                        []
+                    ]
+                ]
+                None
+              (test/test.ml[128,5841+2]..test/test.ml[128,5841+34])
+                Pexp_object/2454
+                attribute "ocaml.doc"
+                  [
+                    structure_item (test/test.ml[128,5841+36]..[128,5841+59])
+                      Pstr_eval
+                      expression (test/test.ml[128,5841+36]..[128,5841+59])
+                        Pexp_constant PConst_string(" [object ... end] ",(test/test.ml[128,5841+36]..[128,5841+59]),None)
+                  ]
+                [
+                  core_type (test/test.ml[128,5841+19]..test/test.ml[128,5841+34])
+                    Ttyp_constr "Ppxlib!.class_structure"
+                    []
+                ]
+                None
+              (test/test.ml[129,5901+2]..test/test.ml[129,5901+43])
+                Pexp_newtype/2455
+                attribute "ocaml.doc"
+                  [
+                    structure_item (test/test.ml[129,5901+45]..[129,5901+71])
+                      Pstr_eval
+                      expression (test/test.ml[129,5901+45]..[129,5901+71])
+                        Pexp_constant PConst_string(" [fun (type t) -> E] ",(test/test.ml[129,5901+45]..[129,5901+71]),None)
+                  ]
+                [
+                  core_type (test/test.ml[129,5901+20]..test/test.ml[129,5901+30])
+                    Ttyp_constr "Ppxlib!.loc"
+                    [
+                      core_type (test/test.ml[129,5901+20]..test/test.ml[129,5901+26])
+                        Ttyp_constr "string/15!"
+                        []
+                    ]
+                  core_type (test/test.ml[129,5901+33]..test/test.ml[129,5901+43])
+                    Ttyp_constr "Ppxlib!.expression"
+                    []
+                ]
+                None
+              (test/test.ml[130,5973+2]..test/test.ml[130,5973+28])
+                Pexp_pack/2456
+                attribute "ocaml.doc"
+                  [
+                    structure_item (test/test.ml[131,6002+6]..[133,6073+60])
+                      Pstr_eval
+                      expression (test/test.ml[131,6002+6]..[133,6073+60])
+                        Pexp_constant PConst_string(" [(module ME)].\n          [(module ME : S)] is represented as\n          [Pexp_constraint(Pexp_pack ME, Ptyp_package S)] ",(test/test.ml[131,6002+6]..[133,6073+60]),None)
+                  ]
+                [
+                  core_type (test/test.ml[130,5973+17]..test/test.ml[130,5973+28])
+                    Ttyp_constr "Ppxlib!.module_expr"
+                    []
+                ]
+                None
+              (test/test.ml[134,6134+2]..test/test.ml[134,6134+46])
+                Pexp_open/2457
+                attribute "ocaml.doc"
+                  [
+                    structure_item (test/test.ml[135,6181+6]..[137,6231+33])
+                      Pstr_eval
+                      expression (test/test.ml[135,6181+6]..[137,6231+33])
+                        Pexp_constant PConst_string(" - [M.(E)]\n          - [let open M in E]\n          - [let open! M in E] ",(test/test.ml[135,6181+6]..[137,6231+33]),None)
+                  ]
+                [
+                  core_type (test/test.ml[134,6134+17]..test/test.ml[134,6134+33])
+                    Ttyp_constr "Ppxlib!.open_declaration"
+                    []
+                  core_type (test/test.ml[134,6134+36]..test/test.ml[134,6134+46])
+                    Ttyp_constr "Ppxlib!.expression"
+                    []
+                ]
+                None
+              (test/test.ml[138,6265+2]..test/test.ml[138,6265+23])
+                Pexp_letop/2458
+                attribute "ocaml.doc"
+                  [
+                    structure_item (test/test.ml[139,6289+6]..[140,6321+50])
+                      Pstr_eval
+                      expression (test/test.ml[139,6289+6]..[140,6321+50])
+                        Pexp_constant PConst_string(" - [let* P = E0 in E1]\n          - [let* P0 = E00 and* P1 = E01 in E1] ",(test/test.ml[139,6289+6]..[140,6321+50]),None)
+                  ]
+                [
+                  core_type (test/test.ml[138,6265+18]..test/test.ml[138,6265+23])
+                    Ttyp_constr "Ppxlib!.letop"
+                    []
+                ]
+                None
+              (test/test.ml[141,6372+2]..test/test.ml[141,6372+31])
+                Pexp_extension/2459
+                attribute "ocaml.doc"
+                  [
+                    structure_item (test/test.ml[141,6372+33]..[141,6372+49])
+                      Pstr_eval
+                      expression (test/test.ml[141,6372+33]..[141,6372+49])
+                        Pexp_constant PConst_string(" [\\[%id\\]] ",(test/test.ml[141,6372+33]..[141,6372+49]),None)
+                  ]
+                [
+                  core_type (test/test.ml[141,6372+22]..test/test.ml[141,6372+31])
+                    Ttyp_constr "Ppxlib!.extension"
+                    []
+                ]
+                None
+              (test/test.ml[142,6422+2]..test/test.ml[142,6422+20])
+                Pexp_unreachable/2460
+                attribute "ocaml.doc"
+                  [
+                    structure_item (test/test.ml[142,6422+22]..[142,6422+32])
+                      Pstr_eval
+                      expression (test/test.ml[142,6422+22]..[142,6422+32])
+                        Pexp_constant PConst_string(" [.] ",(test/test.ml[142,6422+22]..[142,6422+32]),None)
+                  ]
+                []
+                None
+            ]
+        ptype_private = Public
+        ptype_manifest =
+          None
+    ]
+]
+
+{<Dune__exe__Test>
+ "Ast"[module] -> (CU Ppxlib . "Ast"[module])<Dune__exe__Test.1>;
+ "Ast_helper"[module] ->
+     (CU Ppxlib . "Ast_helper"[module])<Dune__exe__Test.2>;
+ "Ast_magic"[module] ->
+     (CU Ppxlib . "Selected_ast"[module] . "Ast"[module] .
+     "Config"[module])<Dune__exe__Test.3>;
+ "Asttypes"[module] -> (CU Ppxlib . "Asttypes"[module])<Dune__exe__Test.4>;
+ "Parse"[module] -> (CU Ppxlib . "Parse"[module])<Dune__exe__Test.5>;
+ "Parsetree"[module] -> (CU Ppxlib . "Parsetree"[module])<Dune__exe__Test.6>;
+ "Pprintast"[module] -> (CU Astlib . "Pprintast"[module])<Dune__exe__Test.7>;
+ "Selected_ast"[module] ->
+     (CU Ppxlib . "Selected_ast"[module])<Dune__exe__Test.8>;
+ "ast"[value] -> <Dune__exe__Test.9>;
+ "expression_desc"[type] -> <Dune__exe__Test.17>;
+ "loc"[value] -> <Dune__exe__Test.0>;
+ "test"[value] -> <Dune__exe__Test.16>;
+ }
+
+(seq
+  (let (loc/745 = (field 2 (global Ppxlib__Location!)))
+    (setfield_ptr(root-init) 0 (global Dune__exe__Test!) loc/745))
+  (let
+    (ast/952 =
+       (let
+         (pp_ast/953 =
+            (function fmt/955 v/956 : int
+              (apply (field 128 (global Stdlib__Format!)) fmt/955
+                [0: [3: 0 0] "%S"]
+                (apply (field 2 (global Astlib__Pprintast!)) v/956)))
+          compare/1527 =
+            (function expected/1528 actual/1529 : int
+              (apply (field 7 (global Stdlib__String!))
+                (apply (field 2 (global Astlib__Pprintast!)) expected/1528)
+                (apply (field 2 (global Astlib__Pprintast!)) actual/1529))))
+         (apply (field 4 (global Alcotest!)) pp_ast/953 compare/1527)))
+    (setfield_ptr(root-init) 1 (global Dune__exe__Test!) ast/952))
+  (let
+    (test/1716 =
+       (function param/2422[int] : int
+         (apply (field 28 (global Alcotest!)) 0 0
+           (field 1 (global Dune__exe__Test!)) "case I"
+           (makeblock 0
+             (makeblock 1
+               (makeblock 2 "r3p14ccd 70 r4nd0m 5tr1n9"
+                 (field 0 (global Dune__exe__Test!)) 0))
+             (field 0 (global Dune__exe__Test!)) 0 0)
+           (makeblock 0
+             (makeblock 35
+               (makeblock 0
+                 (makeblock 0 "yay" (field 0 (global Dune__exe__Test!)))
+                 [0: 0]))
+             (field 0 (global Dune__exe__Test!)) 0 0))))
+    (setfield_ptr(root-init) 2 (global Dune__exe__Test!) test/1716))
+  (let
+    (*match*/5379 =
+       (apply (field 2 (global Alcotest!)) 0 0 0 0 0 0 0 0 0 0 0 0 0
+         "Simple ppx test suit"
+         (makeblock 0
+           (makeblock 0 "Transform"
+             (makeblock 0
+               (makeblock 0 (*,int,*) "Test" -249891123
+                 (field 2 (global Dune__exe__Test!)))
+               0))
+           0)))
+    0)
+  0)
+(seq
+  (let (loc/745 = (field 2 (global Ppxlib__Location!)))
+    (setfield_ptr(root-init) 0 (global Dune__exe__Test!) loc/745))
+  (let
+    (ast/952 =
+       (let
+         (pp_ast/953 =
+            (function fmt/955 v/956 : int
+              (apply (field 128 (global Stdlib__Format!)) fmt/955
+                [0: [3: 0 0] "%S"]
+                (apply (field 2 (global Astlib__Pprintast!)) v/956)))
+          compare/1527 =
+            (function expected/1528 actual/1529 : int
+              (apply (field 7 (global Stdlib__String!))
+                (apply (field 2 (global Astlib__Pprintast!)) expected/1528)
+                (apply (field 2 (global Astlib__Pprintast!)) actual/1529))))
+         (apply (field 4 (global Alcotest!)) pp_ast/953 compare/1527)))
+    (setfield_ptr(root-init) 1 (global Dune__exe__Test!) ast/952))
+  (let
+    (test/1716 =
+       (function param/2422[int] : int
+         (apply (field 28 (global Alcotest!)) 0 0
+           (field 1 (global Dune__exe__Test!)) "case I"
+           (makeblock 0
+             (makeblock 1
+               (makeblock 2 "r3p14ccd 70 r4nd0m 5tr1n9"
+                 (field 0 (global Dune__exe__Test!)) 0))
+             (field 0 (global Dune__exe__Test!)) 0 0)
+           (makeblock 0
+             (makeblock 35
+               (makeblock 0
+                 (makeblock 0 "yay" (field 0 (global Dune__exe__Test!)))
+                 [0: 0]))
+             (field 0 (global Dune__exe__Test!)) 0 0))))
+    (setfield_ptr(root-init) 2 (global Dune__exe__Test!) test/1716))
+  (let
+    (*match*/5379 =
+       (apply (field 2 (global Alcotest!)) 0 0 0 0 0 0 0 0 0 0 0 0 0
+         "Simple ppx test suit"
+         (makeblock 0
+           (makeblock 0 "Transform"
+             (makeblock 0
+               (makeblock 0 (*,int,*) "Test" -249891123
+                 (field 2 (global Dune__exe__Test!)))
+               0))
+           0)))
+    0)
+  0)

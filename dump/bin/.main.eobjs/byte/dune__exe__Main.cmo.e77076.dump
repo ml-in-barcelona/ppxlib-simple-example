@@ -1,0 +1,46 @@
+[
+  structure_item (bin/main.ml[1,0+0]..[1,0+36])
+    Pstr_eval
+    expression (bin/main.ml[1,0+0]..[1,0+36])
+      Pexp_apply
+      expression (bin/main.ml[1,0+0]..[1,0+33])
+        Pexp_ident "Ppxlib.Driver.run_as_ppx_rewriter" (bin/main.ml[1,0+0]..[1,0+33])
+      [
+        <arg>
+        Nolabel
+          expression (bin/main.ml[1,0+34]..[1,0+36])
+            Pexp_construct "()" (bin/main.ml[1,0+34]..[1,0+36])
+            None
+      ]
+]
+
+;;Ppxlib.Driver.run_as_ppx_rewriter ()
+[
+  structure_item (bin/main.ml[1,0+0]..bin/main.ml[1,0+36])
+    Tstr_eval
+    expression (bin/main.ml[1,0+0]..bin/main.ml[1,0+36])
+      Texp_apply
+      expression (bin/main.ml[1,0+0]..bin/main.ml[1,0+33])
+        Texp_ident "Ppxlib!.Driver.run_as_ppx_rewriter"
+      [
+        <arg>
+          Nolabel
+          expression (bin/main.ml[1,0+34]..bin/main.ml[1,0+36])
+            Texp_construct "()"
+            []
+      ]
+]
+
+{<Dune__exe__Main>
+ }
+
+(setglobal Dune__exe__Main!
+  (seq
+    (after Dune__exe__Main bin/main.ml(1):0-36
+      (apply (field 12 (global Ppxlib__Driver!)) 0))
+    (pseudo <unknown location> (makeblock 0))))
+(setglobal Dune__exe__Main!
+  (seq
+    (after Dune__exe__Main bin/main.ml(1):0-36
+      (apply (field 12 (global Ppxlib__Driver!)) 0))
+    (pseudo <unknown location> (makeblock 0))))

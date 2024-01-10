@@ -1,0 +1,53 @@
+[
+  structure_item (test.ml[1,0+0]..[1,0+38])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (test.ml[1,0+4]..[1,0+6])
+          Ppat_construct "()" (test.ml[1,0+4]..[1,0+6])
+          None
+        expression (test.ml[1,0+9]..[1,0+38])
+          Pexp_apply
+          expression (test.ml[1,0+9]..[1,0+22])
+            Pexp_ident "print_endline" (test.ml[1,0+9]..[1,0+22])
+          [
+            <arg>
+            Nolabel
+              expression (test.ml[1,0+23]..[1,0+38])
+                Pexp_constant PConst_string("Hello, World!",(test.ml[1,0+24]..[1,0+37]),None)
+          ]
+    ]
+]
+
+let () = print_endline "Hello, World!"
+[
+  structure_item (test.ml[1,0+0]..test.ml[1,0+38])
+    Tstr_value Nonrec
+    [
+      <def>
+        pattern (test.ml[1,0+4]..test.ml[1,0+6])
+          Tpat_construct "()"
+          []
+          None
+        expression (test.ml[1,0+9]..test.ml[1,0+38])
+          Texp_apply
+          expression (test.ml[1,0+9]..test.ml[1,0+22])
+            Texp_ident "Stdlib!.print_endline"
+          [
+            <arg>
+              Nolabel
+              expression (test.ml[1,0+23]..test.ml[1,0+38])
+                Texp_constant Const_string("Hello, World!",(test.ml[1,0+24]..test.ml[1,0+37]),None)
+          ]
+    ]
+]
+
+{<Dune__exe__Test>
+ }
+
+(seq
+  (let (*match*/425 = (apply (field 45 (global Stdlib!)) "Hello, World!")) 0)
+  0)
+(seq
+  (let (*match*/425 = (apply (field 45 (global Stdlib!)) "Hello, World!")) 0)
+  0)
