@@ -1,5 +1,11 @@
+* capture the log
+
+#+begin_src shell
+dune build > log.txt 2>&1
+#+end_src
 
 * data analysis 1
+
 
 #+begin_src shell :results value
 grep DEBUG log.txt  |cut -d, -f1-3 |sort |uniq -c |sort -n |tail -20
