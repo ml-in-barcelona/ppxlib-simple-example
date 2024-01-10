@@ -10,42 +10,20 @@ It uses [`esy`](https://esy.sh) since it's a little easier to install sandboxes 
 
 ## Installation
 
-Needs `esy` installed globally in your system, if you don't have it install it with npm: `npm install -g esy`.
-
 ```bash
-esy # Installs the dependencies and builds the project
-```
-
-## Editor
-
-```bash
-esy add @opam/ocaml-lsp-server
+opam install .
 ```
 
 ## Building
 
 ```bash
-esy build # Builds the project, once
-esy watch # Watch the filesystem and re-builds the project on each change
+dune build
 ```
 
 ## Testing
 
 ```bash
-esy test # Runs alcotest tests
+dune test
 ```
 
-## Usage
 
-Users of your ppx need to add this to their dune for your executable to be executed as ppx (or inside bsconfig if targeting ReScript).
-
-```lisp
-(preprocess
-  (pps simple-ppx))
-```
-
-```ocaml
-print_endline [%yay]
-(* Transforms to *)
-print_endline "r3p14ccd 70 r4nd0m 5tr1n9"
-```

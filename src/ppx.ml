@@ -52,11 +52,11 @@ let print_value_binding_list2 (x : value_binding) : unit=
     pvb_attributes; (* : attributes; *)
     pvb_loc; (* : location; *)
   } ->
-    (print_endline (Batteries.dump ("DEBUG55:pat", pvb_pat )));
-    (print_endline (Batteries.dump ("DEBUG55:expr", pvb_expr )));
+    (print_endline (Batteries.dump ("DEBUG:value_binding.pat:", pvb_pat )));
+    (print_endline (Batteries.dump ("DEBUG:value_binding.expr:", pvb_expr )));
     (*print_value_binding_expr pvb_expr*)
-    (print_endline (Batteries.dump ("DEBUG55:atrr", pvb_attributes )));
-    (print_endline (Batteries.dump ("DEBUG55:loc", pvb_loc )))
+    (print_endline (Batteries.dump ("DEBUG:value_binding.atrr:", pvb_attributes )));
+    (print_endline (Batteries.dump ("DEBUG:value_binding.loc:", pvb_loc )))
 
 let rec print_value_binding_list (x : value_binding list) : unit=
   match x with
@@ -66,6 +66,22 @@ let rec print_value_binding_list (x : value_binding list) : unit=
     (print_value_binding_list t);
     ()
 
+let rec process_id2(x:longident) =
+  match x with
+  | Lident string -> string
+  | Ldot (longident, string) ->
+    (process_id2 longident) ^ "." ^ string
+  | Lapply (longident,longident2)
+    -> (process_id2 longident)  ^ "."
+       ^ (process_id2 longident2 )
+
+let process_id(x:longident_loc) =
+  match x with
+  | {txt;_} ->(process_id2 txt)
+(* (({txt2)) ->txt2 *)
+    (* (print_endline (Batteries.dump ("DEBUG:process_id:",  txt2))); *)
+    
+  
 let rec process_record_kind(x) =
   match x with
     {
@@ -75,7 +91,7 @@ let rec process_record_kind(x) =
      pld_loc(* : Location.t *);
      pld_attributes(* : attributes *); 
    } ->
-    (print_endline (Batteries.dump ("precord_kind:",  
+    (print_endline (Batteries.dump ("DEBUG:precord_kind:",  
                                     pld_name,
                                     "mutable",
                                     pld_mutable,
@@ -84,39 +100,51 @@ let rec process_record_kind(x) =
 and
 process_core_type_desc x =
   match x with
-  | Ptyp_any  -> (print_endline (Batteries.dump ("DEBUG:Ptyp_any")))
-  | Ptyp_var name ->(print_endline (Batteries.dump ("DEBUG:Ptyp_var"  , name)))
-  | Ptyp_arrow (arg_label , core_type , core_type2) ->
-    (print_endline (Batteries.dump ("DEBUG:Ptyp_arrow10" )))
-  | Ptyp_tuple a (* of core_type list *)
-    ->
-    (print_endline (Batteries.dump ("DEBUG:Ptyp_arrow9" )))
   | Ptyp_constr (a,b) (* of Longident.t loc * core_type list *)
     ->
+    let myid = (process_id a) in
     (process_core_type_list b);
-    (print_endline (Batteries.dump ("DEBUG:Ptyp_constr", "id",a, "types",b )))
+
+    Printf.printf "DEBUG:Ptyp_constr1:%s" myid;
+     (* "id" ^ a ^ " id2 " ^ myid  *)
+
+    (print_endline (Batteries.dump (
+         "DEBUG:Ptyp_constr:",
+         "id",a,myid,
+         "types",b )))
+
+  | Ptyp_tuple a (* of core_type list *)
+    ->
+    (print_endline (Batteries.dump ("DEBUG:Ptyp_tuple:" )))
+
+  (*not in test*)
+  | Ptyp_any  -> (print_endline (Batteries.dump ("DEBUG:Ptyp_any:")))
+  | Ptyp_var name ->(print_endline (Batteries.dump ("DEBUG:Ptyp_var:"  , name)))
+  | Ptyp_arrow (arg_label , core_type , core_type2) ->
+    (print_endline (Batteries.dump ("DEBUG:Ptyp_arrow10:" )))
+
   | Ptyp_object (a,b)(* of object_field list * closed_flag *)
     ->
-    (print_endline (Batteries.dump ("DEBUG:Ptyp_arrow8" )))
+    (print_endline (Batteries.dump ("DEBUG:Ptyp_arrow8:" )))
   | Ptyp_class (a,b) (* of Longident.t loc * core_type list *)
     ->
-    (print_endline (Batteries.dump ("DEBUG:Ptyp_arrow7" )))
+    (print_endline (Batteries.dump ("DEBUG:Ptyp_arrow7:" )))
   | Ptyp_alias (a,b) (* of core_type * string loc  *)
     ->
-    (print_endline (Batteries.dump ("DEBUG:Ptyp_arrow6" )))
+    (print_endline (Batteries.dump ("DEBUG:Ptyp_arrow6:" )))
   | Ptyp_variant (a,b,c) (* of row_field list * closed_flag * label list option *)
     ->
-    (print_endline (Batteries.dump ("DEBUG:Ptyp_arrow5" )))
+    (print_endline (Batteries.dump ("DEBUG:Ptyp_arrow5:" )))
   | Ptyp_poly (a,b) (* of string loc list * core_type *)
     ->
-    (print_endline (Batteries.dump ("DEBUG:Ptyp_arrow4" )))
+    (print_endline (Batteries.dump ("DEBUG:Ptyp_arrow4:" )))
   | Ptyp_package a(* of package_type  *)
     ->
-    (print_endline (Batteries.dump ("DEBUG:Ptyp_arrow3",a )))    
+    (print_endline (Batteries.dump ("DEBUG:Ptyp_arrow3:",a )))    
   (* | Ptyp_open (a,b) (\* of Longident.t loc * core_type *\)-> *)
   (*   (print_endline (Batteries.dump ("DEBUG:Ptyp_arrow2",a,b ))) *)    
   | Ptyp_extension a (* of extension   *)    ->
-    (print_endline (Batteries.dump ("DEBUG:Ptyp_extension",a )))
+    (print_endline (Batteries.dump ("DEBUG:Ptyp_extension:",a )))
 and
   process_record_kind_list(x) =
   match x with
@@ -135,7 +163,8 @@ process_core_type(x) =
      ptyp_attributes(* : attributes; *)
     }->
     (process_core_type_desc ptyp_desc);
-    (print_endline (Batteries.dump ("ptyp_desc"  , ptyp_desc)))
+    (*MOSTCOMMON*)
+    (print_endline (Batteries.dump ("DEBUG:core_type.ptyp_desc:"  , ptyp_desc)))
 and process_core_type_list(x:core_type list) =
   match x with
   | [] -> ()
@@ -152,16 +181,16 @@ let print_constructor_arguments(x) =
   match x with
   | Pcstr_tuple a ->
     (process_core_type_list a);
-    (print_endline (Batteries.dump ("DEBUG:Pcstr_tuple"  , a)))
+    (print_endline (Batteries.dump ("DEBUG:Pcstr_tuple:"  , a)))
       
   | Pcstr_record a ->
-    (print_endline (Batteries.dump ("DEBUG:Pcstr_record"  , a)))
+    (print_endline (Batteries.dump ("DEBUG:Pcstr_record:"  , a)))
 
-let rec process_Ptype_variant_constructor_declaration_list(x) =
+let rec process_pype_variant_constructor_declaration_list(x) =
   match x with
   | [] -> ()
   | h :: t ->
-    (* (process_Ptype_variant_constructor_declaration_list h); *)
+    (* (process_pype_variant_constructor_declaration_list h); *)
     match h with
     |{
       pcd_name(* : string loc *);
@@ -175,7 +204,7 @@ let rec process_Ptype_variant_constructor_declaration_list(x) =
       (*   | (str,_) -> str *)
       print_constructor_arguments(pcd_args);
       (print_endline (Batteries.dump (
-           "constructor_declaration:",
+           "DEBUG:constructor_declaration:",
                pcd_name,
                "vars",
                pcd_vars,
@@ -188,7 +217,7 @@ let rec process_Ptype_variant_constructor_declaration_list(x) =
                "attrs",
                pcd_attributes
              )));
-      (process_Ptype_variant_constructor_declaration_list t);
+      (process_pype_variant_constructor_declaration_list t);
       ()
   
 let process_kind(x) =
@@ -196,7 +225,7 @@ let process_kind(x) =
   (*and type_kind =*)
   | Ptype_abstract  -> (print_endline (Batteries.dump ("DEBUG:Ptype_abstract:")))
   | Ptype_variant a ->
-    (process_Ptype_variant_constructor_declaration_list a);
+    (process_pype_variant_constructor_declaration_list a);
     (print_endline (Batteries.dump ("DEBUG:Ptype_variant:",  a))) 
     (*of constructor_declaration list *)
     
@@ -216,15 +245,15 @@ let print_type_decl(x) =
       ptype_attributes (*: attributes*);
       ptype_loc (*: location*)
     } ->
-    (print_endline (Batteries.dump ("type_decl:", ptype_name)));
-    (print_endline (Batteries.dump ("parameters:", ptype_params)));
-    (print_endline (Batteries.dump ("cstrs:", ptype_cstrs)));
-    (print_endline (Batteries.dump ("kind:",ptype_kind)));
+    (print_endline (Batteries.dump ("DEBUG:type_decl:", ptype_name)));
+    (print_endline (Batteries.dump ("DEBUG:parameters:", ptype_params)));
+    (print_endline (Batteries.dump ("DEBUG:cstrs:", ptype_cstrs)));
+    (print_endline (Batteries.dump ("DEBUG:kind:",ptype_kind)));
     (process_kind ptype_kind);
-    (print_endline (Batteries.dump ("private:",  ptype_private,
-                                    "manifest", ptype_manifest,
-                                    "attr", ptype_attributes,
-                                    "loc", ptype_loc
+    (print_endline (Batteries.dump ("DEBUG:private:",  ptype_private,
+                                    "DEBUG:manifest", ptype_manifest,
+                                    "DEBUG:attr", ptype_attributes,
+                                    "DEBUG:loc", ptype_loc
                                    )))
     
 let rec process_type_decl_list(x) =
@@ -236,7 +265,7 @@ let rec process_type_decl_list(x) =
     ()
     
 let printdesc(x :structure_item_desc) :unit =
-  (print_endline (Batteries.dump ("DEBUG44:", x)));
+  (print_endline (Batteries.dump ("DEBUG:structure_item_desc:", x)));
   match x with
   | Pstr_eval (expression,attributes) -> (print_endline (Batteries.dump ("DEBUG:Pstr_eval:", expression,attributes)))
   (*value binding*)
@@ -280,23 +309,16 @@ let printone (x : structure_item ) :unit =
       
 
 let printone2 x :unit =
-  (print_endline (Batteries.dump ("DEBUG1:",x)));
+  (print_endline (Batteries.dump ("DEBUG:SECOND::",x)));
   printone x
   
 let proc1 x   =
   printone2 x;
   x
 
-(* let rec map: unit = function *)
-(*   | [] -> () *)
-(*   | h :: t -> *)
-(*     let u = (map t) in *)
-(*     let i = (proc1 h) in *)
-(*     let j = (print_endline (Batteries.dump ("DEBUG33:",i, u))) in  *)
-(*     () *)
 let debug proc lst : unit =
   let result = List.map proc lst in
-  List.iter (fun i -> print_endline (Batteries.dump ("DEBUG33:", i))) result;
+  List.iter (fun i -> print_endline (Batteries.dump ("DEBUG:TOPLEVEL:", i))) result;
   ()
                 
 let transform x (*ast, bytecodes of the interface *) =
