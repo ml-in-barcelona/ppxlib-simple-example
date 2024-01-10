@@ -1,6 +1,6 @@
 (executable
  (name main)
  (public_name ppx-introspector)
- (libraries simpleppx)
+ (libraries ppxintrospector)
  (ocamlopt_flags (-linkall))
  (package ppx-introspector))

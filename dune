@@ -3,17 +3,13 @@
   (flags
    (:standard
     -warn-error
-    -9-26-27-11
+    -9-26-27-11-37
     -dtypedtree
     -dparsetree
-    -dump-dir
-    /home/mdupont/2024/01/07/ppxlib-simple-example/dump/
+    -dump-into-file
     -dlambda
     -annot
     -dlocations
     -dsource
     -dshape
     -drawlambda))))
-
-(executable
- (name test))
