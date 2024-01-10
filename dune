@@ -1,0 +1,4 @@
+(env
+ (_
+  (flags
+   (:standard -warn-error -9-26-27-11 -dtypedtree -dparsetree -dump-dir /home/mdupont/2024/01/07/ppxlib-simple-example/dump/ -dlambda -annot -dlocations -dsource -dshape -drawlambda  ))))
