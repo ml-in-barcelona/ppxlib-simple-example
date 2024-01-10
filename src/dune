@@ -1,7 +1,7 @@
 (env
  (_
   (flags
-   (:standard -warn-error -8-9-26-27-11 -dtypedtree -dparsetree -dump-into-file -dlambda -annot -dlocations -dsource -dshape -drawlambda  ))))
+   (:standard -warn-error -8-9-26-27-11 -dtypedtree -dparsetree -dump-into-file -dlambda -annot -dlocations -dsource  -drawlambda  ))))
 (library
  (name ppxintrospector)
  (wrapped false)

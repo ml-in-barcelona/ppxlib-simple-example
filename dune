@@ -11,5 +11,4 @@
     -annot
     -dlocations
     -dsource
-    -dshape
     -drawlambda))))
