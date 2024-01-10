@@ -1,0 +1,60 @@
+
+* data analysis 1
+
+#+begin_src shell
+grep DEBUG log.txt  |cut -d, -f1-3 |sort |uniq -c |sort -n |tail -20
+#+end_src
+
+#+RESULTS:
+|  1 | ("DEBUG:Ptyp_constr",    | "id",           | (("extension_constructor") |    |       |        |      |         |     |           |    |       |        |      |         |     |          |
+|  1 | ("DEBUG:Ptyp_constr",    | "id",           | (("letop")                 |    |       |        |      |         |     |           |    |       |        |      |         |     |          |
+|  1 | ("DEBUG:Ptyp_constr",    | "id",           | (("open_declaration")      |    |       |        |      |         |     |           |    |       |        |      |         |     |          |
+|  1 | ("DEBUG:Ptyp_constr",    | "id",           | (("rec_flag")              |    |       |        |      |         |     |           |    |       |        |      |         |     |          |
+|  1 | ("DEBUG:Ptyp_constr",    | "id",           | (("value_binding")         |    |       |        |      |         |     |           |    |       |        |      |         |     |          |
+|  1 | ["DEBUG:Ptype_variant:"; | (("Pexp_ident", | (("test/test.ml",          | 33 |       |        |      |         |     |           |    |       |        |      |         |     |          |
+|  1 | Done:                    | 95%             | (461/481,                  | 20 | left) | (jobs: | 1) | Done: | 96% | (463/481, | 18 | left) | (jobs: | 3) | Done: | 96% | (466/481 |
+|  2 | ("DEBUG:Ptyp_constr",    | "id",           | (("module_expr")           |    |       |        |      |         |     |           |    |       |        |      |         |     |          |
+|  2 | ("DEBUG:Ptyp_constr",    | "id",           | (("pattern")               |    |       |        |      |         |     |           |    |       |        |      |         |     |          |
+|  2 | ("DEBUG:Ptyp_constr",    | "id",           | (("string")                |    |       |        |      |         |     |           |    |       |        |      |         |     |          |
+|  3 | DEBUG:Ptyp_arrow9        |                 |                            |    |       |        |      |         |     |           |    |       |        |      |         |     |          |
+|  3 | ("DEBUG:Ptyp_constr",    | "id",           | (("cases")                 |    |       |        |      |         |     |           |    |       |        |      |         |     |          |
+|  3 | ("DEBUG:Ptyp_constr",    | "id",           | (("label")                 |    |       |        |      |         |     |           |    |       |        |      |         |     |          |
+|  4 | ["DEBUG55:atrr"]         |                 |                            |    |       |        |      |         |     |           |    |       |        |      |         |     |          |
+|  4 | ("DEBUG:Ptyp_constr",    | "id",           | (("core_type")             |    |       |        |      |         |     |           |    |       |        |      |         |     |          |
+|  4 | ("DEBUG:Ptyp_constr",    | "id",           | (("loc")                   |    |       |        |      |         |     |           |    |       |        |      |         |     |          |
+|  5 | ("DEBUG:Ptyp_constr",    | "id",           | (("longident_loc")         |    |       |        |      |         |     |           |    |       |        |      |         |     |          |
+|  6 | ("DEBUG:Ptyp_constr",    | "id",           | (("list")                  |    |       |        |      |         |     |           |    |       |        |      |         |     |          |
+|  8 | ("DEBUG:Ptyp_constr",    | "id",           | (("option")                |    |       |        |      |         |     |           |    |       |        |      |         |     |          |
+| 35 | ("DEBUG:Ptyp_constr",    | "id",           | (("expression")            |    |       |        |      |         |     |           |    |       |        |      |         |     |          |
+
+So we can see the ptype constructor.
+
+#+begin_src shell
+grep Ptyp_constr log.txt |grep DEBUG  |cut -d, -f1-3 |sort |uniq -c |sort -n |tail -30
+#+end_src
+
+#+RESULTS:
+| 1 ("DEBUG:Ptyp_constr"  | id | (("arg_label")             |
+| 1 ("DEBUG:Ptyp_constr"  | id | (("class_structure")       |
+| 1 ("DEBUG:Ptyp_constr"  | id | (("constant")              |
+| 1 ("DEBUG:Ptyp_constr"  | id | (("direction_flag")        |
+| 1 ("DEBUG:Ptyp_constr"  | id | (("extension")             |
+| 1 ("DEBUG:Ptyp_constr"  | id | (("extension_constructor") |
+| 1 ("DEBUG:Ptyp_constr"  | id | (("letop")                 |
+| 1 ("DEBUG:Ptyp_constr"  | id | (("open_declaration")      |
+| 1 ("DEBUG:Ptyp_constr"  | id | (("rec_flag")              |
+| 1 ("DEBUG:Ptyp_constr"  | id | (("value_binding")         |
+| 2 ("DEBUG:Ptyp_constr"  | id | (("module_expr")           |
+| 2 ("DEBUG:Ptyp_constr"  | id | (("pattern")               |
+| 2 ("DEBUG:Ptyp_constr"  | id | (("string")                |
+| 3 ("DEBUG:Ptyp_constr"  | id | (("cases")                 |
+| 3 ("DEBUG:Ptyp_constr"  | id | (("label")                 |
+| 4 ("DEBUG:Ptyp_constr"  | id | (("core_type")             |
+| 4 ("DEBUG:Ptyp_constr"  | id | (("loc")                   |
+| 5 ("DEBUG:Ptyp_constr"  | id | (("longident_loc")         |
+| 6 ("DEBUG:Ptyp_constr"  | id | (("list")                  |
+| 8 ("DEBUG:Ptyp_constr"  | id | (("option")                |
+| 35 ("DEBUG:Ptyp_constr" | id | (("expression")            |
+
+so each of these will need a decoder function.
+
