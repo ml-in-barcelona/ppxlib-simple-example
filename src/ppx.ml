@@ -237,47 +237,50 @@ and process_core_type_list(x ) =
        process_core_type (h, b); 
       process_core_type_list(t,b)        
     
-let print_constructor_arguments(x) =
-  match x with
-  | Pcstr_tuple a ->
-    (* (process_core_type_list a); *)
-    (print_endline (Batteries.dump ("DEBUG:Pcstr_tuple:"  , a)))
-      
-  | Pcstr_record a ->
-    (print_endline (Batteries.dump ("DEBUG:Pcstr_record:"  , a)))
+let print_constructor_arguments(a) =
+  match a with
+  | (x,s) ->
+    match x with
+    | Pcstr_tuple a ->
+       (process_core_type_list (a,s)); 
+       (print_endline (Batteries.dump ("DEBUG:Pcstr_tuple:"  , a)))
+       
+    | Pcstr_record a ->
+      (print_endline (Batteries.dump ("DEBUG:Pcstr_record:"  , a)))
 
-let rec process_pype_variant_constructor_declaration_list(x) =
-  match x with
-  | [] -> ()
-  | h :: t ->
-    (* (process_pype_variant_constructor_declaration_list h); *)
-    match h with
-    |{
-      pcd_name(* : string loc *);
-      pcd_vars(* : string loc list *);
-      pcd_args(* : constructor_arguments *);
-      pcd_res(* : core_type option *);
-      pcd_loc(* : Location.t *);
-      pcd_attributes(* : attributes *); 
-    }->
-      (* let name = match pcd_name with *)
-      (*   | (str,_) -> str *)
-      print_constructor_arguments(pcd_args);
-      (print_endline (Batteries.dump (
-           "DEBUG:constructor_declaration:",
-               pcd_name,
-               "vars",
-               pcd_vars,
-               "args",
-               pcd_args,
-               "res",
-               pcd_res,
-               "loc",
-               pcd_loc,
-               "attrs",
-               pcd_attributes
-             )));
-      (process_pype_variant_constructor_declaration_list t);
+let rec process_pype_variant_constructor_declaration_list(a:constructor_declaration list*string_list) =
+  match a with
+  | (x,s)->
+    match x with
+    | [] -> ()
+    | h :: t ->
+      match h with
+      |{
+        pcd_name(* : string loc *);
+        pcd_vars(* : string loc list *);
+        pcd_args(* : constructor_arguments *);
+        pcd_res(* : core_type option *);
+        pcd_loc(* : Location.t *);
+        pcd_attributes(* : attributes *); 
+      }->
+        (* let name = match pcd_name with *)
+        (*   | (str,_) -> str *)
+        print_constructor_arguments(pcd_args,s);
+        (print_endline (Batteries.dump (
+             "DEBUG:constructor_declaration:",
+             pcd_name,
+             "vars",
+             pcd_vars,
+             "args",
+             pcd_args,
+             "res",
+             pcd_res,
+             "loc",
+             pcd_loc,
+             "attrs",
+             pcd_attributes
+           )));
+        (process_pype_variant_constructor_declaration_list (t,s));
       ()
   
 let process_kind(a) =
@@ -287,7 +290,7 @@ let process_kind(a) =
     (*and type_kind =*)
     | Ptype_abstract  -> (print_endline (Batteries.dump ("DEBUG:Ptype_abstract:")))
     | Ptype_variant a ->
-      (process_pype_variant_constructor_declaration_list a);
+      (process_pype_variant_constructor_declaration_list (a,s));
       (print_endline (Batteries.dump ("DEBUG:Ptype_variant:",  a))) 
     (*of constructor_declaration list *)
       
