@@ -10,22 +10,22 @@ type core_type_list = core_type list
 (*   (print_endline (Batteries.dump ("DEBUG21:", x))); *)
 (*   "descr" *)
 
-let printone (x : structure_item ) :string =
-  match x with
-  |{
-    pstr_desc; (*structure_item_desc*)
-    _
-  } ->
-    (printdesc2 pstr_desc)
+(* let printone (x : structure_item ) :string = *)
+(*   match x with *)
+(*   |{ *)
+(*     pstr_desc; (\*structure_item_desc*\) *)
+(*     _ *)
+(*   } -> *)
+(*     (printdesc2 pstr_desc) *)
     
       
 
-let printone2 x :string =
-  (print_endline (Batteries.dump ("DEBUG1:",x)));
-  printone x
+(* let printone2 x :string = *)
+(*   (print_endline (Batteries.dump ("DEBUG1:",x))); *)
+(*   printone x *)
 
-let proc2 x  : string =
-  (printone2 x)
+(* let proc2 x  : string = *)
+(*   (printone2 x) *)
   
 (* let printdesc2(x :structure_item_desc) :string = *)
 (*   (print_endline (Batteries.dump ("DEBUG33:", x))); *)
