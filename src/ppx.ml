@@ -274,6 +274,41 @@ let emit_core_type_desc (x : core_type_desc * string_list):string =
       ->
       "Ptyp_tuple" ^ my_process_core_type_list(a,  s )
 
+    (*not in test*)
+    | Ptyp_any  -> (print_endline (Batteries.dump ("DEBUG:Ptyp_any:"))); "any"
+    | Ptyp_var name ->(print_endline (Batteries.dump ("DEBUG:Ptyp_var:"  , name))); "var-name"
+  | Ptyp_arrow (arg_label , core_type , core_type2) ->
+    (* my_process_core_type((core_type, string_list)); *)
+    (* my_process_core_type(core_type2, string_list); *)
+    (print_endline (Batteries.dump ("DEBUG:Ptyp_arrow10:" ))); "arrow"
+
+  | Ptyp_object (a,b)(* of object_field list * closed_flag *)
+    ->
+    (print_endline (Batteries.dump ("DEBUG:Ptyp_arrow8:" ))); "obj"
+  | Ptyp_class (a,b) (* of Longident.t loc * core_type list *)
+    ->
+    let myid = (process_id (a,s)) in
+    (* my_process_core_type_list(b, y :: myid); *)
+    (print_endline (Batteries.dump ("DEBUG:Ptyp_arrow7:" ))); "class"
+  | Ptyp_alias (a,b) (* of core_type * string loc  *)
+    ->
+    (* my_process_core_type(a, y); *)
+    (print_endline (Batteries.dump ("DEBUG:Ptyp_arrow6:" ))); "alias"
+  | Ptyp_variant (a,b,c) (* of row_field list * closed_flag * label list option *)
+    ->
+    (print_endline (Batteries.dump ("DEBUG:Ptyp_arrow5:" )));"variant"
+  | Ptyp_poly (a,b) (* of string loc list * core_type *)
+    ->
+    (* my_process_core_type(b, y); *)
+    (print_endline (Batteries.dump ("DEBUG:Ptyp_arrow4:" ))); "poly"
+  | Ptyp_package a(* of package_type  *)
+    ->
+    (print_endline (Batteries.dump ("DEBUG:Ptyp_arrow3:",a ))) ; "typ_package"
+  (* | Ptyp_open (a,b) (\* of Longident.t loc * core_type *\)-> *)
+  (*   (print_endline (Batteries.dump ("DEBUG:Ptyp_arrow2",a,b ))) *)    
+  | Ptyp_extension a (* of extension   *)    ->
+    (print_endline (Batteries.dump ("DEBUG:Ptyp_extension:",a ))); "extension"
+
 
 let  emit_core_type(a: core_type * string_list*int):string=
   match a with
