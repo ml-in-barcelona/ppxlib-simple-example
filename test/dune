@@ -1,10 +1,10 @@
 (env
  (_
   (flags
-   (:standard -warn-error -8-9-26-27-37-34-11 -dtypedtree -dparsetree -dump-into-file -dlambda -annot -dlocations -dsource  -drawlambda  ))))
+   (:standard -warn-error -8-9-26-27-37-34-11-11-32-39 -dtypedtree -dparsetree -dump-into-file -dlambda -annot -dlocations -dsource  -drawlambda  ))))
 
 (test
  (name test)
- (libraries alcotest ppxlib)
+ (libraries alcotest ppxlib batteries)
  (preprocess
   (pps ppxlib.metaquot ppxintrospector -- -no-merge)))

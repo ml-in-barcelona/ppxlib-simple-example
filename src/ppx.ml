@@ -6,9 +6,9 @@ type core_type_list = core_type list
 (*: (Astlib.Ast_500.Parsetree.structure_item list) -> (Astlib.Ast_500.Parsetree.structure_item list)
 *)
 
-let printdesc2(x :structure_item_desc) :string =
-  (print_endline (Batteries.dump ("DEBUG21:", x)));
-  "descr"
+(* let printdesc2(x :structure_item_desc) :string = *)
+(*   (print_endline (Batteries.dump ("DEBUG21:", x))); *)
+(*   "descr" *)
 
 let printone (x : structure_item ) :string =
   match x with
@@ -27,10 +27,9 @@ let printone2 x :string =
 let proc2 x  : string =
   (printone2 x)
   
-
-let printdesc2(x :structure_item_desc) :string =
-  (print_endline (Batteries.dump ("DEBUG33:", x)));
-  "FIXME123"
+(* let printdesc2(x :structure_item_desc) :string = *)
+(*   (print_endline (Batteries.dump ("DEBUG33:", x))); *)
+(*   "FIXME123" *)
   
 let print_value_binding_expr (x : expression) : string=
   match x with
