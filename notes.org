@@ -611,3 +611,14 @@ I think it relates to
 grep constructor_declaration_new log.txt > constructor_declaration_new
 tail constructor_declaration_new
 #end_src
+
+
+DEBUG:constructor_declaration_new:
+constructor:"Pexp_open"
+{
+Pcstr_tuple:ptyp_desc:Ptyp_constr:"open_declaration"
+->
+process_core_type_list:
+,ptyp_desc:Ptyp_constr:"expression"
+->process_core_type_list:,
+process_core_type_list:}
