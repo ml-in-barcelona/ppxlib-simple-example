@@ -136,7 +136,7 @@ let rec
                                     pld_mutable,
                                     "type",
                                     pld_type)));
-    "process_record_kind" ^ pld_name.txt ^ " body " ^ foo
+    "process_record_kind:\"" ^ pld_name.txt ^ "\" body:" ^ foo
 and
   process_core_type_desc (x : core_type_desc * string_list):string =
   match x with
@@ -162,7 +162,7 @@ and
          "newy", newy
 
        )));     
-      id1 ^ "->" ^ newlist
+      "Ptyp_constr:\"" ^ id1 ^ "\"->" ^ newlist
     | Ptyp_tuple a (* of core_type list *)
       ->
       (print_endline (Batteries.dump ("DEBUG:Ptyp_tuple:", a )));
@@ -227,14 +227,14 @@ and
     let td = (process_core_type_desc (ptyp_desc,s)) in
     (*MOSTCOMMON*)
     (print_endline (Batteries.dump ("DEBUG:core_type.ptyp_desc:" , a, td)));
-    "type" ^ td
+    "ptyp_desc:" ^ td
 and process_core_type_list(x: core_type_list * string_list):string =
   match x with
   | (a,b) ->
     match a with
-    | [] -> "process_core_type_list"
+    | [] -> "process_core_type_list:"
     | h :: t ->
-      process_core_type (h, b) ^ "|" ^ process_core_type_list(t,b)        
+      process_core_type (h, b) ^ "," ^ process_core_type_list(t,b)        
     
 let print_constructor_arguments(a) =
   match a with
@@ -327,7 +327,7 @@ let print_type_decl(a) =
                                       "DEBUG:attr", ptype_attributes,
                                       "DEBUG:loc", ptype_loc
                                      )));
-      ptype_name.txt ^ " = " ^ (process_kind (ptype_kind,s))
+      "print_type_decl:\"" ^  ptype_name.txt ^ "\" = " ^ (process_kind (ptype_kind,s))
       
 type     type_declaration_list = type_declaration list
     
@@ -354,14 +354,14 @@ let printdesc(a :structure_item_desc*string_list) :string =
     (*value binding*)
     | Pstr_value (rec_flag, value_binding_list) ->
       (print_endline (Batteries.dump ("DEBUG:Pstr_value:", rec_flag, value_binding_list)));
-      "val"      ^ print_value_binding_list(value_binding_list)
+      "Pstr_value:"      ^ print_value_binding_list(value_binding_list)
     | Pstr_primitive value_description ->(print_endline (Batteries.dump ("DEBUG:Pstr_primitive:", value_description))) ; "primitive"
                                          
     | Pstr_type (rec_flag, type_declaration_list) ->
       (*for expression_desc*)
       
       (print_endline (Batteries.dump ("DEBUG:Pstr_type:", rec_flag, type_declaration_list)));
-      "type"^
+      "Pstr_type:"^
       process_type_decl_list((type_declaration_list,s))
     | Pstr_typext  type_extension ->(print_endline (Batteries.dump ("DEBUG:Pstr_typext:", type_extension))); "typeext"
     | Pstr_exception extension_constructor ->(print_endline (Batteries.dump ("DEBUG:Pstr_exception:", extension_constructor))); "exception"
@@ -385,7 +385,7 @@ let printone (x : structure_item) :string =
     pstr_desc; (*structure_item_desc*)
     _
   } ->
-    (print_endline ("TOP structure_item_desc" ^ (printdesc (pstr_desc,[]))));
+    (print_endline ("TOP structure_item_desc"     ^ "|" ^ (printdesc (pstr_desc,[]))));
     "fixme"
     
 (*   () *)
