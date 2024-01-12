@@ -7,31 +7,58 @@ dune build > log.txt 2>&1
 * data analysis 1
 
 
+
 #+begin_src shell :results all
-grep DEBUG log.txt  |cut -d, -f1-3 |sort |uniq -c |sort -n |tail -20
+grep DEBUG:Ptyp_constr1 log.txt  |cut -d: -f1-5 |sort |uniq -c |sort -n |tail -20
 #+end_src
 
 #+RESULTS:
-|  2 | ("DEBUG:ptyp_desc:",          | Tag3  | ((("pattern"),       | (("test/test.ml" |
-|  2 | ("DEBUG:ptyp_desc:",          | Tag3  | ((("string"),        | (("test/test.ml" |
-|  3 | ("DEBUG:Ptyp_constr:",        | "id", | (("cases")           |                  |
-|  3 | ("DEBUG:Ptyp_constr:",        | "id", | (("label")           |                  |
-|  3 | ("DEBUG:ptyp_desc:",          | Tag3  | ((("cases"),         | (("test/test.ml" |
-|  3 | ("DEBUG:ptyp_desc:",          | Tag3  | ((("label"),         | (("test/test.ml" |
-|  3 | DEBUG:Ptyp_tuple:             |       |                      |                  |
-|  4 | ("DEBUG:Ptyp_constr:",        | "id", | (("core_type")       |                  |
-|  4 | ("DEBUG:Ptyp_constr:",        | "id", | (("loc")             |                  |
-|  4 | ("DEBUG:ptyp_desc:",          | Tag3  | ((("core_type"),     | (("test/test.ml" |
-|  4 | ("DEBUG:ptyp_desc:",          | Tag3  | ((("loc"),           | (("test/test.ml" |
-|  4 | ["DEBUG:value_binding.atrr:"] |       |                      |                  |
-|  5 | ("DEBUG:Ptyp_constr:",        | "id", | (("longident_loc")   |                  |
-|  5 | ("DEBUG:ptyp_desc:",          | Tag3  | ((("longident_loc"), | (("test/test.ml" |
-|  6 | ("DEBUG:Ptyp_constr:",        | "id", | (("list")            |                  |
-|  6 | ("DEBUG:ptyp_desc:",          | Tag3  | ((("list"),          | (("test/test.ml" |
-|  8 | ("DEBUG:Ptyp_constr:",        | "id", | (("option")          |                  |
-|  8 | ("DEBUG:ptyp_desc:",          | Tag3  | ((("option"),        | (("test/test.ml" |
-| 35 | ("DEBUG:Ptyp_constr:",        | "id", | (("expression")      |                  |
-| 35 | ("DEBUG:ptyp_desc:",          | Tag3  | ((("expression"),    | (("test/test.ml" |
+| 1 DEBUG:Ptyp_constr1 Constructor 'longident_loclongident_loc' ("DEBUG:Ptyp_constr:"           | id | (("longident_loc")    | (("test/test.ml" | 45 | 1328 | 1359) | ("test/test.ml" | 45 | 1328 | 1372) | 0)) | longident_loclongident_loc           | types |                       0 | context          |                                0) |      |       |                 |    |      |       |     |    |                  |    |      |       |                 |    |      |       |    |   |     |         |             |
+| 1 DEBUG:Ptyp_constr1 Constructor 'longident_loclongident_loc' ("DEBUG:Ptyp_constr:"           | id | (("longident_loc")    | (("test/test.ml" | 46 | 1375 | 1409) | ("test/test.ml" | 46 | 1375 | 1422) | 0)) | longident_loclongident_loc           | types |                       0 | context          |                                0) |      |       |                 |    |      |       |     |    |                  |    |      |       |                 |    |      |       |    |   |     |         |             |
+| 1 DEBUG:Ptyp_constr1 Constructor 'longident_loclongident_loc' ("DEBUG:Ptyp_constr:"           | id | (("longident_loc")    | (("test/test.ml" | 55 | 1860 | 1876) | ("test/test.ml" | 55 | 1860 | 1889) | 0)) | longident_loclongident_loc           | types |                       0 | context          |                                0) |      |       |                 |    |      |       |     |    |                  |    |      |       |                 |    |      |       |    |   |     |         |             |
+| 1 DEBUG:Ptyp_constr1 Constructor 'module_exprmodule_expr' ("DEBUG:Ptyp_constr:"               | id | (("module_expr")      | (("test/test.ml" | 58 | 1991 | 2033) | ("test/test.ml" | 58 | 1991 | 2044) | 0)) | module_exprmodule_expr               | types |                       0 | context          |                                0) |      |       |                 |    |      |       |     |    |                  |    |      |       |                 |    |      |       |    |   |     |         |             |
+| 1 DEBUG:Ptyp_constr1 Constructor 'module_exprmodule_expr' ("DEBUG:Ptyp_constr:"               | id | (("module_expr")      | (("test/test.ml" | 65 | 2308 | 2325) | ("test/test.ml" | 65 | 2308 | 2336) | 0)) | module_exprmodule_expr               | types |                       0 | context          |                                0) |      |       |                 |    |      |       |     |    |                  |    |      |       |                 |    |      |       |    |   |     |         |             |
+| 1 DEBUG:Ptyp_constr1 Constructor 'open_declarationopen_declaration' ("DEBUG:Ptyp_constr:"     | id | (("open_declaration") | (("test/test.ml" | 66 | 2337 | 2354) | ("test/test.ml" | 66 | 2337 | 2370) | 0)) | open_declarationopen_declaration     | types |                       0 | context          |                                0) |      |       |                 |    |      |       |     |    |                  |    |      |       |                 |    |      |       |    |   |     |         |             |
+| 1 DEBUG:Ptyp_constr1 Constructor 'optionoption' ("DEBUG:Ptyp_constr:"                         | id | (("option")           | (("test/test.ml" | 37 |  917 |  956) | ("test/test.ml" | 37 |  917 |  962) | 0)) | optionoption                         | types | [(Tag3 ((("expression") | (("test/test.ml" |                                37 |  917 |  945) | ("test/test.ml" | 37 |  917 |  955) | 0)) | 0) | (("test/test.ml" | 37 |  917 |  945) | ("test/test.ml" | 37 |  917 |  955) | 0) | 0 | 0)] | context |          0) |
+| 1 DEBUG:Ptyp_constr1 Constructor 'optionoption' ("DEBUG:Ptyp_constr:"                         | id | (("option")           | (("test/test.ml" | 42 | 1153 | 1202) | ("test/test.ml" | 42 | 1153 | 1208) | 0)) | optionoption                         | types | [(Tag3 ((("expression") | (("test/test.ml" |                                42 | 1153 | 1191) | ("test/test.ml" | 42 | 1153 | 1201) | 0)) | 0) | (("test/test.ml" | 42 | 1153 | 1191) | ("test/test.ml" | 42 | 1153 | 1201) | 0) | 0 | 0)] | context |          0) |
+| 1 DEBUG:Ptyp_constr1 Constructor 'optionoption' ("DEBUG:Ptyp_constr:"                         | id | (("option")           | (("test/test.ml" | 43 | 1209 | 1248) | ("test/test.ml" | 43 | 1209 | 1254) | 0)) | optionoption                         | types | [(Tag3 ((("expression") | (("test/test.ml" |                                43 | 1209 | 1237) | ("test/test.ml" | 43 | 1209 | 1247) | 0)) | 0) | (("test/test.ml" | 43 | 1209 | 1237) | ("test/test.ml" | 43 | 1209 | 1247) | 0) | 0 | 0)] | context |          0) |
+| 1 DEBUG:Ptyp_constr1 Constructor 'optionoption' ("DEBUG:Ptyp_constr:"                         | id | (("option")           | (("test/test.ml" | 44 | 1255 | 1321) | ("test/test.ml" | 44 | 1255 | 1327) | 0)) | optionoption                         | types | [(Tag3 ((("expression") | (("test/test.ml" |                                44 | 1255 | 1310) | ("test/test.ml" | 44 | 1255 | 1320) | 0)) | 0) | (("test/test.ml" | 44 | 1255 | 1310) | ("test/test.ml" | 44 | 1255 | 1320) | 0) | 0 | 0)] | context |          0) |
+| 1 DEBUG:Ptyp_constr1 Constructor 'optionoption' ("DEBUG:Ptyp_constr:"                         | id | (("option")           | (("test/test.ml" | 48 | 1472 | 1532) | ("test/test.ml" | 48 | 1472 | 1538) | 0)) | optionoption                         | types | [(Tag3 ((("expression") | (("test/test.ml" |                                48 | 1472 | 1521) | ("test/test.ml" | 48 | 1472 | 1531) | 0)) | 0) | (("test/test.ml" | 48 | 1472 | 1521) | ("test/test.ml" | 48 | 1472 | 1531) | 0) | 0 | 0)] | context |          0) |
+| 1 DEBUG:Ptyp_constr1 Constructor 'optionoption' ("DEBUG:Ptyp_constr:"                         | id | (("option")           | (("test/test.ml" | 53 | 1757 | 1799) | ("test/test.ml" | 53 | 1757 | 1805) | 0)) | optionoption                         | types |  [(Tag3 ((("core_type") | (("test/test.ml" |                                53 | 1757 | 1789) | ("test/test.ml" | 53 | 1757 | 1798) | 0)) | 0) | (("test/test.ml" | 53 | 1757 | 1789) | ("test/test.ml" | 53 | 1757 | 1798) | 0) | 0 | 0)] | context |          0) |
+| 1 DEBUG:Ptyp_constr1 Constructor 'optionoption' ("DEBUG:Ptyp_constr:"                         | id | (("option")           | (("test/test.ml" | 62 | 2178 | 2218) | ("test/test.ml" | 62 | 2178 | 2224) | 0)) | optionoption                         | types |  [(Tag3 ((("core_type") | (("test/test.ml" |                                62 | 2178 | 2208) | ("test/test.ml" | 62 | 2178 | 2217) | 0)) | 0) | (("test/test.ml" | 62 | 2178 | 2208) | ("test/test.ml" | 62 | 2178 | 2217) | 0) | 0 | 0)] | context |          0) |
+| 1 DEBUG:Ptyp_constr1 Constructor 'optionoptionlocloc' ("DEBUG:Ptyp_constr:"                   | id | (("option")           | (("test/test.ml" | 58 | 1991 | 2020) | ("test/test.ml" | 58 | 1991 | 2026) | 0)) | optionoptionlocloc                   | types |     [(Tag3 ((("string") | (("test/test.ml" |                                58 | 1991 | 2013) | ("test/test.ml" | 58 | 1991 | 2019) | 0)) | 0) | (("test/test.ml" | 58 | 1991 | 2013) | ("test/test.ml" | 58 | 1991 | 2019) | 0) | 0 | 0)] | context | ["locloc"]) |
+| 1 DEBUG:Ptyp_constr1 Constructor 'patternpattern' ("DEBUG:Ptyp_constr:"                       | id | (("pattern")          | (("test/test.ml" | 37 |  917 |  965) | ("test/test.ml" | 37 |  917 |  972) | 0)) | patternpattern                       | types |                       0 | context          |                                0) |      |       |                 |    |      |       |     |    |                  |    |      |       |                 |    |      |       |    |   |     |         |             |
+| 1 DEBUG:Ptyp_constr1 Constructor 'patternpattern' ("DEBUG:Ptyp_constr:"                       | id | (("pattern")          | (("test/test.ml" | 51 | 1629 | 1645) | ("test/test.ml" | 51 | 1629 | 1652) | 0)) | patternpattern                       | types |                       0 | context          |                                0) |      |       |                 |    |      |       |     |    |                  |    |      |       |                 |    |      |       |    |   |     |         |             |
+| 1 DEBUG:Ptyp_constr1 Constructor 'rec_flagrec_flag' ("DEBUG:Ptyp_constr:"                     | id | (("rec_flag")         | (("test/test.ml" | 35 |  829 |  845) | ("test/test.ml" | 35 |  829 |  853) | 0)) | rec_flagrec_flag                     | types |                       0 | context          |                                0) |      |       |                 |    |      |       |     |    |                  |    |      |       |                 |    |      |       |    |   |     |         |             |
+| 1 DEBUG:Ptyp_constr1 Constructor 'stringstringlocloc' ("DEBUG:Ptyp_constr:"                   | id | (("string")           | (("test/test.ml" | 64 | 2262 | 2282) | ("test/test.ml" | 64 | 2262 | 2288) | 0)) | stringstringlocloc                   | types |                       0 | context          |                       ["locloc"]) |      |       |                 |    |      |       |     |    |                  |    |      |       |                 |    |      |       |    |   |     |         |             |
+| 1 DEBUG:Ptyp_constr1 Constructor 'stringstringoptionoptionlocloclocloc' ("DEBUG:Ptyp_constr:" | id | (("string")           | (("test/test.ml" | 58 | 1991 | 2013) | ("test/test.ml" | 58 | 1991 | 2019) | 0)) | stringstringoptionoptionlocloclocloc | types |                       0 | context          | ["optionoptionlocloc"; "locloc"]) |      |       |                 |    |      |       |     |    |                  |    |      |       |                 |    |      |       |    |   |     |         |             |
+| 1 DEBUG:Ptyp_constr1 Constructor 'value_bindingvalue_bindinglistlist' ("DEBUG:Ptyp_constr:"   | id | (("value_binding")    | (("test/test.ml" | 35 |  829 |  856) | ("test/test.ml" | 35 |  829 |  869) | 0)) | value_bindingvalue_bindinglistlist   | types |                       0 | context          |                     ["listlist"]) |      |       |                 |    |      |       |     |    |                  |    |      |       |                 |    |      |       |    |   |     |         |             |
+
+#+begin_src shell :results all
+grep DEBUG log.txt  |cut -d: -f1-2 |sort |uniq -c |sort -n |tail -20
+#+end_src
+
+#+RESULTS:
+|  3 | DEBUG:Ptyp_constr1              | Constructor | 'casescases'                       | ("DEBUG |
+|  3 | "DEBUG:Ptyp_tuple               |             |                                    |         |
+|  4 | ("DEBUG:Pstr_value              |             |                                    |         |
+|  4 | DEBUG:Ptyp_constr1              | Constructor | 'locloc'                           | ("DEBUG |
+|  4 | ["DEBUG:value_binding.atrr      |             |                                    |         |
+|  4 | ("DEBUG:value_binding.expr      |             |                                    |         |
+|  4 | ("DEBUG:value_binding.loc       |             |                                    |         |
+|  4 | ("DEBUG:value_binding.pat       |             |                                    |         |
+|  5 | DEBUG:Ptyp_constr1              | Constructor | 'expressionexpressionoptionoption' | ("DEBUG |
+|  5 | DEBUG:Ptyp_constr1              | Constructor | 'longident_loclongident_loc'       | ("DEBUG |
+|  6 | DEBUG:Ptyp_constr1              | Constructor | 'listlist'                         | ("DEBUG |
+|  7 | DEBUG:Ptyp_constr1              | Constructor | 'optionoption'                     | ("DEBUG |
+|  8 | ("DEBUG:Pstr_module             |             |                                    |         |
+| 15 | ("DEBUG:SECOND                  |             |                                    |         |
+| 15 | ("DEBUG:structure_item_desc     |             |                                    |         |
+| 15 | ("DEBUG:TOPLEVEL                |             |                                    |         |
+| 28 | DEBUG:Ptyp_constr1              | Constructor | 'expressionexpression'             | ("DEBUG |
+| 37 | ("DEBUG:constructor_declaration |             |                                    |         |
+| 37 | ["DEBUG:Pcstr_tuple             |             |                                    |         |
+| 87 | ["DEBUG:core_type.ptyp_desc     |             |                                    |         |
 
 So we can see the ptype constructor.
 
@@ -516,3 +543,52 @@ we ave handeled them in some places but not all.
 longident_loc = longident eloc
 
 Pexp_construct contains longident_loc
+
+
+
+
+#+begin_src shell :result all
+  grep "TOP struct" log.txt |tr "|" "\n" |sort | uniq -c |sort  -n
+#+end_src
+
+#+RESULTS:
+|  1 | Pcstr_tuple:process_core_type_list                                             |                                        |   |      |                  |
+|  1 | Pcstr_tuple:typearg_label->process_core_type_list                              |                                        |   |      |                  |
+|  1 | Pcstr_tuple:typecases->process_core_type_list                                  |                                        |   |      |                  |
+|  1 | Pcstr_tuple:typeclass_structure->process_core_type_list                        |                                        |   |      |                  |
+|  1 | Pcstr_tuple:typeconstant->process_core_type_list                               |                                        |   |      |                  |
+|  1 | Pcstr_tuple:typeextension_constructor->process_core_type_list                  |                                        |   |      |                  |
+|  1 | Pcstr_tuple:typeextension->process_core_type_list                              |                                        |   |      |                  |
+|  1 | Pcstr_tuple:typelabel->process_core_type_list                                  |                                        |   |      |                  |
+|  1 | Pcstr_tuple:typeletop->process_core_type_list                                  |                                        |   |      |                  |
+|  1 | Pcstr_tuple:typelist->typePtyp_tupletypeloc->typelabel->process_core_type_list |                                        |   |      |                  |
+|  1 | Pcstr_tuple:typelist->typePtyp_tupletypelongident_loc->process_core_type_list  |                                        |   |      |                  |
+|  1 | Pcstr_tuple:typeloc->typelabel->process_core_type_list                         |                                        |   |      |                  |
+|  1 | Pcstr_tuple:typeloc->typeoption->typestring->process_core_type_list            |                                        |   |      |                  |
+|  1 | Pcstr_tuple:typeloc->typestring->process_core_type_list                        |                                        |   |      |                  |
+|  1 | Pcstr_tuple:typemodule_expr->process_core_type_list                            |                                        |   |      |                  |
+|  1 | Pcstr_tuple:typeopen_declaration->process_core_type_list                       |                                        |   |      |                  |
+|  1 | Pcstr_tuple:typepattern->process_core_type_list                                |                                        |   |      |                  |
+|  1 | Pcstr_tuple:typerec_flag->process_core_type_list                               |                                        |   |      |                  |
+|  1 | process_type_decl_list                                                         |                                        |   |      |                  |
+|  1 | TOP                                                                            | structure_item_desctypeexpression_desc | = | type | variant:VARIANT: |
+|  1 | typedirection_flag->process_core_type_list                                     |                                        |   |      |                  |
+|  1 | typelist->typePtyp_tupletypearg_label->process_core_type_list                  |                                        |   |      |                  |
+|  1 | typelist->typevalue_binding->process_core_type_list                            |                                        |   |      |                  |
+|  1 | typeloc->typelabel->process_core_type_list                                     |                                        |   |      |                  |
+|  1 | typemodule_expr->process_core_type_list                                        |                                        |   |      |                  |
+|  1 | typepattern->process_core_type_list                                            |                                        |   |      |                  |
+|  2 | Pcstr_tuple:typelist->typeexpression->process_core_type_list                   |                                        |   |      |                  |
+|  2 | TOP                                                                            | structure_item_descopen                |   |      |                  |
+|  2 | typecases->process_core_type_list                                              |                                        |   |      |                  |
+|  2 | typecore_type->process_core_type_list                                          |                                        |   |      |                  |
+|  2 | typelongident_loc->process_core_type_list                                      |                                        |   |      |                  |
+|  2 | typeoption->typecore_type->process_core_type_list                              |                                        |   |      |                  |
+|  3 | Pcstr_tuple:typelongident_loc->process_core_type_list                          |                                        |   |      |                  |
+|  4 | print_value_binding_list                                                       |                                        |   |      |                  |
+|  4 | TOP                                                                            | structure_item_descvalyodo             |   |      |                  |
+|  5 | typeoption->typeexpression->process_core_type_list                             |                                        |   |      |                  |
+|  8 | TOP                                                                            | structure_item_descbinding             |   |      |                  |
+| 14 | Pcstr_tuple:typeexpression->process_core_type_list                             |                                        |   |      |                  |
+| 17 | typeexpression->process_core_type_list                                         |                                        |   |      |                  |
+| 58 | process_core_type_list                                                         |                                        |   |      |                  |
