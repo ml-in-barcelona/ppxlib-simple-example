@@ -64,7 +64,7 @@ let rec print_value_binding_list (x : value_binding list) : string=
   | [] -> "print_value_binding_list"
   | h :: t ->
     (print_value_binding_list2 h)
-    ^ "|" ^(print_value_binding_list t)
+    ^ ";;" ^(print_value_binding_list t) ^ ";;"
      
 let rec process_id1 a : string = 
   match a with
@@ -140,15 +140,15 @@ let rec
 and
   process_core_type_desc (x : core_type_desc * string_list):string =
   match x with
-    (ctd, astring_list)->
+    (ctd, s)->
     match ctd with
     | Ptyp_constr (a,b) (* of Longident.t loc * core_type list *)
       ->
       let {txt;loc} = a in
       let id1 = process_id1(txt) in
-      let concat = (concatlist (id1, astring_list)) in
-      let newy = [id1] @ astring_list in
-      let newlist = (process_core_type_list (b, newy)) in
+      (* let concat = (concatlist (id1, astring_list)) in *)
+      (* let newy = [id1] @ astring_list in *)
+      let newlist = (process_core_type_list (b, s)) in
       Printf.printf "DEBUG:Ptyp_constr1 '%s' %s" id1 newlist;
       (* "id" ^ a ^ " id2 " ^ myid  *)
 
@@ -156,17 +156,14 @@ and
          "DEBUG:Ptyp_constr:",
          "id",a,
          "types",b,
-         "context",astring_list,
-         "id1", id1,
-         "concat", concat,
-         "newy", newy
-
+         "context",s,
+         "id1", id1
        )));     
       "Ptyp_constr:\"" ^ id1 ^ "\"->" ^ newlist
     | Ptyp_tuple a (* of core_type list *)
       ->
       (print_endline (Batteries.dump ("DEBUG:Ptyp_tuple:", a )));
-      "Ptyp_tuple" ^ process_core_type_list(a,  "TUPLE" :: astring_list )
+      "Ptyp_tuple" ^ process_core_type_list(a,  s )
 
 
     (*not in test*)
@@ -182,7 +179,7 @@ and
     (print_endline (Batteries.dump ("DEBUG:Ptyp_arrow8:" ))); "obj"
   | Ptyp_class (a,b) (* of Longident.t loc * core_type list *)
     ->
-    let myid = (process_id (a,astring_list)) in
+    let myid = (process_id (a,s)) in
     (* process_core_type_list(b, y :: myid); *)
     (print_endline (Batteries.dump ("DEBUG:Ptyp_arrow7:" ))); "class"
   | Ptyp_alias (a,b) (* of core_type * string loc  *)
@@ -206,11 +203,11 @@ and
 and
   process_record_kind_list(a) : string =
   match a with
-  (x, "process_record_kind_list" :: s)->
+  (x, s)->
   match x with
   | [] -> "process_record_kind_list"
   | h :: t ->
-    (process_record_kind (h , "prk" :: s)) ^ "|" ^ (process_record_kind_list (t, s))
+    (process_record_kind (h ,  s)) ^ "/" ^ (process_record_kind_list (t, s))
     
 and
 
@@ -282,9 +279,15 @@ let rec process_pype_variant_constructor_declaration_list(a:constructor_declarat
              pcd_attributes
            )));
         
-        (process_pype_variant_constructor_declaration_list (t,s))
-        ^ "|" ^
-        print_constructor_arguments(pcd_args,s)
+        let ret =              "constructor:\""^ pcd_name.txt ^ "\""
+                               ^ "{" ^
+                               print_constructor_arguments(pcd_args,s)
+                               ^ "}" ^ "\n\t|" ^
+                               process_pype_variant_constructor_declaration_list(t,s)
+        in
+        Printf.printf "DEBUG:constructor_declaration_new: %s\n" ret;
+        ret
+        
   
 let process_kind(a) :string=
   match a with
@@ -338,9 +341,9 @@ let rec process_type_decl_list(a:type_declaration_list*string_list):string =
     | [] -> "process_type_decl_list"
     | h :: t ->
       (print_type_decl (h,s))
-      ^ "|" ^
+      ^ "[" ^
       (process_type_decl_list (t,s))
-      
+      ^ "]"
       
     
 let printdesc(a :structure_item_desc*string_list) :string =
