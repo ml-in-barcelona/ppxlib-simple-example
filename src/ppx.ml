@@ -129,7 +129,7 @@ let rec
      pld_loc(* : Location.t *);
      pld_attributes(* : attributes *); 
    } ->
-    let foo =process_core_type(pld_type, s) in
+    let foo =my_process_core_type(pld_type, s) in
     (print_endline (Batteries.dump ("DEBUG:precord_kind:",  
                                     pld_name,
                                     "mutable",
@@ -138,7 +138,7 @@ let rec
                                     pld_type)));
     "process_record_kind:\"" ^ pld_name.txt ^ "\" body:" ^ foo
 and
-  process_core_type_desc (x : core_type_desc * string_list):string =
+  my_process_core_type_desc (x : core_type_desc * string_list):string =
   match x with
     (ctd, s)->
     match ctd with
@@ -148,7 +148,7 @@ and
       let id1 = process_id1(txt) in
       (* let concat = (concatlist (id1, astring_list)) in *)
       (* let newy = [id1] @ astring_list in *)
-      let newlist = (process_core_type_list (b, s)) in
+      let newlist = (my_process_core_type_list (b, s)) in
       Printf.printf "DEBUG:Ptyp_constr1 '%s' %s" id1 newlist;
       (* "id" ^ a ^ " id2 " ^ myid  *)
 
@@ -163,15 +163,15 @@ and
     | Ptyp_tuple a (* of core_type list *)
       ->
       (print_endline (Batteries.dump ("DEBUG:Ptyp_tuple:", a )));
-      "Ptyp_tuple" ^ process_core_type_list(a,  s )
+      "Ptyp_tuple" ^ my_process_core_type_list(a,  s )
 
 
     (*not in test*)
     | Ptyp_any  -> (print_endline (Batteries.dump ("DEBUG:Ptyp_any:"))); "any"
     | Ptyp_var name ->(print_endline (Batteries.dump ("DEBUG:Ptyp_var:"  , name))); "var-name"
   | Ptyp_arrow (arg_label , core_type , core_type2) ->
-    (* process_core_type((core_type, string_list)); *)
-    (* process_core_type(core_type2, string_list); *)
+    (* my_process_core_type((core_type, string_list)); *)
+    (* my_process_core_type(core_type2, string_list); *)
     (print_endline (Batteries.dump ("DEBUG:Ptyp_arrow10:" ))); "arrow"
 
   | Ptyp_object (a,b)(* of object_field list * closed_flag *)
@@ -180,18 +180,18 @@ and
   | Ptyp_class (a,b) (* of Longident.t loc * core_type list *)
     ->
     let myid = (process_id (a,s)) in
-    (* process_core_type_list(b, y :: myid); *)
+    (* my_process_core_type_list(b, y :: myid); *)
     (print_endline (Batteries.dump ("DEBUG:Ptyp_arrow7:" ))); "class"
   | Ptyp_alias (a,b) (* of core_type * string loc  *)
     ->
-    (* process_core_type(a, y); *)
+    (* my_process_core_type(a, y); *)
     (print_endline (Batteries.dump ("DEBUG:Ptyp_arrow6:" ))); "alias"
   | Ptyp_variant (a,b,c) (* of row_field list * closed_flag * label list option *)
     ->
     (print_endline (Batteries.dump ("DEBUG:Ptyp_arrow5:" )));"variant"
   | Ptyp_poly (a,b) (* of string loc list * core_type *)
     ->
-    (* process_core_type(b, y); *)
+    (* my_process_core_type(b, y); *)
     (print_endline (Batteries.dump ("DEBUG:Ptyp_arrow4:" ))); "poly"
   | Ptyp_package a(* of package_type  *)
     ->
@@ -211,7 +211,7 @@ and
     
 and
 
-  process_core_type(a: core_type * string_list):string=
+  my_process_core_type(a: core_type * string_list):string=
   match a with
   | (x,s) ->
      match x with  
@@ -221,17 +221,17 @@ and
       ptyp_loc_stack(* : location_stack *);
       ptyp_attributes(* : attributes; *)
     }->
-    let td = (process_core_type_desc (ptyp_desc,s)) in
+    let td = (my_process_core_type_desc (ptyp_desc,s)) in
     (*MOSTCOMMON*)
     (print_endline (Batteries.dump ("DEBUG:core_type.ptyp_desc:" , a, td)));
     "ptyp_desc:" ^ td
-and process_core_type_list(x: core_type_list * string_list):string =
+and my_process_core_type_list(x: core_type_list * string_list):string =
   match x with
   | (a,b) ->
     match a with
-    | [] -> "process_core_type_list:"
+    | [] -> "my_process_core_type_list:"
     | h :: t ->
-      process_core_type (h, b) ^ "," ^ process_core_type_list(t,b)        
+      my_process_core_type (h, b) ^ "," ^ my_process_core_type_list(t,b)        
 
 
 
@@ -269,16 +269,16 @@ let emit_core_type_desc (x : core_type_desc * string_list):string =
       let id1 = emit_id1(txt) in
       (* let concat = (concatlist (id1, astring_list)) in *)
       (* let newy = [id1] @ astring_list in *)
-      (* let newlist = (process_core_type_list (b, s)) in *)
+      (* let newlist = (my_process_core_type_list (b, s)) in *)
       id1 (* ^ "\"->" ^ newlist *)
     | Ptyp_tuple a (* of core_type list *)
       ->
-      "Ptyp_tuple" ^ process_core_type_list(a,  s )
+      "Ptyp_tuple" ^ my_process_core_type_list(a,  s )
 
 
-let  emit_core_type(a: core_type * string_list):string=
+let  emit_core_type(a: core_type * string_list*int):string=
   match a with
-  | (x,s) ->
+  | (x,s,n) ->
      match x with  
     {
       ptyp_desc(* : core_type_desc *);
@@ -287,29 +287,45 @@ let  emit_core_type(a: core_type * string_list):string=
       ptyp_attributes(* : attributes; *)
     }->
     let td = (emit_core_type_desc (ptyp_desc,s)) in
-    td
+    td ^ (string_of_int n)
 
+let  emit_core_type2(a: core_type * string_list*int):string=
+  match a with
+  | (x,s,n) ->
+    match x with  
+      {
+        ptyp_desc(* : core_type_desc *);
+        ptyp_loc(* : Location.t *);
+        ptyp_loc_stack(* : location_stack *);
+        ptyp_attributes(* : attributes; *)
+      }->
+      let td = (emit_core_type_desc (ptyp_desc,s)) in
+      td 
+                
 
-let rec emit_core_type_list(x: core_type_list * string_list):string =
+let rec emit_core_type_list(x: core_type_list * string_list*int):string =
   match x with
-  | (a,b) ->
+  | (a,b,n) ->
     match a with
     | [] -> ""
     | h :: t ->
-      let tt = emit_core_type_list(t,b)  in
+      let tt = emit_core_type_list(t,b,n+1)  in
       if tt != "" then
-        emit_core_type (h, b) ^ "," ^ tt
+        emit_core_type (h, b,n) ^ "," ^ tt
       else
-        emit_core_type (h, b)
+        emit_core_type (h, b,n)
 
 let  imp_core_type((a,s,n): core_type * string_list*int):string=
-  
-  let name = emit_core_type(a,s) in
-  "(process_" ^ name ^ " " ^ name ^ (string_of_int n) ^ ")"
 
-let  decl_imp_core_type(a: core_type * string_list):string=
+  let name1 = emit_core_type2(a,s,n) in
+  let name = emit_core_type(a,s,n) in
+  "(process_" ^ name1 ^ " " ^ name  ^ ")"
+(* ^"B" ^(string_of_int n) *)
+
+let  decl_imp_core_type(a: core_type * string_list*int):string=
   let name = emit_core_type(a) in
-  "let process_" ^ name ^ " ( a" ^ name ^ ":" ^ name ^ ")=()\n"
+  let name1 = emit_core_type2(a) in
+  "let process_" ^ name1 ^ " ( a" ^ name ^ ":" ^ name1 ^ ")=()\n"
 
 let rec decl_imp_core_type_list(x: core_type_list * string_list*int):string =
   match x with
@@ -319,9 +335,9 @@ let rec decl_imp_core_type_list(x: core_type_list * string_list*int):string =
     | h :: t ->
       let tt = decl_imp_core_type_list(t,b,n+1)  in
       if tt != "" then
-        decl_imp_core_type (h, b) ^ " " ^ tt
+        decl_imp_core_type (h, b,n) ^ " " ^ tt
       else
-        decl_imp_core_type (h, b)
+        decl_imp_core_type (h, b,n)
 
 let rec imp_core_type_list(x: core_type_list * string_list*int):string =
   match x with
@@ -330,15 +346,16 @@ let rec imp_core_type_list(x: core_type_list * string_list*int):string =
     | [] -> ""
     | h :: t ->
       let tt = imp_core_type_list(t,b,n+1)  in
+      let one = imp_core_type (h, b,n ) in
       if tt != "" then
-        imp_core_type (h, b,n)  ^ "," ^ tt
+        one ^ "," ^ tt
       else
-        imp_core_type (h, b,n ) 
+        one
 
 let emit_constructor_arguments(name,x,s):string =
   match x with
   | Pcstr_tuple a ->
-    "| " ^ name ^ " ("^ (emit_core_type_list (a,s))  ^ ") -> " ^ "(process_types (" ^ imp_core_type_list (a,s,0) ^"))"
+    "| " ^ name ^ " ("^ (emit_core_type_list (a,s,0))  ^ ") -> " ^ "(process_types (" ^ imp_core_type_list (a,s,0) ^"))"
     
 let decl_emit_constructor_arguments(name,x,s):string =
   match x with
@@ -351,7 +368,7 @@ let print_constructor_arguments(a) =
     match x with
     | Pcstr_tuple a ->       
       (print_endline (Batteries.dump ("DEBUG:Pcstr_tuple:"  , a)));
-      "Pcstr_tuple:" ^ (process_core_type_list (a,s))
+      "Pcstr_tuple:" ^ (my_process_core_type_list (a,s))
        
     | Pcstr_record a ->
       (print_endline (Batteries.dump ("DEBUG:Pcstr_record:"  , a)));
@@ -493,44 +510,69 @@ let printdesc(a :structure_item_desc*string_list) :string =
 
                               
 let process_types (x) = ()
+let process_option ( alist0)=()
+let process_core_type ( alist0)=()
+let process_direction_flag ( alist0)=()
 
-let process_arg_label ( aarg_label:arg_label)=()
-let process_cases ( acases:cases)=()
-let process_class_structure ( aclass_structure:class_structure)=()
-let process_constant ( aconstant:constant)=()
-let process_expression ( aexpression:expression)=()
-let process_extension ( aextension:extension)=()
-let process_extension_constructor ( aextension_constructor:extension_constructor)=()
-let process_label ( alabel:label)=()
-let process_letop ( aletop:letop)=()
-let process_list ( alist)=()
-let process_loc ( aloc)=()
-let process_option ( aloc)=()
-let process_longident_loc ( alongident_loc:longident_loc)=()
-let process_module_expr ( amodule_expr:module_expr)=()
-let process_open_declaration ( aopen_declaration:open_declaration)=()
-let process_pattern ( apattern:pattern)=()
-let process_rec_flag ( arec_flag:rec_flag)=()
-                                           
 
+(**)
+
+let process_arg_label ( aarg_label0:arg_label)=()
+let process_cases ( acases0:cases)=()
+let process_class_structure ( aclass_structure0:class_structure)=()
+let process_constant ( aconstant0:constant)=()
+let process_expression ( aexpression0:expression)=()
+let process_extension ( aextension0:extension)=()
+let process_extension_constructor ( aextension_constructor0:extension_constructor)=()
+let process_label ( alabel0:label)=()
+let process_letop ( aletop0:letop)=()
+let process_list ( alist0)=()
+let process_loc ( aloc0)=()
+let process_longident_loc ( alongident_loc0:longident_loc)=()
+let process_module_expr ( amodule_expr0:module_expr)=()
+let process_open_declaration ( aopen_declaration0:open_declaration)=()
+let process_pattern ( apattern0:pattern)=()
+let process_rec_flag ( arec_flag0:rec_flag)=()
 let foo(x) =
-  match x with    
-  | Pexp_ident longident_loc -> (process_types ((process_longident_loc longident_loc)))
-  | Pexp_constant constant -> (process_types ((process_constant constant)))
-  | Pexp_let (rec_flag,alist,expression) -> (process_types ((process_rec_flag rec_flag),(process_list alist),(process_expression expression)))
-  | Pexp_function cases -> (process_types ((process_cases cases)))
-  | Pexp_fun (arg_label,option,pattern,expression) -> (process_types ((process_arg_label arg_label),(process_option option),(process_pattern pattern),(process_expression expression)))
-  | Pexp_apply (expression, list) -> (process_types ((process_expression expression),(process_list list)))
-  | Pexp_match (expression, cases) -> (process_types ((process_expression expression),(process_cases cases)))
-  | Pexp_try (expression, cases) -> (process_types ((process_expression expression),(process_cases cases)))
-  | Pexp_tuple list -> (process_types ((process_list list)))
-  | Pexp_construct (longident_loc, option) -> (process_types ((process_longident_loc longident_loc),(process_option option)))
-| Pexp_variant (label,option) -> (process_types ((process_label label),(process_option option)))
-| Pexp_record (list, option) -> (process_types ((process_list list),(process_option option)))
-| Pexp_field (expression ,longident_loc) -> (process_types ((process_expression expression),(process_longident_loc longident_loc)))
-| Pexp_setfield (expression, longident_loc, expression1) -> (process_types ((process_expression expression),(process_longident_loc longident_loc),(process_expression expression)))
-| Pexp_array list -> (process_types ((process_list list)))
-| Pexp_ifthenelse (expression, expression2, option) -> (process_types ((process_expression expression),(process_expression expression),(process_option option)))
+  match x with
+  | Pexp_apply (expressionA0,listA1) -> (process_types ((process_expression expressionA0),(process_list listA1)))
+| Pexp_array (listA0) -> (process_types ((process_list listA0)))
+| Pexp_assert (expressionA0) -> (process_types ((process_expression expressionA0)))
+| Pexp_coerce (expressionA0,optionA1,core_typeA2) -> (process_types ((process_expression expressionA0),(process_option optionA1),(process_core_type core_typeA2)))
+| Pexp_constant (constantA0) -> (process_types ((process_constant constantA0)))
+| Pexp_constraint (expressionA0,core_typeA1) -> (process_types ((process_expression expressionA0),(process_core_type core_typeA1)))
+| Pexp_construct (longident_locA0,optionA1) -> (process_types ((process_longident_loc longident_locA0),(process_option optionA1)))
+| Pexp_extension (extensionA0) -> (process_types ((process_extension extensionA0)))
+| Pexp_field (expressionA0,longident_locA1) -> (process_types ((process_expression expressionA0),(process_longident_loc longident_locA1)))
+| Pexp_for (patternA0,expressionA1,expressionA2,direction_flagA3,expressionA4) -> (process_types ((process_pattern patternA0),(process_expression expressionA1),(process_expression expressionA2),(process_direction_flag direction_flagA3),(process_expression expressionA4)))
+| Pexp_fun (arg_labelA0,optionA1,patternA2,expressionA3) -> (process_types ((process_arg_label arg_labelA0),(process_option optionA1),(process_pattern patternA2),(process_expression expressionA3)))
+| Pexp_function (casesA0) -> (process_types ((process_cases casesA0)))
+| Pexp_ident (longident_locA0) -> (process_types ((process_longident_loc longident_locA0)))
+| Pexp_ifthenelse (expressionA0,expressionA1,optionA2) -> (process_types ((process_expression expressionA0),(process_expression expressionA1),(process_option optionA2)))
+| Pexp_lazy (expressionA0) -> (process_types ((process_expression expressionA0)))
+| Pexp_letexception (extension_constructorA0,expressionA1) -> (process_types ((process_extension_constructor extension_constructorA0),(process_expression expressionA1)))
+| Pexp_letmodule (locA0,module_exprA1,expressionA2) -> (process_types ((process_loc locA0),(process_module_expr module_exprA1),(process_expression expressionA2)))
+| Pexp_letop (letopA0) -> (process_types ((process_letop letopA0)))
+| Pexp_let (rec_flagA0,listA1,expressionA2) -> (process_types ((process_rec_flag rec_flagA0),(process_list listA1),(process_expression expressionA2)))
+| Pexp_match (expressionA0,casesA1) -> (process_types ((process_expression expressionA0),(process_cases casesA1)))
+| Pexp_new (longident_locA0) -> (process_types ((process_longident_loc longident_locA0)))
+| Pexp_newtype (locA0,expressionA1) -> (process_types ((process_loc locA0),(process_expression expressionA1)))
+| Pexp_object (class_structureA0) -> (process_types ((process_class_structure class_structureA0)))
+| Pexp_open (open_declarationA0,expressionA1) -> (process_types ((process_open_declaration open_declarationA0),(process_expression expressionA1)))
+| Pexp_override (listA0) -> (process_types ((process_list listA0)))
+| Pexp_pack (module_exprA0) -> (process_types ((process_module_expr module_exprA0)))
+| Pexp_poly (expressionA0,optionA1) -> (process_types ((process_expression expressionA0),(process_option optionA1)))
+| Pexp_record (listA0,optionA1) -> (process_types ((process_list listA0),(process_option optionA1)))
+| Pexp_send (expressionA0,locA1) -> (process_types ((process_expression expressionA0),(process_loc locA1)))
+| Pexp_sequence (expressionA0,expressionA1) -> (process_types ((process_expression expressionA0),(process_expression expressionA1)))
+| Pexp_setfield (expressionA0,longident_locA1,expressionA2) -> (process_types ((process_expression expressionA0),(process_longident_loc longident_locA1),(process_expression expressionA2)))
+| Pexp_setinstvar (locA0,expressionA1) -> (process_types ((process_loc locA0),(process_expression expressionA1)))
+| Pexp_try (expressionA0,casesA1) -> (process_types ((process_expression expressionA0),(process_cases casesA1)))
+| Pexp_tuple (listA0) -> (process_types ((process_list listA0)))
+| Pexp_unreachable -> (process_types ())
+| Pexp_variant (labelA0,optionA1) -> (process_types ((process_label labelA0),(process_option optionA1)))
+| Pexp_while (expressionA0,expressionA1) -> (process_types ((process_expression expressionA0),(process_expression expressionA1)))
+                                            
 
 let foo = 1
   
