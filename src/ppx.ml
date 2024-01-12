@@ -56,7 +56,7 @@ let print_value_binding_list2 (x : value_binding) : string =
     (*print_value_binding_expr pvb_expr*)
     (print_endline (Batteries.dump ("DEBUG:value_binding.atrr:", pvb_attributes )));
     (print_endline (Batteries.dump ("DEBUG:value_binding.loc:", pvb_loc )));
-    "yodo"
+    "pattern-fixme"
 
 let rec print_value_binding_list (x : value_binding list) : string=
   match x with
