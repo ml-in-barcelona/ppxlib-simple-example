@@ -61,7 +61,7 @@ let print_value_binding_list2 (x : value_binding) : string =
 
 let rec print_value_binding_list (x : value_binding list) : string=
   match x with
-  | [] -> ""
+  | [] -> "print_value_binding_list"
   | h :: t ->
     (print_value_binding_list2 h)
     ^ "|" ^(print_value_binding_list t)
@@ -77,7 +77,7 @@ let rec process_id1 a : string =
 
 let rec stringlister (x:string_list) : string =
   match x with
-  | [] ->""
+  | [] ->"stringlister"
   | h :: t -> h ^ stringlister(t)
 and
   process_id2(x:longident *string_list):string =
@@ -165,8 +165,8 @@ and
       id1 ^ "->" ^ newlist
     | Ptyp_tuple a (* of core_type list *)
       ->
-      (print_endline (Batteries.dump ("DEBUG:Ptyp_tuple:" )));
-      "[FIXME1]"
+      (print_endline (Batteries.dump ("DEBUG:Ptyp_tuple:", a )));
+      "Ptyp_tuple" ^ process_core_type_list(a,  "TUPLE" :: astring_list )
 
 
     (*not in test*)
@@ -208,7 +208,7 @@ and
   match a with
   (x, "process_record_kind_list" :: s)->
   match x with
-  | [] -> ""
+  | [] -> "process_record_kind_list"
   | h :: t ->
     (process_record_kind (h , "prk" :: s)) ^ "|" ^ (process_record_kind_list (t, s))
     
@@ -232,7 +232,7 @@ and process_core_type_list(x: core_type_list * string_list):string =
   match x with
   | (a,b) ->
     match a with
-    | [] -> "Empty"
+    | [] -> "process_core_type_list"
     | h :: t ->
       process_core_type (h, b) ^ "|" ^ process_core_type_list(t,b)        
     
@@ -253,7 +253,7 @@ let rec process_pype_variant_constructor_declaration_list(a:constructor_declarat
   match a with
   | (x,s)->
     match x with
-    | [] -> ""
+    | [] -> "VARIANT:" 
     | h :: t ->
       match h with
       |{
@@ -281,7 +281,7 @@ let rec process_pype_variant_constructor_declaration_list(a:constructor_declarat
              "attrs",
              pcd_attributes
            )));
-        "VARIANT:"  ^
+        
         (process_pype_variant_constructor_declaration_list (t,s))
         ^ "|" ^
         print_constructor_arguments(pcd_args,s)
@@ -335,7 +335,7 @@ let rec process_type_decl_list(a:type_declaration_list*string_list):string =
   match a with
   |(x,s)->
     match x with
-    | [] -> ""
+    | [] -> "process_type_decl_list"
     | h :: t ->
       (print_type_decl (h,s))
       ^ "|" ^
