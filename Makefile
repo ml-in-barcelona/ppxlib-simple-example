@@ -9,4 +9,4 @@ clean :
 
 log.txt:  src/ppx.ml
 	dune clean
-	dune build > log.txt 2>&1
+	dune build --display=quiet > log.txt 2>&1

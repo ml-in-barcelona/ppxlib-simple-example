@@ -23,50 +23,341 @@ let ast =
   in
   testable pp_ast compare
 
+
+type core_type = Parsetree.core_type = {
+  ptyp_desc : core_type_desc;
+  ptyp_loc : location;
+  ptyp_loc_stack : location_stack;
+  ptyp_attributes : attributes;  (** [... \[@id1\] \[@id2\]] *)
+}
+and expression = Parsetree.expression = {
+  pexp_desc : expression_desc;
+  pexp_loc : location;
+  pexp_loc_stack : location_stack;
+  pexp_attributes : attributes;  (** [... \[@id1\] \[@id2\]] *)
+}
+
+and pattern = Parsetree.pattern = {
+  ppat_desc : pattern_desc;
+  ppat_loc : location;
+  ppat_loc_stack : location_stack;
+  ppat_attributes : attributes;  (** [... \[@id1\] \[@id2\]] *)
+}
+
+and pattern_desc = Parsetree.pattern_desc =
+  | Ppat_any  (** The pattern [_]. *)
+  | Ppat_var of string loc  (** A variable pattern such as [x] *)
+  | Ppat_alias of pattern * string loc
+      (** An alias pattern such as [P as 'a] *)
+  | Ppat_constant of constant
+      (** Patterns such as [1], ['a'], ["true"], [1.0], [1l], [1L], [1n] *)
+  | Ppat_interval of constant * constant
+      (** Patterns such as ['a'..'z'].
+
+          Other forms of interval are recognized by the parser but rejected by
+          the type-checker. *)
+  | Ppat_tuple of pattern list
+      (** Patterns [(P1, ..., Pn)].
+
+          Invariant: [n >= 2] *)
+  | Ppat_construct of longident_loc * (string loc list * pattern) option
+      (** [Ppat_construct(C, args)] represents:
+
+          - [C] when [args] is [None],
+          - [C P] when [args] is [Some (\[\], P)]
+          - [C (P1, ..., Pn)] when [args] is
+            [Some (\[\], Ppat_tuple \[P1; ...; Pn\])]
+          - [C (type a b) P] when [args] is [Some (\[a; b\], P)] *)
+  | Ppat_variant of label * pattern option
+      (** [Ppat_variant(`A, pat)] represents:
+
+          - [`A] when [pat] is [None],
+          - [`A P] when [pat] is [Some P] *)
+  | Ppat_record of (longident_loc * pattern) list * closed_flag
+      (** [Ppat_record(\[(l1, P1) ; ... ; (ln, Pn)\], flag)] represents:
+
+          - [{ l1=P1; ...; ln=Pn }] when [flag] is
+            {{!Asttypes.closed_flag.Closed} [Closed]}
+          - [{ l1=P1; ...; ln=Pn; _}] when [flag] is
+            {{!Asttypes.closed_flag.Open} [Open]}
+
+          Invariant: [n > 0] *)
+  | Ppat_array of pattern list  (** Pattern [\[| P1; ...; Pn |\]] *)
+  | Ppat_or of pattern * pattern  (** Pattern [P1 | P2] *)
+  | Ppat_constraint of pattern * core_type  (** Pattern [(P : T)] *)
+  | Ppat_type of longident_loc  (** Pattern [#tconst] *)
+  | Ppat_lazy of pattern  (** Pattern [lazy P] *)
+  | Ppat_unpack of string option loc
+      (** [Ppat_unpack(s)] represents:
+
+          - [(module P)] when [s] is [Some "P"]
+          - [(module _)] when [s] is [None]
+
+          Note: [(module P : S)] is represented as
+          [Ppat_constraint(Ppat_unpack(Some "P"), Ptyp_package S)] *)
+  | Ppat_exception of pattern  (** Pattern [exception P] *)
+  | Ppat_extension of extension  (** Pattern [\[%id\]] *)
+  | Ppat_open of longident_loc * pattern  (** Pattern [M.(P)] *)
+
+and expression_desc = Parsetree.expression_desc =
+  | Pexp_ident of longident_loc  (** Identifiers such as [x] and [M.x] *)
+  | Pexp_constant of constant
+      (** Expressions constant such as [1], ['a'], ["true"], [1.0], [1l], [1L],
+          [1n] *)
+  | Pexp_let of rec_flag * value_binding list * expression
+      (** [Pexp_let(flag, \[(P1,E1) ; ... ; (Pn,En)\], E)] represents:
+
+          - [let P1 = E1 and ... and Pn = EN in E] when [flag] is
+            {{!Asttypes.rec_flag.Nonrecursive} [Nonrecursive]},
+          - [let rec P1 = E1 and ... and Pn = EN in E] when [flag] is
+            {{!Asttypes.rec_flag.Recursive} [Recursive]}. *)
+  | Pexp_function of cases  (** [function P1 -> E1 | ... | Pn -> En] *)
+  | Pexp_fun of arg_label * expression option * pattern * expression
+      (** [Pexp_fun(lbl, exp0, P, E1)] represents:
+
+          - [fun P -> E1] when [lbl] is {{!Asttypes.arg_label.Nolabel}
+            [Nolabel]} and [exp0] is [None]
+          - [fun ~l:P -> E1] when [lbl] is {{!Asttypes.arg_label.Labelled}
+            [Labelled l]} and [exp0] is [None]
+          - [fun ?l:P -> E1] when [lbl] is {{!Asttypes.arg_label.Optional}
+            [Optional l]} and [exp0] is [None]
+          - [fun ?l:(P = E0) -> E1] when [lbl] is
+            {{!Asttypes.arg_label.Optional} [Optional l]} and [exp0] is
+            [Some E0]
+
+          Notes:
+
+          - If [E0] is provided, only {{!Asttypes.arg_label.Optional}
+            [Optional]} is allowed.
+          - [fun P1 P2 .. Pn -> E1] is represented as nested
+            {{!expression_desc.Pexp_fun} [Pexp_fun]}.
+          - [let f P = E] is represented using {{!expression_desc.Pexp_fun}
+            [Pexp_fun]}. *)
+  | Pexp_apply of expression * (arg_label * expression) list
+      (** [Pexp_apply(E0, \[(l1, E1) ; ... ; (ln, En)\])] represents
+          [E0 ~l1:E1 ... ~ln:En]
+
+          [li] can be {{!Asttypes.arg_label.Nolabel} [Nolabel]} (non labeled
+          argument), {{!Asttypes.arg_label.Labelled} [Labelled]} (labelled
+          arguments) or {{!Asttypes.arg_label.Optional} [Optional]} (optional
+          argument).
+
+          Invariant: [n > 0] *)
+  | Pexp_match of expression * cases
+      (** [match E0 with P1 -> E1 | ... | Pn -> En] *)
+  | Pexp_try of expression * cases
+      (** [try E0 with P1 -> E1 | ... | Pn -> En] *)
+  | Pexp_tuple of expression list
+      (** Expressions [(E1, ..., En)]
+
+          Invariant: [n >= 2] *)
+  | Pexp_construct of longident_loc * expression option
+      (** [Pexp_construct(C, exp)] represents:
+
+          - [C] when [exp] is [None],
+          - [C E] when [exp] is [Some E],
+          - [C (E1, ..., En)] when [exp] is [Some (Pexp_tuple\[E1;...;En\])] *)
+  | Pexp_variant of label * expression option
+      (** [Pexp_variant(`A, exp)] represents
+
+          - [`A] when [exp] is [None]
+          - [`A E] when [exp] is [Some E] *)
+  | Pexp_record of (longident_loc * expression) list * expression option
+      (** [Pexp_record(\[(l1,P1) ; ... ; (ln,Pn)\], exp0)] represents
+
+          - [{ l1=P1; ...; ln=Pn }] when [exp0] is [None]
+          - [{ E0 with l1=P1; ...; ln=Pn }] when [exp0] is [Some E0]
+
+          Invariant: [n > 0] *)
+  | Pexp_field of expression * longident_loc  (** [E.l] *)
+  | Pexp_setfield of expression * longident_loc * expression
+      (** [E1.l <- E2] *)
+  | Pexp_array of expression list  (** [\[| E1; ...; En |\]] *)
+  | Pexp_ifthenelse of expression * expression * expression option
+      (** [if E1 then E2 else E3] *)
+  | Pexp_sequence of expression * expression  (** [E1; E2] *)
+  | Pexp_while of expression * expression  (** [while E1 do E2 done] *)
+  | Pexp_for of pattern * expression * expression * direction_flag * expression
+      (** [Pexp_for(i, E1, E2, direction, E3)] represents:
+
+          - [for i = E1 to E2 do E3 done] when [direction] is
+            {{!Asttypes.direction_flag.Upto} [Upto]}
+          - [for i = E1 downto E2 do E3 done] when [direction] is
+            {{!Asttypes.direction_flag.Downto} [Downto]} *)
+  | Pexp_constraint of expression * core_type  (** [(E : T)] *)
+  | Pexp_coerce of expression * core_type option * core_type
+      (** [Pexp_coerce(E, from, T)] represents
+
+          - [(E :> T)] when [from] is [None],
+          - [(E : T0 :> T)] when [from] is [Some T0]. *)
+  | Pexp_send of expression * label loc  (** [E # m] *)
+  | Pexp_new of longident_loc  (** [new M.c] *)
+  | Pexp_setinstvar of label loc * expression  (** [x <- 2] *)
+  | Pexp_override of (label loc * expression) list
+      (** [{< x1 = E1; ...; xn = En >}] *)
+  | Pexp_letmodule of string option loc * module_expr * expression
+      (** [let module M = ME in E] *)
+  | Pexp_letexception of extension_constructor * expression
+      (** [let exception C in E] *)
+  | Pexp_assert of expression
+      (** [assert E].
+
+          Note: [assert false] is treated in a special way by the type-checker. *)
+  | Pexp_lazy of expression  (** [lazy E] *)
+  | Pexp_poly of expression * core_type option
+      (** Used for method bodies.
+
+          Can only be used as the expression under
+          {{!class_field_kind.Cfk_concrete} [Cfk_concrete]} for methods (not
+          values). *)
+  | Pexp_object of class_structure  (** [object ... end] *)
+  | Pexp_newtype of string loc * expression  (** [fun (type t) -> E] *)
+  | Pexp_pack of module_expr
+      (** [(module ME)].
+
+          [(module ME : S)] is represented as
+          [Pexp_constraint(Pexp_pack ME, Ptyp_package S)] *)
+  | Pexp_open of open_declaration * expression
+      (** - [M.(E)]
+          - [let open M in E]
+          - [let open! M in E] *)
+  | Pexp_letop of letop
+      (** - [let* P = E0 in E1]
+          - [let* P0 = E00 and* P1 = E01 in E1] *)
+  | Pexp_extension of extension  (** [\[%id\]] *)
+  | Pexp_unreachable  (** [.] *)
+
+and core_type_desc = Parsetree.core_type_desc =
+  | Ptyp_any  (** [_] *)
+  | Ptyp_var of string  (** A type variable such as ['a] *)
+  | Ptyp_arrow of arg_label * core_type * core_type
+      (** [Ptyp_arrow(lbl, T1, T2)] represents:
+
+          - [T1 -> T2] when [lbl] is {{!Asttypes.arg_label.Nolabel} [Nolabel]},
+          - [~l:T1 -> T2] when [lbl] is {{!Asttypes.arg_label.Labelled}
+            [Labelled]},
+          - [?l:T1 -> T2] when [lbl] is {{!Asttypes.arg_label.Optional}
+            [Optional]}. *)
+  | Ptyp_tuple of core_type list
+      (** [Ptyp_tuple(\[T1 ; ... ; Tn\])] represents a product type
+          [T1 * ... * Tn].
+
+          Invariant: [n >= 2]. *)
+  | Ptyp_constr of longident_loc * core_type list
+      (** [Ptyp_constr(lident, l)] represents:
+
+          - [tconstr] when [l=\[\]],
+          - [T tconstr] when [l=\[T\]],
+          - [(T1, ..., Tn) tconstr] when [l=\[T1 ; ... ; Tn\]]. *)
+  | Ptyp_object of object_field list * closed_flag
+      (** [Ptyp_object(\[ l1:T1; ...; ln:Tn \], flag)] represents:
+
+          - [< l1:T1; ...; ln:Tn >] when [flag] is
+            {{!Asttypes.closed_flag.Closed} [Closed]},
+          - [< l1:T1; ...; ln:Tn; .. >] when [flag] is
+            {{!Asttypes.closed_flag.Open} [Open]}. *)
+  | Ptyp_class of longident_loc * core_type list
+      (** [Ptyp_class(tconstr, l)] represents:
+
+          - [#tconstr] when [l=\[\]],
+          - [T #tconstr] when [l=\[T\]],
+          - [(T1, ..., Tn) #tconstr] when [l=\[T1 ; ... ; Tn\]]. *)
+  | Ptyp_alias of core_type * string  (** [T as 'a]. *)
+  | Ptyp_variant of row_field list * closed_flag * label list option
+      (** [Ptyp_variant(\[`A;`B\], flag, labels)] represents:
+
+          - [\[ `A|`B \]] when [flag] is {{!Asttypes.closed_flag.Closed}
+            [Closed]}, and [labels] is [None],
+          - [\[> `A|`B \]] when [flag] is {{!Asttypes.closed_flag.Open} [Open]},
+            and [labels] is [None],
+          - [\[< `A|`B \]] when [flag] is {{!Asttypes.closed_flag.Closed}
+            [Closed]}, and [labels] is [Some \[\]],
+          - [\[< `A|`B > `X `Y \]] when [flag] is
+            {{!Asttypes.closed_flag.Closed} [Closed]}, and [labels] is
+            [Some \["X";"Y"\]]. *)
+  | Ptyp_poly of string loc list * core_type
+      (** ['a1 ... 'an. T]
+
+          Can only appear in the following context:
+
+          - As the {!core_type} of a {{!pattern_desc.Ppat_constraint}
+            [Ppat_constraint]} node corresponding to a constraint on a
+            let-binding:
+
+          {[
+            let x : 'a1 ... 'an. T = e ...
+          ]}
+          - Under {{!class_field_kind.Cfk_virtual} [Cfk_virtual]} for methods
+            (not values).
+
+          - As the {!core_type} of a {{!class_type_field_desc.Pctf_method}
+            [Pctf_method]} node.
+
+          - As the {!core_type} of a {{!expression_desc.Pexp_poly} [Pexp_poly]}
+            node.
+
+          - As the {{!label_declaration.pld_type} [pld_type]} field of a
+            {!label_declaration}.
+
+          - As a {!core_type} of a {{!core_type_desc.Ptyp_object} [Ptyp_object]}
+            node.
+
+          - As the {{!value_description.pval_type} [pval_type]} field of a
+            {!value_description}. *)
+  | Ptyp_package of package_type  (** [(module S)]. *)
+  | Ptyp_extension of extension  (** [\[%id\]]. *)
+and value_binding = Parsetree.value_binding = {
+  pvb_pat : pattern;
+  pvb_expr : expression;
+  pvb_attributes : attributes;
+  pvb_loc : location;
+}
+
+
 let test () =
   check ast "case I" [%expr "r3p14ccd 70 r4nd0m 5tr1n9"] [%expr [%yay]]
 
 let () =
   run "Simple ppx test suit" [ ("Transform", [ ("Test", `Quick, test) ]) ]
 
-type expression_desc =
-  | Pexp_ident of longident_loc  
-  | Pexp_constant of constant
-  | Pexp_let of rec_flag * value_binding list * expression
-  | Pexp_function of cases  
-  | Pexp_fun of arg_label * expression option * pattern * expression
-  | Pexp_apply of expression * (arg_label * expression) list
-  | Pexp_match of expression * cases
-  | Pexp_try of expression * cases
-  | Pexp_tuple of expression list
-  | Pexp_construct of longident_loc * expression option
-  | Pexp_variant of label * expression option
-  | Pexp_record of (longident_loc * expression) list * expression option
-  | Pexp_field of expression * longident_loc  
-  | Pexp_setfield of expression * longident_loc * expression
-  | Pexp_array of expression list  
-  | Pexp_ifthenelse of expression * expression * expression option
-  | Pexp_sequence of expression * expression  
-  | Pexp_while of expression * expression 
-  | Pexp_for of pattern * expression * expression * direction_flag * expression
-  | Pexp_constraint of expression * core_type  
-  | Pexp_coerce of expression * core_type option * core_type
-  | Pexp_send of expression * label loc  
-  | Pexp_new of longident_loc  
-  | Pexp_setinstvar of label loc * expression  
-  | Pexp_override of (label loc * expression) list
-  | Pexp_letmodule of string option loc * module_expr * expression
-  | Pexp_letexception of extension_constructor * expression
-  | Pexp_assert of expression
-  | Pexp_lazy of expression  
-  | Pexp_poly of expression * core_type option
-  | Pexp_object of class_structure  
-  | Pexp_newtype of string loc * expression  
-  | Pexp_pack of module_expr
-  | Pexp_open of open_declaration * expression
-  | Pexp_letop of letop
-  | Pexp_extension of extension 
-  | Pexp_unreachable  
+(* type expression_desc = *)
+(*   | Pexp_ident of longident_loc   *)
+(*   | Pexp_constant of constant *)
+(*   | Pexp_let of rec_flag * value_binding list * expression *)
+(*   | Pexp_function of cases   *)
+(*   | Pexp_fun of arg_label * expression option * pattern * expression *)
+(*   | Pexp_apply of expression * (arg_label * expression) list *)
+(*   | Pexp_match of expression * cases *)
+(*   | Pexp_try of expression * cases *)
+(*   | Pexp_tuple of expression list *)
+(*   | Pexp_construct of longident_loc * expression option *)
+(*   | Pexp_variant of label * expression option *)
+(*   | Pexp_record of (longident_loc * expression) list * expression option *)
+(*   | Pexp_field of expression * longident_loc   *)
+(*   | Pexp_setfield of expression * longident_loc * expression *)
+(*   | Pexp_array of expression list   *)
+(*   | Pexp_ifthenelse of expression * expression * expression option *)
+(*   | Pexp_sequence of expression * expression   *)
+(*   | Pexp_while of expression * expression  *)
+(*   | Pexp_for of pattern * expression * expression * direction_flag * expression *)
+(*   | Pexp_constraint of expression * core_type   *)
+(*   | Pexp_coerce of expression * core_type option * core_type *)
+(*   | Pexp_send of expression * label loc   *)
+(*   | Pexp_new of longident_loc   *)
+(*   | Pexp_setinstvar of label loc * expression   *)
+(*   | Pexp_override of (label loc * expression) list *)
+(*   | Pexp_letmodule of string option loc * module_expr * expression *)
+(*   | Pexp_letexception of extension_constructor * expression *)
+(*   | Pexp_assert of expression *)
+(*   | Pexp_lazy of expression   *)
+(*   | Pexp_poly of expression * core_type option *)
+(*   | Pexp_object of class_structure   *)
+(*   | Pexp_newtype of string loc * expression   *)
+(*   | Pexp_pack of module_expr *)
+(*   | Pexp_open of open_declaration * expression *)
+(*   | Pexp_letop of letop *)
+(*   | Pexp_extension of extension  *)
+(*   | Pexp_unreachable   *)
 
 type string_list = string list
 type core_type_list = core_type list

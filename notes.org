@@ -638,3 +638,29 @@ process_core_type_list:
 ,ptyp_desc:Ptyp_constr:"expression"
 ->process_core_type_list:,
 process_core_type_list:}
+
+
+
+
+
+
+
+
+
+
+* latest results
+
+      1 ["DEBUG3:"; (Tag9 (((((("Alcotest")
+      1 ("DEBUG:Pstr_value:", 0, [(((("debu
+      1 ("DEBUG:Pstr_value:", 0, [(((("prin
+      1 ("DEBUG:Pstr_value:", 0, [(((("proc
+      1 ("DEBUG:Pstr_value:", 0, [(((("tran
+      1 ("DEBUG:value_binding.pat:", ((("de
+      1 ("DEBUG:value_binding.pat:", ((("tr
+      2 ("DEBUG:value_binding.pat:", ((("pr
+      4 ("DEBUG:SECOND::", (Tag1 (0, [(((("
+      4 ("DEBUG:structure_item_desc:", Tag1
+      4 ["DEBUG:value_binding.atrr:"]
+      4 ("DEBUG:value_binding.expr:", (Tag4
+      4 ("DEBUG:value_binding.loc:", (("tes
+     77 ("DEBUG:TOPLEVEL:", "fixme")

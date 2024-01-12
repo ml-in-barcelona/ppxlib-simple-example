@@ -42,7 +42,71 @@ let print_value_binding_expr (x : expression) : string=
     (print_endline (Batteries.dump ("DEBUG66:desc", pexp_desc )));
     (print_endline (Batteries.dump ("DEBUG66:desc", pexp_attributes )));
   "TODO"
+
+let process_types (x):string = ""
+let process_option ( alist0):string = ""
+let process_core_type ( alist0):string = ""
+let process_direction_flag ( alist0):string = ""
+let process_arg_label ( aarg_label0:arg_label):string=""
+let process_cases ( acases0:cases):string=""
+let process_class_structure ( aclass_structure0:class_structure):string=""
+let process_constant ( aconstant0:constant):string=""
+let process_extension ( aextension0:extension):string=""
+let process_extension_constructor ( aextension_constructor0:extension_constructor):string=""
+let process_label ( alabel0:label):string=""
+let process_letop ( aletop0:letop):string=""
+let process_list ( alist0):string=""
+let process_loc ( aloc0):string=""
+let process_longident_loc ( alongident_loc0:longident_loc):string=""
+let process_module_expr ( amodule_expr0:module_expr):string=""
+let process_open_declaration ( aopen_declaration0:open_declaration):string=""
+let process_rec_flag ( arec_flag0:rec_flag):string=""
+
   
+let rec process_expression_desc ( x:expression_desc):string=
+  match x with
+  | Pexp_apply (expressionA0,listA1) -> (process_types ((process_expression expressionA0),(process_list listA1)))
+  | Pexp_array (listA0) -> (process_types ((process_list listA0)))
+  | Pexp_assert (expressionA0) -> (process_types ((process_expression expressionA0)))
+  | Pexp_coerce (expressionA0,optionA1,core_typeA2) -> (process_types ((process_expression expressionA0),(process_option optionA1),(process_core_type core_typeA2)))
+  | Pexp_constant (constantA0) -> (process_types ((process_constant constantA0)))
+  | Pexp_constraint (expressionA0,core_typeA1) -> (process_types ((process_expression expressionA0),(process_core_type core_typeA1)))
+  | Pexp_construct (longident_locA0,optionA1) -> (process_types ((process_longident_loc longident_locA0),(process_option optionA1)))
+  | Pexp_extension (extensionA0) -> (process_types ((process_extension extensionA0)))
+  | Pexp_field (expressionA0,longident_locA1) -> (process_types ((process_expression expressionA0),(process_longident_loc longident_locA1)))
+  | Pexp_for (patternA0,expressionA1,expressionA2,direction_flagA3,expressionA4) -> (process_types ((process_pattern patternA0),(process_expression expressionA1),(process_expression expressionA2),(process_direction_flag direction_flagA3),(process_expression expressionA4)))
+  | Pexp_fun (arg_labelA0,optionA1,patternA2,expressionA3) -> (process_types ((process_arg_label arg_labelA0),(process_option optionA1),(process_pattern patternA2),(process_expression expressionA3)))
+  | Pexp_function (casesA0) -> (process_types ((process_cases casesA0)))
+  | Pexp_ident (longident_locA0) -> (process_types ((process_longident_loc longident_locA0)))
+  | Pexp_ifthenelse (expressionA0,expressionA1,optionA2) -> (process_types ((process_expression expressionA0),(process_expression expressionA1),(process_option optionA2)))
+  | Pexp_lazy (expressionA0) -> (process_types ((process_expression expressionA0)))
+  | Pexp_letexception (extension_constructorA0,expressionA1) -> (process_types ((process_extension_constructor extension_constructorA0),(process_expression expressionA1)))
+  | Pexp_letmodule (locA0,module_exprA1,expressionA2) -> (process_types ((process_loc locA0),(process_module_expr module_exprA1),(process_expression expressionA2)))
+  | Pexp_letop (letopA0) -> (process_types ((process_letop letopA0)))
+  | Pexp_let (rec_flagA0,listA1,expressionA2) -> (process_types ((process_rec_flag rec_flagA0),(process_list listA1),(process_expression expressionA2)))
+  | Pexp_match (expressionA0,casesA1) -> (process_types ((process_expression expressionA0),(process_cases casesA1)))
+  | Pexp_new (longident_locA0) -> (process_types ((process_longident_loc longident_locA0)))
+  | Pexp_newtype (locA0,expressionA1) -> (process_types ((process_loc locA0),(process_expression expressionA1)))
+  | Pexp_object (class_structureA0) -> (process_types ((process_class_structure class_structureA0)))
+  | Pexp_open (open_declarationA0,expressionA1) -> (process_types ((process_open_declaration open_declarationA0),(process_expression expressionA1)))
+  | Pexp_override (listA0) -> (process_types ((process_list listA0)))
+  | Pexp_pack (module_exprA0) -> (process_types ((process_module_expr module_exprA0)))
+  | Pexp_poly (expressionA0,optionA1) -> (process_types ((process_expression expressionA0),(process_option optionA1)))
+  | Pexp_record (listA0,optionA1) -> (process_types ((process_list listA0),(process_option optionA1)))
+  | Pexp_send (expressionA0,locA1) -> (process_types ((process_expression expressionA0),(process_loc locA1)))
+  | Pexp_sequence (expressionA0,expressionA1) -> (process_types ((process_expression expressionA0),(process_expression expressionA1)))
+  | Pexp_setfield (expressionA0,longident_locA1,expressionA2) -> (process_types ((process_expression expressionA0),(process_longident_loc longident_locA1),(process_expression expressionA2)))
+  | Pexp_setinstvar (locA0,expressionA1) -> (process_types ((process_loc locA0),(process_expression expressionA1)))
+  | Pexp_try (expressionA0,casesA1) -> (process_types ((process_expression expressionA0),(process_cases casesA1)))
+  | Pexp_tuple (listA0) -> (process_types ((process_list listA0)))
+  | Pexp_unreachable -> (process_types ())
+  | Pexp_variant (labelA0,optionA1) -> (process_types ((process_label labelA0),(process_option optionA1)))
+  | Pexp_while (expressionA0,expressionA1) -> (process_types ((process_expression expressionA0),(process_expression expressionA1)))
+and process_pattern_desc x = ""
+and process_pattern ( apattern0:pattern):string=(process_pattern_desc apattern0.ppat_desc)
+and process_expression ( x:expression):string= process_expression_desc(x.pexp_desc)
+
+          
 let print_value_binding_list2 (x : value_binding) : string =
   match x with
   | {
@@ -56,7 +120,7 @@ let print_value_binding_list2 (x : value_binding) : string =
     (*print_value_binding_expr pvb_expr*)
     (print_endline (Batteries.dump ("DEBUG:value_binding.atrr:", pvb_attributes )));
     (print_endline (Batteries.dump ("DEBUG:value_binding.loc:", pvb_loc )));
-    "pattern-fixme"
+    "pattern:" ^ (process_pattern pvb_pat) ^ " expr: " ^ (process_expression pvb_expr)
 
 let rec print_value_binding_list (x : value_binding list) : string=
   match x with
@@ -128,14 +192,14 @@ let rec
      pld_loc(* : Location.t *);
      pld_attributes(* : attributes *); 
    } ->
-    let foo =my_process_core_type(pld_type, s) in
+    let pct =my_process_core_type(pld_type, s) in
     (print_endline (Batteries.dump ("DEBUG:precord_kind:",  
                                     pld_name,
                                     "mutable",
                                     pld_mutable,
                                     "type",
                                     pld_type)));
-    "process_record_kind:\"" ^ pld_name.txt ^ "\" body:" ^ foo
+    "process_record_kind:\"" ^ pld_name.txt ^ "\" body:" ^ pct
 and
   my_process_core_type_desc (x : core_type_desc * string_list):string =
   match x with
@@ -390,11 +454,13 @@ let emit_constructor_arguments(name,x,s):string =
   match x with
   | Pcstr_tuple a ->
     "| " ^ name ^ " ("^ (emit_core_type_list (a,s,0))  ^ ") -> " ^ "(process_types (" ^ imp_core_type_list (a,s,0) ^"))"
+  | other  -> "other"
     
 let decl_emit_constructor_arguments(name,x,s):string =
   match x with
   | Pcstr_tuple a ->
-    decl_imp_core_type_list (a,s,0) 
+    decl_imp_core_type_list (a,s,0)
+  | other  -> "other"
 
 let print_constructor_arguments(a) =
   match a with
@@ -543,69 +609,6 @@ let printdesc(a :structure_item_desc*string_list) :string =
     | Pstr_extension ( extension , attributes)->(print_endline (Batteries.dump ("DEBUG:Pstr_extension:", extension , attributes))) ; "extension"
 
                               
-let process_types (x) = ()
-let process_option ( alist0)=()
-let process_core_type ( alist0)=()
-let process_direction_flag ( alist0)=()
-
-
-(**)
-
-let process_arg_label ( aarg_label0:arg_label)=()
-let process_cases ( acases0:cases)=()
-let process_class_structure ( aclass_structure0:class_structure)=()
-let process_constant ( aconstant0:constant)=()
-let process_expression ( aexpression0:expression)=()
-let process_extension ( aextension0:extension)=()
-let process_extension_constructor ( aextension_constructor0:extension_constructor)=()
-let process_label ( alabel0:label)=()
-let process_letop ( aletop0:letop)=()
-let process_list ( alist0)=()
-let process_loc ( aloc0)=()
-let process_longident_loc ( alongident_loc0:longident_loc)=()
-let process_module_expr ( amodule_expr0:module_expr)=()
-let process_open_declaration ( aopen_declaration0:open_declaration)=()
-let process_pattern ( apattern0:pattern)=()
-let process_rec_flag ( arec_flag0:rec_flag)=()
-let foo(x) =
-  match x with
-  | Pexp_apply (expressionA0,listA1) -> (process_types ((process_expression expressionA0),(process_list listA1)))
-| Pexp_array (listA0) -> (process_types ((process_list listA0)))
-| Pexp_assert (expressionA0) -> (process_types ((process_expression expressionA0)))
-| Pexp_coerce (expressionA0,optionA1,core_typeA2) -> (process_types ((process_expression expressionA0),(process_option optionA1),(process_core_type core_typeA2)))
-| Pexp_constant (constantA0) -> (process_types ((process_constant constantA0)))
-| Pexp_constraint (expressionA0,core_typeA1) -> (process_types ((process_expression expressionA0),(process_core_type core_typeA1)))
-| Pexp_construct (longident_locA0,optionA1) -> (process_types ((process_longident_loc longident_locA0),(process_option optionA1)))
-| Pexp_extension (extensionA0) -> (process_types ((process_extension extensionA0)))
-| Pexp_field (expressionA0,longident_locA1) -> (process_types ((process_expression expressionA0),(process_longident_loc longident_locA1)))
-| Pexp_for (patternA0,expressionA1,expressionA2,direction_flagA3,expressionA4) -> (process_types ((process_pattern patternA0),(process_expression expressionA1),(process_expression expressionA2),(process_direction_flag direction_flagA3),(process_expression expressionA4)))
-| Pexp_fun (arg_labelA0,optionA1,patternA2,expressionA3) -> (process_types ((process_arg_label arg_labelA0),(process_option optionA1),(process_pattern patternA2),(process_expression expressionA3)))
-| Pexp_function (casesA0) -> (process_types ((process_cases casesA0)))
-| Pexp_ident (longident_locA0) -> (process_types ((process_longident_loc longident_locA0)))
-| Pexp_ifthenelse (expressionA0,expressionA1,optionA2) -> (process_types ((process_expression expressionA0),(process_expression expressionA1),(process_option optionA2)))
-| Pexp_lazy (expressionA0) -> (process_types ((process_expression expressionA0)))
-| Pexp_letexception (extension_constructorA0,expressionA1) -> (process_types ((process_extension_constructor extension_constructorA0),(process_expression expressionA1)))
-| Pexp_letmodule (locA0,module_exprA1,expressionA2) -> (process_types ((process_loc locA0),(process_module_expr module_exprA1),(process_expression expressionA2)))
-| Pexp_letop (letopA0) -> (process_types ((process_letop letopA0)))
-| Pexp_let (rec_flagA0,listA1,expressionA2) -> (process_types ((process_rec_flag rec_flagA0),(process_list listA1),(process_expression expressionA2)))
-| Pexp_match (expressionA0,casesA1) -> (process_types ((process_expression expressionA0),(process_cases casesA1)))
-| Pexp_new (longident_locA0) -> (process_types ((process_longident_loc longident_locA0)))
-| Pexp_newtype (locA0,expressionA1) -> (process_types ((process_loc locA0),(process_expression expressionA1)))
-| Pexp_object (class_structureA0) -> (process_types ((process_class_structure class_structureA0)))
-| Pexp_open (open_declarationA0,expressionA1) -> (process_types ((process_open_declaration open_declarationA0),(process_expression expressionA1)))
-| Pexp_override (listA0) -> (process_types ((process_list listA0)))
-| Pexp_pack (module_exprA0) -> (process_types ((process_module_expr module_exprA0)))
-| Pexp_poly (expressionA0,optionA1) -> (process_types ((process_expression expressionA0),(process_option optionA1)))
-| Pexp_record (listA0,optionA1) -> (process_types ((process_list listA0),(process_option optionA1)))
-| Pexp_send (expressionA0,locA1) -> (process_types ((process_expression expressionA0),(process_loc locA1)))
-| Pexp_sequence (expressionA0,expressionA1) -> (process_types ((process_expression expressionA0),(process_expression expressionA1)))
-| Pexp_setfield (expressionA0,longident_locA1,expressionA2) -> (process_types ((process_expression expressionA0),(process_longident_loc longident_locA1),(process_expression expressionA2)))
-| Pexp_setinstvar (locA0,expressionA1) -> (process_types ((process_loc locA0),(process_expression expressionA1)))
-| Pexp_try (expressionA0,casesA1) -> (process_types ((process_expression expressionA0),(process_cases casesA1)))
-| Pexp_tuple (listA0) -> (process_types ((process_list listA0)))
-| Pexp_unreachable -> (process_types ())
-| Pexp_variant (labelA0,optionA1) -> (process_types ((process_label labelA0),(process_option optionA1)))
-| Pexp_while (expressionA0,expressionA1) -> (process_types ((process_expression expressionA0),(process_expression expressionA1)))
                                             
 
 let foo = 1
