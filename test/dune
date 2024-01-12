@@ -7,4 +7,4 @@
  (name test)
  (libraries alcotest ppxlib batteries)
  (preprocess
-  (pps ppxlib.metaquot ppxintrospector -- -no-merge)))
+  (pps ppxlib.metaquot ppx-introspector -- -no-merge)))

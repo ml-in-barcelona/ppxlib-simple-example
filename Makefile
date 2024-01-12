@@ -1,3 +1,6 @@
+install:
+	dune build -p        ppx-introspector -j 23 @install
+
 build1: clean
 	dune build
 

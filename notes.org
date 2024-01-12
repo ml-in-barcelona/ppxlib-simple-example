@@ -1,3 +1,19 @@
+* status
+
+** libs
+
+run ppx introspector on these modules
+
+*** menhir
+*** gbnf parser
+*** ppxlib
+*** ocaml_ocaml_types - types.ml extracted from ocaml into standalone module
+
+make sure it works and covers all the cases, 
+
+** unimath
+later the target will be to unite unimath with the other modules.
+
 * capture the log
 
 #+begin_src shell
@@ -465,7 +481,7 @@ grep Tag4 log.txt|fold -s -w 35|grep Tag4 |sort |uniq -c |sort -n
 
 
 #+begin_src shell :result all
-  grep DEBUG log.txt  |fold -s -w30 |\
+  grep DEBUG log.txt  |fold -s -w30 
       grep DEBUG |sort |uniq -c | sort -n
 #+end_src
 

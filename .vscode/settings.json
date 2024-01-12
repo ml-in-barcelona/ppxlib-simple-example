@@ -1,9 +1,0 @@
-{
-  "[reason]": {
-    "editor.formatOnSave": true
-  },
-  "ocaml.sandbox": {
-    "kind": "opam",
-    "switch": "/Users/davesnx/Code/github/ml-in-barcelona/jsoo-css"
-  },
-}
