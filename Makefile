@@ -1,7 +1,7 @@
 
 report: log.txt
-#	grep DEBUG2B: log.txt | cut -d: -f2  |sort -u
-	grep -A1 DEBUG2A: log.txt 
+	grep DEBUG2B: log.txt | cut -d: -f2- 
+	grep DEBUG2A: log.txt | cut -d: -f2-
 
 install:
 	dune build -p        ppx-introspector -j 23 @install

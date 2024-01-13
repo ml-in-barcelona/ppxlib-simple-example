@@ -664,3 +664,31 @@ process_core_type_list:}
       4 ("DEBUG:value_binding.expr:", (Tag4
       4 ("DEBUG:value_binding.loc:", (("tes
      77 ("DEBUG:TOPLEVEL:", "fixme")
+
+
+
+
+* new try
+
+  (print_endline ("DEBUG2AA:" ^ "open Ppxlib"));
+  
+grep ^DEBUG2AA: log.txt |cut -d: -f2- |sort -u   > src/gen2.ml
+
+that starts the header
+
+grep ^DEBUG2A: log.txt |cut -d: -f2- |sort -u    >> src/gen2.ml
+
+now for this one we need to remove sort
+grep ^DEBUG2B: log.txt |cut -d: -f2-     >> src/gen2.ml
+
+
+* cleanup scripts.
+in test.sh is a horrible monster we found in the sed dungeon.
+this removes some known errors.
+
+the next big fix will be to move the case statements inside the proper functions
+"DEBUG2C: let process_"
+in this function.
+process_type_variant_constructor_declaration_list(a:string*constructor_declaration list*string_list):string =
+
+the ordering of the subobject the constructors are wrong.

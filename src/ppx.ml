@@ -1,9 +1,5 @@
 open Ppxlib
-
-
-let ppddump x = ()
-  
-let ddump x = ""
+let ppddump x = () (*stub to hide batteries dump*)
 
 type string_list = string list
 type patter_list = pattern list
@@ -504,10 +500,11 @@ let rec emit_core_type_list(x: core_type_list * string_list*int):string =
     | [] -> ""
     | h :: t ->
       let tt = emit_core_type_list(t,b,n+1)  in
-      if tt != "" then
-        emit_core_type (h, b,n) ^ "," ^ tt
-      else
-        emit_core_type (h, b,n)
+      let h1 = emit_core_type (h,b,n) in
+      if tt != "" then 
+        h1 ^ "," ^ tt
+      else 
+        h1
 
 let  imp_core_type((a,s,n): core_type * string_list*int):string=
 
@@ -517,7 +514,7 @@ let  imp_core_type((a,s,n): core_type * string_list*int):string=
 (* ^"B" ^(string_of_int n) *)
 
 
-
+(* calls the function from the constructor*)
 let rec imp_core_type_list(x: core_type_list * string_list*int):string =
   match x with
   | (a,b,n) ->
@@ -526,10 +523,10 @@ let rec imp_core_type_list(x: core_type_list * string_list*int):string =
     | h :: t ->
       let tt = imp_core_type_list(t,b,n+1)  in
       let one = imp_core_type (h, b,n ) in
-      if tt != "" then
+      if tt != "" then 
         one ^ "," ^ tt
-      else
-        one
+      else 
+        one 
 
 let emit_constructor_arguments(a1:(string*string*constructor_arguments*string_list)):string =  let (parent,name,x,s) = a1 in  match x with  | Pcstr_tuple a ->
     "| " ^ name ^ " ("^ (emit_core_type_list (a,s,0))  ^ ") -> " ^ "("
@@ -539,27 +536,59 @@ let emit_constructor_arguments(a1:(string*string*constructor_arguments*string_li
 let  decl_imp_core_type(a: string*string *core_type * string_list*int):string=
   let (parent, parent2, atype, s, n) = a in
   let name = emit_core_type(atype, s, n) in
-  let name1 = emit_core_type2(atype, s, n) in
-  "let "^ "process_types_" ^ parent ^ "__" ^ parent2^
-  " ( a" ^ name ^ ":" ^ name1  ^
-  "):string=\""^parent  ^ "__" ^ parent2
-  ^ "_" ^ name1  ^"\" ^ \"a" ^ name ^ "\"\n"
+  let h1 = emit_core_type2(atype, s, n) in
+  (print_endline ("DEBUG2A:" ^ "let process_" ^ h1 ^ " x : " ^ h1 ^ "= x"));  
+  "a" ^ name  
+(* ":" ^ name1  *)
+(* ")" *)
+(* :string=\""^parent  ^ "__" ^ parent2  ^ "_" ^ name1  ^"\" ^ \"a" ^ name ^ "\"\n" *)
 
-let rec decl_imp_core_type_list(x: string*string*core_type_list * string_list*int):string = match x with
-  | (parent,name,a,b,n) ->
-    match a with
-    | [] -> ""
-    | h :: t ->
-      let tt = decl_imp_core_type_list(parent,name,t,b,n+1)  in
-      if tt != "" then
-        decl_imp_core_type (parent,name, h, b,n) ^ " " ^ tt
-      else
-        decl_imp_core_type (parent,name, h, b,n)
 
+let ff =1
+let rec decl_imp_core_type_list(parent,name,a,b,n) = 
+  match a with
+  | [] -> ""
+  | h :: t ->
+    let h1 = decl_imp_core_type (parent,name, h, b,n) in
+    let tt = decl_imp_core_type_list(parent,name,t,b,n+1)  in
+    if tt != "" then 
+      h1 ^ "," ^ tt 
+    else 
+      h1
+        
+let f=1        
+let rec decl_imp_core_type_list2((parent,name,a,b,n): string*string*core_type_list * string_list*int):string = 
+  match a with
+  | [] -> ""
+  | h :: t ->
+    let h1 = emit_core_type2(h, b, n) in
+    let tt = decl_imp_core_type_list2(parent,name,t,b,n+1)  in
+    if tt != "" then 
+      h1 ^ "*" ^ tt 
+    else 
+      h1
+
+(*sep with hats ^ string concat *)
+let rec decl_imp_core_type_list_hats((parent,name,a,b,n): string*string*core_type_list * string_list*int):string = 
+  match a with
+  | [] -> ""
+  | h :: t ->
+    let h1 = decl_imp_core_type (parent,name, h, b,n) in
+    let quoted = "\"" ^ h1 ^ "\"" in
+    let tt = decl_imp_core_type_list_hats(parent,name,t,b,n+1)  in
+    if tt != "" then 
+      quoted ^ "^" ^ tt 
+    else 
+      quoted
+        
 let decl_emit_constructor_arguments(parent,name,x,s):string =
   match x with
   | Pcstr_tuple a ->
-    decl_imp_core_type_list (parent,name,a,s,0)
+    "let "^ "process_types_" ^ parent ^ "__" ^ name
+    ^ "(("    ^  decl_imp_core_type_list (parent,name,a,s,0) ^   "):"
+    ^ "("    ^  decl_imp_core_type_list2 (parent,name,a,s,0) ^  ")):string"
+    ^ " = \"process_types_" ^ parent ^ "__" ^ name ^ "\"^" ^
+    (decl_imp_core_type_list_hats (parent,name,a,s,0) )
   | other  -> "other"
 
 let process_label_declaration  x =
@@ -601,6 +630,11 @@ let rec process_type_variant_constructor_declaration_list(a:string*constructor_d
         pcd_loc(* : Location.t *);
         pcd_attributes(* : attributes *); 
       }->
+        (print_endline (
+            "DEBUG2C: let process_"
+            ^ p ^ "__" ^ pcd_name.txt
+            ^ " x :string ="
+            ^ "match x with "));
         (* let name = match pcd_name with *)
         (*   | (str,_) -> str *)
         (* (ppddump ( *)
@@ -619,8 +653,8 @@ let rec process_type_variant_constructor_declaration_list(a:string*constructor_d
         (*    )); *)
         let newtext = (emit_constructor_arguments(p,pcd_name.txt, pcd_args, s)) in
         let newtext2 = (decl_emit_constructor_arguments(p,pcd_name.txt, pcd_args, s)) in
-        (print_endline ("DEBUG2A:" ^ newtext2));
-        (print_endline ("DEBUG2B:" ^ newtext)); 
+        (print_endline ("DEBUG2B:" ^ newtext2));
+        (print_endline ("DEBUG2C:" ^ newtext)); 
         let ret =              "constructor:\""^ pcd_name.txt ^ "\""
                                ^ "{" ^
                                print_constructor_arguments(pcd_args,s)
@@ -742,6 +776,7 @@ let debug proc lst : string =
                 
 let transform x (*ast, bytecodes of the interface *) =
   (ppddump ("DEBUG3:",x));
+  (print_endline ("DEBUG2AA:" ^ "open Ppxlib")); 
   let foo = (debug proc1 x) in
   x
 
