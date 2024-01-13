@@ -1,3 +1,7 @@
+
+report: log.txt
+	grep TOPstruc log.txt |fold -w 50 | grep FIXME  |sort |uniq -c |sort -n 
+
 install:
 	dune build -p        ppx-introspector -j 23 @install
 
