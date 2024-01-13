@@ -70,7 +70,7 @@ let process_constant ( a:constant):string=
   match a with
   | Pconst_integer (a,b) -> "int" ^a
   | Pconst_char char  -> "char" ^ String.make 1 char
-  | Pconst_string (string,location,stringoption) -> "string" ^ string
+  | Pconst_string (string,location,stringoption) -> "Pconst_string(\"" ^ string ^ "\")"
   | Pconst_float (string , char_option) -> "float" ^ string
 
 
@@ -308,13 +308,11 @@ and
   | Ptyp_extension a (* of extension   *)    ->
     (ppddump ("DEBUG:Ptyp_extension:",a )); "extension"
 and
-  process_record_kind_list(a) : string =
-  match a with
-  (x, s)->
+  process_record_kind_list(p,x,s) : string =
   match x with
   | [] -> "process_record_kind_list"
   | h :: t ->
-    (process_record_kind (h ,  s)) ^ "/" ^ (process_record_kind_list (t, s))    
+    (process_record_kind (h ,  s)) ^ "/" ^ (process_record_kind_list (p, t, s))    
 and
   my_process_core_type(x: core_type ):string=
   match x with  
@@ -518,22 +516,7 @@ let  imp_core_type((a,s,n): core_type * string_list*int):string=
   "(process_" ^ name1 ^ " " ^ name  ^ ")"
 (* ^"B" ^(string_of_int n) *)
 
-let  decl_imp_core_type(a: core_type * string_list*int):string=
-  let name = emit_core_type(a) in
-  let name1 = emit_core_type2(a) in
-  "let process_" ^ name1 ^ " ( a" ^ name ^ ":" ^ name1 ^ ")=()\n"
 
-let rec decl_imp_core_type_list(x: core_type_list * string_list*int):string =
-  match x with
-  | (a,b,n) ->
-    match a with
-    | [] -> ""
-    | h :: t ->
-      let tt = decl_imp_core_type_list(t,b,n+1)  in
-      if tt != "" then
-        decl_imp_core_type (h, b,n) ^ " " ^ tt
-      else
-        decl_imp_core_type (h, b,n)
 
 let rec imp_core_type_list(x: core_type_list * string_list*int):string =
   match x with
@@ -548,16 +531,35 @@ let rec imp_core_type_list(x: core_type_list * string_list*int):string =
       else
         one
 
-let emit_constructor_arguments(name,x,s):string =
-  match x with
-  | Pcstr_tuple a ->
-    "| " ^ name ^ " ("^ (emit_core_type_list (a,s,0))  ^ ") -> " ^ "(process_types (" ^ imp_core_type_list (a,s,0) ^"))"
+let emit_constructor_arguments(a1:(string*string*constructor_arguments*string_list)):string =  let (parent,name,x,s) = a1 in  match x with  | Pcstr_tuple a ->
+    "| " ^ name ^ " ("^ (emit_core_type_list (a,s,0))  ^ ") -> " ^ "("
+    ^ "process_types_" ^ parent ^ "__"^ name^  "(" ^ imp_core_type_list (a,s,0) ^"))"
   | other  -> "other"
-    
-let decl_emit_constructor_arguments(name,x,s):string =
+
+let  decl_imp_core_type(a: string*string *core_type * string_list*int):string=
+  let (parent, parent2, atype, s, n) = a in
+  let name = emit_core_type(atype, s, n) in
+  let name1 = emit_core_type2(atype, s, n) in
+  "let "^ "process_types_" ^ parent ^ "__" ^ parent2^
+  " ( a" ^ name ^ ":" ^ name1  ^
+  "):string=\""^parent  ^ "__" ^ parent2
+  ^ "_" ^ name1  ^"\" ^ \"a" ^ name ^ "\"\n"
+
+let rec decl_imp_core_type_list(x: string*string*core_type_list * string_list*int):string = match x with
+  | (parent,name,a,b,n) ->
+    match a with
+    | [] -> ""
+    | h :: t ->
+      let tt = decl_imp_core_type_list(parent,name,t,b,n+1)  in
+      if tt != "" then
+        decl_imp_core_type (parent,name, h, b,n) ^ " " ^ tt
+      else
+        decl_imp_core_type (parent,name, h, b,n)
+
+let decl_emit_constructor_arguments(parent,name,x,s):string =
   match x with
   | Pcstr_tuple a ->
-    decl_imp_core_type_list (a,s,0)
+    decl_imp_core_type_list (parent,name,a,s,0)
   | other  -> "other"
 
 let process_label_declaration  x =
@@ -584,11 +586,11 @@ let print_constructor_arguments(a) =
       (process_label_declaration_list a)
 
         
-let rec process_pype_variant_constructor_declaration_list(a:constructor_declaration list*string_list):string =
+let rec process_type_variant_constructor_declaration_list(a:string*constructor_declaration list*string_list):string =
   match a with
-  | (x,s)->
+  | (p,x,s)->
     match x with
-    | [] -> "VARIANT:" 
+    | [] -> "VARIANT(" ^ p ^ "):"
     | h :: t ->
       match h with
       |{
@@ -615,15 +617,15 @@ let rec process_pype_variant_constructor_declaration_list(a:constructor_declarat
         (*      "attrs", *)
         (*      pcd_attributes *)
         (*    )); *)
-        let newtext = (emit_constructor_arguments(pcd_name.txt, pcd_args, s)) in
-        let newtext2 = (decl_emit_constructor_arguments(pcd_name.txt, pcd_args, s)) in
+        let newtext = (emit_constructor_arguments(p,pcd_name.txt, pcd_args, s)) in
+        let newtext2 = (decl_emit_constructor_arguments(p,pcd_name.txt, pcd_args, s)) in
         (print_endline ("DEBUG2A:" ^ newtext2));
         (print_endline ("DEBUG2B:" ^ newtext)); 
         let ret =              "constructor:\""^ pcd_name.txt ^ "\""
                                ^ "{" ^
                                print_constructor_arguments(pcd_args,s)
                                ^ "}" ^ "\t|" ^
-                               process_pype_variant_constructor_declaration_list(t,s)
+                               process_type_variant_constructor_declaration_list(p,t,s)
         in
         Printf.printf "DEBUG:constructor_declaration_new: %s\n" ret;
         ret
@@ -632,17 +634,17 @@ let bar =1
   
 let process_kind(a) :string=
   match a with
-  | (x,s)->
+  | (p,x,s)->
     match x with
     (*and type_kind =*)
     | Ptype_abstract  -> (ppddump ("DEBUG:Ptype_abstract:"));
       "DEBUG:Ptype_abstract"
     | Ptype_variant a ->      
       (* (ppddump ("DEBUG:Ptype_variant:",  a)); *)
-      "type variant:" ^ (process_pype_variant_constructor_declaration_list (a,s))      
+      "type variant:" ^ (process_type_variant_constructor_declaration_list (p,a,s))      
     (*of constructor_declaration list *)     
     | Ptype_record a ->     
-      process_record_kind_list(a,s)
+      process_record_kind_list(p,a,s)
     | Ptype_open -> (ppddump ("DEBUG:Ptype_abstract:")); "Ptype_abstract"
 
 let print_type_decl(a) =
@@ -669,7 +671,7 @@ let print_type_decl(a) =
       (*                                 "DEBUG:attr", ptype_attributes, *)
       (*                                 "DEBUG:loc", ptype_loc *)
       (*                                )); *)
-      "print_type_decl:\"" ^  ptype_name.txt ^ "\" = " ^ (process_kind (ptype_kind,s))
+      "print_type_decl:\"" ^  ptype_name.txt ^ "\" = " ^ (process_kind (ptype_name.txt,ptype_kind,s))
       
 type     type_declaration_list = type_declaration list
     
@@ -683,7 +685,6 @@ let rec process_type_decl_list(a:type_declaration_list*string_list):string =
       ^ "[" ^
       (process_type_decl_list (t,s))
       ^ "]"
-      
     
 let printdesc(a :structure_item_desc*string_list) :string =
   match a with
@@ -693,54 +694,39 @@ let printdesc(a :structure_item_desc*string_list) :string =
     | Pstr_value (rec_flag, value_binding_list) ->
       (* (ppddump ("DEBUG:Pstr_value:", rec_flag, value_binding_list)); *)
       "Pstr_value:"      ^ print_value_binding_list(value_binding_list)
-
     | Pstr_type (rec_flag, type_declaration_list) ->
-      (*for expression_desc*)
-      
+      (*for expression_desc*)      
       (* (ppddump ("DEBUG:Pstr_type:", rec_flag, type_declaration_list)); *)
       "Pstr_type:"^
       process_type_decl_list((type_declaration_list,s))
     | Pstr_module  module_binding ->(* (ppddump ("DEBUG:Pstr_module:",module_binding)); *) "module_binding"
     (*open model*)
     | Pstr_open open_description ->(ppddump ("DEBUG:Pstr_open", open_description)); "module_open"
-
     | Pstr_eval (expression,attributes) ->
       (ppddump ("DEBUG:Pstr_eval:", expression,attributes));
       "Pstr_eval"
     (*value binding*)
     | Pstr_primitive value_description ->(ppddump ("DEBUG:Pstr_primitive:", value_description)) ; "primitive"
-                                         
-
     | Pstr_typext  type_extension ->(ppddump ("DEBUG:Pstr_typext:", type_extension)); "typeext"
     | Pstr_exception extension_constructor ->(ppddump ("DEBUG:Pstr_exception:", extension_constructor)); "exception"
-
     | Pstr_recmodule  module_binding_list ->(ppddump ("DEBUG:Pstr_recmodule:", module_binding_list)) ; "recmodule"
     | Pstr_modtype module_type_declaration ->(ppddump ("DEBUG:Pstr_modtype:", module_type_declaration)); "modtype"
-
     | Pstr_class (class_declarations ) ->(ppddump ("DEBUG:Pstr_class:", class_declarations)); "class"
     | Pstr_class_type (class_type_declarations) ->(ppddump ("DEBUG:Pstr_class_type:", class_type_declarations)) ; "class_Type"
     | Pstr_include  (include_declaration)->(ppddump ("DEBUG:Pstr_include:",include_declaration)); "include"
     | Pstr_attribute (attribute)->(ppddump ("DEBUG:Pstr_attribute:", attribute)); "attribte"
     | Pstr_extension ( extension , attributes)->(ppddump ("DEBUG:Pstr_extension:", extension , attributes)) ; "extension"
 
-                              
-                                            
-
+let process_string x = x
 let foo = 1
   
 let printone (x : structure_item) :string =
-  
   match x with
   |{
     pstr_desc; (*structure_item_desc*)
     _
   } ->
     "TOPstructure_item_desc:" ^ (printdesc (pstr_desc,[]))
-    
-(*   () *)
-(* | other -> *)
-(*   let f = (ppddump ("DEBUG4:",other)) in  *)
-      
 
 let printone2 x :string =
   (ppddump ("DEBUG:SECOND::",x));
@@ -749,7 +735,6 @@ let printone2 x :string =
 let proc1 x :string  =
   printone2 x
  
-
 let debug proc lst : string =
   let result = List.map proc lst in
   List.iter (fun i -> print_endline i) result;
@@ -759,5 +744,8 @@ let transform x (*ast, bytecodes of the interface *) =
   (ppddump ("DEBUG3:",x));
   let foo = (debug proc1 x) in
   x
-  
+
+let process_bool x = "bool"
+                                                          
+
  let () = Driver.register_transformation ~impl:transform "simple-ppx" 

@@ -1,6 +1,7 @@
 
 report: log.txt
-	grep TOPstruc log.txt |fold -w 50 | grep FIXME  |sort |uniq -c |sort -n 
+#	grep DEBUG2B: log.txt | cut -d: -f2  |sort -u
+	grep -A1 DEBUG2A: log.txt 
 
 install:
 	dune build -p        ppx-introspector -j 23 @install
