@@ -1,6 +1,10 @@
 open Ppxlib
 
 
+let ppddump x = ()
+  
+let ddump x = ""
+
 type string_list = string list
 type patter_list = pattern list
 type core_type_list = core_type list
@@ -151,8 +155,8 @@ and  print_value_binding_expr (x : expression) : string=
     pexp_loc_stack (* : location_stack *);
     pexp_attributes (* : attributes *); (* [... \[@id1\] \[@id2\]] *)
   } ->
-    (print_endline (Batteries.dump ("DEBUG66:desc", pexp_desc )));
-    (print_endline (Batteries.dump ("DEBUG66:desc", pexp_attributes )));
+    (* (ppddump ("DEBUG66:desc", pexp_desc ))); *)
+    (* (ppddump ("DEBUG66:desc", pexp_attributes ))); *)
   "print_value_binding_expr:" ^ "|" ^ (process_expression_desc pexp_desc)
 and process_expression_desc ( x:expression_desc):string=
   match x with
@@ -237,12 +241,12 @@ and
      pld_attributes(* : attributes *); 
    } ->
     let pct = (my_process_core_type pld_type) in
-    (print_endline (Batteries.dump ("DEBUG:precord_kind:",  
+    (ppddump ("DEBUG:precord_kind:",  
                                     pld_name,
                                     "mutable",
                                     pld_mutable,
                                     "type",
-                                    pld_type)));
+                                    pld_type));
     "process_record_kind:\"" ^ pld_name.txt ^ "|" ^ "\" body:" ^ pct
 and
   my_process_core_type_desc (x : core_type_desc * string_list):string =
@@ -258,51 +262,51 @@ and
       let newlist = (my_process_core_type_list (b, s)) in
       Printf.printf "DEBUG:Ptyp_constr1 '%s' %s" id1 newlist;
       (* "id" ^ a ^ " id2 " ^ myid  *)
-      (print_endline (Batteries.dump (
+      (ppddump (
          "DEBUG:Ptyp_constr:",
          "id",a,
          "types",b,
          "context",s,
          "id1", id1
-       )));     
+       ));     
       "Ptyp_constr:\"" ^ id1 ^ "|" ^ "\"->" ^ newlist
     | Ptyp_tuple a (* of core_type list *)
       ->
-      (print_endline (Batteries.dump ("DEBUG:Ptyp_tuple:", a )));
+      (ppddump ("DEBUG:Ptyp_tuple:", a ));
       "Ptyp_tuple" ^ my_process_core_type_list(a,  s )
     (*not in test*)
-    | Ptyp_any  -> (print_endline (Batteries.dump ("DEBUG:Ptyp_any:"))); "any"
-    | Ptyp_var name ->(print_endline (Batteries.dump ("DEBUG:Ptyp_var:"  , name))); "var-name"
+    | Ptyp_any  -> (ppddump ("DEBUG:Ptyp_any:")); "any"
+    | Ptyp_var name ->(ppddump ("DEBUG:Ptyp_var:"  , name)); "var-name"
   | Ptyp_arrow (arg_label , core_type , core_type2) ->
     (* my_process_core_type((core_type, string_list)); *)
     (* my_process_core_type(core_type2, string_list); *)
-    (print_endline (Batteries.dump ("DEBUG:Ptyp_arrow10:" ))); "arrow"
+    (ppddump ("DEBUG:Ptyp_arrow10:" )); "arrow"
   | Ptyp_object (a,b)(* of object_field list * closed_flag *)
     ->
-    (print_endline (Batteries.dump ("DEBUG:Ptyp_arrow8:" ))); "obj"
+    (ppddump ("DEBUG:Ptyp_arrow8:" )); "obj"
   | Ptyp_class (a,b) (* of Longident.t loc * core_type list *)
     ->
     let myid = (process_id1 a.txt) in
     (* my_process_core_type_list(b, y :: myid); *)
-    (print_endline (Batteries.dump ("DEBUG:Ptyp_arrow7:" ))); "class"
+    (ppddump ("DEBUG:Ptyp_arrow7:" )); "class"
   | Ptyp_alias (a,b) (* of core_type * string loc  *)
     ->
     (* my_process_core_type(a, y); *)
-    (print_endline (Batteries.dump ("DEBUG:Ptyp_arrow6:" ))); "alias"
+    (ppddump ("DEBUG:Ptyp_arrow6:" )); "alias"
   | Ptyp_variant (a,b,c) (* of row_field list * closed_flag * label list option *)
     ->
-    (print_endline (Batteries.dump ("DEBUG:Ptyp_arrow5:" )));"variant"
+    (ppddump ("DEBUG:Ptyp_arrow5:" ));"variant"
   | Ptyp_poly (a,b) (* of string loc list * core_type *)
     ->
     (* my_process_core_type(b, y); *)
-    (print_endline (Batteries.dump ("DEBUG:Ptyp_arrow4:" ))); "poly"
+    (ppddump ("DEBUG:Ptyp_arrow4:" )); "poly"
   | Ptyp_package a(* of package_type  *)
     ->
-    (print_endline (Batteries.dump ("DEBUG:Ptyp_arrow3:",a ))) ; "typ_package"
+    (ppddump ("DEBUG:Ptyp_arrow3:",a )) ; "typ_package"
   (* | Ptyp_open (a,b) (\* of Longident.t loc * core_type *\)-> *)
-  (*   (print_endline (Batteries.dump ("DEBUG:Ptyp_arrow2",a,b ))) *)    
+  (*   (ppddump ("DEBUG:Ptyp_arrow2",a,b )) *)    
   | Ptyp_extension a (* of extension   *)    ->
-    (print_endline (Batteries.dump ("DEBUG:Ptyp_extension:",a ))); "extension"
+    (ppddump ("DEBUG:Ptyp_extension:",a )); "extension"
 and
   process_record_kind_list(a) : string =
   match a with
@@ -339,11 +343,11 @@ let print_value_binding_list2 (x : value_binding) : string =
     pvb_attributes; (* : attributes; *)
     pvb_loc; (* : location; *)
   } ->
-    (print_endline (Batteries.dump ("DEBUG:value_binding.pat:", pvb_pat )));
-    (print_endline (Batteries.dump ("DEBUG:value_binding.expr:", pvb_expr )));
+    (ppddump ("DEBUG:value_binding.pat:", pvb_pat ));
+    (ppddump ("DEBUG:value_binding.expr:", pvb_expr ));
     (*print_value_binding_expr pvb_expr*)
-    (print_endline (Batteries.dump ("DEBUG:value_binding.atrr:", pvb_attributes )));
-    (print_endline (Batteries.dump ("DEBUG:value_binding.loc:", pvb_loc )));
+    (ppddump ("DEBUG:value_binding.atrr:", pvb_attributes ));
+    (ppddump ("DEBUG:value_binding.loc:", pvb_loc ));
     "pattern:" ^ (process_pattern pvb_pat) ^ "|" ^ " expr: " ^ (process_expression pvb_expr)
 
 let rec print_value_binding_list (x : value_binding list) : string=
@@ -377,7 +381,7 @@ let process_id(x:longident_loc* string_list):string =
     match a with
     | {txt;_} ->(process_id2 (txt,b))
 (* (({txt2)) ->txt2 *)
-    (* (print_endline (Batteries.dump ("DEBUG:process_id:",  txt2))); *)
+    (* (ppddump ("DEBUG:process_id:",  txt2)); *)
   
 let splitloc(x:longident_loc * string_list) : string=
   let (a, b) = x in
@@ -433,39 +437,39 @@ let emit_core_type_desc (x : core_type_desc * string_list):string =
       "Ptyp_tuple" ^ my_process_core_type_list(a,  s )
 
     (*not in test*)
-    | Ptyp_any  -> (print_endline (Batteries.dump ("DEBUG:Ptyp_any:"))); "any"
-    | Ptyp_var name ->(print_endline (Batteries.dump ("DEBUG:Ptyp_var:"  , name))); "var-name"
+    | Ptyp_any  -> (ppddump ("DEBUG:Ptyp_any:")); "any"
+    | Ptyp_var name ->(ppddump ("DEBUG:Ptyp_var:"  , name)); "var-name"
   | Ptyp_arrow (arg_label , core_type , core_type2) ->
     (* my_process_core_type((core_type, string_list)); *)
     (* my_process_core_type(core_type2, string_list); *)
-    (print_endline (Batteries.dump ("DEBUG:Ptyp_arrow10:" ))); "arrow"
+    (ppddump ("DEBUG:Ptyp_arrow10:" )); "arrow"
 
   | Ptyp_object (a,b)(* of object_field list * closed_flag *)
     ->
-    (print_endline (Batteries.dump ("DEBUG:Ptyp_arrow8:" ))); "obj"
+    (ppddump ("DEBUG:Ptyp_arrow8:" )); "obj"
   | Ptyp_class (a,b) (* of Longident.t loc * core_type list *)
     ->
     let myid = (process_id1 a.txt ) in
     (* my_process_core_type_list(b, y :: myid); *)
-    (print_endline (Batteries.dump ("DEBUG:Ptyp_arrow7:" ))); "class"
+    (ppddump ("DEBUG:Ptyp_arrow7:" )); "class"
   | Ptyp_alias (a,b) (* of core_type * string loc  *)
     ->
     (* my_process_core_type(a, y); *)
-    (print_endline (Batteries.dump ("DEBUG:Ptyp_arrow6:" ))); "alias"
+    (ppddump ("DEBUG:Ptyp_arrow6:" )); "alias"
   | Ptyp_variant (a,b,c) (* of row_field list * closed_flag * label list option *)
     ->
-    (print_endline (Batteries.dump ("DEBUG:Ptyp_arrow5:" )));"variant"
+    (ppddump ("DEBUG:Ptyp_arrow5:" ));"variant"
   | Ptyp_poly (a,b) (* of string loc list * core_type *)
     ->
     (* my_process_core_type(b, y); *)
-    (print_endline (Batteries.dump ("DEBUG:Ptyp_arrow4:" ))); "poly"
+    (ppddump ("DEBUG:Ptyp_arrow4:" )); "poly"
   | Ptyp_package a(* of package_type  *)
     ->
-    (print_endline (Batteries.dump ("DEBUG:Ptyp_arrow3:",a ))) ; "typ_package"
+    (ppddump ("DEBUG:Ptyp_arrow3:",a )) ; "typ_package"
   (* | Ptyp_open (a,b) (\* of Longident.t loc * core_type *\)-> *)
-  (*   (print_endline (Batteries.dump ("DEBUG:Ptyp_arrow2",a,b ))) *)    
+  (*   (ppddump ("DEBUG:Ptyp_arrow2",a,b )) *)    
   | Ptyp_extension a (* of extension   *)    ->
-    (print_endline (Batteries.dump ("DEBUG:Ptyp_extension:",a ))); "extension"
+    (ppddump ("DEBUG:Ptyp_extension:",a )); "extension"
 
 
 let  emit_core_type(a: core_type * string_list*int):string=
@@ -571,11 +575,11 @@ let print_constructor_arguments(a) =
   | (x,s) ->
     match x with
     | Pcstr_tuple a ->       
-      (print_endline (Batteries.dump ("DEBUG:Pcstr_tuple:"  , a)));
+      (ppddump ("DEBUG:Pcstr_tuple:"  , a));
       "Pcstr_tuple:" ^ (my_process_core_type_list (a,s))
        
     | Pcstr_record a ->
-      (print_endline (Batteries.dump ("DEBUG:Pcstr_record:"  , a)));
+      (ppddump ("DEBUG:Pcstr_record:"  , a));
       "Pcstr_record" ^
       (process_label_declaration_list a)
 
@@ -597,24 +601,24 @@ let rec process_pype_variant_constructor_declaration_list(a:constructor_declarat
       }->
         (* let name = match pcd_name with *)
         (*   | (str,_) -> str *)
-        (print_endline (Batteries.dump (
-             "DEBUG:constructor_declaration:",
-             pcd_name,
-             "vars",
-             pcd_vars,
-             "args",
-             pcd_args,
-             "res",
-             pcd_res,
-             "loc",
-             pcd_loc,
-             "attrs",
-             pcd_attributes
-           )));
+        (* (ppddump ( *)
+        (*      "DEBUG:constructor_declaration:", *)
+        (*      pcd_name, *)
+        (*      "vars", *)
+        (*      pcd_vars, *)
+        (*      "args", *)
+        (*      pcd_args, *)
+        (*      "res", *)
+        (*      pcd_res, *)
+        (*      "loc", *)
+        (*      pcd_loc, *)
+        (*      "attrs", *)
+        (*      pcd_attributes *)
+        (*    )); *)
         let newtext = (emit_constructor_arguments(pcd_name.txt, pcd_args, s)) in
         let newtext2 = (decl_emit_constructor_arguments(pcd_name.txt, pcd_args, s)) in
         (print_endline ("DEBUG2A:" ^ newtext2));
-        (print_endline ("DEBUG2B:" ^ newtext));
+        (print_endline ("DEBUG2B:" ^ newtext)); 
         let ret =              "constructor:\""^ pcd_name.txt ^ "\""
                                ^ "{" ^
                                print_constructor_arguments(pcd_args,s)
@@ -631,15 +635,15 @@ let process_kind(a) :string=
   | (x,s)->
     match x with
     (*and type_kind =*)
-    | Ptype_abstract  -> (print_endline (Batteries.dump ("DEBUG:Ptype_abstract:")));
+    | Ptype_abstract  -> (ppddump ("DEBUG:Ptype_abstract:"));
       "DEBUG:Ptype_abstract"
     | Ptype_variant a ->      
-      (print_endline (Batteries.dump ("DEBUG:Ptype_variant:",  a)));
+      (* (ppddump ("DEBUG:Ptype_variant:",  a)); *)
       "type variant:" ^ (process_pype_variant_constructor_declaration_list (a,s))      
     (*of constructor_declaration list *)     
     | Ptype_record a ->     
       process_record_kind_list(a,s)
-    | Ptype_open -> (print_endline (Batteries.dump ("DEBUG:Ptype_abstract:"))); "Ptype_abstract"
+    | Ptype_open -> (ppddump ("DEBUG:Ptype_abstract:")); "Ptype_abstract"
 
 let print_type_decl(a) =
   match a with
@@ -655,16 +659,16 @@ let print_type_decl(a) =
         ptype_attributes (*: attributes*);
         ptype_loc (*: location*)
       } ->
-      (print_endline (Batteries.dump ("DEBUG:type_decl:", ptype_name)));
-      (print_endline (Batteries.dump ("DEBUG:parameters:", ptype_params)));
-      (print_endline (Batteries.dump ("DEBUG:cstrs:", ptype_cstrs)));
-      (print_endline (Batteries.dump ("DEBUG:kind:",ptype_kind)));
+      (* (ppddump ("DEBUG:type_decl:", ptype_name)); *)
+      (* (ppddump ("DEBUG:parameters:", ptype_params)); *)
+      (* (ppddump ("DEBUG:cstrs:", ptype_cstrs)); *)
+      (* (ppddump ("DEBUG:kind:",ptype_kind)); *)
       
-      (print_endline (Batteries.dump ("DEBUG:private:",  ptype_private,
-                                      "DEBUG:manifest", ptype_manifest,
-                                      "DEBUG:attr", ptype_attributes,
-                                      "DEBUG:loc", ptype_loc
-                                     )));
+      (* (ppddump ("DEBUG:private:",  ptype_private, *)
+      (*                                 "DEBUG:manifest", ptype_manifest, *)
+      (*                                 "DEBUG:attr", ptype_attributes, *)
+      (*                                 "DEBUG:loc", ptype_loc *)
+      (*                                )); *)
       "print_type_decl:\"" ^  ptype_name.txt ^ "\" = " ^ (process_kind (ptype_kind,s))
       
 type     type_declaration_list = type_declaration list
@@ -684,40 +688,40 @@ let rec process_type_decl_list(a:type_declaration_list*string_list):string =
 let printdesc(a :structure_item_desc*string_list) :string =
   match a with
   |(x,s)->
-    (print_endline (Batteries.dump ("DEBUG:structure_item_desc:", x)));
+    (* (ppddump ("DEBUG:structure_item_desc:", x)); *)
     match x with
     | Pstr_value (rec_flag, value_binding_list) ->
-      (print_endline (Batteries.dump ("DEBUG:Pstr_value:", rec_flag, value_binding_list)));
+      (* (ppddump ("DEBUG:Pstr_value:", rec_flag, value_binding_list)); *)
       "Pstr_value:"      ^ print_value_binding_list(value_binding_list)
 
     | Pstr_type (rec_flag, type_declaration_list) ->
       (*for expression_desc*)
       
-      (print_endline (Batteries.dump ("DEBUG:Pstr_type:", rec_flag, type_declaration_list)));
+      (* (ppddump ("DEBUG:Pstr_type:", rec_flag, type_declaration_list)); *)
       "Pstr_type:"^
       process_type_decl_list((type_declaration_list,s))
-    | Pstr_module  module_binding ->(print_endline (Batteries.dump ("DEBUG:Pstr_module:",module_binding))); "module_binding"
+    | Pstr_module  module_binding ->(* (ppddump ("DEBUG:Pstr_module:",module_binding)); *) "module_binding"
     (*open model*)
-    | Pstr_open open_description ->(print_endline (Batteries.dump ("DEBUG:Pstr_open", open_description))); "module_open"
+    | Pstr_open open_description ->(ppddump ("DEBUG:Pstr_open", open_description)); "module_open"
 
     | Pstr_eval (expression,attributes) ->
-      (print_endline (Batteries.dump ("DEBUG:Pstr_eval:", expression,attributes)));
+      (ppddump ("DEBUG:Pstr_eval:", expression,attributes));
       "Pstr_eval"
     (*value binding*)
-    | Pstr_primitive value_description ->(print_endline (Batteries.dump ("DEBUG:Pstr_primitive:", value_description))) ; "primitive"
+    | Pstr_primitive value_description ->(ppddump ("DEBUG:Pstr_primitive:", value_description)) ; "primitive"
                                          
 
-    | Pstr_typext  type_extension ->(print_endline (Batteries.dump ("DEBUG:Pstr_typext:", type_extension))); "typeext"
-    | Pstr_exception extension_constructor ->(print_endline (Batteries.dump ("DEBUG:Pstr_exception:", extension_constructor))); "exception"
+    | Pstr_typext  type_extension ->(ppddump ("DEBUG:Pstr_typext:", type_extension)); "typeext"
+    | Pstr_exception extension_constructor ->(ppddump ("DEBUG:Pstr_exception:", extension_constructor)); "exception"
 
-    | Pstr_recmodule  module_binding_list ->(print_endline (Batteries.dump ("DEBUG:Pstr_recmodule:", module_binding_list))) ; "recmodule"
-    | Pstr_modtype module_type_declaration ->(print_endline (Batteries.dump ("DEBUG:Pstr_modtype:", module_type_declaration))); "modtype"
+    | Pstr_recmodule  module_binding_list ->(ppddump ("DEBUG:Pstr_recmodule:", module_binding_list)) ; "recmodule"
+    | Pstr_modtype module_type_declaration ->(ppddump ("DEBUG:Pstr_modtype:", module_type_declaration)); "modtype"
 
-    | Pstr_class (class_declarations ) ->(print_endline (Batteries.dump ("DEBUG:Pstr_class:", class_declarations))); "class"
-    | Pstr_class_type (class_type_declarations) ->(print_endline (Batteries.dump ("DEBUG:Pstr_class_type:", class_type_declarations))) ; "class_Type"
-    | Pstr_include  (include_declaration)->(print_endline (Batteries.dump ("DEBUG:Pstr_include:",include_declaration))); "include"
-    | Pstr_attribute (attribute)->(print_endline (Batteries.dump ("DEBUG:Pstr_attribute:", attribute))); "attribte"
-    | Pstr_extension ( extension , attributes)->(print_endline (Batteries.dump ("DEBUG:Pstr_extension:", extension , attributes))) ; "extension"
+    | Pstr_class (class_declarations ) ->(ppddump ("DEBUG:Pstr_class:", class_declarations)); "class"
+    | Pstr_class_type (class_type_declarations) ->(ppddump ("DEBUG:Pstr_class_type:", class_type_declarations)) ; "class_Type"
+    | Pstr_include  (include_declaration)->(ppddump ("DEBUG:Pstr_include:",include_declaration)); "include"
+    | Pstr_attribute (attribute)->(ppddump ("DEBUG:Pstr_attribute:", attribute)); "attribte"
+    | Pstr_extension ( extension , attributes)->(ppddump ("DEBUG:Pstr_extension:", extension , attributes)) ; "extension"
 
                               
                                             
@@ -735,11 +739,11 @@ let printone (x : structure_item) :string =
     
 (*   () *)
 (* | other -> *)
-(*   let f = (print_endline (Batteries.dump ("DEBUG4:",other))) in  *)
+(*   let f = (ppddump ("DEBUG4:",other)) in  *)
       
 
 let printone2 x :string =
-  (print_endline (Batteries.dump ("DEBUG:SECOND::",x)));
+  (ppddump ("DEBUG:SECOND::",x));
   printone x
   
 let proc1 x :string  =
@@ -752,7 +756,7 @@ let debug proc lst : string =
     "TODO"
                 
 let transform x (*ast, bytecodes of the interface *) =
-  (print_endline (Batteries.dump ("DEBUG3:",x)));
+  (ppddump ("DEBUG3:",x));
   let foo = (debug proc1 x) in
   x
   
