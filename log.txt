@@ -194,6 +194,226 @@ File "src/gen.ml", line 107, characters 50-51:
 107 | let process_types_with_constraint__Pwith_type ( a,b):string="with_constraint__Pwith_type_longident_loc" ^ "alongident_loc0"
                                                         ^
 Warning 27 [unused-var-strict]: unused variable b.
+File "src/gen4.ml", line 2, characters 23-24:
+2 | let process_attributes x : string= "attributes"
+                           ^
+Warning 27 [unused-var-strict]: unused variable x.
+File "src/gen4.ml", line 3, characters 27-28:
+3 | let process_row_field_desc x : string= "process_row_field_desc"
+                               ^
+Warning 27 [unused-var-strict]: unused variable x.
+File "src/gen4.ml", line 4, characters 32-33:
+4 | let   process_object_field_desc x = "process_object_field_desc"
+                                    ^
+Warning 27 [unused-var-strict]: unused variable x.
+File "src/gen4.ml", line 5, characters 27-28:
+5 | let   process_pattern_desc x = "process_pattern_desc"
+                               ^
+Warning 27 [unused-var-strict]: unused variable x.
+File "src/gen4.ml", line 6, characters 28-29:
+6 | let process_expression_desc x = "process_expression_desc"
+                                ^
+Warning 27 [unused-var-strict]: unused variable x.
+File "src/gen4.ml", line 7, characters 23-24:
+7 | let   process_pattern  x = "process_pattern"
+                           ^
+Warning 27 [unused-var-strict]: unused variable x.
+File "src/gen4.ml", line 8, characters 21-22:
+8 | let process_var_name x : string= "var_name"
+                         ^
+Warning 27 [unused-var-strict]: unused variable x.
+File "src/gen4.ml", line 9, characters 21-22:
+9 | let process_location x : string= "location"
+                         ^
+Warning 27 [unused-var-strict]: unused variable x.
+File "src/gen4.ml", line 10, characters 16-17:
+10 | let process_loc x : string= "loc"
+                     ^
+Warning 27 [unused-var-strict]: unused variable x.
+File "src/gen4.ml", line 11, characters 27-28:
+11 | let process_core_type_desc x : string= "core_Type_desc"
+                                ^
+Warning 27 [unused-var-strict]: unused variable x.
+File "src/gen4.ml", line 12, characters 27-28:
+12 | let process_location_stack x = "process_location_stack"
+                                ^
+Warning 27 [unused-var-strict]: unused variable x.
+File "src/gen4.ml", line 13, characters 20-21:
+13 | let process_payload x : string= "loc"  
+                         ^
+Warning 27 [unused-var-strict]: unused variable x.
+File "src/gen4.ml", line 14, characters 22-23:
+14 | let process_attribute x : string= ""
+                           ^
+Warning 27 [unused-var-strict]: unused variable x.
+File "src/gen4.ml", line 15, characters 17-18:
+15 | let process_bool x : string= "bool"
+                      ^
+Warning 27 [unused-var-strict]: unused variable x.
+File "src/gen4.ml", line 16, characters 21-22:
+16 | let process_position x : string= "post"
+                          ^
+Warning 27 [unused-var-strict]: unused variable x.
+File "src/gen4.ml", line 18, characters 23-24:
+18 | let process_expression x : string= "x"
+                            ^
+Warning 27 [unused-var-strict]: unused variable x.
+File "src/gen4.ml", line 19, characters 22-23:
+19 | let process_extension x : string= "x"
+                           ^
+Warning 27 [unused-var-strict]: unused variable x.
+File "src/gen4.ml", line 20, characters 30-31:
+20 | let process_functor_parameter x : string= "x"
+                                   ^
+Warning 27 [unused-var-strict]: unused variable x.
+File "src/gen4.ml", line 21, characters 32-33:
+21 | let process_include_declaration x : string= "x"
+                                     ^
+Warning 27 [unused-var-strict]: unused variable x.
+File "src/gen4.ml", line 22, characters 17-18:
+22 | let process_list x : string = "x"
+                      ^
+Warning 27 [unused-var-strict]: unused variable x.
+File "src/gen4.ml", line 23, characters 26-27:
+23 | let process_longident_loc x : string = "x"
+                               ^
+Warning 27 [unused-var-strict]: unused variable x.
+File "src/gen4.ml", line 24, characters 22-23:
+24 | let process_longident x : string= "x"
+                           ^
+Warning 27 [unused-var-strict]: unused variable x.
+File "src/gen4.ml", line 25, characters 27-28:
+25 | let process_module_binding x : string= "x"
+                                ^
+Warning 27 [unused-var-strict]: unused variable x.
+File "src/gen4.ml", line 26, characters 24-25:
+26 | let process_module_expr x : string= "x"
+                             ^
+Warning 27 [unused-var-strict]: unused variable x.
+File "src/gen4.ml", line 27, characters 36-37:
+27 | let process_module_type_declaration x : string= "x"
+                                         ^
+Warning 27 [unused-var-strict]: unused variable x.
+File "src/gen4.ml", line 28, characters 24-25:
+28 | let process_module_type x : string= "x"
+                             ^
+Warning 27 [unused-var-strict]: unused variable x.
+File "src/gen4.ml", line 29, characters 29-30:
+29 | let process_open_declaration x : string= "x"
+                                  ^
+Warning 27 [unused-var-strict]: unused variable x.
+File "src/gen4.ml", line 30, characters 19-20:
+30 | let process_option x: string = "x"
+                        ^
+Warning 27 [unused-var-strict]: unused variable x.
+File "src/gen4.ml", line 31, characters 21-22:
+31 | let process_rec_flag x : string= "x"
+                          ^
+Warning 27 [unused-var-strict]: unused variable x.
+File "src/gen4.ml", line 32, characters 19-20:
+32 | let process_string x : string= "x"
+                        ^
+Warning 27 [unused-var-strict]: unused variable x.
+File "src/gen4.ml", line 33, characters 22-23:
+33 | let process_structure x : string= "x"
+                           ^
+Warning 27 [unused-var-strict]: unused variable x.
+File "src/gen4.ml", line 34, characters 31-32:
+34 | let process_toplevel_directive x : string= "x"
+                                    ^
+Warning 27 [unused-var-strict]: unused variable x.
+File "src/gen4.ml", line 35, characters 29-30:
+35 | let process_type_declaration x : string= "x"
+                                  ^
+Warning 27 [unused-var-strict]: unused variable x.
+File "src/gen4.ml", line 36, characters 27-28:
+36 | let process_type_exception x : string= "x"
+                                ^
+Warning 27 [unused-var-strict]: unused variable x.
+File "src/gen4.ml", line 37, characters 27-28:
+37 | let process_type_extension x : string= "x"
+                                ^
+Warning 27 [unused-var-strict]: unused variable x.
+File "src/gen4.ml", line 38, characters 30-31:
+38 | let process_value_description x : string= "x"
+                                   ^
+Warning 27 [unused-var-strict]: unused variable x.
+File "src/gen4.ml", line 39, characters 23-24:
+39 | let process_binding_op x = "process_binding_op"
+                            ^
+Warning 27 [unused-var-strict]: unused variable x.
+File "src/gen4.ml", line 40, characters 22-23:
+40 | let process_core_type x = "process_core_type"
+                           ^
+Warning 27 [unused-var-strict]: unused variable x.
+File "src/gen4.ml", line 41, characters 22-23:
+41 | let process_type_kind x = "process_type_kind"
+                           ^
+Warning 27 [unused-var-strict]: unused variable x.
+File "src/gen4.ml", line 42, characters 26-27:
+42 | let  process_private_flag x = "process_private_flag"
+                               ^
+Warning 27 [unused-var-strict]: unused variable x.
+File "src/gen4.ml", line 43, characters 25-26:
+43 | let process_mutable_flag x = "process_mutable_flag"
+                              ^
+Warning 27 [unused-var-strict]: unused variable x.
+File "src/gen4.ml", line 44, characters 34-35:
+44 | let process_constructor_arguments x = "process_constructor_arguments"
+                                       ^
+Warning 27 [unused-var-strict]: unused variable x.
+File "src/gen4.ml", line 45, characters 39-40:
+45 | let process_extension_constructor_kind x = "process_extension_constructor_kind"
+                                            ^
+Warning 27 [unused-var-strict]: unused variable x.
+File "src/gen4.ml", line 46, characters 37-38:
+46 | let    process_extension_constructor x  = "process_extension_constructor"
+                                          ^
+Warning 27 [unused-var-strict]: unused variable x.
+File "src/gen4.ml", line 47, characters 28-29:
+47 | let process_class_type_desc x = "process_class_type_desc"
+                                 ^
+Warning 27 [unused-var-strict]: unused variable x.
+File "src/gen4.ml", line 48, characters 35-36:
+48 | let  process_class_type_field_desc x = "process_class_type_field_desc"
+                                        ^
+Warning 27 [unused-var-strict]: unused variable x.
+File "src/gen4.ml", line 49, characters 25-26:
+49 | let process_virtual_flag x = "process_virtual_flag"
+                              ^
+Warning 27 [unused-var-strict]: unused variable x.
+File "src/gen4.ml", line 50, characters 28-29:
+50 | let process_class_expr_desc x = "process_class_expr_desc"
+                                 ^
+Warning 27 [unused-var-strict]: unused variable x.
+File "src/gen4.ml", line 51, characters 31-32:
+51 | let   process_class_field_desc x = "process_class_field_desc"
+                                    ^
+Warning 27 [unused-var-strict]: unused variable x.
+File "src/gen4.ml", line 52, characters 29-30:
+52 | let process_module_type_desc x = "process_module_type_desc"
+                                  ^
+Warning 27 [unused-var-strict]: unused variable x.
+File "src/gen4.ml", line 53, characters 32-33:
+53 | let process_signature_item_desc x = "process_signature_item_desc"
+                                     ^
+Warning 27 [unused-var-strict]: unused variable x.
+File "src/gen4.ml", line 54, characters 28-29:
+54 | let   process_override_flag x = "process_override_flag"
+                                 ^
+Warning 27 [unused-var-strict]: unused variable x.
+File "src/gen4.ml", line 55, characters 29-30:
+55 | let process_module_expr_desc x = "process_module_expr_desc"
+                                  ^
+Warning 27 [unused-var-strict]: unused variable x.
+File "src/gen4.ml", line 56, characters 32-33:
+56 | let process_structure_item_desc x = "process_structure_item_desc"
+                                     ^
+Warning 27 [unused-var-strict]: unused variable x.
+File "src/gen4.ml", line 57, characters 36-37:
+57 | let process_directive_argument_desc x = "process_directive_argument_desc"
+                                         ^
+Warning 27 [unused-var-strict]: unused variable x.
 File "src/gen3.ml", lines 58-59, characters 61-105:
 58 | .............................................................match x with 
 59 | | Pdir_string (string0) -> (process_types_directive_argument_desc__Pdir_string((process_string string0)))
@@ -2534,6 +2754,226 @@ File "src/gen3.ml", line 57, characters 63-81:
 57 | let process_types_with_constraint__Pwith_type((alongident_loc0,atype_declaration1):(longident_loc*type_declaration)):string = "process_types_with_constraint__Pwith_type"^"alongident_loc0"^"atype_declaration1"
                                                                     ^^^^^^^^^^^^^^^^^^
 Warning 27 [unused-var-strict]: unused variable atype_declaration1.
+File "src/gen4.ml", line 2, characters 23-24:
+2 | let process_attributes x : string= "attributes"
+                           ^
+Warning 27 [unused-var-strict]: unused variable x.
+File "src/gen4.ml", line 3, characters 27-28:
+3 | let process_row_field_desc x : string= "process_row_field_desc"
+                               ^
+Warning 27 [unused-var-strict]: unused variable x.
+File "src/gen4.ml", line 4, characters 32-33:
+4 | let   process_object_field_desc x = "process_object_field_desc"
+                                    ^
+Warning 27 [unused-var-strict]: unused variable x.
+File "src/gen4.ml", line 5, characters 27-28:
+5 | let   process_pattern_desc x = "process_pattern_desc"
+                               ^
+Warning 27 [unused-var-strict]: unused variable x.
+File "src/gen4.ml", line 6, characters 28-29:
+6 | let process_expression_desc x = "process_expression_desc"
+                                ^
+Warning 27 [unused-var-strict]: unused variable x.
+File "src/gen4.ml", line 7, characters 23-24:
+7 | let   process_pattern  x = "process_pattern"
+                           ^
+Warning 27 [unused-var-strict]: unused variable x.
+File "src/gen4.ml", line 8, characters 21-22:
+8 | let process_var_name x : string= "var_name"
+                         ^
+Warning 27 [unused-var-strict]: unused variable x.
+File "src/gen4.ml", line 9, characters 21-22:
+9 | let process_location x : string= "location"
+                         ^
+Warning 27 [unused-var-strict]: unused variable x.
+File "src/gen4.ml", line 10, characters 16-17:
+10 | let process_loc x : string= "loc"
+                     ^
+Warning 27 [unused-var-strict]: unused variable x.
+File "src/gen4.ml", line 11, characters 27-28:
+11 | let process_core_type_desc x : string= "core_Type_desc"
+                                ^
+Warning 27 [unused-var-strict]: unused variable x.
+File "src/gen4.ml", line 12, characters 27-28:
+12 | let process_location_stack x = "process_location_stack"
+                                ^
+Warning 27 [unused-var-strict]: unused variable x.
+File "src/gen4.ml", line 13, characters 20-21:
+13 | let process_payload x : string= "loc"  
+                         ^
+Warning 27 [unused-var-strict]: unused variable x.
+File "src/gen4.ml", line 14, characters 22-23:
+14 | let process_attribute x : string= ""
+                           ^
+Warning 27 [unused-var-strict]: unused variable x.
+File "src/gen4.ml", line 15, characters 17-18:
+15 | let process_bool x : string= "bool"
+                      ^
+Warning 27 [unused-var-strict]: unused variable x.
+File "src/gen4.ml", line 16, characters 21-22:
+16 | let process_position x : string= "post"
+                          ^
+Warning 27 [unused-var-strict]: unused variable x.
+File "src/gen4.ml", line 18, characters 23-24:
+18 | let process_expression x : string= "x"
+                            ^
+Warning 27 [unused-var-strict]: unused variable x.
+File "src/gen4.ml", line 19, characters 22-23:
+19 | let process_extension x : string= "x"
+                           ^
+Warning 27 [unused-var-strict]: unused variable x.
+File "src/gen4.ml", line 20, characters 30-31:
+20 | let process_functor_parameter x : string= "x"
+                                   ^
+Warning 27 [unused-var-strict]: unused variable x.
+File "src/gen4.ml", line 21, characters 32-33:
+21 | let process_include_declaration x : string= "x"
+                                     ^
+Warning 27 [unused-var-strict]: unused variable x.
+File "src/gen4.ml", line 22, characters 17-18:
+22 | let process_list x : string = "x"
+                      ^
+Warning 27 [unused-var-strict]: unused variable x.
+File "src/gen4.ml", line 23, characters 26-27:
+23 | let process_longident_loc x : string = "x"
+                               ^
+Warning 27 [unused-var-strict]: unused variable x.
+File "src/gen4.ml", line 24, characters 22-23:
+24 | let process_longident x : string= "x"
+                           ^
+Warning 27 [unused-var-strict]: unused variable x.
+File "src/gen4.ml", line 25, characters 27-28:
+25 | let process_module_binding x : string= "x"
+                                ^
+Warning 27 [unused-var-strict]: unused variable x.
+File "src/gen4.ml", line 26, characters 24-25:
+26 | let process_module_expr x : string= "x"
+                             ^
+Warning 27 [unused-var-strict]: unused variable x.
+File "src/gen4.ml", line 27, characters 36-37:
+27 | let process_module_type_declaration x : string= "x"
+                                         ^
+Warning 27 [unused-var-strict]: unused variable x.
+File "src/gen4.ml", line 28, characters 24-25:
+28 | let process_module_type x : string= "x"
+                             ^
+Warning 27 [unused-var-strict]: unused variable x.
+File "src/gen4.ml", line 29, characters 29-30:
+29 | let process_open_declaration x : string= "x"
+                                  ^
+Warning 27 [unused-var-strict]: unused variable x.
+File "src/gen4.ml", line 30, characters 19-20:
+30 | let process_option x: string = "x"
+                        ^
+Warning 27 [unused-var-strict]: unused variable x.
+File "src/gen4.ml", line 31, characters 21-22:
+31 | let process_rec_flag x : string= "x"
+                          ^
+Warning 27 [unused-var-strict]: unused variable x.
+File "src/gen4.ml", line 32, characters 19-20:
+32 | let process_string x : string= "x"
+                        ^
+Warning 27 [unused-var-strict]: unused variable x.
+File "src/gen4.ml", line 33, characters 22-23:
+33 | let process_structure x : string= "x"
+                           ^
+Warning 27 [unused-var-strict]: unused variable x.
+File "src/gen4.ml", line 34, characters 31-32:
+34 | let process_toplevel_directive x : string= "x"
+                                    ^
+Warning 27 [unused-var-strict]: unused variable x.
+File "src/gen4.ml", line 35, characters 29-30:
+35 | let process_type_declaration x : string= "x"
+                                  ^
+Warning 27 [unused-var-strict]: unused variable x.
+File "src/gen4.ml", line 36, characters 27-28:
+36 | let process_type_exception x : string= "x"
+                                ^
+Warning 27 [unused-var-strict]: unused variable x.
+File "src/gen4.ml", line 37, characters 27-28:
+37 | let process_type_extension x : string= "x"
+                                ^
+Warning 27 [unused-var-strict]: unused variable x.
+File "src/gen4.ml", line 38, characters 30-31:
+38 | let process_value_description x : string= "x"
+                                   ^
+Warning 27 [unused-var-strict]: unused variable x.
+File "src/gen4.ml", line 39, characters 23-24:
+39 | let process_binding_op x = "process_binding_op"
+                            ^
+Warning 27 [unused-var-strict]: unused variable x.
+File "src/gen4.ml", line 40, characters 22-23:
+40 | let process_core_type x = "process_core_type"
+                           ^
+Warning 27 [unused-var-strict]: unused variable x.
+File "src/gen4.ml", line 41, characters 22-23:
+41 | let process_type_kind x = "process_type_kind"
+                           ^
+Warning 27 [unused-var-strict]: unused variable x.
+File "src/gen4.ml", line 42, characters 26-27:
+42 | let  process_private_flag x = "process_private_flag"
+                               ^
+Warning 27 [unused-var-strict]: unused variable x.
+File "src/gen4.ml", line 43, characters 25-26:
+43 | let process_mutable_flag x = "process_mutable_flag"
+                              ^
+Warning 27 [unused-var-strict]: unused variable x.
+File "src/gen4.ml", line 44, characters 34-35:
+44 | let process_constructor_arguments x = "process_constructor_arguments"
+                                       ^
+Warning 27 [unused-var-strict]: unused variable x.
+File "src/gen4.ml", line 45, characters 39-40:
+45 | let process_extension_constructor_kind x = "process_extension_constructor_kind"
+                                            ^
+Warning 27 [unused-var-strict]: unused variable x.
+File "src/gen4.ml", line 46, characters 37-38:
+46 | let    process_extension_constructor x  = "process_extension_constructor"
+                                          ^
+Warning 27 [unused-var-strict]: unused variable x.
+File "src/gen4.ml", line 47, characters 28-29:
+47 | let process_class_type_desc x = "process_class_type_desc"
+                                 ^
+Warning 27 [unused-var-strict]: unused variable x.
+File "src/gen4.ml", line 48, characters 35-36:
+48 | let  process_class_type_field_desc x = "process_class_type_field_desc"
+                                        ^
+Warning 27 [unused-var-strict]: unused variable x.
+File "src/gen4.ml", line 49, characters 25-26:
+49 | let process_virtual_flag x = "process_virtual_flag"
+                              ^
+Warning 27 [unused-var-strict]: unused variable x.
+File "src/gen4.ml", line 50, characters 28-29:
+50 | let process_class_expr_desc x = "process_class_expr_desc"
+                                 ^
+Warning 27 [unused-var-strict]: unused variable x.
+File "src/gen4.ml", line 51, characters 31-32:
+51 | let   process_class_field_desc x = "process_class_field_desc"
+                                    ^
+Warning 27 [unused-var-strict]: unused variable x.
+File "src/gen4.ml", line 52, characters 29-30:
+52 | let process_module_type_desc x = "process_module_type_desc"
+                                  ^
+Warning 27 [unused-var-strict]: unused variable x.
+File "src/gen4.ml", line 53, characters 32-33:
+53 | let process_signature_item_desc x = "process_signature_item_desc"
+                                     ^
+Warning 27 [unused-var-strict]: unused variable x.
+File "src/gen4.ml", line 54, characters 28-29:
+54 | let   process_override_flag x = "process_override_flag"
+                                 ^
+Warning 27 [unused-var-strict]: unused variable x.
+File "src/gen4.ml", line 55, characters 29-30:
+55 | let process_module_expr_desc x = "process_module_expr_desc"
+                                  ^
+Warning 27 [unused-var-strict]: unused variable x.
+File "src/gen4.ml", line 56, characters 32-33:
+56 | let process_structure_item_desc x = "process_structure_item_desc"
+                                     ^
+Warning 27 [unused-var-strict]: unused variable x.
+File "src/gen4.ml", line 57, characters 36-37:
+57 | let process_directive_argument_desc x = "process_directive_argument_desc"
+                                         ^
+Warning 27 [unused-var-strict]: unused variable x.
 File "src/ppx.ml", line 2, characters 12-13:
 2 | let ppddump x = () (*stub to hide batteries dump*)
                 ^
@@ -3088,6 +3528,103 @@ DEBUG2AA:open Ppxlib
 DEBUG2Erec: let process_type_decl_a1234567890position (x:a1234567890position):string = match x with {pos_fname1234567890(* string*);pos_lnum1234567890(* int*);pos_bol1234567890(* int*);pos_cnum1234567890(* int*)} ->(process_string pos_fname1234567890)^(process_int pos_lnum1234567890)^(process_int pos_bol1234567890)^(process_int pos_cnum1234567890) 
 
 DEBUG:Ptyp_constr1 'int' my_process_core_type_list:DEBUG:Ptyp_constr1 'int' my_process_core_type_list:DEBUG:Ptyp_constr1 'int' my_process_core_type_list:DEBUG:Ptyp_constr1 'string' my_process_core_type_list:TOPstructure_item_desc:Pstr_type:print_type_decl:"a1234567890position" = process_record_kind:"pos_fname1234567890|" body:ptyp_desc:Ptyp_constr:"string|"->my_process_core_type_list:/process_record_kind:"pos_lnum1234567890|" body:ptyp_desc:Ptyp_constr:"int|"->my_process_core_type_list:/process_record_kind:"pos_bol1234567890|" body:ptyp_desc:Ptyp_constr:"int|"->my_process_core_type_list:/process_record_kind:"pos_cnum1234567890|" body:ptyp_desc:Ptyp_constr:"int|"->my_process_core_type_list:/process_record_kind_list[process_type_decl_list]
+DEBUG2AA:open Ppxlib
+DEBUG:Ptyp_constr1 'string' my_process_core_type_list:DEBUG:Ptyp_constr1 'string' my_process_core_type_list:DEBUG:Ptyp_constr1 'string' my_process_core_type_list:DEBUG:Ptyp_constr1 'string' my_process_core_type_list:DEBUG:Ptyp_constr1 'string' my_process_core_type_list:DEBUG:Ptyp_constr1 'string' my_process_core_type_list:DEBUG:Ptyp_constr1 'string' my_process_core_type_list:DEBUG:Ptyp_constr1 'string' my_process_core_type_list:DEBUG:Ptyp_constr1 'string' my_process_core_type_list:DEBUG:Ptyp_constr1 'string' my_process_core_type_list:DEBUG:Ptyp_constr1 'string' my_process_core_type_list:DEBUG:Ptyp_constr1 'string' my_process_core_type_list:DEBUG:Ptyp_constr1 'string' my_process_core_type_list:DEBUG:Ptyp_constr1 'string' my_process_core_type_list:DEBUG:Ptyp_constr1 'string' my_process_core_type_list:DEBUG:Ptyp_constr1 'string' my_process_core_type_list:DEBUG:Ptyp_constr1 'string' my_process_core_type_list:DEBUG:Ptyp_constr1 'string' my_process_core_type_list:DEBUG:Ptyp_constr1 'string' my_process_core_type_list:DEBUG:Ptyp_constr1 'string' my_process_core_type_list:DEBUG:Ptyp_constr1 'string' my_process_core_type_list:DEBUG:Ptyp_constr1 'string' my_process_core_type_list:DEBUG:Ptyp_constr1 'string' my_process_core_type_list:DEBUG:Ptyp_constr1 'string' my_process_core_type_list:DEBUG:Ptyp_constr1 'string' my_process_core_type_list:DEBUG:Ptyp_constr1 'string' my_process_core_type_list:DEBUG:Ptyp_constr1 'string' my_process_core_type_list:DEBUG:Ptyp_constr1 'string' my_process_core_type_list:DEBUG:Ptyp_constr1 'string' my_process_core_type_list:DEBUG:Ptyp_constr1 'string' my_process_core_type_list:DEBUG:Ptyp_constr1 'string' my_process_core_type_list:DEBUG:Ptyp_constr1 'string' my_process_core_type_list:DEBUG:Ptyp_constr1 'string' my_process_core_type_list:DEBUG:Ptyp_constr1 'position' my_process_core_type_list:DEBUG:Ptyp_constr1 'string' my_process_core_type_list:DEBUG:Ptyp_constr1 'location' my_process_core_type_list:DEBUG:Ptyp_constr1 'string' my_process_core_type_list:DEBUG:Ptyp_constr1 'string' my_process_core_type_list:DEBUG:Ptyp_constr1 'attribute' my_process_core_type_list:DEBUG:Ptyp_constr1 'string' my_process_core_type_list:DEBUG:Ptyp_constr1 'core_type' my_process_core_type_list:DEBUG:Ptyp_constr1 'string' my_process_core_type_list:DEBUG:Ptyp_constr1 'row_field' my_process_core_type_list:DEBUG:Ptyp_constr1 'string' my_process_core_type_list:DEBUG:Ptyp_constr1 'object_field' my_process_core_type_list:DEBUG:Ptyp_constr1 'string' my_process_core_type_list:DEBUG:Ptyp_constr1 'pattern' my_process_core_type_list:DEBUG:Ptyp_constr1 'string' my_process_core_type_list:DEBUG:Ptyp_constr1 'expression' my_process_core_type_list:DEBUG:Ptyp_constr1 'string' my_process_core_type_list:DEBUG:Ptyp_constr1 'case' my_process_core_type_list:DEBUG:Ptyp_constr1 'string' my_process_core_type_list:DEBUG:Ptyp_constr1 'letop' my_process_core_type_list:DEBUG:Ptyp_constr1 'string' my_process_core_type_list:DEBUG:Ptyp_constr1 'binding_op' my_process_core_type_list:DEBUG:Ptyp_constr1 'string' my_process_core_type_list:DEBUG:Ptyp_constr1 'value_description' my_process_core_type_list:DEBUG:Ptyp_constr1 'string' my_process_core_type_list:DEBUG:Ptyp_constr1 'type_declaration' my_process_core_type_list:DEBUG:Ptyp_constr1 'string' my_process_core_type_list:DEBUG:Ptyp_constr1 'label_declaration' my_process_core_type_list:DEBUG:Ptyp_constr1 'string' my_process_core_type_list:DEBUG:Ptyp_constr1 'constructor_declaration' my_process_core_type_list:DEBUG:Ptyp_constr1 'string' my_process_core_type_list:DEBUG:Ptyp_constr1 'type_extension' my_process_core_type_list:DEBUG:Ptyp_constr1 'string' my_process_core_type_list:DEBUG:Ptyp_constr1 'extension_constructor' my_process_core_type_list:DEBUG:Ptyp_constr1 'string' my_process_core_type_list:DEBUG:Ptyp_constr1 'type_exception' my_process_core_type_list:DEBUG:Ptyp_constr1 'string' my_process_core_type_list:DEBUG:Ptyp_constr1 'class_type' my_process_core_type_list:DEBUG:Ptyp_constr1 'string' my_process_core_type_list:DEBUG:Ptyp_constr1 'class_signature' my_process_core_type_list:DEBUG:Ptyp_constr1 'string' my_process_core_type_list:DEBUG:Ptyp_constr1 'class_type_field' my_process_core_type_list:DEBUG:Ptyp_constr1 'string' my_process_core_type_list:DEBUG:Ptyp_constr1 'string' my_process_core_type_list:DEBUG:Ptyp_constr1 'class_expr' my_process_core_type_list:DEBUG:Ptyp_constr1 'string' my_process_core_type_list:DEBUG:Ptyp_constr1 'class_structure' my_process_core_type_list:DEBUG:Ptyp_constr1 'string' my_process_core_type_list:DEBUG:Ptyp_constr1 'class_field' my_process_core_type_list:DEBUG:Ptyp_constr1 'string' my_process_core_type_list:DEBUG:Ptyp_constr1 'module_type' my_process_core_type_list:DEBUG:Ptyp_constr1 'string' my_process_core_type_list:DEBUG:Ptyp_constr1 'signature_item' my_process_core_type_list:DEBUG:Ptyp_constr1 'string' my_process_core_type_list:DEBUG:Ptyp_constr1 'module_declaration' my_process_core_type_list:DEBUG:Ptyp_constr1 'string' my_process_core_type_list:DEBUG:Ptyp_constr1 'module_substitution' my_process_core_type_list:DEBUG:Ptyp_constr1 'string' my_process_core_type_list:DEBUG:Ptyp_constr1 'module_type_declaration' my_process_core_type_list:DEBUG:Ptyp_constr1 'string' my_process_core_type_list:DEBUG:Ptyp_constr1 'string' my_process_core_type_list:DEBUG:Ptyp_constr1 'string' my_process_core_type_list:DEBUG:Ptyp_constr1 'module_expr' my_process_core_type_list:DEBUG:Ptyp_constr1 'string' my_process_core_type_list:DEBUG:Ptyp_constr1 'structure_item' my_process_core_type_list:DEBUG:Ptyp_constr1 'string' my_process_core_type_list:DEBUG:Ptyp_constr1 'value_binding' my_process_core_type_list:DEBUG:Ptyp_constr1 'string' my_process_core_type_list:DEBUG:Ptyp_constr1 'module_binding' my_process_core_type_list:DEBUG:Ptyp_constr1 'string' my_process_core_type_list:DEBUG:Ptyp_constr1 'toplevel_directive' my_process_core_type_list:DEBUG:Ptyp_constr1 'string' my_process_core_type_list:DEBUG:Ptyp_constr1 'directive_argument' my_process_core_type_list:TOPstructure_item_desc:module_open
+TOPstructure_item_desc:Pstr_value:pattern:PATTERNpattern_Ppat_var:process_attributes| expr: EXPR:process_fun:process_arg_labelNoLabel|process_expression_option_TODOnope|PATTERNpattern_Ppat_var:x|EXPR:process_constraintEXPR:CONSTANTprocess_constantPconst_string("attributes")|ptyp_desc:Ptyp_constr:"string|"->my_process_core_type_list:;;print_value_binding_list;;
+TOPstructure_item_desc:Pstr_value:pattern:PATTERNpattern_Ppat_var:process_row_field_desc| expr: EXPR:process_fun:process_arg_labelNoLabel|process_expression_option_TODOnope|PATTERNpattern_Ppat_var:x|EXPR:process_constraintEXPR:CONSTANTprocess_constantPconst_string("process_row_field_desc")|ptyp_desc:Ptyp_constr:"string|"->my_process_core_type_list:;;print_value_binding_list;;
+TOPstructure_item_desc:Pstr_value:pattern:PATTERNpattern_Ppat_var:process_object_field_desc| expr: EXPR:process_fun:process_arg_labelNoLabel|process_expression_option_TODOnope|PATTERNpattern_Ppat_var:x|EXPR:CONSTANTprocess_constantPconst_string("process_object_field_desc");;print_value_binding_list;;
+TOPstructure_item_desc:Pstr_value:pattern:PATTERNpattern_Ppat_var:process_pattern_desc| expr: EXPR:process_fun:process_arg_labelNoLabel|process_expression_option_TODOnope|PATTERNpattern_Ppat_var:x|EXPR:CONSTANTprocess_constantPconst_string("process_pattern_desc");;print_value_binding_list;;
+TOPstructure_item_desc:Pstr_value:pattern:PATTERNpattern_Ppat_var:process_expression_desc| expr: EXPR:process_fun:process_arg_labelNoLabel|process_expression_option_TODOnope|PATTERNpattern_Ppat_var:x|EXPR:CONSTANTprocess_constantPconst_string("process_expression_desc");;print_value_binding_list;;
+TOPstructure_item_desc:Pstr_value:pattern:PATTERNpattern_Ppat_var:process_pattern| expr: EXPR:process_fun:process_arg_labelNoLabel|process_expression_option_TODOnope|PATTERNpattern_Ppat_var:x|EXPR:CONSTANTprocess_constantPconst_string("process_pattern");;print_value_binding_list;;
+TOPstructure_item_desc:Pstr_value:pattern:PATTERNpattern_Ppat_var:process_var_name| expr: EXPR:process_fun:process_arg_labelNoLabel|process_expression_option_TODOnope|PATTERNpattern_Ppat_var:x|EXPR:process_constraintEXPR:CONSTANTprocess_constantPconst_string("var_name")|ptyp_desc:Ptyp_constr:"string|"->my_process_core_type_list:;;print_value_binding_list;;
+TOPstructure_item_desc:Pstr_value:pattern:PATTERNpattern_Ppat_var:process_location| expr: EXPR:process_fun:process_arg_labelNoLabel|process_expression_option_TODOnope|PATTERNpattern_Ppat_var:x|EXPR:process_constraintEXPR:CONSTANTprocess_constantPconst_string("location")|ptyp_desc:Ptyp_constr:"string|"->my_process_core_type_list:;;print_value_binding_list;;
+TOPstructure_item_desc:Pstr_value:pattern:PATTERNpattern_Ppat_var:process_loc| expr: EXPR:process_fun:process_arg_labelNoLabel|process_expression_option_TODOnope|PATTERNpattern_Ppat_var:x|EXPR:process_constraintEXPR:CONSTANTprocess_constantPconst_string("loc")|ptyp_desc:Ptyp_constr:"string|"->my_process_core_type_list:;;print_value_binding_list;;
+TOPstructure_item_desc:Pstr_value:pattern:PATTERNpattern_Ppat_var:process_core_type_desc| expr: EXPR:process_fun:process_arg_labelNoLabel|process_expression_option_TODOnope|PATTERNpattern_Ppat_var:x|EXPR:process_constraintEXPR:CONSTANTprocess_constantPconst_string("core_Type_desc")|ptyp_desc:Ptyp_constr:"string|"->my_process_core_type_list:;;print_value_binding_list;;
+TOPstructure_item_desc:Pstr_value:pattern:PATTERNpattern_Ppat_var:process_location_stack| expr: EXPR:process_fun:process_arg_labelNoLabel|process_expression_option_TODOnope|PATTERNpattern_Ppat_var:x|EXPR:CONSTANTprocess_constantPconst_string("process_location_stack");;print_value_binding_list;;
+TOPstructure_item_desc:Pstr_value:pattern:PATTERNpattern_Ppat_var:process_payload| expr: EXPR:process_fun:process_arg_labelNoLabel|process_expression_option_TODOnope|PATTERNpattern_Ppat_var:x|EXPR:process_constraintEXPR:CONSTANTprocess_constantPconst_string("loc")|ptyp_desc:Ptyp_constr:"string|"->my_process_core_type_list:;;print_value_binding_list;;
+TOPstructure_item_desc:Pstr_value:pattern:PATTERNpattern_Ppat_var:process_attribute| expr: EXPR:process_fun:process_arg_labelNoLabel|process_expression_option_TODOnope|PATTERNpattern_Ppat_var:x|EXPR:process_constraintEXPR:CONSTANTprocess_constantPconst_string("")|ptyp_desc:Ptyp_constr:"string|"->my_process_core_type_list:;;print_value_binding_list;;
+TOPstructure_item_desc:Pstr_value:pattern:PATTERNpattern_Ppat_var:process_bool| expr: EXPR:process_fun:process_arg_labelNoLabel|process_expression_option_TODOnope|PATTERNpattern_Ppat_var:x|EXPR:process_constraintEXPR:CONSTANTprocess_constantPconst_string("bool")|ptyp_desc:Ptyp_constr:"string|"->my_process_core_type_list:;;print_value_binding_list;;
+TOPstructure_item_desc:Pstr_value:pattern:PATTERNpattern_Ppat_var:process_position| expr: EXPR:process_fun:process_arg_labelNoLabel|process_expression_option_TODOnope|PATTERNpattern_Ppat_var:x|EXPR:process_constraintEXPR:CONSTANTprocess_constantPconst_string("post")|ptyp_desc:Ptyp_constr:"string|"->my_process_core_type_list:;;print_value_binding_list;;
+TOPstructure_item_desc:Pstr_value:pattern:PATTERNpattern_Ppat_var:process_int| expr: EXPR:process_fun:process_arg_labelNoLabel|process_expression_option_TODOnope|PATTERNpattern_Ppat_var:x|EXPR:process_constraintEXPR:apply:EXPR:IDENTident:string_of_int|process_list1process_arg_labelNoLabel|EXPR:IDENTident:x|process_list1process_list1|ptyp_desc:Ptyp_constr:"string|"->my_process_core_type_list:;;print_value_binding_list;;
+TOPstructure_item_desc:Pstr_value:pattern:PATTERNpattern_Ppat_var:process_expression| expr: EXPR:process_fun:process_arg_labelNoLabel|process_expression_option_TODOnope|PATTERNpattern_Ppat_var:x|EXPR:process_constraintEXPR:CONSTANTprocess_constantPconst_string("x")|ptyp_desc:Ptyp_constr:"string|"->my_process_core_type_list:;;print_value_binding_list;;
+TOPstructure_item_desc:Pstr_value:pattern:PATTERNpattern_Ppat_var:process_extension| expr: EXPR:process_fun:process_arg_labelNoLabel|process_expression_option_TODOnope|PATTERNpattern_Ppat_var:x|EXPR:process_constraintEXPR:CONSTANTprocess_constantPconst_string("x")|ptyp_desc:Ptyp_constr:"string|"->my_process_core_type_list:;;print_value_binding_list;;
+TOPstructure_item_desc:Pstr_value:pattern:PATTERNpattern_Ppat_var:process_functor_parameter| expr: EXPR:process_fun:process_arg_labelNoLabel|process_expression_option_TODOnope|PATTERNpattern_Ppat_var:x|EXPR:process_constraintEXPR:CONSTANTprocess_constantPconst_string("x")|ptyp_desc:Ptyp_constr:"string|"->my_process_core_type_list:;;print_value_binding_list;;
+TOPstructure_item_desc:Pstr_value:pattern:PATTERNpattern_Ppat_var:process_include_declaration| expr: EXPR:process_fun:process_arg_labelNoLabel|process_expression_option_TODOnope|PATTERNpattern_Ppat_var:x|EXPR:process_constraintEXPR:CONSTANTprocess_constantPconst_string("x")|ptyp_desc:Ptyp_constr:"string|"->my_process_core_type_list:;;print_value_binding_list;;
+TOPstructure_item_desc:Pstr_value:pattern:PATTERNpattern_Ppat_var:process_list| expr: EXPR:process_fun:process_arg_labelNoLabel|process_expression_option_TODOnope|PATTERNpattern_Ppat_var:x|EXPR:process_constraintEXPR:CONSTANTprocess_constantPconst_string("x")|ptyp_desc:Ptyp_constr:"string|"->my_process_core_type_list:;;print_value_binding_list;;
+TOPstructure_item_desc:Pstr_value:pattern:PATTERNpattern_Ppat_var:process_longident_loc| expr: EXPR:process_fun:process_arg_labelNoLabel|process_expression_option_TODOnope|PATTERNpattern_Ppat_var:x|EXPR:process_constraintEXPR:CONSTANTprocess_constantPconst_string("x")|ptyp_desc:Ptyp_constr:"string|"->my_process_core_type_list:;;print_value_binding_list;;
+TOPstructure_item_desc:Pstr_value:pattern:PATTERNpattern_Ppat_var:process_longident| expr: EXPR:process_fun:process_arg_labelNoLabel|process_expression_option_TODOnope|PATTERNpattern_Ppat_var:x|EXPR:process_constraintEXPR:CONSTANTprocess_constantPconst_string("x")|ptyp_desc:Ptyp_constr:"string|"->my_process_core_type_list:;;print_value_binding_list;;
+TOPstructure_item_desc:Pstr_value:pattern:PATTERNpattern_Ppat_var:process_module_binding| expr: EXPR:process_fun:process_arg_labelNoLabel|process_expression_option_TODOnope|PATTERNpattern_Ppat_var:x|EXPR:process_constraintEXPR:CONSTANTprocess_constantPconst_string("x")|ptyp_desc:Ptyp_constr:"string|"->my_process_core_type_list:;;print_value_binding_list;;
+TOPstructure_item_desc:Pstr_value:pattern:PATTERNpattern_Ppat_var:process_module_expr| expr: EXPR:process_fun:process_arg_labelNoLabel|process_expression_option_TODOnope|PATTERNpattern_Ppat_var:x|EXPR:process_constraintEXPR:CONSTANTprocess_constantPconst_string("x")|ptyp_desc:Ptyp_constr:"string|"->my_process_core_type_list:;;print_value_binding_list;;
+TOPstructure_item_desc:Pstr_value:pattern:PATTERNpattern_Ppat_var:process_module_type_declaration| expr: EXPR:process_fun:process_arg_labelNoLabel|process_expression_option_TODOnope|PATTERNpattern_Ppat_var:x|EXPR:process_constraintEXPR:CONSTANTprocess_constantPconst_string("x")|ptyp_desc:Ptyp_constr:"string|"->my_process_core_type_list:;;print_value_binding_list;;
+TOPstructure_item_desc:Pstr_value:pattern:PATTERNpattern_Ppat_var:process_module_type| expr: EXPR:process_fun:process_arg_labelNoLabel|process_expression_option_TODOnope|PATTERNpattern_Ppat_var:x|EXPR:process_constraintEXPR:CONSTANTprocess_constantPconst_string("x")|ptyp_desc:Ptyp_constr:"string|"->my_process_core_type_list:;;print_value_binding_list;;
+TOPstructure_item_desc:Pstr_value:pattern:PATTERNpattern_Ppat_var:process_open_declaration| expr: EXPR:process_fun:process_arg_labelNoLabel|process_expression_option_TODOnope|PATTERNpattern_Ppat_var:x|EXPR:process_constraintEXPR:CONSTANTprocess_constantPconst_string("x")|ptyp_desc:Ptyp_constr:"string|"->my_process_core_type_list:;;print_value_binding_list;;
+TOPstructure_item_desc:Pstr_value:pattern:PATTERNpattern_Ppat_var:process_option| expr: EXPR:process_fun:process_arg_labelNoLabel|process_expression_option_TODOnope|PATTERNpattern_Ppat_var:x|EXPR:process_constraintEXPR:CONSTANTprocess_constantPconst_string("x")|ptyp_desc:Ptyp_constr:"string|"->my_process_core_type_list:;;print_value_binding_list;;
+TOPstructure_item_desc:Pstr_value:pattern:PATTERNpattern_Ppat_var:process_rec_flag| expr: EXPR:process_fun:process_arg_labelNoLabel|process_expression_option_TODOnope|PATTERNpattern_Ppat_var:x|EXPR:process_constraintEXPR:CONSTANTprocess_constantPconst_string("x")|ptyp_desc:Ptyp_constr:"string|"->my_process_core_type_list:;;print_value_binding_list;;
+TOPstructure_item_desc:Pstr_value:pattern:PATTERNpattern_Ppat_var:process_string| expr: EXPR:process_fun:process_arg_labelNoLabel|process_expression_option_TODOnope|PATTERNpattern_Ppat_var:x|EXPR:process_constraintEXPR:CONSTANTprocess_constantPconst_string("x")|ptyp_desc:Ptyp_constr:"string|"->my_process_core_type_list:;;print_value_binding_list;;
+TOPstructure_item_desc:Pstr_value:pattern:PATTERNpattern_Ppat_var:process_structure| expr: EXPR:process_fun:process_arg_labelNoLabel|process_expression_option_TODOnope|PATTERNpattern_Ppat_var:x|EXPR:process_constraintEXPR:CONSTANTprocess_constantPconst_string("x")|ptyp_desc:Ptyp_constr:"string|"->my_process_core_type_list:;;print_value_binding_list;;
+TOPstructure_item_desc:Pstr_value:pattern:PATTERNpattern_Ppat_var:process_toplevel_directive| expr: EXPR:process_fun:process_arg_labelNoLabel|process_expression_option_TODOnope|PATTERNpattern_Ppat_var:x|EXPR:process_constraintEXPR:CONSTANTprocess_constantPconst_string("x")|ptyp_desc:Ptyp_constr:"string|"->my_process_core_type_list:;;print_value_binding_list;;
+TOPstructure_item_desc:Pstr_value:pattern:PATTERNpattern_Ppat_var:process_type_declaration| expr: EXPR:process_fun:process_arg_labelNoLabel|process_expression_option_TODOnope|PATTERNpattern_Ppat_var:x|EXPR:process_constraintEXPR:CONSTANTprocess_constantPconst_string("x")|ptyp_desc:Ptyp_constr:"string|"->my_process_core_type_list:;;print_value_binding_list;;
+TOPstructure_item_desc:Pstr_value:pattern:PATTERNpattern_Ppat_var:process_type_exception| expr: EXPR:process_fun:process_arg_labelNoLabel|process_expression_option_TODOnope|PATTERNpattern_Ppat_var:x|EXPR:process_constraintEXPR:CONSTANTprocess_constantPconst_string("x")|ptyp_desc:Ptyp_constr:"string|"->my_process_core_type_list:;;print_value_binding_list;;
+TOPstructure_item_desc:Pstr_value:pattern:PATTERNpattern_Ppat_var:process_type_extension| expr: EXPR:process_fun:process_arg_labelNoLabel|process_expression_option_TODOnope|PATTERNpattern_Ppat_var:x|EXPR:process_constraintEXPR:CONSTANTprocess_constantPconst_string("x")|ptyp_desc:Ptyp_constr:"string|"->my_process_core_type_list:;;print_value_binding_list;;
+TOPstructure_item_desc:Pstr_value:pattern:PATTERNpattern_Ppat_var:process_value_description| expr: EXPR:process_fun:process_arg_labelNoLabel|process_expression_option_TODOnope|PATTERNpattern_Ppat_var:x|EXPR:process_constraintEXPR:CONSTANTprocess_constantPconst_string("x")|ptyp_desc:Ptyp_constr:"string|"->my_process_core_type_list:;;print_value_binding_list;;
+TOPstructure_item_desc:Pstr_value:pattern:PATTERNpattern_Ppat_var:process_binding_op| expr: EXPR:process_fun:process_arg_labelNoLabel|process_expression_option_TODOnope|PATTERNpattern_Ppat_var:x|EXPR:CONSTANTprocess_constantPconst_string("process_binding_op");;print_value_binding_list;;
+TOPstructure_item_desc:Pstr_value:pattern:PATTERNpattern_Ppat_var:process_core_type| expr: EXPR:process_fun:process_arg_labelNoLabel|process_expression_option_TODOnope|PATTERNpattern_Ppat_var:x|EXPR:CONSTANTprocess_constantPconst_string("process_core_type");;print_value_binding_list;;
+TOPstructure_item_desc:Pstr_value:pattern:PATTERNpattern_Ppat_var:process_type_kind| expr: EXPR:process_fun:process_arg_labelNoLabel|process_expression_option_TODOnope|PATTERNpattern_Ppat_var:x|EXPR:CONSTANTprocess_constantPconst_string("process_type_kind");;print_value_binding_list;;
+TOPstructure_item_desc:Pstr_value:pattern:PATTERNpattern_Ppat_var:process_private_flag| expr: EXPR:process_fun:process_arg_labelNoLabel|process_expression_option_TODOnope|PATTERNpattern_Ppat_var:x|EXPR:CONSTANTprocess_constantPconst_string("process_private_flag");;print_value_binding_list;;
+TOPstructure_item_desc:Pstr_value:pattern:PATTERNpattern_Ppat_var:process_mutable_flag| expr: EXPR:process_fun:process_arg_labelNoLabel|process_expression_option_TODOnope|PATTERNpattern_Ppat_var:x|EXPR:CONSTANTprocess_constantPconst_string("process_mutable_flag");;print_value_binding_list;;
+TOPstructure_item_desc:Pstr_value:pattern:PATTERNpattern_Ppat_var:process_constructor_arguments| expr: EXPR:process_fun:process_arg_labelNoLabel|process_expression_option_TODOnope|PATTERNpattern_Ppat_var:x|EXPR:CONSTANTprocess_constantPconst_string("process_constructor_arguments");;print_value_binding_list;;
+TOPstructure_item_desc:Pstr_value:pattern:PATTERNpattern_Ppat_var:process_extension_constructor_kind| expr: EXPR:process_fun:process_arg_labelNoLabel|process_expression_option_TODOnope|PATTERNpattern_Ppat_var:x|EXPR:CONSTANTprocess_constantPconst_string("process_extension_constructor_kind");;print_value_binding_list;;
+TOPstructure_item_desc:Pstr_value:pattern:PATTERNpattern_Ppat_var:process_extension_constructor| expr: EXPR:process_fun:process_arg_labelNoLabel|process_expression_option_TODOnope|PATTERNpattern_Ppat_var:x|EXPR:CONSTANTprocess_constantPconst_string("process_extension_constructor");;print_value_binding_list;;
+TOPstructure_item_desc:Pstr_value:pattern:PATTERNpattern_Ppat_var:process_class_type_desc| expr: EXPR:process_fun:process_arg_labelNoLabel|process_expression_option_TODOnope|PATTERNpattern_Ppat_var:x|EXPR:CONSTANTprocess_constantPconst_string("process_class_type_desc");;print_value_binding_list;;
+TOPstructure_item_desc:Pstr_value:pattern:PATTERNpattern_Ppat_var:process_class_type_field_desc| expr: EXPR:process_fun:process_arg_labelNoLabel|process_expression_option_TODOnope|PATTERNpattern_Ppat_var:x|EXPR:CONSTANTprocess_constantPconst_string("process_class_type_field_desc");;print_value_binding_list;;
+TOPstructure_item_desc:Pstr_value:pattern:PATTERNpattern_Ppat_var:process_virtual_flag| expr: EXPR:process_fun:process_arg_labelNoLabel|process_expression_option_TODOnope|PATTERNpattern_Ppat_var:x|EXPR:CONSTANTprocess_constantPconst_string("process_virtual_flag");;print_value_binding_list;;
+TOPstructure_item_desc:Pstr_value:pattern:PATTERNpattern_Ppat_var:process_class_expr_desc| expr: EXPR:process_fun:process_arg_labelNoLabel|process_expression_option_TODOnope|PATTERNpattern_Ppat_var:x|EXPR:CONSTANTprocess_constantPconst_string("process_class_expr_desc");;print_value_binding_list;;
+TOPstructure_item_desc:Pstr_value:pattern:PATTERNpattern_Ppat_var:process_class_field_desc| expr: EXPR:process_fun:process_arg_labelNoLabel|process_expression_option_TODOnope|PATTERNpattern_Ppat_var:x|EXPR:CONSTANTprocess_constantPconst_string("process_class_field_desc");;print_value_binding_list;;
+TOPstructure_item_desc:Pstr_value:pattern:PATTERNpattern_Ppat_var:process_module_type_desc| expr: EXPR:process_fun:process_arg_labelNoLabel|process_expression_option_TODOnope|PATTERNpattern_Ppat_var:x|EXPR:CONSTANTprocess_constantPconst_string("process_module_type_desc");;print_value_binding_list;;
+TOPstructure_item_desc:Pstr_value:pattern:PATTERNpattern_Ppat_var:process_signature_item_desc| expr: EXPR:process_fun:process_arg_labelNoLabel|process_expression_option_TODOnope|PATTERNpattern_Ppat_var:x|EXPR:CONSTANTprocess_constantPconst_string("process_signature_item_desc");;print_value_binding_list;;
+TOPstructure_item_desc:Pstr_value:pattern:PATTERNpattern_Ppat_var:process_override_flag| expr: EXPR:process_fun:process_arg_labelNoLabel|process_expression_option_TODOnope|PATTERNpattern_Ppat_var:x|EXPR:CONSTANTprocess_constantPconst_string("process_override_flag");;print_value_binding_list;;
+TOPstructure_item_desc:Pstr_value:pattern:PATTERNpattern_Ppat_var:process_module_expr_desc| expr: EXPR:process_fun:process_arg_labelNoLabel|process_expression_option_TODOnope|PATTERNpattern_Ppat_var:x|EXPR:CONSTANTprocess_constantPconst_string("process_module_expr_desc");;print_value_binding_list;;
+TOPstructure_item_desc:Pstr_value:pattern:PATTERNpattern_Ppat_var:process_structure_item_desc| expr: EXPR:process_fun:process_arg_labelNoLabel|process_expression_option_TODOnope|PATTERNpattern_Ppat_var:x|EXPR:CONSTANTprocess_constantPconst_string("process_structure_item_desc");;print_value_binding_list;;
+TOPstructure_item_desc:Pstr_value:pattern:PATTERNpattern_Ppat_var:process_directive_argument_desc| expr: EXPR:process_fun:process_arg_labelNoLabel|process_expression_option_TODOnope|PATTERNpattern_Ppat_var:x|EXPR:CONSTANTprocess_constantPconst_string("process_directive_argument_desc");;print_value_binding_list;;
+TOPstructure_item_desc:Pstr_value:pattern:PATTERNpattern_Ppat_var:process_type_decl_position| expr: EXPR:process_fun:process_arg_labelNoLabel|process_expression_option_TODOnope|PATTERNPpat_constraint:PATTERNpattern_Ppat_var:x|ptyp_desc:Ptyp_constr:"position|"->my_process_core_type_list:|EXPR:process_constraintEXPR:process_matchEXPR:IDENTident:x|process_casescase:PATTERNpatterna9|process_expression_option_TODOnope|EXPR:apply:EXPR:IDENTident:^|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:process_string|process_list1process_arg_labelNoLabel|EXPR:IDENTident:pos_fname|process_list1process_list1|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:^|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:process_int|process_list1process_arg_labelNoLabel|EXPR:IDENTident:pos_lnum|process_list1process_list1|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:^|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:process_int|process_list1process_arg_labelNoLabel|EXPR:IDENTident:pos_bol|process_list1process_list1|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:process_int|process_list1process_arg_labelNoLabel|EXPR:IDENTident:pos_cnum|process_list1process_list1|process_list1process_list1|process_list1process_list1|process_list1process_list1|process_casesprocess_cases|ptyp_desc:Ptyp_constr:"string|"->my_process_core_type_list:;;print_value_binding_list;;
+TOPstructure_item_desc:Pstr_value:pattern:PATTERNpattern_Ppat_var:process_type_decl_location| expr: EXPR:process_fun:process_arg_labelNoLabel|process_expression_option_TODOnope|PATTERNPpat_constraint:PATTERNpattern_Ppat_var:x|ptyp_desc:Ptyp_constr:"location|"->my_process_core_type_list:|EXPR:process_constraintEXPR:process_matchEXPR:IDENTident:x|process_casescase:PATTERNpatterna9|process_expression_option_TODOnope|EXPR:apply:EXPR:IDENTident:^|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:process_position|process_list1process_arg_labelNoLabel|EXPR:IDENTident:loc_start|process_list1process_list1|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:^|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:process_position|process_list1process_arg_labelNoLabel|EXPR:IDENTident:loc_end|process_list1process_list1|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:process_bool|process_list1process_arg_labelNoLabel|EXPR:IDENTident:loc_ghost|process_list1process_list1|process_list1process_list1|process_list1process_list1|process_casesprocess_cases|ptyp_desc:Ptyp_constr:"string|"->my_process_core_type_list:;;print_value_binding_list;;
+TOPstructure_item_desc:Pstr_value:pattern:PATTERNpattern_Ppat_var:process_type_decl_loc| expr: EXPR:process_fun:process_arg_labelNoLabel|process_expression_option_TODOnope|PATTERNpattern_Ppat_var:x|EXPR:process_constraintEXPR:process_matchEXPR:IDENTident:x|process_casescase:PATTERNpatterna9|process_expression_option_TODOnope|EXPR:apply:EXPR:IDENTident:^|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:process_var_name|process_list1process_arg_labelNoLabel|EXPR:IDENTident:txt|process_list1process_list1|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:process_location|process_list1process_arg_labelNoLabel|EXPR:IDENTident:loc|process_list1process_list1|process_list1process_list1|process_casesprocess_cases|ptyp_desc:Ptyp_constr:"string|"->my_process_core_type_list:;;print_value_binding_list;;
+TOPstructure_item_desc:Pstr_value:pattern:PATTERNpattern_Ppat_var:process_type_decl_attribute| expr: EXPR:process_fun:process_arg_labelNoLabel|process_expression_option_TODOnope|PATTERNPpat_constraint:PATTERNpattern_Ppat_var:x|ptyp_desc:Ptyp_constr:"attribute|"->my_process_core_type_list:|EXPR:process_constraintEXPR:process_matchEXPR:IDENTident:x|process_casescase:PATTERNpatterna9|process_expression_option_TODOnope|EXPR:apply:EXPR:IDENTident:^|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:process_loc|process_list1process_arg_labelNoLabel|EXPR:IDENTident:attr_name|process_list1process_list1|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:^|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:process_payload|process_list1process_arg_labelNoLabel|EXPR:IDENTident:attr_payload|process_list1process_list1|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:process_location|process_list1process_arg_labelNoLabel|EXPR:IDENTident:attr_loc|process_list1process_list1|process_list1process_list1|process_list1process_list1|process_casesprocess_cases|ptyp_desc:Ptyp_constr:"string|"->my_process_core_type_list:;;print_value_binding_list;;
+TOPstructure_item_desc:Pstr_value:pattern:PATTERNpattern_Ppat_var:process_type_decl_core_type| expr: EXPR:process_fun:process_arg_labelNoLabel|process_expression_option_TODOnope|PATTERNPpat_constraint:PATTERNpattern_Ppat_var:x|ptyp_desc:Ptyp_constr:"core_type|"->my_process_core_type_list:|EXPR:process_constraintEXPR:process_matchEXPR:IDENTident:x|process_casescase:PATTERNpatterna9|process_expression_option_TODOnope|EXPR:apply:EXPR:IDENTident:^|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:process_core_type_desc|process_list1process_arg_labelNoLabel|EXPR:IDENTident:ptyp_desc|process_list1process_list1|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:^|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:process_location|process_list1process_arg_labelNoLabel|EXPR:IDENTident:ptyp_loc|process_list1process_list1|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:^|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:process_location_stack|process_list1process_arg_labelNoLabel|EXPR:IDENTident:ptyp_loc_stack|process_list1process_list1|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:process_attributes|process_list1process_arg_labelNoLabel|EXPR:IDENTident:ptyp_attributes|process_list1process_list1|process_list1process_list1|process_list1process_list1|process_list1process_list1|process_casesprocess_cases|ptyp_desc:Ptyp_constr:"string|"->my_process_core_type_list:;;print_value_binding_list;;
+TOPstructure_item_desc:Pstr_value:pattern:PATTERNpattern_Ppat_var:process_type_decl_row_field| expr: EXPR:process_fun:process_arg_labelNoLabel|process_expression_option_TODOnope|PATTERNPpat_constraint:PATTERNpattern_Ppat_var:x|ptyp_desc:Ptyp_constr:"row_field|"->my_process_core_type_list:|EXPR:process_constraintEXPR:process_matchEXPR:IDENTident:x|process_casescase:PATTERNpatterna9|process_expression_option_TODOnope|EXPR:apply:EXPR:IDENTident:^|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:process_row_field_desc|process_list1process_arg_labelNoLabel|EXPR:IDENTident:prf_desc|process_list1process_list1|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:^|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:process_location|process_list1process_arg_labelNoLabel|EXPR:IDENTident:prf_loc|process_list1process_list1|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:process_attributes|process_list1process_arg_labelNoLabel|EXPR:IDENTident:prf_attributes|process_list1process_list1|process_list1process_list1|process_list1process_list1|process_casesprocess_cases|ptyp_desc:Ptyp_constr:"string|"->my_process_core_type_list:;;print_value_binding_list;;
+TOPstructure_item_desc:Pstr_value:pattern:PATTERNpattern_Ppat_var:process_type_decl_object_field| expr: EXPR:process_fun:process_arg_labelNoLabel|process_expression_option_TODOnope|PATTERNPpat_constraint:PATTERNpattern_Ppat_var:x|ptyp_desc:Ptyp_constr:"object_field|"->my_process_core_type_list:|EXPR:process_constraintEXPR:process_matchEXPR:IDENTident:x|process_casescase:PATTERNpatterna9|process_expression_option_TODOnope|EXPR:apply:EXPR:IDENTident:^|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:process_object_field_desc|process_list1process_arg_labelNoLabel|EXPR:IDENTident:pof_desc|process_list1process_list1|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:^|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:process_location|process_list1process_arg_labelNoLabel|EXPR:IDENTident:pof_loc|process_list1process_list1|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:process_attributes|process_list1process_arg_labelNoLabel|EXPR:IDENTident:pof_attributes|process_list1process_list1|process_list1process_list1|process_list1process_list1|process_casesprocess_cases|ptyp_desc:Ptyp_constr:"string|"->my_process_core_type_list:;;print_value_binding_list;;
+TOPstructure_item_desc:Pstr_value:pattern:PATTERNpattern_Ppat_var:process_type_decl_pattern| expr: EXPR:process_fun:process_arg_labelNoLabel|process_expression_option_TODOnope|PATTERNPpat_constraint:PATTERNpattern_Ppat_var:x|ptyp_desc:Ptyp_constr:"pattern|"->my_process_core_type_list:|EXPR:process_constraintEXPR:process_matchEXPR:IDENTident:x|process_casescase:PATTERNpatterna9|process_expression_option_TODOnope|EXPR:apply:EXPR:IDENTident:^|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:process_pattern_desc|process_list1process_arg_labelNoLabel|EXPR:IDENTident:ppat_desc|process_list1process_list1|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:^|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:process_location|process_list1process_arg_labelNoLabel|EXPR:IDENTident:ppat_loc|process_list1process_list1|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:^|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:process_location_stack|process_list1process_arg_labelNoLabel|EXPR:IDENTident:ppat_loc_stack|process_list1process_list1|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:process_attributes|process_list1process_arg_labelNoLabel|EXPR:IDENTident:ppat_attributes|process_list1process_list1|process_list1process_list1|process_list1process_list1|process_list1process_list1|process_casesprocess_cases|ptyp_desc:Ptyp_constr:"string|"->my_process_core_type_list:;;print_value_binding_list;;
+TOPstructure_item_desc:Pstr_value:pattern:PATTERNpattern_Ppat_var:process_type_decl_expression| expr: EXPR:process_fun:process_arg_labelNoLabel|process_expression_option_TODOnope|PATTERNPpat_constraint:PATTERNpattern_Ppat_var:x|ptyp_desc:Ptyp_constr:"expression|"->my_process_core_type_list:|EXPR:process_constraintEXPR:process_matchEXPR:IDENTident:x|process_casescase:PATTERNpatterna9|process_expression_option_TODOnope|EXPR:apply:EXPR:IDENTident:^|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:process_expression_desc|process_list1process_arg_labelNoLabel|EXPR:IDENTident:pexp_desc|process_list1process_list1|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:^|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:process_location|process_list1process_arg_labelNoLabel|EXPR:IDENTident:pexp_loc|process_list1process_list1|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:^|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:process_location_stack|process_list1process_arg_labelNoLabel|EXPR:IDENTident:pexp_loc_stack|process_list1process_list1|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:process_attributes|process_list1process_arg_labelNoLabel|EXPR:IDENTident:pexp_attributes|process_list1process_list1|process_list1process_list1|process_list1process_list1|process_list1process_list1|process_casesprocess_cases|ptyp_desc:Ptyp_constr:"string|"->my_process_core_type_list:;;print_value_binding_list;;
+TOPstructure_item_desc:Pstr_value:pattern:PATTERNpattern_Ppat_var:process_type_decl_case| expr: EXPR:process_fun:process_arg_labelNoLabel|process_expression_option_TODOnope|PATTERNPpat_constraint:PATTERNpattern_Ppat_var:x|ptyp_desc:Ptyp_constr:"case|"->my_process_core_type_list:|EXPR:process_constraintEXPR:process_matchEXPR:IDENTident:x|process_casescase:PATTERNpatterna9|process_expression_option_TODOnope|EXPR:apply:EXPR:IDENTident:^|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:process_pattern|process_list1process_arg_labelNoLabel|EXPR:IDENTident:pc_lhs|process_list1process_list1|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:^|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:process_option|process_list1process_arg_labelNoLabel|EXPR:IDENTident:pc_guard|process_list1process_list1|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:process_expression|process_list1process_arg_labelNoLabel|EXPR:IDENTident:pc_rhs|process_list1process_list1|process_list1process_list1|process_list1process_list1|process_casesprocess_cases|ptyp_desc:Ptyp_constr:"string|"->my_process_core_type_list:;;print_value_binding_list;;
+TOPstructure_item_desc:Pstr_value:pattern:PATTERNpattern_Ppat_var:process_type_decl_letop| expr: EXPR:process_fun:process_arg_labelNoLabel|process_expression_option_TODOnope|PATTERNPpat_constraint:PATTERNpattern_Ppat_var:x|ptyp_desc:Ptyp_constr:"letop|"->my_process_core_type_list:|EXPR:process_constraintEXPR:process_matchEXPR:IDENTident:x|process_casescase:PATTERNpatterna9|process_expression_option_TODOnope|EXPR:apply:EXPR:IDENTident:^|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:process_binding_op|process_list1process_arg_labelNoLabel|EXPR:IDENTident:let_|process_list1process_list1|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:^|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:process_list|process_list1process_arg_labelNoLabel|EXPR:IDENTident:ands|process_list1process_list1|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:process_expression|process_list1process_arg_labelNoLabel|EXPR:IDENTident:body|process_list1process_list1|process_list1process_list1|process_list1process_list1|process_casesprocess_cases|ptyp_desc:Ptyp_constr:"string|"->my_process_core_type_list:;;print_value_binding_list;;
+TOPstructure_item_desc:Pstr_value:pattern:PATTERNpattern_Ppat_var:process_type_decl_binding_op| expr: EXPR:process_fun:process_arg_labelNoLabel|process_expression_option_TODOnope|PATTERNPpat_constraint:PATTERNpattern_Ppat_var:x|ptyp_desc:Ptyp_constr:"binding_op|"->my_process_core_type_list:|EXPR:process_constraintEXPR:process_matchEXPR:IDENTident:x|process_casescase:PATTERNpatterna9|process_expression_option_TODOnope|EXPR:apply:EXPR:IDENTident:^|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:process_loc|process_list1process_arg_labelNoLabel|EXPR:IDENTident:pbop_op|process_list1process_list1|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:^|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:process_pattern|process_list1process_arg_labelNoLabel|EXPR:IDENTident:pbop_pat|process_list1process_list1|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:^|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:process_expression|process_list1process_arg_labelNoLabel|EXPR:IDENTident:pbop_exp|process_list1process_list1|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:process_location|process_list1process_arg_labelNoLabel|EXPR:IDENTident:pbop_loc|process_list1process_list1|process_list1process_list1|process_list1process_list1|process_list1process_list1|process_casesprocess_cases|ptyp_desc:Ptyp_constr:"string|"->my_process_core_type_list:;;print_value_binding_list;;
+TOPstructure_item_desc:Pstr_value:pattern:PATTERNpattern_Ppat_var:process_type_decl_value_description| expr: EXPR:process_fun:process_arg_labelNoLabel|process_expression_option_TODOnope|PATTERNPpat_constraint:PATTERNpattern_Ppat_var:x|ptyp_desc:Ptyp_constr:"value_description|"->my_process_core_type_list:|EXPR:process_constraintEXPR:process_matchEXPR:IDENTident:x|process_casescase:PATTERNpatterna9|process_expression_option_TODOnope|EXPR:apply:EXPR:IDENTident:^|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:process_loc|process_list1process_arg_labelNoLabel|EXPR:IDENTident:pval_name|process_list1process_list1|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:^|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:process_core_type|process_list1process_arg_labelNoLabel|EXPR:IDENTident:pval_type|process_list1process_list1|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:^|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:process_list|process_list1process_arg_labelNoLabel|EXPR:IDENTident:pval_prim|process_list1process_list1|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:^|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:process_attributes|process_list1process_arg_labelNoLabel|EXPR:IDENTident:pval_attributes|process_list1process_list1|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:process_location|process_list1process_arg_labelNoLabel|EXPR:IDENTident:pval_loc|process_list1process_list1|process_list1process_list1|process_list1process_list1|process_list1process_list1|process_list1process_list1|process_casesprocess_cases|ptyp_desc:Ptyp_constr:"string|"->my_process_core_type_list:;;print_value_binding_list;;
+TOPstructure_item_desc:Pstr_value:pattern:PATTERNpattern_Ppat_var:process_type_decl_type_declaration| expr: EXPR:process_fun:process_arg_labelNoLabel|process_expression_option_TODOnope|PATTERNPpat_constraint:PATTERNpattern_Ppat_var:x|ptyp_desc:Ptyp_constr:"type_declaration|"->my_process_core_type_list:|EXPR:process_constraintEXPR:process_matchEXPR:IDENTident:x|process_casescase:PATTERNpatterna9|process_expression_option_TODOnope|EXPR:apply:EXPR:IDENTident:^|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:process_loc|process_list1process_arg_labelNoLabel|EXPR:IDENTident:ptype_name|process_list1process_list1|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:^|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:process_list|process_list1process_arg_labelNoLabel|EXPR:IDENTident:ptype_params|process_list1process_list1|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:^|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:process_list|process_list1process_arg_labelNoLabel|EXPR:IDENTident:ptype_cstrs|process_list1process_list1|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:^|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:process_type_kind|process_list1process_arg_labelNoLabel|EXPR:IDENTident:ptype_kind|process_list1process_list1|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:^|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:process_private_flag|process_list1process_arg_labelNoLabel|EXPR:IDENTident:ptype_private|process_list1process_list1|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:^|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:process_option|process_list1process_arg_labelNoLabel|EXPR:IDENTident:ptype_manifest|process_list1process_list1|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:^|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:process_attributes|process_list1process_arg_labelNoLabel|EXPR:IDENTident:ptype_attributes|process_list1process_list1|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:process_location|process_list1process_arg_labelNoLabel|EXPR:IDENTident:ptype_loc|process_list1process_list1|process_list1process_list1|process_list1process_list1|process_list1process_list1|process_list1process_list1|process_list1process_list1|process_list1process_list1|process_list1process_list1|process_casesprocess_cases|ptyp_desc:Ptyp_constr:"string|"->my_process_core_type_list:;;print_value_binding_list;;
+TOPstructure_item_desc:Pstr_value:pattern:PATTERNpattern_Ppat_var:process_type_decl_label_declaration| expr: EXPR:process_fun:process_arg_labelNoLabel|process_expression_option_TODOnope|PATTERNPpat_constraint:PATTERNpattern_Ppat_var:x|ptyp_desc:Ptyp_constr:"label_declaration|"->my_process_core_type_list:|EXPR:process_constraintEXPR:process_matchEXPR:IDENTident:x|process_casescase:PATTERNpatterna9|process_expression_option_TODOnope|EXPR:apply:EXPR:IDENTident:^|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:process_loc|process_list1process_arg_labelNoLabel|EXPR:IDENTident:pld_name|process_list1process_list1|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:^|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:process_mutable_flag|process_list1process_arg_labelNoLabel|EXPR:IDENTident:pld_mutable|process_list1process_list1|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:^|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:process_core_type|process_list1process_arg_labelNoLabel|EXPR:IDENTident:pld_type|process_list1process_list1|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:^|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:process_location|process_list1process_arg_labelNoLabel|EXPR:IDENTident:pld_loc|process_list1process_list1|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:process_attributes|process_list1process_arg_labelNoLabel|EXPR:IDENTident:pld_attributes|process_list1process_list1|process_list1process_list1|process_list1process_list1|process_list1process_list1|process_list1process_list1|process_casesprocess_cases|ptyp_desc:Ptyp_constr:"string|"->my_process_core_type_list:;;print_value_binding_list;;
+TOPstructure_item_desc:Pstr_value:pattern:PATTERNpattern_Ppat_var:process_type_decl_constructor_declaration| expr: EXPR:process_fun:process_arg_labelNoLabel|process_expression_option_TODOnope|PATTERNPpat_constraint:PATTERNpattern_Ppat_var:x|ptyp_desc:Ptyp_constr:"constructor_declaration|"->my_process_core_type_list:|EXPR:process_constraintEXPR:process_matchEXPR:IDENTident:x|process_casescase:PATTERNpatterna9|process_expression_option_TODOnope|EXPR:apply:EXPR:IDENTident:^|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:process_loc|process_list1process_arg_labelNoLabel|EXPR:IDENTident:pcd_name|process_list1process_list1|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:^|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:process_list|process_list1process_arg_labelNoLabel|EXPR:IDENTident:pcd_vars|process_list1process_list1|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:^|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:process_constructor_arguments|process_list1process_arg_labelNoLabel|EXPR:IDENTident:pcd_args|process_list1process_list1|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:^|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:process_option|process_list1process_arg_labelNoLabel|EXPR:IDENTident:pcd_res|process_list1process_list1|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:^|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:process_location|process_list1process_arg_labelNoLabel|EXPR:IDENTident:pcd_loc|process_list1process_list1|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:process_attributes|process_list1process_arg_labelNoLabel|EXPR:IDENTident:pcd_attributes|process_list1process_list1|process_list1process_list1|process_list1process_list1|process_list1process_list1|process_list1process_list1|process_list1process_list1|process_casesprocess_cases|ptyp_desc:Ptyp_constr:"string|"->my_process_core_type_list:;;print_value_binding_list;;
+TOPstructure_item_desc:Pstr_value:pattern:PATTERNpattern_Ppat_var:process_type_decl_type_extension| expr: EXPR:process_fun:process_arg_labelNoLabel|process_expression_option_TODOnope|PATTERNPpat_constraint:PATTERNpattern_Ppat_var:x|ptyp_desc:Ptyp_constr:"type_extension|"->my_process_core_type_list:|EXPR:process_constraintEXPR:process_matchEXPR:IDENTident:x|process_casescase:PATTERNpatterna9|process_expression_option_TODOnope|EXPR:apply:EXPR:IDENTident:^|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:process_longident_loc|process_list1process_arg_labelNoLabel|EXPR:IDENTident:ptyext_path|process_list1process_list1|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:^|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:process_list|process_list1process_arg_labelNoLabel|EXPR:IDENTident:ptyext_params|process_list1process_list1|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:^|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:process_list|process_list1process_arg_labelNoLabel|EXPR:IDENTident:ptyext_constructors|process_list1process_list1|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:^|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:process_private_flag|process_list1process_arg_labelNoLabel|EXPR:IDENTident:ptyext_private|process_list1process_list1|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:^|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:process_location|process_list1process_arg_labelNoLabel|EXPR:IDENTident:ptyext_loc|process_list1process_list1|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:process_attributes|process_list1process_arg_labelNoLabel|EXPR:IDENTident:ptyext_attributes|process_list1process_list1|process_list1process_list1|process_list1process_list1|process_list1process_list1|process_list1process_list1|process_list1process_list1|process_casesprocess_cases|ptyp_desc:Ptyp_constr:"string|"->my_process_core_type_list:;;print_value_binding_list;;
+TOPstructure_item_desc:Pstr_value:pattern:PATTERNpattern_Ppat_var:process_type_decl_extension_constructor| expr: EXPR:process_fun:process_arg_labelNoLabel|process_expression_option_TODOnope|PATTERNPpat_constraint:PATTERNpattern_Ppat_var:x|ptyp_desc:Ptyp_constr:"extension_constructor|"->my_process_core_type_list:|EXPR:process_constraintEXPR:process_matchEXPR:IDENTident:x|process_casescase:PATTERNpatterna9|process_expression_option_TODOnope|EXPR:apply:EXPR:IDENTident:^|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:process_loc|process_list1process_arg_labelNoLabel|EXPR:IDENTident:pext_name|process_list1process_list1|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:^|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:process_extension_constructor_kind|process_list1process_arg_labelNoLabel|EXPR:IDENTident:pext_kind|process_list1process_list1|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:^|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:process_location|process_list1process_arg_labelNoLabel|EXPR:IDENTident:pext_loc|process_list1process_list1|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:process_attributes|process_list1process_arg_labelNoLabel|EXPR:IDENTident:pext_attributes|process_list1process_list1|process_list1process_list1|process_list1process_list1|process_list1process_list1|process_casesprocess_cases|ptyp_desc:Ptyp_constr:"string|"->my_process_core_type_list:;;print_value_binding_list;;
+TOPstructure_item_desc:Pstr_value:pattern:PATTERNpattern_Ppat_var:process_type_decl_type_exception| expr: EXPR:process_fun:process_arg_labelNoLabel|process_expression_option_TODOnope|PATTERNPpat_constraint:PATTERNpattern_Ppat_var:x|ptyp_desc:Ptyp_constr:"type_exception|"->my_process_core_type_list:|EXPR:process_constraintEXPR:process_matchEXPR:IDENTident:x|process_casescase:PATTERNpatterna9|process_expression_option_TODOnope|EXPR:apply:EXPR:IDENTident:^|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:process_extension_constructor|process_list1process_arg_labelNoLabel|EXPR:IDENTident:ptyexn_constructor|process_list1process_list1|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:^|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:process_location|process_list1process_arg_labelNoLabel|EXPR:IDENTident:ptyexn_loc|process_list1process_list1|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:process_attributes|process_list1process_arg_labelNoLabel|EXPR:IDENTident:ptyexn_attributes|process_list1process_list1|process_list1process_list1|process_list1process_list1|process_casesprocess_cases|ptyp_desc:Ptyp_constr:"string|"->my_process_core_type_list:;;print_value_binding_list;;
+TOPstructure_item_desc:Pstr_value:pattern:PATTERNpattern_Ppat_var:process_type_decl_class_type| expr: EXPR:process_fun:process_arg_labelNoLabel|process_expression_option_TODOnope|PATTERNPpat_constraint:PATTERNpattern_Ppat_var:x|ptyp_desc:Ptyp_constr:"class_type|"->my_process_core_type_list:|EXPR:process_constraintEXPR:process_matchEXPR:IDENTident:x|process_casescase:PATTERNpatterna9|process_expression_option_TODOnope|EXPR:apply:EXPR:IDENTident:^|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:process_class_type_desc|process_list1process_arg_labelNoLabel|EXPR:IDENTident:pcty_desc|process_list1process_list1|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:^|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:process_location|process_list1process_arg_labelNoLabel|EXPR:IDENTident:pcty_loc|process_list1process_list1|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:process_attributes|process_list1process_arg_labelNoLabel|EXPR:IDENTident:pcty_attributes|process_list1process_list1|process_list1process_list1|process_list1process_list1|process_casesprocess_cases|ptyp_desc:Ptyp_constr:"string|"->my_process_core_type_list:;;print_value_binding_list;;
+TOPstructure_item_desc:Pstr_value:pattern:PATTERNpattern_Ppat_var:process_type_decl_class_signature| expr: EXPR:process_fun:process_arg_labelNoLabel|process_expression_option_TODOnope|PATTERNPpat_constraint:PATTERNpattern_Ppat_var:x|ptyp_desc:Ptyp_constr:"class_signature|"->my_process_core_type_list:|EXPR:process_constraintEXPR:process_matchEXPR:IDENTident:x|process_casescase:PATTERNpatterna9|process_expression_option_TODOnope|EXPR:apply:EXPR:IDENTident:^|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:process_core_type|process_list1process_arg_labelNoLabel|EXPR:IDENTident:pcsig_self|process_list1process_list1|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:process_list|process_list1process_arg_labelNoLabel|EXPR:IDENTident:pcsig_fields|process_list1process_list1|process_list1process_list1|process_casesprocess_cases|ptyp_desc:Ptyp_constr:"string|"->my_process_core_type_list:;;print_value_binding_list;;
+TOPstructure_item_desc:Pstr_value:pattern:PATTERNpattern_Ppat_var:process_type_decl_class_type_field| expr: EXPR:process_fun:process_arg_labelNoLabel|process_expression_option_TODOnope|PATTERNPpat_constraint:PATTERNpattern_Ppat_var:x|ptyp_desc:Ptyp_constr:"class_type_field|"->my_process_core_type_list:|EXPR:process_constraintEXPR:process_matchEXPR:IDENTident:x|process_casescase:PATTERNpatterna9|process_expression_option_TODOnope|EXPR:apply:EXPR:IDENTident:^|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:process_class_type_field_desc|process_list1process_arg_labelNoLabel|EXPR:IDENTident:pctf_desc|process_list1process_list1|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:^|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:process_location|process_list1process_arg_labelNoLabel|EXPR:IDENTident:pctf_loc|process_list1process_list1|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:process_attributes|process_list1process_arg_labelNoLabel|EXPR:IDENTident:pctf_attributes|process_list1process_list1|process_list1process_list1|process_list1process_list1|process_casesprocess_cases|ptyp_desc:Ptyp_constr:"string|"->my_process_core_type_list:;;print_value_binding_list;;
+TOPstructure_item_desc:Pstr_value:pattern:PATTERNpattern_Ppat_var:process_type_decl_class_infos| expr: EXPR:process_fun:process_arg_labelNoLabel|process_expression_option_TODOnope|PATTERNpattern_Ppat_var:x|EXPR:process_constraintEXPR:process_matchEXPR:IDENTident:x|process_casescase:PATTERNpatterna9|process_expression_option_TODOnope|EXPR:apply:EXPR:IDENTident:^|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:process_virtual_flag|process_list1process_arg_labelNoLabel|EXPR:IDENTident:pci_virt|process_list1process_list1|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:^|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:process_list|process_list1process_arg_labelNoLabel|EXPR:IDENTident:pci_params|process_list1process_list1|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:^|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:process_loc|process_list1process_arg_labelNoLabel|EXPR:IDENTident:pci_name|process_list1process_list1|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:^|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:process_var_name|process_list1process_arg_labelNoLabel|EXPR:IDENTident:pci_expr|process_list1process_list1|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:^|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:process_location|process_list1process_arg_labelNoLabel|EXPR:IDENTident:pci_loc|process_list1process_list1|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:process_attributes|process_list1process_arg_labelNoLabel|EXPR:IDENTident:pci_attributes|process_list1process_list1|process_list1process_list1|process_list1process_list1|process_list1process_list1|process_list1process_list1|process_list1process_list1|process_casesprocess_cases|ptyp_desc:Ptyp_constr:"string|"->my_process_core_type_list:;;print_value_binding_list;;
+TOPstructure_item_desc:Pstr_value:pattern:PATTERNpattern_Ppat_var:process_type_decl_class_expr| expr: EXPR:process_fun:process_arg_labelNoLabel|process_expression_option_TODOnope|PATTERNPpat_constraint:PATTERNpattern_Ppat_var:x|ptyp_desc:Ptyp_constr:"class_expr|"->my_process_core_type_list:|EXPR:process_constraintEXPR:process_matchEXPR:IDENTident:x|process_casescase:PATTERNpatterna9|process_expression_option_TODOnope|EXPR:apply:EXPR:IDENTident:^|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:process_class_expr_desc|process_list1process_arg_labelNoLabel|EXPR:IDENTident:pcl_desc|process_list1process_list1|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:^|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:process_location|process_list1process_arg_labelNoLabel|EXPR:IDENTident:pcl_loc|process_list1process_list1|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:process_attributes|process_list1process_arg_labelNoLabel|EXPR:IDENTident:pcl_attributes|process_list1process_list1|process_list1process_list1|process_list1process_list1|process_casesprocess_cases|ptyp_desc:Ptyp_constr:"string|"->my_process_core_type_list:;;print_value_binding_list;;
+TOPstructure_item_desc:Pstr_value:pattern:PATTERNpattern_Ppat_var:process_type_decl_class_structure| expr: EXPR:process_fun:process_arg_labelNoLabel|process_expression_option_TODOnope|PATTERNPpat_constraint:PATTERNpattern_Ppat_var:x|ptyp_desc:Ptyp_constr:"class_structure|"->my_process_core_type_list:|EXPR:process_constraintEXPR:process_matchEXPR:IDENTident:x|process_casescase:PATTERNpatterna9|process_expression_option_TODOnope|EXPR:apply:EXPR:IDENTident:^|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:process_pattern|process_list1process_arg_labelNoLabel|EXPR:IDENTident:pcstr_self|process_list1process_list1|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:process_list|process_list1process_arg_labelNoLabel|EXPR:IDENTident:pcstr_fields|process_list1process_list1|process_list1process_list1|process_casesprocess_cases|ptyp_desc:Ptyp_constr:"string|"->my_process_core_type_list:;;print_value_binding_list;;
+TOPstructure_item_desc:Pstr_value:pattern:PATTERNpattern_Ppat_var:process_type_decl_class_field| expr: EXPR:process_fun:process_arg_labelNoLabel|process_expression_option_TODOnope|PATTERNPpat_constraint:PATTERNpattern_Ppat_var:x|ptyp_desc:Ptyp_constr:"class_field|"->my_process_core_type_list:|EXPR:process_constraintEXPR:process_matchEXPR:IDENTident:x|process_casescase:PATTERNpatterna9|process_expression_option_TODOnope|EXPR:apply:EXPR:IDENTident:^|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:process_class_field_desc|process_list1process_arg_labelNoLabel|EXPR:IDENTident:pcf_desc|process_list1process_list1|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:^|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:process_location|process_list1process_arg_labelNoLabel|EXPR:IDENTident:pcf_loc|process_list1process_list1|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:process_attributes|process_list1process_arg_labelNoLabel|EXPR:IDENTident:pcf_attributes|process_list1process_list1|process_list1process_list1|process_list1process_list1|process_casesprocess_cases|ptyp_desc:Ptyp_constr:"string|"->my_process_core_type_list:;;print_value_binding_list;;
+TOPstructure_item_desc:Pstr_value:pattern:PATTERNpattern_Ppat_var:process_type_decl_module_type| expr: EXPR:process_fun:process_arg_labelNoLabel|process_expression_option_TODOnope|PATTERNPpat_constraint:PATTERNpattern_Ppat_var:x|ptyp_desc:Ptyp_constr:"module_type|"->my_process_core_type_list:|EXPR:process_constraintEXPR:process_matchEXPR:IDENTident:x|process_casescase:PATTERNpatterna9|process_expression_option_TODOnope|EXPR:apply:EXPR:IDENTident:^|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:process_module_type_desc|process_list1process_arg_labelNoLabel|EXPR:IDENTident:pmty_desc|process_list1process_list1|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:^|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:process_location|process_list1process_arg_labelNoLabel|EXPR:IDENTident:pmty_loc|process_list1process_list1|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:process_attributes|process_list1process_arg_labelNoLabel|EXPR:IDENTident:pmty_attributes|process_list1process_list1|process_list1process_list1|process_list1process_list1|process_casesprocess_cases|ptyp_desc:Ptyp_constr:"string|"->my_process_core_type_list:;;print_value_binding_list;;
+TOPstructure_item_desc:Pstr_value:pattern:PATTERNpattern_Ppat_var:process_type_decl_signature_item| expr: EXPR:process_fun:process_arg_labelNoLabel|process_expression_option_TODOnope|PATTERNPpat_constraint:PATTERNpattern_Ppat_var:x|ptyp_desc:Ptyp_constr:"signature_item|"->my_process_core_type_list:|EXPR:process_constraintEXPR:process_matchEXPR:IDENTident:x|process_casescase:PATTERNpatterna9|process_expression_option_TODOnope|EXPR:apply:EXPR:IDENTident:^|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:process_signature_item_desc|process_list1process_arg_labelNoLabel|EXPR:IDENTident:psig_desc|process_list1process_list1|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:process_location|process_list1process_arg_labelNoLabel|EXPR:IDENTident:psig_loc|process_list1process_list1|process_list1process_list1|process_casesprocess_cases|ptyp_desc:Ptyp_constr:"string|"->my_process_core_type_list:;;print_value_binding_list;;
+TOPstructure_item_desc:Pstr_value:pattern:PATTERNpattern_Ppat_var:process_type_decl_module_declaration| expr: EXPR:process_fun:process_arg_labelNoLabel|process_expression_option_TODOnope|PATTERNPpat_constraint:PATTERNpattern_Ppat_var:x|ptyp_desc:Ptyp_constr:"module_declaration|"->my_process_core_type_list:|EXPR:process_constraintEXPR:process_matchEXPR:IDENTident:x|process_casescase:PATTERNpatterna9|process_expression_option_TODOnope|EXPR:apply:EXPR:IDENTident:^|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:process_loc|process_list1process_arg_labelNoLabel|EXPR:IDENTident:pmd_name|process_list1process_list1|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:^|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:process_module_type|process_list1process_arg_labelNoLabel|EXPR:IDENTident:pmd_type|process_list1process_list1|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:^|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:process_attributes|process_list1process_arg_labelNoLabel|EXPR:IDENTident:pmd_attributes|process_list1process_list1|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:process_location|process_list1process_arg_labelNoLabel|EXPR:IDENTident:pmd_loc|process_list1process_list1|process_list1process_list1|process_list1process_list1|process_list1process_list1|process_casesprocess_cases|ptyp_desc:Ptyp_constr:"string|"->my_process_core_type_list:;;print_value_binding_list;;
+TOPstructure_item_desc:Pstr_value:pattern:PATTERNpattern_Ppat_var:process_type_decl_module_substitution| expr: EXPR:process_fun:process_arg_labelNoLabel|process_expression_option_TODOnope|PATTERNPpat_constraint:PATTERNpattern_Ppat_var:x|ptyp_desc:Ptyp_constr:"module_substitution|"->my_process_core_type_list:|EXPR:process_constraintEXPR:process_matchEXPR:IDENTident:x|process_casescase:PATTERNpatterna9|process_expression_option_TODOnope|EXPR:apply:EXPR:IDENTident:^|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:process_loc|process_list1process_arg_labelNoLabel|EXPR:IDENTident:pms_name|process_list1process_list1|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:^|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:process_longident_loc|process_list1process_arg_labelNoLabel|EXPR:IDENTident:pms_manifest|process_list1process_list1|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:^|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:process_attributes|process_list1process_arg_labelNoLabel|EXPR:IDENTident:pms_attributes|process_list1process_list1|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:process_location|process_list1process_arg_labelNoLabel|EXPR:IDENTident:pms_loc|process_list1process_list1|process_list1process_list1|process_list1process_list1|process_list1process_list1|process_casesprocess_cases|ptyp_desc:Ptyp_constr:"string|"->my_process_core_type_list:;;print_value_binding_list;;
+TOPstructure_item_desc:Pstr_value:pattern:PATTERNpattern_Ppat_var:process_type_decl_module_type_declaration| expr: EXPR:process_fun:process_arg_labelNoLabel|process_expression_option_TODOnope|PATTERNPpat_constraint:PATTERNpattern_Ppat_var:x|ptyp_desc:Ptyp_constr:"module_type_declaration|"->my_process_core_type_list:|EXPR:process_constraintEXPR:process_matchEXPR:IDENTident:x|process_casescase:PATTERNpatterna9|process_expression_option_TODOnope|EXPR:apply:EXPR:IDENTident:^|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:process_loc|process_list1process_arg_labelNoLabel|EXPR:IDENTident:pmtd_name|process_list1process_list1|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:^|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:process_option|process_list1process_arg_labelNoLabel|EXPR:IDENTident:pmtd_type|process_list1process_list1|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:^|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:process_attributes|process_list1process_arg_labelNoLabel|EXPR:IDENTident:pmtd_attributes|process_list1process_list1|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:process_location|process_list1process_arg_labelNoLabel|EXPR:IDENTident:pmtd_loc|process_list1process_list1|process_list1process_list1|process_list1process_list1|process_list1process_list1|process_casesprocess_cases|ptyp_desc:Ptyp_constr:"string|"->my_process_core_type_list:;;print_value_binding_list;;
+TOPstructure_item_desc:Pstr_value:pattern:PATTERNpattern_Ppat_var:process_type_decl_open_infos| expr: EXPR:process_fun:process_arg_labelNoLabel|process_expression_option_TODOnope|PATTERNpattern_Ppat_var:x|EXPR:process_constraintEXPR:process_matchEXPR:IDENTident:x|process_casescase:PATTERNpatterna9|process_expression_option_TODOnope|EXPR:apply:EXPR:IDENTident:^|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:process_var_name|process_list1process_arg_labelNoLabel|EXPR:IDENTident:popen_expr|process_list1process_list1|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:^|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:process_override_flag|process_list1process_arg_labelNoLabel|EXPR:IDENTident:popen_override|process_list1process_list1|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:^|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:process_location|process_list1process_arg_labelNoLabel|EXPR:IDENTident:popen_loc|process_list1process_list1|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:process_attributes|process_list1process_arg_labelNoLabel|EXPR:IDENTident:popen_attributes|process_list1process_list1|process_list1process_list1|process_list1process_list1|process_list1process_list1|process_casesprocess_cases|ptyp_desc:Ptyp_constr:"string|"->my_process_core_type_list:;;print_value_binding_list;;
+TOPstructure_item_desc:Pstr_value:pattern:PATTERNpattern_Ppat_var:process_type_decl_include_infos| expr: EXPR:process_fun:process_arg_labelNoLabel|process_expression_option_TODOnope|PATTERNpattern_Ppat_var:x|EXPR:process_constraintEXPR:process_matchEXPR:IDENTident:x|process_casescase:PATTERNpatterna9|process_expression_option_TODOnope|EXPR:apply:EXPR:IDENTident:^|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:process_var_name|process_list1process_arg_labelNoLabel|EXPR:IDENTident:pincl_mod|process_list1process_list1|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:^|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:process_location|process_list1process_arg_labelNoLabel|EXPR:IDENTident:pincl_loc|process_list1process_list1|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:process_attributes|process_list1process_arg_labelNoLabel|EXPR:IDENTident:pincl_attributes|process_list1process_list1|process_list1process_list1|process_list1process_list1|process_casesprocess_cases|ptyp_desc:Ptyp_constr:"string|"->my_process_core_type_list:;;print_value_binding_list;;
+TOPstructure_item_desc:Pstr_value:pattern:PATTERNpattern_Ppat_var:process_type_decl_module_expr| expr: EXPR:process_fun:process_arg_labelNoLabel|process_expression_option_TODOnope|PATTERNPpat_constraint:PATTERNpattern_Ppat_var:x|ptyp_desc:Ptyp_constr:"module_expr|"->my_process_core_type_list:|EXPR:process_constraintEXPR:process_matchEXPR:IDENTident:x|process_casescase:PATTERNpatterna9|process_expression_option_TODOnope|EXPR:apply:EXPR:IDENTident:^|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:process_module_expr_desc|process_list1process_arg_labelNoLabel|EXPR:IDENTident:pmod_desc|process_list1process_list1|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:^|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:process_location|process_list1process_arg_labelNoLabel|EXPR:IDENTident:pmod_loc|process_list1process_list1|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:process_attributes|process_list1process_arg_labelNoLabel|EXPR:IDENTident:pmod_attributes|process_list1process_list1|process_list1process_list1|process_list1process_list1|process_casesprocess_cases|ptyp_desc:Ptyp_constr:"string|"->my_process_core_type_list:;;print_value_binding_list;;
+TOPstructure_item_desc:Pstr_value:pattern:PATTERNpattern_Ppat_var:process_type_decl_structure_item| expr: EXPR:process_fun:process_arg_labelNoLabel|process_expression_option_TODOnope|PATTERNPpat_constraint:PATTERNpattern_Ppat_var:x|ptyp_desc:Ptyp_constr:"structure_item|"->my_process_core_type_list:|EXPR:process_constraintEXPR:process_matchEXPR:IDENTident:x|process_casescase:PATTERNpatterna9|process_expression_option_TODOnope|EXPR:apply:EXPR:IDENTident:^|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:process_structure_item_desc|process_list1process_arg_labelNoLabel|EXPR:IDENTident:pstr_desc|process_list1process_list1|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:process_location|process_list1process_arg_labelNoLabel|EXPR:IDENTident:pstr_loc|process_list1process_list1|process_list1process_list1|process_casesprocess_cases|ptyp_desc:Ptyp_constr:"string|"->my_process_core_type_list:;;print_value_binding_list;;
+TOPstructure_item_desc:Pstr_value:pattern:PATTERNpattern_Ppat_var:process_type_decl_value_binding| expr: EXPR:process_fun:process_arg_labelNoLabel|process_expression_option_TODOnope|PATTERNPpat_constraint:PATTERNpattern_Ppat_var:x|ptyp_desc:Ptyp_constr:"value_binding|"->my_process_core_type_list:|EXPR:process_constraintEXPR:process_matchEXPR:IDENTident:x|process_casescase:PATTERNpatterna9|process_expression_option_TODOnope|EXPR:apply:EXPR:IDENTident:^|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:process_pattern|process_list1process_arg_labelNoLabel|EXPR:IDENTident:pvb_pat|process_list1process_list1|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:^|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:process_expression|process_list1process_arg_labelNoLabel|EXPR:IDENTident:pvb_expr|process_list1process_list1|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:^|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:process_attributes|process_list1process_arg_labelNoLabel|EXPR:IDENTident:pvb_attributes|process_list1process_list1|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:process_location|process_list1process_arg_labelNoLabel|EXPR:IDENTident:pvb_loc|process_list1process_list1|process_list1process_list1|process_list1process_list1|process_list1process_list1|process_casesprocess_cases|ptyp_desc:Ptyp_constr:"string|"->my_process_core_type_list:;;print_value_binding_list;;
+TOPstructure_item_desc:Pstr_value:pattern:PATTERNpattern_Ppat_var:process_type_decl_module_binding| expr: EXPR:process_fun:process_arg_labelNoLabel|process_expression_option_TODOnope|PATTERNPpat_constraint:PATTERNpattern_Ppat_var:x|ptyp_desc:Ptyp_constr:"module_binding|"->my_process_core_type_list:|EXPR:process_constraintEXPR:process_matchEXPR:IDENTident:x|process_casescase:PATTERNpatterna9|process_expression_option_TODOnope|EXPR:apply:EXPR:IDENTident:^|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:process_loc|process_list1process_arg_labelNoLabel|EXPR:IDENTident:pmb_name|process_list1process_list1|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:^|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:process_module_expr|process_list1process_arg_labelNoLabel|EXPR:IDENTident:pmb_expr|process_list1process_list1|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:^|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:process_attributes|process_list1process_arg_labelNoLabel|EXPR:IDENTident:pmb_attributes|process_list1process_list1|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:process_location|process_list1process_arg_labelNoLabel|EXPR:IDENTident:pmb_loc|process_list1process_list1|process_list1process_list1|process_list1process_list1|process_list1process_list1|process_casesprocess_cases|ptyp_desc:Ptyp_constr:"string|"->my_process_core_type_list:;;print_value_binding_list;;
+TOPstructure_item_desc:Pstr_value:pattern:PATTERNpattern_Ppat_var:process_type_decl_toplevel_directive| expr: EXPR:process_fun:process_arg_labelNoLabel|process_expression_option_TODOnope|PATTERNPpat_constraint:PATTERNpattern_Ppat_var:x|ptyp_desc:Ptyp_constr:"toplevel_directive|"->my_process_core_type_list:|EXPR:process_constraintEXPR:process_matchEXPR:IDENTident:x|process_casescase:PATTERNpatterna9|process_expression_option_TODOnope|EXPR:apply:EXPR:IDENTident:^|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:process_loc|process_list1process_arg_labelNoLabel|EXPR:IDENTident:pdir_name|process_list1process_list1|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:^|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:process_option|process_list1process_arg_labelNoLabel|EXPR:IDENTident:pdir_arg|process_list1process_list1|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:process_location|process_list1process_arg_labelNoLabel|EXPR:IDENTident:pdir_loc|process_list1process_list1|process_list1process_list1|process_list1process_list1|process_casesprocess_cases|ptyp_desc:Ptyp_constr:"string|"->my_process_core_type_list:;;print_value_binding_list;;
+TOPstructure_item_desc:Pstr_value:pattern:PATTERNpattern_Ppat_var:process_type_decl_directive_argument| expr: EXPR:process_fun:process_arg_labelNoLabel|process_expression_option_TODOnope|PATTERNPpat_constraint:PATTERNpattern_Ppat_var:x|ptyp_desc:Ptyp_constr:"directive_argument|"->my_process_core_type_list:|EXPR:process_constraintEXPR:process_matchEXPR:IDENTident:x|process_casescase:PATTERNpatterna9|process_expression_option_TODOnope|EXPR:apply:EXPR:IDENTident:^|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:process_directive_argument_desc|process_list1process_arg_labelNoLabel|EXPR:IDENTident:pdira_desc|process_list1process_list1|process_list1process_arg_labelNoLabel|EXPR:apply:EXPR:IDENTident:process_location|process_list1process_arg_labelNoLabel|EXPR:IDENTident:pdira_loc|process_list1process_list1|process_list1process_list1|process_casesprocess_cases|ptyp_desc:Ptyp_constr:"string|"->my_process_core_type_list:;;print_value_binding_list;;
 DEBUG2AA:open Ppxlib
 
 
