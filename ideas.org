@@ -1,21 +1,82 @@
 * ideas
 
-We can use fundamental types of Constructors and Record Types to describe the first layer of the asts.
+We can use fundamental types of Constructors (+,Disjoint union, inductive types)
+and Record Types (Product, *, tables)
+to describe the first layer of the asts as an algebra.
 
+translate these layers of ppx ocaml into topological math theory 
+** layers
+*** Driver transformation 1
+**** List of structure_item (record *) 2
+***** pstr_desc structure_item_desc (inductive type +) 3
+******* Pstr_value (rec_flag, value_binding_list) -> function
+******* Pstr_type (rec_flag, type_declaration_list) -> types 4
+******** Emitthecode.emit_type_decl_list type_declaration (ptype_name, 5
+********* ptype_kind Ptype_record a ->     6
+********** record_kind_field pld_type(* : core_type *); 7
+
+********** core_type  8
+********** core_type_desc Ptyp_constr "name of type" 9
+******* Pstr_module  module_binding -> modules
+******* Pstr_open open_description -> includes
 
 ** construct a new copy of the program in parts
 *** header with includes
 **** Open all needed fundamental types
 ***** Should come from existing opens collected in source module
 ***** Recursive processing of modules
+
+
+*** for each type mentioned in the constructor
+**** Generate a call to process the fundamental type.
+The constructors are called in order
+
+**** Generate a declaration of the stub function to process the fundamental type
+this allows for customization of processing.
+
 *** for each type declaration
 **** Process constructors with tuples of primitive types as args
 ***** Process lists and optionals still not working.
-***** for each type mentioned in the constructor
 
-****** Generate a call to process the fundamental type.
-The constructors are called in order
-
-******* Generate a declaration of the stub function to process the fundamental type
-this allows for customization of processing.
 **** Process record types with list of fields.
+for each field we process its type with another type specific function for each type
+
+* Issues
+
+** higher order types
+list, option and loc are higher order types that we currently have problems with.
+
+63 |  let process_type_decl_loc (x:loc):string = match x with {txt(* var_name*);loc(* location*)} ->(process_type_decl_var_name txt)^(process_type_decl_location loc) 
+                                   ^^^
+Error: The type constructor loc expects 1 argument(s),
+
+open_infos
+include_infos
+
+** names with -
+one type has the name with a - in it, need to strip it.
+"var-name"
+
+*** question
+uniting unimath and llm and ppx
+
+runner: llm, used for vectorizing all the terms, and structured subgraph chunks of the data.
+complete chunks, reduced in size chunks. ask llm to break larger text into chunks.
+the vectorized form is fed back into unimath as input.
+
+blazedb : vector db or graph db of all the data.
+
+original text here maps to chunk a1 here via function f.
+chunk a1 has vector A 1 value in unimath.
+
+find paths in graph. deep graph learning model on the unimath graph.
+
+* diagram1
+
+init -> seed text  -> thinker
+thinker -> llama
+grammar -> llama : contrain output
+llama -> token -> ocaml
+ocaml -> coq -> parse
+ocaml -> stop : terminate conversation
+output of parse -> feed back into thinker.
