@@ -692,3 +692,25 @@ in this function.
 process_type_variant_constructor_declaration_list(a:string*constructor_declaration list*string_list):string =
 
 the ordering of the subobject the constructors are wrong.
+
+* ideas
+
+We can use fundamental types of Constructors and Record Types to describe the first layer of the asts.
+
+
+** construct a new copy of the program in parts
+*** header with includes
+**** Open all needed fundamental types
+***** Should come from existing opens collected in source module
+***** Recursive processing of modules
+*** for each type declaration
+**** Process constructors with tuples of primitive types as args
+***** Process lists and optionals still not working.
+***** for each type mentioned in the constructor
+
+****** Generate a call to process the fundamental type.
+The constructors are called in order
+
+******* Generate a declaration of the stub function to process the fundamental type
+this allows for customization of processing.
+**** Process record types with list of fields.

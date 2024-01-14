@@ -242,7 +242,10 @@ and
                                     "mutable",
                                     pld_mutable,
                                     "type",
-                                    pld_type));
+              pld_type));
+    (*
+       this is a field in a record
+    *)
     "process_record_kind:\"" ^ pld_name.txt ^ "|" ^ "\" body:" ^ pct
 and
   my_process_core_type_desc (x : core_type_desc * string_list):string =
@@ -719,7 +722,79 @@ let rec process_type_decl_list(a:type_declaration_list*string_list):string =
       ^ "[" ^
       (process_type_decl_list (t,s))
       ^ "]"
-    
+
+(*
+   start of generator for record types
+      first step to generate record vistior :
+   1. function with type
+   1.1. single argument x
+   2. match x with pattern
+   3. action on variablee to print them.
+
+   and type_kind = Parsetree.type_kind =
+  | Ptype_record of label_declaration list  (** Invariant: non-empty list *)
+
+           | Ptype_record a ->
+            let a = self#list self#label_declaration ctx a in
+            ( Ptype_record (Stdlib.fst a),
+              self#constr ctx "Ptype_record" [ Stdlib.snd a ] )
+*)
+let fffff=1
+
+(*the decl list
+  list,
+  string context,
+  separarator
+*)
+let rec emit_type_decl_list((x,s,t1):(type_declaration_list*string_list*string)):string=
+  match x with
+  | [] -> ""
+  | h :: t ->
+    (emit_type_decl (h,s))
+    ^ t1 ^
+    (emit_type_decl_list (t,s,t1))
+and emit_type_decl ((x,s)) =
+  match x with
+    {
+      ptype_name (* : string loc *);
+      ptype_params (* : (core_type * (variance * injectivity)) list *);
+      ptype_cstrs (*: (core_type * core_type * location) list*) ;   
+      ptype_kind (*: type_kind*)  ; 
+      ptype_private (*: private_flag*); 
+      ptype_manifest (* : core_type option *);
+      ptype_attributes (*: attributes*);
+      ptype_loc (*: location*)
+    } ->
+    "\nDEBUG2Erec: let process_type_decl_" ^  ptype_name.txt ^ " (x:" ^ ptype_name.txt ^ "):string = " ^ (emit_type_decl_kind (ptype_name.txt,ptype_kind,s)^ "\n")
+
+and emit_type_decl_kind((p,x,s)) :string=
+  match x with
+  | Ptype_record a ->     
+    emit_record_kind_field_list(p,a,s)
+  | other -> "SKIP"
+and  emit_record_kind_field_list(p,x,s) : string =
+    match x with
+  | [] -> ""
+  | h :: t ->
+    let one = (emit_record_kind_field (h, s)) in
+    let tail1 = (emit_record_kind_field_list (p, t, s)) in
+    if tail1 != "" then
+      one ^ ";" ^ tail1
+    else
+      one                                            
+and  emit_record_kind_field((x,s):label_declaration *string_list):string =
+  match x with
+    {
+     pld_name(* : string loc *);
+     pld_mutable(* : mutable_flag *);
+     pld_type(* : core_type *);
+     pld_loc(* : Location.t *);
+     pld_attributes(* : attributes *); 
+   } ->
+    let pct = (emit_core_type2 (pld_type,s,0)) in
+    pld_name.txt  ^ "(* " ^ pct ^ "*)"
+
+                            
 let printdesc(a :structure_item_desc*string_list) :string =
   match a with
   |(x,s)->
@@ -728,12 +803,12 @@ let printdesc(a :structure_item_desc*string_list) :string =
     | Pstr_value (rec_flag, value_binding_list) ->
       (* (ppddump ("DEBUG:Pstr_value:", rec_flag, value_binding_list)); *)
       "Pstr_value:"      ^ print_value_binding_list(value_binding_list)
-    | Pstr_type (rec_flag, type_declaration_list) ->
-      (*for expression_desc*)      
-      (* (ppddump ("DEBUG:Pstr_type:", rec_flag, type_declaration_list)); *)
+    | Pstr_type (rec_flag, type_declaration_list) ->      
+      (print_endline ("\n"^(emit_type_decl_list (type_declaration_list,s," "))^"\n"));
       "Pstr_type:"^
       process_type_decl_list((type_declaration_list,s))
-    | Pstr_module  module_binding ->(* (ppddump ("DEBUG:Pstr_module:",module_binding)); *) "module_binding"
+    | Pstr_module  module_binding ->
+      (* (ppddump ("DEBUG:Pstr_module:",module_binding)); *) "module_binding"
     (*open model*)
     | Pstr_open open_description ->(ppddump ("DEBUG:Pstr_open", open_description)); "module_open"
     | Pstr_eval (expression,attributes) ->
@@ -782,5 +857,4 @@ let transform x (*ast, bytecodes of the interface *) =
 
 let process_bool x = "bool"
                                                           
-
- let () = Driver.register_transformation ~impl:transform "simple-ppx" 
+let () = Driver.register_transformation ~impl:transform "simple-ppx" 
