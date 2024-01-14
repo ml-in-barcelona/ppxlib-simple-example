@@ -765,21 +765,25 @@ and emit_type_decl ((x,s)) =
       ptype_attributes (*: attributes*);
       ptype_loc (*: location*)
     } ->
-    "\nDEBUG2Erec: let process_type_decl_" ^  ptype_name.txt ^ " (x:" ^ ptype_name.txt ^ "):string = " ^ (emit_type_decl_kind (ptype_name.txt,ptype_kind,s)^ "\n")
+    "\nDEBUG2Erec: let process_type_decl_" ^  ptype_name.txt ^ " (x:" ^ ptype_name.txt
+    ^ "):string = match x with {"
+    ^ (emit_type_decl_kind (ptype_name.txt,ptype_kind,s,";"))
+    ^ "} ->"
+    ^ (emit_type_decl_kind_process (ptype_name.txt,ptype_kind,s,"^"))
 
-and emit_type_decl_kind((p,x,s)) :string=
+and emit_type_decl_kind((p,x,s,ss)) :string=
   match x with
   | Ptype_record a ->     
-    emit_record_kind_field_list(p,a,s)
+    emit_record_kind_field_list(p,a,s,ss)
   | other -> "SKIP"
-and  emit_record_kind_field_list(p,x,s) : string =
+and  emit_record_kind_field_list(p,x,s,ss) : string =
     match x with
   | [] -> ""
   | h :: t ->
     let one = (emit_record_kind_field (h, s)) in
-    let tail1 = (emit_record_kind_field_list (p, t, s)) in
+    let tail1 = (emit_record_kind_field_list (p, t, s, ss)) in
     if tail1 != "" then
-      one ^ ";" ^ tail1
+      one ^ ss ^ tail1
     else
       one                                            
 and  emit_record_kind_field((x,s):label_declaration *string_list):string =
@@ -794,7 +798,34 @@ and  emit_record_kind_field((x,s):label_declaration *string_list):string =
     let pct = (emit_core_type2 (pld_type,s,0)) in
     pld_name.txt  ^ "(* " ^ pct ^ "*)"
 
-                            
+
+and emit_type_decl_kind_process((p,x,s,ss)) :string=
+  match x with
+  | Ptype_record a ->     
+    emit_record_kind_field_list_process(p,a,s,ss)
+  | other -> "SKIP"
+and  emit_record_kind_field_list_process(p,x,s,ss) : string =
+    match x with
+  | [] -> ""
+  | h :: t ->
+    let one = (emit_record_kind_field_process (h, s)) in
+    let tail1 = (emit_record_kind_field_list_process (p, t, s, ss)) in
+    if tail1 != "" then
+      one ^ ss ^ tail1
+    else
+      one                                            
+and  emit_record_kind_field_process((x,s):label_declaration *string_list):string =
+  match x with
+    {
+     pld_name(* : string loc *);
+     pld_mutable(* : mutable_flag *);
+     pld_type(* : core_type *);
+     pld_loc(* : Location.t *);
+     pld_attributes(* : attributes *); 
+   } ->
+    let pct = (emit_core_type2 (pld_type,s,0)) in
+    "(process_" ^ pct ^ " " ^  pld_name.txt ^ ")"
+
 let printdesc(a :structure_item_desc*string_list) :string =
   match a with
   |(x,s)->
