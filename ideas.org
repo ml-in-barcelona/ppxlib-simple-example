@@ -80,3 +80,109 @@ llama -> token -> ocaml
 ocaml -> coq -> parse
 ocaml -> stop : terminate conversation
 output of parse -> feed back into thinker.
+
+* next idea
+
+1. introspection is part of the orient/decision making phase.
+2. oodo is basic loop.
+3. proof enginee feed into decision making step.
+4. developing theories/proofs is an activity
+5. activity uses proof general, coq, etc.
+   we can generate coq directly from ppx using a custom plugin.
+   we can use llm to customize each case with prompt models and other fun items.
+   we want the ability to tie in the llm to the ppx and call it in chunks via the api.
+   the api calls the ollama server that has an embedded ocaml inside it as well. so ocaml on the client and server.
+   we will use lwt yojson for the client.
+   we can extend the protocol to include more metadata extracted with ocaml.
+   we can wrap the llama.cpp with the ocaml wrapper and use that to annotate the metadata,
+   we can take the ocaml structure of llama and transform it into meta c++, but aslo metacoq/unimath.
+   we can take the mistral model and lift into unimath, the computation graph and tensor models and even data relationships we extract.
+   all this data can be used by the compiler to produce better code, we can imagine the unimath extraction into c++.
+   we can do this by mechanized extraction between ocaml and c++ with some bridge.
+   now we can imagine a huge set of templates parameterized with the unimath/metacoq data that we can query at compile or run time.
+   then we can manipulate this structure to create new versions of it, mutations
+   but we want to constrain them to valid ones, imagine an autoencoder that will only produce valid data.
+   the proof engine would constraint and check it further.  
+   take unimath and train model on it. be able to predict next code.
+   convert types declarations, record structures and constructors from ppx to unimath.
+   constrain the grammar with model of the unimath. use coq grammar and reduce it further.
+   check the grammar with gbnf/llama.
+   replace/rewrite that code with ocaml.
+   use the ocaml to parse and return the gbnf structures.
+   translate grammar to coq proof, lift into unimath.
+   convert metacoq/ppx data into grammar that will match/generate those parts of the data given.
+   so translate the metadata into a grammar that can be used by llama.cpp.
+   this reduction of strenght is going from level 8 to level 1-3 or so.
+   so our theory has to represent systems in various states and be able to process or transform them along.
+   we want to translate our data into various forms of the existing unimath structures and show how each concept can be expressed in each other concept or not and why,
+   this is a N*N/2 relationship between the types of the system showing how they can represent each other.
+   this system can be used behind a llm text prompt as input, so the user would interact with an llm to have it generate instructures for our system.
+   the system can be used from dune in compilation calling the llm for items matching the ppx directives.
+
+
+* so the components are :
+
+** client driver front end LLM with high level goal.
+eg prompt : "make me a snake game"
+it can also be a complex spec document like this one.
+It can also be driven by dune ppx that calls the system for any marked code.
+It can be called from an LSP,or from proof general.
+this can also be an "autogpt agent" or some other task that is working with the system.
+we can create hybrid systems where our llama.cpp+proof system is used by another driver.
+
+basically we call into ollama.cpp server with embedded ocaml (coq/unimath) using https rest
+
+*** memory architecture
+some client might load the model as shared memory as well, but we will just
+talk to a server that has it loaded. 
+we can imagine all the parts as sharing memory.
+need to protect against bad inputs. Also protect users from each other.
+need to save/find conversations and contexts in the time repo structure.
+
+*** queue
+we create a queue of jobs to process.
+jobs can spawn new jobs.
+
+*** translation from goal into unimath model.
+we lift the input into a higher level math system for checking and modelling.
+this can be done on the inside of the llm.
+it can use the vectorization of the goal as the specification.
+
+****  iteration over model
+traversal of the graph in chunks and using prompt models to generate text.
+
+***** grammar generation
+generate grammar from the model to be used.
+collect statistics
+
+***** constrained generation
+
+the model generates constrained output using grammar.
+this output is parsed by coq and checked for syntax and also correctness.
+
+***** Expanded output
+the metacoq data is used to decorate the output of the llm and annotate that
+it is then evaluated back by the llm to create a response guided by the structure.
+this is important for error handling. 
+
+***** Summary
+the results are summarized by multiple passes of the llm.
+
+**** in code
+we can write this all in code.
+
+*** in spec
+we can write this all in our org mode spec and translate it back to ocaml using pandoc/haskell
+or native org mode parsers.
+
+
+** oodo
+User is driving the system in an oodo loop.
+*** observe
+behaviour of system, observability and semantic integration
+*** orient
+understand data in context
+*** decide
+if to continue or abort (halting problem)
+*** act
+take actions in the system
