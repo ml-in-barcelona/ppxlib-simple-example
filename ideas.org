@@ -124,12 +124,16 @@ output of parse -> feed back into thinker.
 
 ** client driver front end LLM with high level goal.
 eg prompt : "make me a snake game"
-it can also be a complex spec document like this one.
-It can also be driven by dune ppx that calls the system for any marked code.
-It can be called from an LSP,or from proof general.
+it can also be a complex spec document like this one, larger than a context window.
+well the parts then need to be structured with org mode.
+
+It can also be driven by dune ppx-introspector that calls the system for any marked code.
+
+It can be called from an Language Server Protocol LSP(visual studio),
+or from proof general in emacs. 
+
 this can also be an "autogpt agent" or some other task that is working with the system.
 we can create hybrid systems where our llama.cpp+proof system is used by another driver.
-
 basically we call into ollama.cpp server with embedded ocaml (coq/unimath) using https rest
 
 *** memory architecture
@@ -137,16 +141,54 @@ some client might load the model as shared memory as well, but we will just
 talk to a server that has it loaded. 
 we can imagine all the parts as sharing memory.
 need to protect against bad inputs. Also protect users from each other.
-need to save/find conversations and contexts in the time repo structure.
+need to save/find conversations and contexts in the time repo structure which has directories for each day.
 
 *** queue
 we create a queue of jobs to process.
 jobs can spawn new jobs.
 
-*** translation from goal into unimath model.
-we lift the input into a higher level math system for checking and modelling.
-this can be done on the inside of the llm.
-it can use the vectorization of the goal as the specification.
+*** translation from goal (snake game) into unimath model.
+
+we lift the unstructured user input eg "make me a snake game"
+into a higher level of formality using a math system for checking and modeling.
+
+this can be done on the inside of the llm, in the forward pass, we can find concepts
+relating to our reference knowledge and highlight neighboring concepts automatically,
+based on the vectorization of the goal as the specification. it could emit types, records, fields, constructors, template, tables, code
+out of the llm model that was highlighted or triggered by the input.
+this is the oracle view of the llm model weight internals
+or the lexical introspection into the language space.
+we can consult the oracle to gain insight into the gods, but it is
+
+alternatively, we can just ask the llm to translate it and contrain the output. 
+
+#+begin_src output
+We convert an unstructured user input like "make me a snake game" into
+a higher level of formality using a mathematical system for analysis
+and modeling. This can be done automatically through a machine
+learning model that is trained on a reference knowledge base. As the
+model receives the input, it highlights related concepts based on
+vectorization of the goal as a specification.
+
+The output of this process could include types, records, fields,
+constructors, templates, tables, and code that are triggered or
+highlighted in the model. This is often referred to as the "oracle
+view" of the model's weight internals or the lexical introspection
+into the language space. The oracle provides insight into the concepts
+that the input relates to, but it is important to note that it may not
+be perfect and should be used with caution.
+
+Alternatively, we can instruct the machine learning model to translate
+the input directly and constrain the output to ensure accuracy and
+consistency. This approach can be useful for generating specific
+outputs that are tailored to a particular use case or application.
+#+end_src
+
+***** merge eigenvector
+use new prime numbers to re-encode eigenvectors.
+how to add weights. minimizes the loss, gradient funtion.
+https://github.com/meta-introspector/lang_agent/issues/1
+
 
 ****  iteration over model
 traversal of the graph in chunks and using prompt models to generate text.
@@ -161,28 +203,89 @@ the model generates constrained output using grammar.
 this output is parsed by coq and checked for syntax and also correctness.
 
 ***** Expanded output
-the metacoq data is used to decorate the output of the llm and annotate that
-it is then evaluated back by the llm to create a response guided by the structure.
-this is important for error handling. 
+the metacoq data is used to decorate and annotate the output of the llm, syntax highlighting, lsp, semgrep,
+snippets from definitions of names referenced,
+and annotate the output of the llm, with parse results, test results, proof results, all with urls that contain further links that can be followed or not by the user.
+the use also specifies the depth of the data returned,
+and rules of inference to follow or not, with weights, like a annotated graph, or weighted graph,
+which is a series of numbers that are the weights of a quasi neural network.
+we are constructing the values of a neural network peicemeal, or pretraining it or transfering knowledge from existing code in ocaml into the network.
+
+how to merge model weights, or even compose new models out of existing models.
+we use eigenvectors as axis to multiply counts of objects of certain types
+
+it is then evaluated back by the llm to create a response guided by the structure of the type system.
+this is important for error handling.
+
+#+begin_src output
+
+The Metacoq data serves as a visual enhancement and metadata to the output of an LLM (Language Model). It provides syntax highlighting, LSP (Language Server Protocol) support, SEMGrep functionality, snippets from definition references, and annotates the LLM output with parse results, test results, and proof results. These annotations are linked to URLs that can be followed or not by the user.
+
+The use of Metacoq data allows for fine-tuning of depth and rules of inference. It is a weighted graph representation, which is a series of numbers representing the weights of a quasi-neural network. This enables us to piece together the values of a neural network incrementally, through pretraining or transferring knowledge from existing OCaml code into the network.
+
+Merging and composing new models can be done by using eigenvectors as axes to multiply counts of objects of certain types. This approach is crucial for error handling, ensuring that the LLM response adheres to the structure of the type system.
+#+end_src
+
 
 ***** Summary
 the results are summarized by multiple passes of the llm.
 
 **** in code
-we can write this all in code.
+
+we can write this all in code, in ocaml, or have an llm translate it for us.
 
 *** in spec
-we can write this all in our org mode spec and translate it back to ocaml using pandoc/haskell
-or native org mode parsers.
+we can write this all in our org mode spec and translate it back to ocaml
+using pandoc/haskell or native org mode parsers. we found a grammar for org mode.
 
 
 ** oodo
-User is driving the system in an oodo loop.
+User is driving the system in an OODO loop.
+
 *** observe
-behaviour of system, observability and semantic integration
+behaviour of system, observability and semantic integration,
+ppx -introspector, knowledge of types, records and constructors
+recursive expansion into levels of detail.
+
 *** orient
-understand data in context
-*** decide
-if to continue or abort (halting problem)
+understand data in context, llm forward passes inference,
+database inference lookups, vectorization,
+statistical analysis. 
+
+dfa would count as part of orientation, 
+
+*** decide.
+human is needed, if to continue or abort (halting problem)
+executive decision.
+
 *** act
-take actions in the system
+take actions in the system. those can be pointers to new urls that resolve to future work.
+
+#+begin_src output
+
+In an OODO loop, the user takes charge of driving the system by
+observing its behavior, understanding it in context through forward
+passes and inference, making executive decisions, and acting on them.
+
+The first step is observation, where the user introspects the types,
+records, and constructors using Ppx. This provides a recursive
+expansion into levels of detail that enables the user to understand
+the system more deeply.
+
+Next comes orientation, where the user applies LLM forward passes for
+inference and database lookup inferences. They also use vectorization
+and statistical analysis to gain insights into the data in context.
+
+dfa is a part of orientation as it helps the user count the actions
+needed to complete the task at hand. The halting problem comes into
+play during decision-making, where the user decides whether to
+continue or abort the process based on their own executive
+decision-making capabilities.
+
+Finally, the user acts on the system by taking pointers to new URLs
+that resolve to future work. This enables them to make decisions and
+take action in real-time, making the OODO loop a powerful tool for
+driving complex systems forward.
+#+end_src
+
+*** User may delegate decisions to others or ai.
