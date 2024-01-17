@@ -17,7 +17,7 @@ later the target will be to unite unimath with the other modules.
 * capture the log
 
 #+begin_src shell
-dune build > log.txt 2>&1
+dune build > log.txt 2>&1she
 #+end_src
 
 * new try

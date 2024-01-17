@@ -775,7 +775,7 @@ let printdesc(a :structure_item_desc*string_list) :string =
     | Pstr_class (class_declarations ) ->(ppddump ("DEBUG:Pstr_class:", class_declarations)); "class"
     | Pstr_class_type (class_type_declarations) ->(ppddump ("DEBUG:Pstr_class_type:", class_type_declarations)) ; "class_Type"
     | Pstr_include  (include_declaration)->(ppddump ("DEBUG:Pstr_include:",include_declaration)); "include"
-    | Pstr_attribute (attribute)->(ppddump ("DEBUG:Pstr_attribute:", attribute)); "attribte"
+    | Pstr_attribute (attribute)->(ppddump ("DEBUG:Pstr_attribute:", attribute)); "_attribute"
     | Pstr_extension ( extension , attributes)->(ppddump ("DEBUG:Pstr_extension:", extension , attributes)) ; "extension"
 
 let process_string x = x
