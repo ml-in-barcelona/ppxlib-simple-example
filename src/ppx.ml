@@ -45,7 +45,7 @@ let process_pack (x):string = "PACK" ^ x     let process_tuple (x):string = "TUP
                                 
 let process_constant1 (x):string = "CONSTANT" ^ x
 let process_assert (x):string = "ASSERT" ^ x
-let process_option ( a):string = "process_option_TODO" ^ a
+let process_option ( a):string = "(process_option " ^ a ^ ")"
                                                                 
 
 
@@ -110,10 +110,11 @@ let rec
   match a with
   | [] -> "process_list1"
   | (l,e) :: t -> (process_arg_label l) ^ "|" ^ (process_expression e) ^ "|" ^ (process_list1 t)
-and process_expression_option ( a: expression option ):string = "process_expression_option_TODO" ^
-  match a with
+and process_expression_option ( a: expression option ):string = "(process_expression_option" ^
+  (match a with
   | Some x -> (process_expression x)
-  | None -> "nope"
+  | None -> "(null_expression)"
+  ) ^")"
 and process_string_loc_expression_list x = "process_string_loc_expression_list"
 and process_expression_list ( a ):string=
   "process_list" ^  
@@ -126,16 +127,18 @@ and process_value_binding x =
   process_expression(x.pvb_expr)
 
 and  process_case (a:case) =
-  "case:" ^ 
-  process_pattern a.pc_lhs ^ "|" ^
+  "(case" ^ 
+  (process_pattern a.pc_lhs ^ "|" ^
   process_expression_option a.pc_guard ^ "|" ^
-  process_expression a.pc_rhs
+  process_expression a.pc_rhs) ^
+    ")"
     
 and process_cases ( a:cases):string=
-  "process_cases" ^  
-  match a with
+  "(process_cases" ^  
+ ( match a with
   | [] -> "process_cases"
   | a :: t -> (process_case a) ^ "|" ^ (process_cases t)
+ ) ^ ")"
 
 and process_value_binding_list x = "value_binding_list" ^
     match x with
@@ -220,10 +223,11 @@ and process_record_kind4 :label_declaration -> string_list -> string = fun x s -
 and  process_record_kind2(x :label_declaration)(s:string_list) = ""
 and    process_record_kind3 x s = ""
 and process_core_type ( x ):string = (my_process_core_type x)
-and process_core_type_option ( a: core_type option ):string = "processcore_type_option_TODO" ^
-  match a with
+and process_core_type_option ( a: core_type option ):string = "(process_core_type_option " ^
+  (match a with
   | Some x -> (process_core_type x)
   | None -> "nope"
+  ) ^ ")" 
 and
   process_record_kind((x,s):label_declaration *string_list):string =
   match x with
@@ -799,7 +803,7 @@ let proc1 x :string  =
 let debug proc lst : string =
   let result = List.map proc lst in
   List.iter (fun i -> print_endline i) result;
-    "TODO"
+  ""
                 
 let transform x (*ast, bytecodes of the interface *) =
   (ppddump ("DEBUG3:",x));
