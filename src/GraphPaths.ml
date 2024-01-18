@@ -78,5 +78,5 @@ let issymmetric_symmetric_closure _ _ =
     'a1 -> 'a1 -> ('a1, ('a1, 'a2) symmetric_closure) gpaths -> ('a1, ('a1,
     'a2) symmetric_closure) gpaths **)
 
-let reverse_in_closure u v p =
-  reverse issymmetric_symmetric_closure u v p
+(* let reverse_in_closure u v p = *)
+(*   reverse issymmetric_symmetric_closure u v p *)

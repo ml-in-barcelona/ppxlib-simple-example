@@ -1,5 +1,16 @@
 open Ppxlib
 open Ppxlibextras
+open Graph
+
+(*
+    pregraph
+    graph
+*)
+let create_edge (edge,node)=
+  let pg = make_pregraph in
+  let g = make_graph pg edge node in
+  g
+
 let ppddump x = () (*stub to hide batteries dump*)
 
 
@@ -258,6 +269,9 @@ and
       ->
       let {txt;loc} = a in
       let id1 = process_id1(txt) in
+      
+      let edge = create_edge ("Ptyp_constr", id1) in
+        
       (* let concat = (concatlist (id1, astring_list)) in *)
       (* let newy = [id1] @ astring_list in *)
       let newlist = (my_process_core_type_list (b, s)) in

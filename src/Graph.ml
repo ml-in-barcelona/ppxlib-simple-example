@@ -1,9 +1,9 @@
 open PartA
-open PartB
-open PartD
+(* open PartB *)
+(* open PartD *)
 open Preamble
-open Propositions0
-open UnivalenceAxiom
+(* open Propositions0 *)
+(* open UnivalenceAxiom *)
 
 type __ = Obj.t
 let __ = let rec f _ = Obj.repr f in Obj.repr f
@@ -18,13 +18,16 @@ let make_pregraph =
 type vertex = __
 
 type edge = __
-
+type 'x isofhlevel = __
+type 'x isaprop = 'x isofhlevel
+type 'a paths = | Coq_paths_refl
+type 'x isaset = 'x -> 'x -> 'x paths isaprop
 type has_vertexset = vertex isaset
 
 (** val isaprop_has_vertexset : pregraph -> has_vertexset isaprop **)
 
-let isaprop_has_vertexset _ =
-  isapropisaset
+(* let isaprop_has_vertexset _ = *)
+(*   isapropisaset *)
 
 type has_edgesets = vertex -> vertex -> edge isaset
 
@@ -87,70 +90,70 @@ let graph_mor_comp g h k p q =
     -> edge) -> (vertex -> vertex -> edge -> edge) -> (vertex -> vertex ->
     edge -> edge paths) -> graph_mor paths **)
 
-let make_graph_mor_eq _ _ p_UU2080_ p_UU2081_ p_UU2081_' e =
-  pair_path_in2 p_UU2080_ p_UU2081_ p_UU2081_'
-    (Obj.magic funextsec p_UU2081_ p_UU2081_' (fun x ->
-      Obj.magic funextsec (Obj.magic p_UU2081_ x) (Obj.magic p_UU2081_' x)
-        (fun y ->
-        Obj.magic funextfun (p_UU2081_ x y) (p_UU2081_' x y) (fun f ->
-          e x y f))))
+(* let make_graph_mor_eq _ _ p_UU2080_ p_UU2081_ p_UU2081_' e = *)
+(*   pair_path_in2 p_UU2080_ p_UU2081_ p_UU2081_' *)
+(*     (Obj.magic funextsec p_UU2081_ p_UU2081_' (fun x -> *)
+(*       Obj.magic funextsec (Obj.magic p_UU2081_ x) (Obj.magic p_UU2081_' x) *)
+(*         (fun y -> *)
+(*         Obj.magic funextfun (p_UU2081_ x y) (p_UU2081_' x y) (fun f -> *)
+(*           e x y f)))) *)
 
 (** val graph_mor_id_left :
     pregraph -> pregraph -> graph_mor -> graph_mor paths **)
 
-let graph_mor_id_left g h p =
-  let p_UU2080_ = p.pr1 in
-  let p_UU2081_ = p.pr2 in
-  make_graph_mor_eq g h p_UU2080_ (fun x y f ->
-    onedge g h { pr1 = p_UU2080_; pr2 = p_UU2081_ } ((graph_mor_id g).pr1 x)
-      ((graph_mor_id g).pr1 y) ((graph_mor_id g).pr2 x y f)) p_UU2081_
-    (fun _ _ _ -> Coq_paths_refl)
+(* let graph_mor_id_left g h p = *)
+(*   let p_UU2080_ = p.pr1 in *)
+(*   let p_UU2081_ = p.pr2 in *)
+(*   make_graph_mor_eq g h p_UU2080_ (fun x y f -> *)
+(*     onedge g h { pr1 = p_UU2080_; pr2 = p_UU2081_ } ((graph_mor_id g).pr1 x) *)
+(*       ((graph_mor_id g).pr1 y) ((graph_mor_id g).pr2 x y f)) p_UU2081_ *)
+(*     (fun _ _ _ -> Coq_paths_refl) *)
 
 (** val graph_mor_id_right :
     pregraph -> pregraph -> graph_mor -> graph_mor paths **)
 
-let graph_mor_id_right g h p =
-  let p_UU2080_ = p.pr1 in
-  let p_UU2081_ = p.pr2 in
-  make_graph_mor_eq g h p_UU2080_ (fun x y f ->
-    onedge h h (graph_mor_id h) (p_UU2080_ x) (p_UU2080_ y) (p_UU2081_ x y f))
-    p_UU2081_ (fun _ _ _ -> Coq_paths_refl)
+(* let graph_mor_id_right g h p = *)
+(*   let p_UU2080_ = p.pr1 in *)
+(*   let p_UU2081_ = p.pr2 in *)
+(*   make_graph_mor_eq g h p_UU2080_ (fun x y f -> *)
+(*     onedge h h (graph_mor_id h) (p_UU2080_ x) (p_UU2080_ y) (p_UU2081_ x y f)) *)
+(*     p_UU2081_ (fun _ _ _ -> Coq_paths_refl) *)
 
 (** val graph_mor_comp_assoc :
     pregraph -> pregraph -> pregraph -> pregraph -> graph_mor -> graph_mor ->
     graph_mor -> graph_mor paths **)
 
-let graph_mor_comp_assoc g1 g2 g3 g4 p q r =
-  let p_UU2080_ = p.pr1 in
-  let p_UU2081_ = p.pr2 in
-  let q_UU2080_ = q.pr1 in
-  let q_UU2081_ = q.pr2 in
-  let r_UU2080_ = r.pr1 in
-  let r_UU2081_ = r.pr2 in
-  make_graph_mor_eq g1 g4
-    (funcomp
-      (onvertex g1 g3
-        (graph_mor_comp g1 g2 g3 { pr1 = p_UU2080_; pr2 = p_UU2081_ } { pr1 =
-          q_UU2080_; pr2 = q_UU2081_ }))
-      (onvertex g3 g4 { pr1 = r_UU2080_; pr2 = r_UU2081_ })) (fun x y f ->
-    onedge g2 g4
-      (graph_mor_comp g2 g3 g4 { pr1 = q_UU2080_; pr2 = q_UU2081_ } { pr1 =
-        r_UU2080_; pr2 = r_UU2081_ }) (p_UU2080_ x) (p_UU2080_ y)
-      (p_UU2081_ x y f)) (fun x y f ->
-    onedge g3 g4 { pr1 = r_UU2080_; pr2 = r_UU2081_ }
-      ((graph_mor_comp g1 g2 g3 { pr1 = p_UU2080_; pr2 = p_UU2081_ } { pr1 =
-         q_UU2080_; pr2 = q_UU2081_ }).pr1 x)
-      ((graph_mor_comp g1 g2 g3 { pr1 = p_UU2080_; pr2 = p_UU2081_ } { pr1 =
-         q_UU2080_; pr2 = q_UU2081_ }).pr1 y)
-      ((graph_mor_comp g1 g2 g3 { pr1 = p_UU2080_; pr2 = p_UU2081_ } { pr1 =
-         q_UU2080_; pr2 = q_UU2081_ }).pr2 x y f)) (fun _ _ _ ->
-    Coq_paths_refl)
+(* let graph_mor_comp_assoc g1 g2 g3 g4 p q r = *)
+(*   let p_UU2080_ = p.pr1 in *)
+(*   let p_UU2081_ = p.pr2 in *)
+(*   let q_UU2080_ = q.pr1 in *)
+(*   let q_UU2081_ = q.pr2 in *)
+(*   let r_UU2080_ = r.pr1 in *)
+(*   let r_UU2081_ = r.pr2 in *)
+(*   make_graph_mor_eq g1 g4 *)
+(*     (funcomp *)
+(*       (onvertex g1 g3 *)
+(*         (graph_mor_comp g1 g2 g3 { pr1 = p_UU2080_; pr2 = p_UU2081_ } { pr1 = *)
+(*           q_UU2080_; pr2 = q_UU2081_ })) *)
+(*       (onvertex g3 g4 { pr1 = r_UU2080_; pr2 = r_UU2081_ })) (fun x y f -> *)
+(*     onedge g2 g4 *)
+(*       (graph_mor_comp g2 g3 g4 { pr1 = q_UU2080_; pr2 = q_UU2081_ } { pr1 = *)
+(*         r_UU2080_; pr2 = r_UU2081_ }) (p_UU2080_ x) (p_UU2080_ y) *)
+(*       (p_UU2081_ x y f)) (fun x y f -> *)
+(*     onedge g3 g4 { pr1 = r_UU2080_; pr2 = r_UU2081_ } *)
+(*       ((graph_mor_comp g1 g2 g3 { pr1 = p_UU2080_; pr2 = p_UU2081_ } { pr1 = *)
+(*          q_UU2080_; pr2 = q_UU2081_ }).pr1 x) *)
+(*       ((graph_mor_comp g1 g2 g3 { pr1 = p_UU2080_; pr2 = p_UU2081_ } { pr1 = *)
+(*          q_UU2080_; pr2 = q_UU2081_ }).pr1 y) *)
+(*       ((graph_mor_comp g1 g2 g3 { pr1 = p_UU2080_; pr2 = p_UU2081_ } { pr1 = *)
+(*          q_UU2080_; pr2 = q_UU2081_ }).pr2 x y f)) (fun _ _ _ -> *)
+(*     Coq_paths_refl) *)
 
 (** val isaset_graph_mor :
     pregraph -> pregraph -> has_vertexset -> has_edgesets -> graph_mor isaset **)
 
 let funspace_isaset x = x
-let isaset_graph_mor _ _ h k =
-  isaset_total2 (funspace_isaset h) (fun p_UU2080_ ->
-    impred_isaset (fun x ->
-      impred_isaset (fun y -> funspace_isaset (k (p_UU2080_ x) (p_UU2080_ y)))))
+(* let isaset_graph_mor _ _ h k = *)
+(*   isaset_total2 (funspace_isaset h) (fun p_UU2080_ -> *)
+(*     impred_isaset (fun x -> *)
+(*       impred_isaset (fun y -> funspace_isaset (k (p_UU2080_ x) (p_UU2080_ y))))) *)
