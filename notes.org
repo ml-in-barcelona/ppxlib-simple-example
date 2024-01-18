@@ -45,3 +45,72 @@ process_type_variant_constructor_declaration_list(a:string*constructor_declarati
 
 the ordering of the subobject the constructors are wrong.
 
+
+*
+#+begin_src shell
+grep DEBUG2E:constructor_declaration_new log.txt |cut "-d|" -f1 | cut -d: -f4- |sort |uniq -c| sort -r
+#+end_src
+
+#+RESULTS:
+| 1 | "Virtual"{        |
+| 1 | "Upto"{           |
+| 1 | "Unit"{           |
+| 1 | "Rtag"{           |
+| 1 | "Pwith_type"{     |
+| 1 | "Ptype_abstract"{ |
+| 1 | "Ptyp_any"{       |
+| 1 | "Ptop_def"{       |
+| 1 | "Pstr_eval"{      |
+| 1 | "PStr"{           |
+| 1 | "Psig_value"{     |
+| 1 | "Private"{        |
+| 1 | "Ppat_any"{       |
+| 1 | "Pmty_ident"{     |
+| 1 | "Pmod_ident"{     |
+| 1 | "Pext_decl"{      |
+| 1 | "Pexp_ident"{     |
+| 1 | "Pdir_string"{    |
+| 1 | "Pcty_constr"{    |
+| 1 | "Pctf_inherit"{   |
+| 1 | "Pcstr_tuple"{    |
+| 1 | "Pconst_integer"{ |
+| 1 | "Pcl_constr"{     |
+| 1 | "Pcf_inherit"{    |
+| 1 | "Override"{       |
+| 1 | "Otag"{           |
+| 1 | "O"{              |
+| 1 | "Nonrecursive"{   |
+| 1 | "Nolabel"{        |
+| 1 | "Lident"{         |
+| 1 | "Injective"{      |
+| 1 | "Immutable"{      |
+| 1 | "Covariant"{      |
+| 1 | "Coq_tt"{         |
+| 1 | "Coq_true"{       |
+| 1 | "Coq_paths_refl"{ |
+| 1 | "Coq_ii1"{        |
+| 1 | "Closed"{         |
+| 1 | "Cfk_virtual"{    |
+
+#+begin_src output
+The code declares various types related to a graph structure. Here's a creative reinterpretation while preserving the main ideas:
+
+Imagine an artist painting a beautiful landscape on a large canvas. The canvas is divided into smaller squares, each representing a different part of the scene. Each square can contain multiple colors and shapes, which represent the objects in the landscape. The connections between these squares are drawn with lines, representing the relationships between the objects.
+
+The `type` keyword in Coq is used to define new types, just as the artist creates new shapes and colors on their canvas. In this case, we're defining several types related to a graph structure:
+
+* `coq_UU`: This type represents a unique identifier for each object (or square) in the landscape.
+* `node`: This type represents a single object (or square) in the landscape. Each object can have multiple colors and shapes, represented by other types.
+* `arc`: This type represents a connection between two objects (or squares). The connection can be drawn with lines of different shapes and thicknesses.
+* `'x isofhlevel`: This type represents a hierarchy of objects in the landscape, with each level having a unique identifier (`coq_UU`). The higher the level, the more abstract or general the object becomes.
+* `(t, p) total2`: This type represents a tuple containing two elements of types `t` and `p`. It is used to represent the connections between objects in the landscape, where each connection can have two different shapes and colors (`t` and `p`).
+* `dirprod`: This type represents a directed product of two tuples, which means that the order of the elements matters. In this case, it is used to represent the connections between objects with two different shapes and colors.
+* `precgraph`: This type represents a graph structure where each object (or square) has a unique identifier (`coq_UU`) and can be connected to other objects with lines of different shapes and thicknesses. The hierarchy of objects is represented by the `isofhlevel` type.
+* `'x isaprop`: This type represents an object (or square) that belongs to a specific level in the hierarchy (`isofhlevel`).
+* `'a paths`: This type represents all possible paths between two objects (or squares) in the graph structure, including direct and indirect connections. The paths can have different shapes and thicknesses, represented by other types.
+* `coq_paths_refl`: This type represents a single path that starts and ends at the same object (or square). It is used as a base case for all possible paths in the graph structure.
+* `'x isaset`: This type represents an assignment of paths between two objects (or squares), where each object can have multiple paths connecting to it. The paths are represented by other types, and the object belongs to a specific level in the hierarchy (`isofhlevel`).
+* `cgraph`: This type represents a graph structure where each object (or square) has a unique identifier (`coq_UU`) and can be connected to other objects with lines of different shapes and thicknesses. The hierarchy of objects is represented by the `isofhlevel` type, and the paths between objects are represented by the `'a paths` type.
+* `arc -> node paths`: This type represents a function that takes an arc (or connection) and returns a path between two objects connected by that arc. The path can have different shapes and thicknesses, represented by other types.
+* `arc -> node paths`: This type represents a function that takes an arc (or connection) and returns a path between two objects connected by that arc. The path can have different shapes and thicknesses, represented by other types.
+#+end_src
