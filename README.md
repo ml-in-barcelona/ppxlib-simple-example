@@ -2,47 +2,42 @@
 
 A simple ppx to examplify the initial setup of [ppxlib](https://github.com/ocaml-ppx/ppxlib/), part of the talk [**The needed introduction to writing a ppx**](https://youtu.be/dMoRMqQ6GLs?t=4184) given at [Reason STHLM Meetup](https://www.meetup.com/es-ES/ReasonSTHLM/)..
 
-It uses [`esy`](https://esy.sh) since it's a little easier to install sandboxes enviroments than opam.
-
-- OCaml 4.14
-- dune 3.4.1
+It uses [`opam`](https://opam.ocaml.org)
+- OCaml 5.2.0
+- dune 3.12
 - ppxlib 0.27
 
 ## Installation
 
-Needs `esy` installed globally in your system, if you don't have it install it with npm: `npm install -g esy`.
-
 ```bash
-esy # Installs the dependencies and builds the project
-```
-
-## Editor
-
-```bash
-esy add @opam/ocaml-lsp-server
+make install
 ```
 
 ## Building
 
 ```bash
-esy build # Builds the project, once
-esy watch # Watch the filesystem and re-builds the project on each change
+make build # Builds the project, once
+make dev # Watch the filesystem and re-builds the project on each change
 ```
 
 ## Testing
 
 ```bash
-esy test # Runs alcotest tests
+make test # Runs snapshot tests
+make test-watch # Watch the filesystem and re-runs the tests on each change
+make test-update # Updates the snapshot tests
 ```
 
 ## Usage
 
-Users of your ppx need to add this to their dune for your executable to be executed as ppx (or inside bsconfig if targeting ReScript).
+Users of your ppx need to add the ppx name to their dune stanza:
 
 ```lisp
 (preprocess
-  (pps simple-ppx))
+  (pps ppx-simple-example))
 ```
+
+And then you can use it in your code:
 
 ```ocaml
 print_endline [%yay]
