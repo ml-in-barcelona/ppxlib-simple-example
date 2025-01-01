@@ -4,6 +4,6 @@
   },
   "ocaml.sandbox": {
     "kind": "opam",
-    "switch": "/Users/davesnx/Code/github/ml-in-barcelona/jsoo-css"
+    "switch": "${workspaceFolder:ppxlib-simple-example}"
   },
 }

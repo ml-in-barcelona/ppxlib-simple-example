@@ -1,6 +1,4 @@
 (executable
- (name main)
- (public_name simple-ppx)
- (libraries simpleppx)
- (ocamlopt_flags (-linkall))
- (package simple-ppx))
+ (name standalone)
+ (public_name ppx-simple-example.bin)
+ (libraries simple ppxlib))
