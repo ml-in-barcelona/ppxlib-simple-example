@@ -1,4 +1,0 @@
-(executable
- (name standalone)
- (public_name ppx-simple-example.bin)
- (libraries simple ppxlib))

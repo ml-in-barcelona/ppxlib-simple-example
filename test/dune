@@ -1,3 +1,8 @@
 (cram
  (package ppx-simple-example)
- (deps %{bin:ppx-simple-example.bin}))
+ (deps standalone.exe))
+
+(executable
+ (name standalone)
+ (modules standalone)
+ (libraries simple ppxlib))
