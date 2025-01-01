@@ -9,4 +9,5 @@
  (depends
   (dune (>= 3.17.0))
   (ocaml-lsp-server (>= 1.20.1))
+  (ppxlib (>= 0.27.0))
   (ocamlformat (>= 0.27.0))))
