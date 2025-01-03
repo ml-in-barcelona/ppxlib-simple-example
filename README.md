@@ -42,5 +42,5 @@ And then you can use it in your code:
 ```ocaml
 print_endline [%yay]
 (* Transforms to *)
-print_endline "r3p14ccd 70 r4nd0m 5tr1n9"
+print_endline "Hello future compiler engineer!"
 ```

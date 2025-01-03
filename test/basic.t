@@ -5,4 +5,4 @@ Create a file input.ml with the following content
 
 Run the ppx and print the output
   $ ./standalone.exe --impl input.ml
-  let () = print_endline "r3p14ccd 70 r4nd0m 5tr1n9"
+  let () = print_endline "Hello future compiler engineer!"
