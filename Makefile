@@ -1,4 +1,5 @@
 project_name = ppxlib-simple-example
+OCAML_VERSION = 5.4.1
 
 DUNE = opam exec -- dune
 opam_file = $(project_name).opam
@@ -47,9 +48,13 @@ format-check: ## Checks if format is correct
 setup-githooks: ## Setup githooks
 	git config core.hooksPath .githooks
 
+.PHONY: ocaml-version
+ocaml-version: ## Print the OCaml version
+	@echo $(OCAML_VERSION)
+
 .PHONY: create-switch
 create-switch: ## Create opam switch
-	opam switch create . 5.4.1 --deps-only --with-test -y
+	opam switch create . $(OCAML_VERSION) --deps-only --with-test -y
 
 .PHONY: install
 install: # Install dependencies

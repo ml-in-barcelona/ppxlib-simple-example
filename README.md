@@ -2,10 +2,7 @@
 
 A simple ppx to examplify the initial setup of [ppxlib](https://github.com/ocaml-ppx/ppxlib/), part of the talk [**The needed introduction to writing a ppx**](https://youtu.be/dMoRMqQ6GLs?t=4184) given at [Reason STHLM Meetup](https://www.meetup.com/es-ES/ReasonSTHLM/)..
 
-It uses [`opam`](https://opam.ocaml.org)
-- OCaml 5.2.0
-- dune 3.12
-- ppxlib 0.27
+It uses [`opam`](https://opam.ocaml.org), `dune` and `ppxlib`.
 
 ## Installation
 

@@ -24,17 +24,20 @@ jobs:
           - macos-latest
           - ubuntu-latest
           - windows-latest
-        ocaml-compiler:
-          - 5.4.1
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Use OCaml ${{ matrix.ocaml-compiler }}
+      - name: Read OCaml version
+        id: ocaml-version
+        shell: bash
+        run: echo "version=$(make ocaml-version)" >> "$GITHUB_OUTPUT"
+
+      - name: Use OCaml ${{ steps.ocaml-version.outputs.version }}
         uses: ocaml/setup-ocaml@v3
         with:
-          ocaml-compiler: ${{ matrix.ocaml-compiler }}
+          ocaml-compiler: ${{ steps.ocaml-version.outputs.version }}
 
       - name: Install
         run: make install
