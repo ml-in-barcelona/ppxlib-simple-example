@@ -1,4 +1,4 @@
-(lang dune 3.12)
+(lang dune 3.21)
 
 (generate_opam_files true)
 
@@ -7,7 +7,8 @@
  (synopsis "A short description of your project")
  (description "A longer description of your project")
  (depends
-  (dune (>= 3.17.0))
-  (ocaml-lsp-server (>= 1.20.1))
-  (ppxlib (>= 0.27.0))
-  (ocamlformat (>= 0.27.0))))
+  (ocaml (>= 5.4.1))
+  (dune (>= 3.21.1))
+  (ocaml-lsp-server (>= 1.25.0))
+  (ppxlib (>= 0.37.0))
+  (ocamlformat (>= 0.28.1))))
